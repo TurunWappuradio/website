@@ -6,7 +6,7 @@
   <meta name="description" content="{{description}}">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta charset="UTF-8">
-
+  <meta name="google-site-verification" content="fDOrbgrfvIYE70e3ZdCknEA0LBIEE6onQG9a9mNfbyA" />
     <!-- Disable tap highlight on IE -->
   <meta name="msapplication-tap-highlight" content="no">
 
@@ -27,16 +27,29 @@
   <meta name="theme-color" content="#1976d2">
 
   <link href="https://fonts.googleapis.com/css?family=Montserrat:400,600" rel="stylesheet">
-  <link rel="stylesheet" type="text/css" href="styles.css?v={buildTime build}"/>
-  <script async type="text/javascript" src="bundle.min.js?v={buildTime build}"></script>
+  <link rel="stylesheet" type="text/css" href="styles.css?v={{buildTime "v"}}"/>
+  <script async type="text/javascript" src="bundle.min.js?v={{buildTime "v"}}"></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-126189026-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-126189026-1');
+  </script>
 </head>
-  <body>
-    <div class="Container">
-      <div class="Headline">
-        <h1><bold>Tur</bold>un</h1>
-        <h1><bold>Wa</bold>ppuradio</h1>
-      </div>
-      {{{contents}}}
+<body>
+  {{> Header}}
+  <div class="Container">
+    <div class="Headline">
+      <h1><bold>Tur</bold>un</h1>
+      <h1><bold>Wa</bold>ppuradio</h1>
     </div>
-  </body>
+    {{{contents}}}
+  </div>
+  
+</body>
+
 </html>

@@ -1,0 +1,41 @@
+{
+  "name": "static-site-template",
+  "version": "1.0.0",
+  "description": "A static site template using metalsmith.",
+  "main": "index.js",
+  "scripts": {
+    "build:css": "node-sass --include-path scss src/main.scss dist/styles.css",
+    "build:metalsmith": "bash -c \"node build.js\"",
+    "build:js": "bash -c \"browserify src/main.js -o dist/bundle.js -t [ babelify --presets [ es2015] ] && npm run uglify\"",
+    "copy:assets": "shx mkdir -p dist/ && cp -r src/assets/* dist/",
+    "uglify": "uglifyjs --compress --mangle -- dist/bundle.js > dist/bundle.min.js && rm dist/bundle.js",
+    "clean": "rm -rf dist",
+    "server": "http-server dist",
+    "build:all": "npm run clean && (npm run build:metalsmith && npm run build:css && npm run build:js && npm run copy:assets)",
+    "watch": "nodemon --ignore dist/ -e scss,html,md,js,jsx -x \"npm run build:all\"",
+    "dev": "bash -c \"(npm run server & npm run watch)\"",
+    "start": "bash -c \"(npm run build:all && npm run server)\""
+  },
+  "author": "Julius Rajala",
+  "license": "MIT",
+  "devDependencies": {
+    "babel-preset-es2015": "^6.13.2",
+    "babelify": "^7.3.0",
+    "browserify": "^13.1.0",
+    "handlebars": "^4.0.5",
+    "handlebars-helpers": "^0.10.0",
+    "http-server": "^0.9.0",
+    "metalsmith": "^2.1.0",
+    "metalsmith-filter": "^1.0.2",
+    "metalsmith-layouts": "^1.6.5",
+    "metalsmith-markdown": "^0.2.1",
+    "metalsmith-templates": "^0.7.0",
+    "node-sass": "^3.8.0",
+    "nodemon": "^1.10.0",
+    "shx": "^0.2.2",
+    "uglify-js": "^2.7.3"
+  },
+  "dependencies": {
+    "metalsmith": "^2.1.0"
+  }
+}

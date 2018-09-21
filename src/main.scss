@@ -1,0 +1,45 @@
+* {
+  font-family: Montserrat, sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.Container {
+  max-width: 100%;
+  width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 20px;
+
+  > p {
+    > em {
+      font-weight: 600;
+      color: #1976d2;
+    }
+  }
+}
+
+.Headline {
+  margin-bottom: 60px;
+
+  h1 {
+    font-size: 8rem;
+    line-height: .8;
+    margin: 0;
+
+    @media (max-width: 900px), (max-device-width: 900px) {
+      font-size: 3rem;
+    }
+  }
+
+  bold {
+    color: #1976d2;
+  }
+}

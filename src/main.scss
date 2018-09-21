@@ -35,6 +35,10 @@ body {
     margin: 0;
 
     @media (max-width: 900px), (max-device-width: 900px) {
+      font-size: 5rem;
+    }
+
+    @media (max-width: 600px), (max-device-width: 600px) {
       font-size: 3rem;
     }
   }

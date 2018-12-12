@@ -4,10 +4,14 @@ draft: false
 layout: index.html
 ---
 
-# Manifesti: Turun Yliopisto ansaitsee kampusradion
+# Manifesti: Turun korkeakouluopiskelijat ansaitsevat yhteisen kampusradion
 
-Suomalaisia opiskelijoita hemmotellaan useammilla kampuksilla omilla amatööriradioilla. Tanpereen Teekkareilla on Rakkauden Wappuradio, Aallossa on Radio Diodi, jne. Turun Yliopistolla amatööriradioa ei kuitenkaan ainakaan tietääksemme *vielä* tehdä. Mielestämme tilanne pitää ehdottomasti korjata. Visiomme on aidosti poikkitieteellinen Wappuradio joka tarjoilee ohjelmaa ja musiikkia noin viikon verran joskus vapun alla. Turun Yliopiston opiskelijoiden tuottamana radiokanava, Turun Yliopiston opiskelijoille.
+Suomalaisia opiskelijoita hemmotellaan useammilla kampuksilla omilla amatööriradioilla. Tanpereen Teekkareilla on Rakkauden Wappuradio, Aallossa on Radio Diodi, jne. Nyt haluamme hemmotella Turun korkeakouluopiskelijoita kampusradiolla. Kasassa on aidosti poikkitieteellinen Turun Wappuradio joka tarjoilee ohjelmaa ja musiikkia viikon verran vapun alla. Turun korkeakoulujen opiskelijoiden tuottamana radiokanava, Turun kampukselle.
 
-Turun Wappuradio yhdistys TurWa järjestää alustavan tiedustelun kiinnostuneiden kartoittamiseksi Ravintola Proffan Kellarin isossa kabinetissa _tiistaina 2.10.2018 kello 18.00_. Rooleja tuotannossa on itse ohjelman keräämisestä, tekniikasta, sponsoreiden hankinnasta ynnä muusta sellaisesta. Tilaa riittää, tule mukaan.
+## Pähkinänkuoressa
+- Lähetys lähtee käyntiin *23.4. - 30.4.2019*
+- Tykitämme ohjelmaa koko viikon *24/7*
+- Ohjelmahaku opiskelijoille alkaa *1.1.2019*
+- Etsimme nyt jo yhteistyökumppaneita!
 
-Mikäli et pääse paikalle mutta olet kuitenkin kiinnostunut toiminnasta, lähetä sähköpostia osoitteeseen *toimitus[ät]turunwappuradio.com*.
+Jos olet kiinnostunut toiminnasta ja haluat mukaan, ota yhteyttä: *toimitus[ät]turunwappuradio.com*.

@@ -1,4 +1,8 @@
 
+$colorTeal: #5bbfbf;
+$colorBlue: #60a3ee;
+$colorOrange: #ee6b60;
+
 *, all {
   font-family: Montserrat, sans-serif;
   box-sizing: border-box;
@@ -12,6 +16,7 @@ body {
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  background-color: #003366;
 }
 
 .Container {
@@ -25,7 +30,7 @@ body {
   > h1 {
     font-size: 2rem;
     font-weight: 600;
-    color: #1976d2;
+    color: $colorOrange;
     padding: 10px 0;
   }
 
@@ -33,14 +38,16 @@ body {
     padding: 10px 0;
     font-size: 1.5rem;
     font-weight: 600;
+    color: white;
   }
 
   > p {
     line-height: 1.4;
     padding: 5px 0;
+    color: #fff;
     > em {
       font-weight: 600;
-      color: #1976d2;
+      color: $colorTeal;
     }
   }
 
@@ -48,28 +55,30 @@ body {
     padding: 5px 0;
     line-height: 1.4;
     list-style: disc;
+    > em {
+      font-weight: 600;
+      color: $colorTeal;
+    }
   }
 
   ul {
     padding-left: 20px;
+    color: white;
   }
 }
 
 .Header {
-  padding: 30px 0;
+  padding: 0;
   font-family: Montserrat, sans-serif;
+  width: 100%;
+  text-align: right;
+  max-width: 900px;
   li {
     display: inline-block;
     padding: 5px 30px;
-    width: 150px;
-
-    &:first-child {
-      border-right: 2px dashed #1976d2;
-      text-align: right;
-    }
   }
   li > a{
-    color: #1976d2;
+    color: $colorTeal;
     font-weight: 600;
     text-decoration: none;
     &:hover {
@@ -82,19 +91,11 @@ body {
   margin-bottom: 60px;
   font-family: Montserrat, sans-serif;
   font-weight: 600;
+  text-align: center;
 
-  > h1 {
-    font-size: 8rem;
-    line-height: .8 !important; // Sorry.
-    margin: 0;
-
-    @media (max-width: 900px), (max-device-width: 900px) {
-      font-size: 5rem;
-    }
-
-    @media (max-width: 600px), (max-device-width: 600px) {
-      font-size: 3rem;
-    }
+  > img {
+    max-width: 100%;
+    width: 300px;
   }
 
   bold {

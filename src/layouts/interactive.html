@@ -21,24 +21,23 @@
   <meta name="apple-mobile-web-app-title" content="Your website">
 
   <!-- Tile icon for Win8 (144x144 + tile color) -->
-  <meta name="msapplication-TileImage" content="images/touch/ms-touch-icon-144x144-precomposed.png">
+  <meta name="msapplication-TileImage" content="imnpm ages/touch/ms-touch-icon-144x144-precomposed.png">
   <meta name="msapplication-TileColor" content="#1976d2">
   
   <meta name="theme-color" content="#1976d2">
 
   <link href="https://fonts.googleapis.com/css?family=Montserrat:400,600" rel="stylesheet">
-  <link rel="stylesheet" type="text/css" href="styles.css?v={{buildTime "v"}}"/>
-  <script async type="text/javascript" src="bundle.min.js?v={{buildTime "v"}}"></script>
-
+  <link rel="stylesheet" type="text/css" href="styles.css?v={{buildTime "v"}}">
+  
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id={{build_env "GA"}}"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-
+    
     gtag('config', '{{build_env "GA"}}');
-  </script>
+    </script>
 </head>
 <body>
   {{> Header}}
@@ -46,8 +45,11 @@
     <img src="leima.svg" alt="Turun Wappuradio"/>
   </div>
   <div class="Container">
-    {{{contents}}}
+    <div id="radio-root"></div>
+    <div id="video-root"></div>
+    <div id="show-root"></div>
   </div>
   {{> Footer}}
+  <script src="bundle.js?v={{buildTime "v"}}"></script>
 </body>
 </html>

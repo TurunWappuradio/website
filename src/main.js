@@ -1,4 +1,1 @@
-import './scripts/hello';
-import registerServiceWorker from './registerServiceWorker';
-
-registerServiceWorker();
+import './utils/hello';

@@ -31,13 +31,13 @@
   <script async type="text/javascript" src="bundle.min.js?v={{buildTime "v"}}"></script>
 
   <!-- Global site tag (gtag.js) - Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id={{build_env "GA"}}"></script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id={{setEnv "GA_ID"}}"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
 
-    gtag('config', '{{build_env "GA"}}');
+    gtag('config', '{{setEnv "GA_ID"}}');
   </script>
 </head>
 <body>

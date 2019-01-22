@@ -4,12 +4,11 @@ const filter = require('metalsmith-filter');
 const layouts = require('metalsmith-layouts');
 const handlebarsHelpers = require('./lib/handlebarsHelpers');
 
-
 metalsmith(__dirname)
   .source('./src/content/')
   .destination('dist/')
   .use(markdown())
-  .use(handlebarsHelpers())
+  .use(handlebarsHelpers({'process': process}))
   .use(layouts({
     'engine':'handlebars', 
     'directory':'src/layouts',

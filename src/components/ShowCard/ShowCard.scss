@@ -1,0 +1,43 @@
+.ShowCard {
+  padding-top: 80px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  transition: all .2s ease-in-out;
+  -webkit-box-shadow: 2px 2px 3px 0px rgba(0,0,0,0.21);
+  -moz-box-shadow: 2px 2px 3px 0px rgba(0,0,0,0.21);
+  box-shadow: 2px 2px 3px 0px rgba(0,0,0,0.21);
+
+  > * {
+    padding: 10px 20px;
+  }
+
+  > h2 {
+    background-color: rgba(0,0,0,1);
+    color: $colorTeal;
+    font-weight: 600;
+  }
+
+  p {
+    display: none;
+    background-color: #fff;
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+  }
+
+  &-open {
+    padding-top: 140px;
+    -webkit-box-shadow: 3px 4px 3px 0px rgba(0,0,0,0.21);
+    -moz-box-shadow: 3px 4px 3px 0px rgba(0,0,0,0.21);
+    box-shadow: 3px 4px 3px 0px rgba(0,0,0,0.21);
+    transform: translateY(-1px);
+
+    > p {
+      display: block;
+    }
+  }
+
+}

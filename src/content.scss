@@ -20,7 +20,12 @@ body {
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  background-color: #003366;
+  background: #003366;
+  background: -moz-linear-gradient(top, #003366 0%, #325b84 100%);
+  background: -webkit-linear-gradient(top, #003366 0%,#325b84 100%);
+  background: linear-gradient(to bottom, #003366 0%,#325b84 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#003366', endColorstr='#325b84',GradientType=0 );
+
 }
 
 .Container {
@@ -30,6 +35,29 @@ body {
   margin-left: auto;
   margin-right: auto;
   padding: 20px;
+
+  > p > img {
+    max-width: 100%;
+  }
+
+  .ImageContainer {
+    margin: 20px 0px;
+    width: 100%;
+    display: flex;
+    padding: 20px 60px;
+    > img {
+      border-radius: 5px;
+      -webkit-box-shadow: 2px 2px 3px 0px rgba(0,0,0,0.21);
+      -moz-box-shadow: 2px 2px 3px 0px rgba(0,0,0,0.21);
+      box-shadow: 2px 2px 3px 0px rgba(0,0,0,0.21);
+      transition: all ease-in-out .2s;
+
+      &:hover {
+        -webkit-filter: blur(3px); /* Safari 6.0 - 9.0 */
+        filter: blur(3px);
+      }
+    }
+  }
 
   > h1 {
     font-size: 2rem;
@@ -47,7 +75,7 @@ body {
 
   > p {
     line-height: 1.4;
-    padding: 5px 0;
+    padding: 7px 0;
     color: #fff;
     > em {
       font-weight: 600;
@@ -68,6 +96,40 @@ body {
   ul {
     padding-left: 20px;
     color: white;
+  }
+
+  a {
+    color: $colorOrange;
+    font-style: italic;
+  }
+
+  > .ButtonContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: center;
+    padding: 20px;
+
+    > a {
+      margin: 40px;
+      font-style: normal;
+      text-decoration: none;
+      display: inline-block;
+      background: transparent;
+      color: #fff;
+      font-weight: 600;
+      border: 2px solid #fff;
+      border-radius: 5px;
+      padding: 10px 20px;
+      font-size: 1.5rem;
+      cursor: pointer;
+      transition: .1s ease-in-out all;
+
+      &:hover {
+        color: $colorBlue;
+        border-color: $colorBlue;
+      }
+    }
   }
 }
 
@@ -98,6 +160,9 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  -webkit-box-shadow: 0px -2px 3px 0px rgba(0,0,0,0.21);
+  -moz-box-shadow: 0px -2px 3px 0px rgba(0,0,0,0.21);
+  box-shadow: 0px -2px 3px 0px rgba(0,0,0,0.21);
 
   > ul {
     width: 100%;
@@ -105,7 +170,7 @@ body {
     text-align: right;
 
     > li > a {
-      color: #003366;
+      color: #fff;
     }
   }
 }
@@ -123,5 +188,21 @@ body {
 
   bold {
     color: #1976d2;
+  }
+}
+
+.Page {
+  font-family: Montserrat, sans-serif;
+  max-width: 100%;
+  width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 20px;
+
+  h1 {
+    font-size: 2rem;
+    font-weight: 600;
+    color: $colorOrange;
+    padding: 10px 10px;
   }
 }

@@ -27,6 +27,7 @@
     "@babel/preset-react": "^7.0.0",
     "babel-loader": "^8.0.5",
     "browserify": "^16.2.2",
+    "googleapis": "^37.2.0",
     "handlebars": "^4.0.5",
     "handlebars-helpers": "^0.10.0",
     "http-server": "^0.11.1",

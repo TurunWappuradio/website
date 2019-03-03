@@ -2,3 +2,5 @@
 /dist
 .env
 .idea/
+credentials.json
+token.json

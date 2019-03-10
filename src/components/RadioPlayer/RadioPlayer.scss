@@ -1,0 +1,28 @@
+.RadioPlayer {
+    display: flex;
+    flex-direction: column;
+    //width: 100%;
+    align-items: center;
+}
+
+.clickable {
+    :hover {
+        cursor: pointer;
+    }
+}
+
+#nowPlaying {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #fff;
+}
+
+#RadioPlayerActions {
+    display: flex;
+    justify-content: space-around;
+    width: 80%;
+    img {
+        width: 50px;
+        height: auto;
+    }
+}

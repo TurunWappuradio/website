@@ -1,3 +1,5 @@
+![Logo](src/assets/leima.svg)
+
 # Turun Wappuradio website
 
 Something of a mutant project that builds a mostly static site with a couple of dynamic react-components to provide extra functionality.

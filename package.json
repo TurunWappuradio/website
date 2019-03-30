@@ -15,7 +15,7 @@
     "start": "npm run build-all && npm run server",
     "build-extras": "npm run clean && npm run build-metalsmith && npm run build-css && npm run copy-assets",
     "dev": "npm run build-extras && webpack-dev-server --config ./webpack.config.js --mode development",
-    "release": "export NODE_ENV=production && npm run start && npm run upload",
+    "release": "export NODE_ENV=production && npm run build-all && npm run upload && npm run server",
     "upload": "export NODE_ENV=production && node lib/awsUpload.js"
   },
   "engines": {

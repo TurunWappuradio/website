@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build-css": "node-sass --include-path scss src/main.scss dist/styles.css",
+    "watch-css": "node-sass --include-path scss src/main.scss dist/styles.css -w",
     "build-metalsmith": "node build.js",
     "build-js": "webpack",
     "build-all": "npm run clean && npm run build-extras && npm run build-js",

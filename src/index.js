@@ -3,24 +3,15 @@ import ReactDOM from 'react-dom';
 import { VideoPlayer, RadioPlayer, ShowList } from './components';
 
 function renderVideo() {
-  ReactDOM.render(
-    <VideoPlayer />,
-    document.getElementById('radio-root')
-  )
+  ReactDOM.render(<VideoPlayer />, document.getElementById('radio-root'));
 }
 
 function renderRadio() {
-  ReactDOM.render(
-    <RadioPlayer />,
-    document.getElementById('video-root')
-  )
+  ReactDOM.render(<RadioPlayer />, document.getElementById('video-root'));
 }
 
 function renderShows() {
-  ReactDOM.render(
-    <ShowList />,
-    document.getElementById('show-root')
-  )
+  ReactDOM.render(<ShowList />, document.getElementById('show-root'));
 }
 
 function mountComponents() {

@@ -1,15 +1,37 @@
 .ShowCard {
-  padding-top: 80px;
+  cursor: pointer;
   margin-bottom: 20px;
   border-radius: 5px;
-  cursor: pointer;
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
   transition: all .2s ease-in-out;
-  -webkit-box-shadow: 2px 2px 3px 0px rgba(0,0,0,0.21);
-  -moz-box-shadow: 2px 2px 3px 0px rgba(0,0,0,0.21);
+  position: relative;
   box-shadow: 2px 2px 3px 0px rgba(0,0,0,0.21);
+  overflow: hidden;
+  height: 100px;
+
+  > .ShowCard-hero {
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    position: absolute;
+
+    > .ShowCard-title {
+      font-size: 1.5rem;
+      bottom: 10px;
+      left: 10px;
+      font-weight: 500;
+      color: #fff;
+      position: absolute;
+    }
+  }
+
+
+  > .ShowCard-content {
+    position: relative;
+    z-index: 1;
+  }
 
   > * {
     padding: 10px 20px;
@@ -21,23 +43,27 @@
     font-weight: 600;
   }
 
-  p {
-    display: none;
-    background-color: #fff;
-    border-bottom-right-radius: 5px;
-    border-bottom-left-radius: 5px;
-  }
-
   &-open {
-    padding-top: 140px;
-    -webkit-box-shadow: 3px 4px 3px 0px rgba(0,0,0,0.21);
-    -moz-box-shadow: 3px 4px 3px 0px rgba(0,0,0,0.21);
+    padding-top: 0;
     box-shadow: 3px 4px 3px 0px rgba(0,0,0,0.21);
     transform: translateY(-1px);
+    flex-direction: row;
+    height: 300px;
 
-    > p {
-      display: block;
+    > .ShowCard-hero {
+      position: relative;
+      display: flex;
+      flex: 2;
+      height: 100%;
     }
+
+    > .ShowCard-content {
+      background-color: #fff;
+      overflow: auto;
+      flex: 1;
+      height: 100%;
+    }
+
   }
 
 }

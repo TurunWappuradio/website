@@ -6,12 +6,17 @@ export default props => {
   console.log(open);
   return (
     <div
-      role="button"
-      onClick={selectFn}
       className={`ShowCard ${open ? 'ShowCard-open' : ''}`}
-      style={{ backgroundImage: `url(${imgSrc})` }}>
-      <h2 className="ShowCard-title">{title}</h2>
-      <p className="ShowCard-description">{description}</p>
+      onClick={selectFn}>
+      <div
+        className="ShowCard-hero"
+        role="button"
+        style={{ backgroundImage: `url(${imgSrc})` }}>
+        <h2 className="ShowCard-title">{title}</h2>
+      </div>
+      <div className="ShowCard-content">
+        {open && <p className="ShowCard-description">{description}</p>}
+      </div>
     </div>
   );
 };

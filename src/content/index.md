@@ -4,22 +4,16 @@ draft: false
 layout: index.html
 ---
 
-# Turun Wappuradio - Meidän oma
+# 1. Lähetys starttaa 23.4.
 
-Suomalaisia opiskelijoita hemmotellaan useammilla kampuksilla omilla wappuradioilla. Tanpereen Teekkareilla on Rakkauden Wappuradio, Aallossa on Radio Diodi, jne. Turkulaisetkin ansaitsevat rakkautta wappuradion muodossa. Turun korkeakouluopiskelijat lyövätkin nyt hynttyyt yhteen ja tekeät asialle jotain.
+Turun Wappuradion ensimmäinen lähetys paukahtaa bittiavaruuteen 23.4. kello 12.00 alkaen. Luvassa on viikon verran ohjelmaa lähes kellon ympäri, pikkutunneilla asti.
 
-Lopputulos on aidosti poikkitieteellinen Turun Wappuradio joka tarjoilee ohjelmaa ja musiikkia viikon verran vapun alla. Turun korkeakoulujen opiskelijoiden tuottamana radiokanava, Turun kampukselle.
+Aidosti poikkitieteellistä vappuradiota on tuottamassa ensimmäisenä vuonna yhteensä yli 100 opiskelijaa Turun Yliopiston ja Ammattikorkeakoulun eri tiedekunnista ja yhdistyksestä.
 
-## Pähkinänkuoressa
-- Olemme kuultavissa *23.4. - 30.4.2019* paikassa internet.
-- Tykitämme ohjelmaa koko viikon *24/7*
-- Ohjelmahaku opiskelijoille alkaa *7.1.2019*
-- Studiomme löytyy Turun kampuksen sydämestä yliopistonmäeltä.
+Näppäile nettiradiomme auki wappuviikolla. Tämä on kattaus jota et halua missata.
 
-## Tahdon mukaan
+Studiomme löytyy yliopiston kampuksen sydämestä Agoran kellarikerroksesta luokasta *K123*.
 
-Nyt kannattaa lähteä toteuttamaan ensimmäistä Turkulaista Wappuradiota ohjelmien muodossa.
+## Haluatko mukaan?
 
-Ohjelmahaku lisätietoineen löytyy [ohjelmahaku-sivulta](/ohjelmahaku.html).
-
-Jos taas pelkkä toimittaminen riitä ja haluat mukaan tuottamaan Turun Wappuradiota, ota yhteyttä: *toimitus[ät]turunwappuradio.com*. Tai tuu meidän kokoukseen. Ne on yleensä Proffassa.
+Vaikka ohjelmahakumme onkin tältä vuodelta kiinni, on meillä edelleen tekemistä tarjolla. Laita vaikka viestiä toimituksellemme *toimitus[ät]turunwappuradio.com* ja kerro mitä haluaisit tehdä. Tai tuu meidän kokoukseen. Ne on viikottain Proffassa.

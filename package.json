@@ -5,15 +5,18 @@
   "main": "index.js",
   "scripts": {
     "build-css": "node-sass --include-path scss src/main.scss dist/styles.css",
-    "build-metalsmith": "bash -c \"node build.js\"",
+    "build-metalsmith": "node build.js",
     "build-js": "webpack",
     "build-all": "npm run clean && npm run build-extras && npm run build-js",
     "copy-assets": "shx mkdir -p dist/ && cp -r src/assets/* dist/",
-    "clean": "rm -rf dist",
+    "prettify": "prettier --write \"src/**/*.{js,jsx}\"",
+    "clean": "shx rm -rf dist",
     "server": "http-server dist",
-    "start": "bash -c \"(npm run build-all && npm run server)\"",
+    "start": "npm run build-all && npm run server",
     "build-extras": "npm run clean && npm run build-metalsmith && npm run build-css && npm run copy-assets",
-    "dev": "npm run build-extras && webpack-dev-server --config ./webpack.config.js --mode development"
+    "dev": "npm run build-extras && webpack-dev-server --config ./webpack.config.js --mode development",
+    "release": "export NODE_ENV=production && npm run start && npm run upload",
+    "upload": "export NODE_ENV=production && node lib/awsUpload.js"
   },
   "engines": {
     "node": "10.11.0"
@@ -21,29 +24,31 @@
   "author": "Julius Rajala",
   "license": "MIT",
   "devDependencies": {
-    "@babel/core": "^7.2.2",
-    "@babel/plugin-proposal-class-properties": "^7.3.0",
-    "@babel/preset-env": "^7.3.1",
+    "@babel/core": "^7.4.0",
+    "@babel/plugin-proposal-class-properties": "^7.4.0",
+    "@babel/preset-env": "^7.4.2",
     "@babel/preset-react": "^7.0.0",
+    "aws-sdk": "^2.432.0",
     "babel-loader": "^8.0.5",
-    "browserify": "^16.2.2",
-    "handlebars": "^4.0.5",
+    "handlebars": "^4.1.1",
     "handlebars-helpers": "^0.10.0",
     "http-server": "^0.11.1",
     "metalsmith": "^2.1.0",
     "metalsmith-filter": "^1.0.2",
     "metalsmith-layouts": "^1.6.5",
-    "metalsmith-markdown": "^1.1.0",
+    "metalsmith-markdown": "^1.2.0",
+    "mime-types": "^2.1.22",
     "node-sass": "^3.8.0",
-    "nodemon": "^1.18.9",
+    "path": "^0.12.7",
+    "prettier": "^1.16.4",
     "shx": "^0.2.2",
-    "uglify-js": "^2.7.3",
-    "webpack": "^4.29.0",
-    "webpack-cli": "^3.2.1",
-    "webpack-dev-server": "^3.1.14"
+    "webpack": "^4.29.6",
+    "webpack-cli": "^3.3.0",
+    "webpack-dev-server": "^3.2.1"
   },
   "dependencies": {
-    "react": "^16.7.0",
-    "react-dom": "^16.7.0"
+    "date-fns": "^1.30.1",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6"
   }
 }

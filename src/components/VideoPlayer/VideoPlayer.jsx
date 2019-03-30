@@ -6,6 +6,6 @@ export default class extends React.Component {
       <div className="VideoPlayer">
         <h1 className="VideoPlayer-title">Videosoitin:</h1>
       </div>
-    )
+    );
   }
 }

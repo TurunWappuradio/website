@@ -6,6 +6,6 @@ export default class extends React.Component {
       <div className="RadioPlayer">
         <h1 className="RadioPlayer-title">Radiosoitin:</h1>
       </div>
-    )
+    );
   }
 }

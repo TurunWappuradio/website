@@ -15,8 +15,8 @@ function renderShows() {
 }
 
 function mountComponents() {
-  renderVideo();
-  renderRadio();
+  // renderVideo();
+  // renderRadio();
   renderShows();
 }
 

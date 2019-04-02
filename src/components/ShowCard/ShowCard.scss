@@ -92,8 +92,17 @@
       overflow: auto;
       flex: 1;
       height: 100%;
+      border-left: 8px dashed;
     }
 
+    @media (max-width: 600px), (max-device-width: 600px) {
+      flex-direction: column;
+      height:80vh;
+      > .ShowCard-content {
+        border-top: 8px dashed;
+        border-left: none;
+      }
+    }
   }
 
 }

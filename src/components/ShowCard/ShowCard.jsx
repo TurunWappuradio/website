@@ -31,7 +31,9 @@ export default props => {
         </div>
         <h2 className="ShowCard-title">{title}</h2>
       </div>
-      <div className="ShowCard-content">
+      <div
+        style={{ borderColor: placeholderColors[id % 2] }}
+        className="ShowCard-content">
         {open && <p className="ShowCard-description">{description}</p>}
       </div>
     </div>

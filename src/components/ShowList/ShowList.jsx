@@ -44,24 +44,25 @@ export default class extends React.Component {
     return (
       <div className="ShowList">
         <h1 className="ShowList-title">Ohjelmat:</h1>
-        <ul className="ShowList-selector">
+        <div className="ShowList-selector">
           {dates.map(date => (
-            <li
+            <button
+              className="ShowList-dayButton"
               key={date}
-              style={{ color: openDate === date ? '#5bbfbf' : '#ffffff' }}
-              role="button"
+              style={openDate === date ? { color: '#5bbfbf' } : {}}
               onClick={() => this.selectDate(date)}>
               {openDate === date
                 ? format(groupedShows[date][0].startDatetime, 'dddd DD.M.', {
                     locale: fi
                   })
                 : date}
-            </li>
+            </button>
           ))}
-        </ul>
+        </div>
         {selectedTimes &&
-          selectedTimes.map(item => (
+          selectedTimes.map((item, idx) => (
             <ShowCard
+              index={idx}
               show={item}
               open={item.id === selected}
               selectFn={() => this.changeSelected(item)}

@@ -2,19 +2,23 @@
   &-selector {
     padding: 20px 0px;
     display: block;
+  }
 
-    > li {
-      cursor: pointer;
-      display: inline-block;
-      padding: 1rem;
-      font-size: 1.3rem;
-      font-weight: 600;
-      color: #fff;
-      text-transform: capitalize;
+  &-dayButton {
+    display: inline-block;
+    padding: 1rem;
+    margin-right: .5rem;
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #fff;
+    text-transform: capitalize;
+    background: transparent;
+    border: none;
+    cursor: pointer;
 
-      &:first-child {
-        color: $colorTeal;
-      }
+    &:hover, &:focus {
+      color: #ee6b60;
+      outline: none;
     }
   }
 }

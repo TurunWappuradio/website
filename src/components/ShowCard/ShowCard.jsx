@@ -5,7 +5,7 @@ const placeholderColors = ['#ee6b60', '#5bbfbf'];
 const placeholderCards = ['blue_card.png', 'orange_card.png'];
 
 export default props => {
-  const { show, open, selectFn } = props;
+  const { show, open, selectFn, index } = props;
   const {
     title,
     imgSrc,
@@ -16,13 +16,13 @@ export default props => {
     hosts,
     producers
   } = show;
-  const background = imgSrc ? imgSrc : placeholderCards[id % 2];
+  const background = imgSrc ? imgSrc : placeholderCards[index % 2];
   return (
     <div
       key={`showCard-${id}`}
       className={`ShowCard ${open ? 'ShowCard-open' : ''}`}
       onClick={selectFn}
-      style={{ backgroundColor: placeholderColors[id % 2] }}
+      style={{ backgroundColor: placeholderColors[index % 2] }}
       role="button">
       <div className="ShowCard-heroContainer">
         <img className="ShowCard-hero" src={background} />
@@ -35,7 +35,7 @@ export default props => {
         </div>
         <h2
           className="ShowCard-title"
-          style={{ backgroundColor: placeholderColors[id % 2] }}>
+          style={{ backgroundColor: placeholderColors[index % 2] }}>
           {title}
         </h2>
       </div>

@@ -156,7 +156,7 @@ body {
   max-width: 900px;
   li {
     display: inline-block;
-    padding: 30px 30px;
+    padding: 2rem;
   }
   li > a{
     color: $colorTeal;
@@ -166,6 +166,21 @@ body {
       text-decoration: underline;
     }
   }
+}
+
+.Header {
+  @media (max-width: 700px), (max-device-width: 700px) {
+    > ul >li {
+      padding: 1rem;
+    }
+  }
+
+  @media (max-width: 500px), (max-device-width: 500px) {
+    > ul >li {
+      font-size: .9rem;
+    }
+  }
+
 }
 
 .Footer {

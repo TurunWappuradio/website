@@ -3,7 +3,7 @@ const markdown = require('metalsmith-markdown');
 const filter = require('metalsmith-filter');
 const layouts = require('metalsmith-layouts');
 const handlebarsHelpers = require('./lib/handlebarsHelpers');
-const programDataFetcher = require('./lib/programDataFetcher/csvParser');
+const programDataFetcher = require('./lib/programDataFetcher/');
 
 metalsmith(__dirname)
   .source('./src/content/')

@@ -1,107 +1,128 @@
 .ShowCard {
   cursor: pointer;
   margin-bottom: 20px;
-  border-radius: 5px;
+  border-radius: 2px;
   display: flex;
   flex-direction: column;
   transition: all .2s ease-in-out;
   position: relative;
   box-shadow: 2px 2px 3px 0px rgba(0,0,0,0.21);
   overflow: hidden;
-  height: 100px;
+  height: 150px;
 
-  > .ShowCard-hero {
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    position: absolute;
-
-    > .ShowCard-title {
-      font-size: 1.5rem;
-      bottom: 10px;
-      left: 10px;
-      font-weight: 500;
-      color: #fff;
-      position: absolute;
-    }
-
-    > .ShowCard-creators {
-      top: 10px;
-      right: 10px;
-      position: absolute;
-      display: flex;
-      flex-direction: column;
-      align-items: flex-end;
-
-      .ShowCard-hosts {
-        font-size: .8rem;
-        font-weight: 600;
-        // background-color: #fff;
-        color: #222222;
-        border-radius: 3px;
-        padding: 3px;
-        margin-bottom: 3px;
-      }
-    }
-
-    > .ShowCard-time {
-      font-size: 1rem;
-      top: 10px;
-      left: 10px;
-      font-weight: 600;
-      color: #fff;
-      position: absolute;
-    }
-  }
-
-  > .ShowCard-content {
+  > .ShowCard-heroContainer {
     position: relative;
-    z-index: 1;
+    line-height: 0;
+    height: 100%;
 
     > * {
-      padding: 1rem;
-      font-size: 1.2rem;
-      line-height: 1.2;
+      line-height: 1;
     }
-  }
 
+    > .ShowCard-hero {
+      width: 100%;
+      margin-top: -150px;
+      opacity: .7;
+      background: #fff;
+    }
+  
+      > .ShowCard-title {
+        font-size: 1.5rem;
+        bottom: 10px;
+        left: 10px;
+        font-weight: 500;
+        color: #fff;
+        padding: 5px;
+        position: absolute;
+        border-radius: 4px;
+      }
+  
+      > .ShowCard-creators {
+        top: 10px;
+        right: 10px;
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+  
+        .ShowCard-hosts {
+          font-size: .8rem;
+          font-weight: 600;
+          // background-color: #fff;
+          color: #222222;
+          border-radius: 3px;
+          padding: 3px;
+          margin-bottom: 3px;
+        }
+      }
+  
+      > .ShowCard-time {
+        font-size: 1rem;
+        top: 10px;
+        left: 10px;
+        font-weight: 600;
+        position: absolute;
+        font-weight: 600;
+      }
 
-  > h2 {
-    background-color: rgba(0,0,0,1);
-    color: $colorTeal;
-    font-weight: 600;
+    @media (max-width: 700px), (max-device-width: 700px) {
+      .ShowCard-hero {
+        margin-top: -100px;
+      }
+
+      .ShowCard-title {
+        right: 10px;
+      }
+    }
   }
 
   &-open {
     padding-top: 0;
     box-shadow: 3px 4px 3px 0px rgba(0,0,0,0.21);
-    transform: translateY(-1px);
     flex-direction: row;
-    height: 300px;
+    height: auto;
+    max-height: 250px;
 
-    > .ShowCard-hero {
-      position: relative;
-      display: flex;
+    > .ShowCard-heroContainer {
       flex: 2;
-      height: 100%;
-    }
-
-    > .ShowCard-content {
-      background-color: #fff;
-      overflow: auto;
-      flex: 1;
-      height: 100%;
-      border-left: 8px dashed;
-    }
-
-    @media (max-width: 600px), (max-device-width: 600px) {
-      flex-direction: column;
-      height:80vh;
-      > .ShowCard-content {
-        border-top: 8px dashed;
-        border-left: none;
+      max-height: 250px;
+      
+      > .ShowCard-hero {
+        background: #fff;
+        margin-top: 0;
       }
+
+    }
+    > .ShowCard-description {
+      flex: 1;
+      background: #fff;
+      font-size: 1.2rem;
+      padding: 20px;
+      overflow: auto;
+      line-height: 1.4;
+    }
+
+    @media (max-width: 700px), (max-device-width: 700px) {
+      flex-direction: column;
+      max-height: none;
+
+      > .ShowCard-heroContainer {
+        flex: none;
+        height: auto;
+        max-height: none;
+
+        > .ShowCard-hero {
+          border: none;
+        }
+      }
+
+      > .ShowCard-description {
+        flex: none;
+        position: relative;
+        z-index: 3;
+        min-height: 100px;
+      }
+
     }
   }
 

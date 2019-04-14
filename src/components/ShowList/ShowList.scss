@@ -1,7 +1,13 @@
 .ShowList {
   &-selector {
     padding: 20px 0px;
-    display: block;
+    display: none;
+  }
+
+  &-selector--mobile {
+    margin: 20px 0;
+    font-weight: 600;
+    font-size: 1.3rem;
   }
 
   &-dayButton {
@@ -50,4 +56,18 @@
       color: $colorOrange;
     }
   }
+}
+
+@media (min-width: 640px) {
+  .ShowList-selector--mobile {
+    display: none;
+  }
+
+  .ShowList-selector {
+    display: block;
+  }
+}
+
+@media (min-width: 960px) {
+  
 }

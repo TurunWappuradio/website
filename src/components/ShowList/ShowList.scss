@@ -21,4 +21,33 @@
       outline: none;
     }
   }
+
+  &-header {
+    display: flex;
+    flex-direction: row;
+
+    > h1 {
+      flex: 1;
+    }
+  }
+
+  &-filterButton {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    color: #fff;
+    padding: 0;
+    margin: 0;
+    margin-left: 1rem;
+    text-decoration: underline;
+
+    &:focus, &:active {
+      outline: none;
+    }
+
+    &:hover {
+      color: $colorOrange;
+    }
+  }
 }

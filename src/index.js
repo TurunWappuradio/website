@@ -29,7 +29,6 @@ function mountComponents() {
   // renderRadio();
   renderMusic();
   renderShows();
-  
 }
 
 mountComponents();

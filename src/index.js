@@ -3,11 +3,11 @@ import ReactDOM from 'react-dom';
 import { VideoPlayer, RadioPlayer, ShowList, MusicLibrary } from './components';
 
 function renderVideo() {
-  ReactDOM.render(<VideoPlayer />, document.getElementById('radio-root'));
+  ReactDOM.render(<VideoPlayer />, document.getElementById('video-root'));
 }
 
 function renderRadio() {
-  ReactDOM.render(<RadioPlayer />, document.getElementById('video-root'));
+  ReactDOM.render(<RadioPlayer />, document.getElementById('radio-root'));
 }
 
 function renderShows() {
@@ -25,8 +25,8 @@ function renderMusic() {
 }
 
 function mountComponents() {
-  renderVideo();
   renderRadio();
+  renderVideo();
   renderMusic();
   renderShows();
 }

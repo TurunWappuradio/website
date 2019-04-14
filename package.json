@@ -29,6 +29,7 @@
     "@babel/plugin-proposal-class-properties": "^7.4.0",
     "@babel/preset-env": "^7.4.2",
     "@babel/preset-react": "^7.0.0",
+    "@svgr/webpack": "^4.2.0",
     "aws-sdk": "^2.432.0",
     "babel-loader": "^8.0.5",
     "date-fns": "^1.30.1",

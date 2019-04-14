@@ -1,25 +1,27 @@
 import React from 'react';
 import { groupBy, keys, head } from 'ramda';
-import { format } from 'date-fns';
+import { format, isWithinRange, isBefore } from 'date-fns';
 import fi from 'date-fns/locale/fi';
 
 import ShowCard from '../ShowCard/ShowCard';
 import { getProgramData } from '../../utils/data';
 
-const byDate = groupBy(item => format(item.startDatetime, 'DD.M').toString());
+const getDateKeyFormat = dateTime => format(dateTime, 'DD.M');
 
-const mockShows = getProgramData();
+const byDate = groupBy(item => getDateKeyFormat(item.startDatetime));
+
+const showData = getProgramData();
 
 export default class extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      selected: '',
-      openDate: head(keys(byDate(mockShows)))
-    };
 
+    this.getInitialState.bind(this);
     this.changeSelected.bind(this);
     this.selectDate.bind(this);
+    this.setFilter.bind(this);
+
+    this.state = this.getInitialState();
   }
 
   changeSelected(item) {
@@ -31,19 +33,60 @@ export default class extends React.Component {
     });
   }
 
+  getInitialState() {
+    const currentTime = new Date();
+    const groupedData = this.getGroupedData();
+    const dateKeys = Object.keys(groupedData);
+    const dateKey = getDateKeyFormat(currentTime);
+    const inRange = dateKeys.includes(dateKey);
+    const currentShowId = inRange
+      ? groupedData[dateKey].find(item => {
+          return isWithinRange(
+            currentTime,
+            item.startDatetime,
+            item.endDatetime
+          );
+        }).id
+      : '';
+    return {
+      selected: currentShowId,
+      openDate: inRange ? dateKey : dateKeys[0],
+      filtered: true
+    };
+  }
+
+  getGroupedData() {
+    return byDate(showData);
+  }
+
+  setFilter() {
+    this.setState(state => ({ ...state, filtered: !state.filtered }));
+  }
+
   selectDate(dateString) {
-    console.log(dateString);
     this.setState({ openDate: dateString });
   }
 
   render() {
-    const { selected, openDate } = this.state;
-    const groupedShows = byDate(mockShows);
+    const { selected, openDate, filtered } = this.state;
+    const groupedShows = this.getGroupedData();
     const dates = keys(groupedShows);
     const selectedTimes = openDate && groupedShows[openDate];
+    const shouldApplyFilter =
+      filtered && openDate === getDateKeyFormat(new Date());
+    const timesWithAppliedFilter = shouldApplyFilter
+      ? selectedTimes.filter(show => !isBefore(show.endDatetime, new Date()))
+      : selectedTimes;
     return (
       <div className="ShowList">
-        <h1 className="ShowList-title">Ohjelmat:</h1>
+        <div className="ShowList-header">
+          <h1 className="ShowList-title">Ohjelmistossa</h1>
+          <button
+            className="ShowList-filterButton"
+            onClick={() => this.setFilter()}>
+            {filtered ? 'Näytä menneet' : 'Piilota menneet'}
+          </button>
+        </div>
         <div className="ShowList-selector">
           {dates.map(date => (
             <button
@@ -59,10 +102,11 @@ export default class extends React.Component {
             </button>
           ))}
         </div>
-        {selectedTimes &&
-          selectedTimes.map((item, idx) => (
+        {timesWithAppliedFilter &&
+          timesWithAppliedFilter.map((item, idx) => (
             <ShowCard
               index={idx}
+              key={idx}
               show={item}
               open={item.id === selected}
               selectFn={() => this.changeSelected(item)}

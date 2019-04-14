@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { VideoPlayer, RadioPlayer, ShowList, MusicLibrary } from './components';
+import { VideoPlayer, RadioPlayer, ShoutBox, ShowList, MusicLibrary } from './components';
 
 function renderVideo() {
   const mountPoint = document.getElementById('video-root');
@@ -15,6 +15,13 @@ function renderRadio() {
   if (mountPoint) {
     placeHolder.style.display = 'none';
     ReactDOM.render(<RadioPlayer />, mountPoint);
+  }
+}
+
+function renderShoutBox() {
+  const mountPoint = document.getElementById('shoutbox-root');
+  if (mountPoint) {
+    ReactDOM.render(<ShoutBox />, mountPoint);
   }
 }
 
@@ -37,6 +44,7 @@ function mountComponents() {
     renderRadio();
     renderVideo();
   }
+  renderShoutBox();
   renderMusic();
   renderShows();
 }

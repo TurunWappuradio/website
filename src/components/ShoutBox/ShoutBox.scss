@@ -1,0 +1,17 @@
+#sbMainWrapper {
+  width: 20rem;
+  background-color: #325b84;
+  font-family: Montserrat, sans-serif;
+}
+
+.sbMessageArea {
+  height: 30rem;
+  overflow: auto;
+  overflow-x: hidden;
+}
+
+.sbInputArea {
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.21);
+  height: 3rem;
+}

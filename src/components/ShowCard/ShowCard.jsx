@@ -16,7 +16,7 @@ export default props => {
     hosts,
     producers
   } = show;
-  const background = imgSrc ? imgSrc : placeholderCards[index % 2];
+  const background = imgSrc ? imgSrc : 'kuva_puuttuu_v2.jpg';
   const playingNow = isWithinRange(new Date(), startDatetime, endDatetime);
   return (
     <div

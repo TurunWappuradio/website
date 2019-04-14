@@ -1,0 +1,23 @@
+.sbSingleMessageBox {
+  height: auto;
+  color: #ffffff;
+  padding: 2px 5px;
+  clear: both;
+}
+
+.sbSingleMessageBox:nth-child(even) {
+  background-color: rgba(0, 0, 0, 0.10);
+}
+
+.sbNameText {
+  font-size: 12px;
+}
+
+.sbMessageText {
+  font-size: 10px;
+  padding-left: 5px;
+  word-wrap: break-word;
+  -webkit-hyphens: auto;
+  -ms-hyphens: auto;
+  hyphens: auto;
+}

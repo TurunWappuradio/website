@@ -1,0 +1,52 @@
+.sbTextFieldArea {
+  width: 75%;
+  float: left;
+}
+
+.sbTextFieldInnerArea {
+  width: 90%;
+  height: 80%;
+  margin: auto auto;
+  padding: 0.2rem;
+}
+
+.sbNameInput {
+  width: 75%;
+  background-color: inherit;
+  color: #ffffff;
+  border: none;
+  border-bottom: 1px solid #ffffff;
+}
+
+.sbTextInput {
+  width: 100%;
+  background-color: inherit;
+  color: #ffffff;
+  border: none;
+  border-bottom: 1px solid #ffffff;
+}
+
+.sbButtonArea {
+  width: 25%;
+  float: left;
+}
+
+.sbButtonInnerArea {
+  width: 80%;
+  height: 80%;
+  margin: auto auto;
+  padding: 0.3rem;
+}
+
+.sbSubmitButton {
+  width: 100%;
+  height: 100%;
+  color: #ee6b60;
+  background-color: inherit;
+  border: 2px solid #ee6b60;
+  border-radius: 10px;
+}
+
+.sbSubmitButton:disabled {
+  opacity: 0.5;
+}

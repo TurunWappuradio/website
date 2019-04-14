@@ -1,0 +1,86 @@
+.RadioPlayer {
+    display: flex;
+    flex-direction: column;
+    color: white;
+    align-items: center;
+    margin-bottom: 42px;
+}
+
+.RadioPlayer__Brand {
+    width: 75%;
+    max-width: 300px;
+    margin-bottom: 30px;    
+}
+
+.RadioPlayer__NowPlaying {
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+    font-weight: 600;
+    color: #fff;
+}
+
+.RadioPlayer__Controls {
+    width: 100%;
+    max-width: 300px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.RadioPlayerControl {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    width: 42px;
+    height: 42px;
+
+    svg {
+        fill: #fff;
+        color: #fff;
+    }
+
+    :hover {
+        outline: none;
+    }
+}
+
+.PlayControl {
+    box-shadow: 0 15px 30px 0 rgba(11, 49, 87, 0.3), 0 5px 15px 0 rgba(10, 49, 87, 0.3);
+    background: #5bbfbf;
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    padding: 16px;
+    
+    &.active {
+        background: #ee6b60;
+    }
+}
+
+.pulse {
+    fill: #fff;
+    fill-opacity: 0;
+    transform-origin: 50% 50%;
+    animation-duration: 2s;
+    animation-name: pulse;
+    animation-iteration-count: infinite;
+    transition: all 0.3s ease;
+}
+
+@keyframes pulse {
+    from {
+        -webkit-transform: scale3d(1, 1, 1);
+        transform: scale3d(1, 1, 1);
+    }
+
+    50% {
+        -webkit-transform: scale3d(1.03, 1.03, 1.03);
+        transform: scale3d(1.03, 1.03, 1.03);
+    }
+
+    to {
+        -webkit-transform: scale3d(1, 1, 1);
+        transform: scale3d(1, 1, 1);
+    }
+}

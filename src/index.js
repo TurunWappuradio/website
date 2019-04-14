@@ -25,8 +25,8 @@ function renderMusic() {
 }
 
 function mountComponents() {
-  // renderVideo();
-  // renderRadio();
+  renderVideo();
+  renderRadio();
   renderMusic();
   renderShows();
 }

@@ -12,3 +12,8 @@ $colorOrange: #ee6b60;
 
 @import 'components/common/Button';
 @import 'components/common/Dropdown';
+
+/* Shoutbox styles */
+@import 'components/ShoutBox/ShoutBox';
+@import 'components/ShoutBox/MessageInput/MessageInput';
+@import 'components/ShoutBox/MessageFormatter/MessageFormatter';

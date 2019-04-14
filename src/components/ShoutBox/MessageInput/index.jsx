@@ -5,6 +5,7 @@ const isButtonDisabled = (name, message, timeout) =>
 
 class MessageInput extends Component {
   constructor(props) {
+    super(props);
     this.state = {
       name: '',
       message: '',

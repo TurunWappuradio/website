@@ -1,16 +1,16 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
+
+const isButtonDisabled = (name, message, timeout) =>
+  name === '' || message === '' || timeout;
 
 class MessageInput extends Component {
-  state = {
-    name: '',
-    message: '',
-    timeout: false
-  };
-
-  static propTypes = {
-    onSubmitMessage: PropTypes.func.isRequired
-  };
+  constructor(props) {
+    this.state = {
+      name: '',
+      message: '',
+      timeout: false
+    };
+  }
 
   componentDidUpdate() {
     if (this.state.timeout) {
@@ -18,9 +18,6 @@ class MessageInput extends Component {
       setTimeout(() => this.setState({ timeout: false }), 5000);
     }
   }
-
-  isButtonDisabled = (name, message) =>
-    name === '' || message === '' || this.state.timeout;
 
   render() {
     return (
@@ -57,9 +54,10 @@ class MessageInput extends Component {
               type="submit"
               value="Send"
               className="sbSubmitButton"
-              disabled={this.isButtonDisabled(
+              disabled={isButtonDisabled(
                 this.state.name,
-                this.state.message
+                this.state.message,
+                this.state.timeout
               )}>
               Lähetä
             </button>

@@ -5,11 +5,17 @@ import MessageFormatter from './MessageFormatter';
 const URL = 'ws://localhost:3030';
 
 class Chat extends Component {
-  state = {
-    messages: []
-  };
+  constructor(props) {
+    super(props);
+    this.state = {
+      messages: []
+    };
 
-  ws = new WebSocket(URL);
+    this.ws = new WebSocket(URL);
+
+    this.addMessage.bind(this);
+    this.submitMessage.bind(this);
+  }
 
   componentDidMount() {
     // Connect client
@@ -33,18 +39,19 @@ class Chat extends Component {
     };
   }
 
-  addMessage = message =>
+  addMessage(message) {
     this.setState(state => ({ messages: [message, ...state.messages] }));
+  }
 
-  submitMessage = (name, messageString) => {
+  submitMessage(name, messageString) {
     // on submitting the MessageSend form, send the message, add it to the list and reset the input
     const message = { name: name, message: messageString };
     this.ws.send(JSON.stringify(message));
-  };
+  }
 
   render() {
     return (
-      <div id="sbMainWrapper">
+      <div className="sbMainWrapper">
         <div className="sbMessageArea">
           {this.state.messages.map((message, index) => (
             <MessageFormatter

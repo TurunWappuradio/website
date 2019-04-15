@@ -1,12 +1,18 @@
 .TracklistItem {
-    color: white;
+  color: white;
 }
 
 .TracklistSearch {
-    height: 3em;
-    width: 100%;
+  height: 3em;
+  width: 100%;
 }
 
 .TracklistSearchContainer {
-    padding: 1em;
+  padding: 1rem 0rem;
+}
+
+.MusicLibrary {
+  h1 {
+    padding: 1rem 0rem;
+  }
 }

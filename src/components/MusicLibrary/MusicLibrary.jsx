@@ -1,28 +1,34 @@
 import React, { useState } from 'react';
 import { getTracklist } from '../../utils/tracklist';
+import { take } from 'ramda';
 
 const tracklist = getTracklist();
 
 const MusicLibrary = () => {
-  const [state, setState] = useState('');
+  const [state, setState] = useState({ filter: '', showAll: false });
   const filteredList = tracklist.filter(track => {
     return (
-      track.artist.toLowerCase().match(state.toLowerCase()) ||
-      track.title.toLowerCase().match(state.toLowerCase())
+      track.artist.toLowerCase().match(state.filter.toLowerCase()) ||
+      track.title.toLowerCase().match(state.filter.toLowerCase())
     );
   });
 
   const changeValue = ev => {
     ev.preventDefault();
 
-    setState(ev.target.value);
+    setState({ ...state, filter: ev.target.value });
   };
 
-  // filteröi listasta sellaiset joihin ei sisälly statea;
-
   return (
-    <div>
-      <h1>Kappalelistaus</h1>
+    <div className="MusicLibrary">
+      <div className="ShowList-header">
+        <h1 className="ShowList-title">Kappalelistaus</h1>
+        <button
+          className="ShowList-filterButton"
+          onClick={() => setState({ ...state, showAll: !state.showAll })}>
+          {!state.showAll ? 'Näytä kaikki' : 'Näytä vain 100'}
+        </button>
+      </div>
       <div class="TracklistSearchContainer">
         <input
           class="TracklistSearch"
@@ -31,7 +37,7 @@ const MusicLibrary = () => {
         />
       </div>
       <ul>
-        {filteredList.map((track, index) => (
+        {take(100, filteredList).map((track, index) => (
           <li key={index} class="TracklistItem">
             {track.artist} - {track.title}
           </li>

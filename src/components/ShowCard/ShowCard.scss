@@ -28,14 +28,15 @@
 
       > .ShowCard-playingNow {
         color: #fff;
+        text-transform: uppercase;
         font-size: 1.5rem;
-        text-shadow: 2px 2px 0px $colorTeal;
+        text-shadow: 2px 2px 0px $colorOrange;
         margin-bottom: 5px;
       }
   
       > .ShowCard-time {
+        color: #fff;
         font-size: 1.2rem;
-        text-shadow: 2px 2px 0px $colorOrange;
       }
     }
 

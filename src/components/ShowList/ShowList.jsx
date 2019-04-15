@@ -111,8 +111,8 @@ export default class extends React.Component {
                     locale: fi
                   })
                 : format(groupedShows[date][0].startDatetime, 'dd DD.M.', {
-                  locale: fi
-                })}
+                    locale: fi
+                  })}
             </button>
           ))}
         </div>

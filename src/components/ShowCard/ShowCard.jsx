@@ -29,7 +29,11 @@ export default props => {
         <img className="ShowCard-hero" src={background} />
         <div className="ShowCard-timeContainer">
           {playingNow && <h2 className="ShowCard-playingNow">Soi nyt</h2>}
-          <h2 className="ShowCard-time">
+          <h2
+            className="ShowCard-time"
+            style={{
+              textShadow: `2px 2px 0px ${placeholderColors[(index + 1) % 2]}`
+            }}>
             {format(startDatetime, 'HH:mm')} - {format(endDatetime, 'HH:mm')}
           </h2>
         </div>
@@ -39,7 +43,7 @@ export default props => {
         </div>
         <h2
           className="ShowCard-title"
-          style={{ backgroundColor: placeholderColors[index % 2] }}>
+          style={{ backgroundColor: placeholderColors[(index + 1) % 2] }}>
           {title}
         </h2>
       </div>

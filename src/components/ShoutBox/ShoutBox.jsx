@@ -3,7 +3,7 @@ import MessageInput from './MessageInput';
 import MessageFormatter from './MessageFormatter';
 
 //const URL = 'ws://localhost:3030';
-const URL = 'wss://shoutbox-metadata-backend.herokuapp.com:3030';
+const URL = 'wss://shoutbox-metadata-backend.herokuapp.com';
 
 class Chat extends Component {
   constructor(props) {

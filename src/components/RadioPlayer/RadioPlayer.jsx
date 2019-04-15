@@ -17,7 +17,7 @@ export default class extends React.Component {
 
     this.onPlayPause.bind(this);
     this.onVolumeOnOff.bind(this);
-    
+
     this.audio = React.createRef();
   }
 

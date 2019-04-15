@@ -1,3 +1,4 @@
+const webpack = require('webpack');
 module.exports = {
   entry: './src/index.js',
   module: {
@@ -23,5 +24,12 @@ module.exports = {
   },
   devServer: {
     contentBase: './dist'
-  }
+  },
+  plugins: [
+    new webpack.DefinePlugin({
+      'process.env': {
+        'BROADCAST_MODE': JSON.stringify(process.env.BROADCAST_MODE),
+      }
+    })
+  ]
 };

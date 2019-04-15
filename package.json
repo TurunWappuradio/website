@@ -44,7 +44,7 @@
     "metalsmith-layouts": "^1.6.5",
     "metalsmith-markdown": "^1.2.0",
     "mime-types": "^2.1.22",
-    "node-sass": "^3.8.0",
+    "node-sass": "^4.11.0",
     "path": "^0.12.7",
     "prettier": "^1.16.4",
     "ramda": "^0.26.1",

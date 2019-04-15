@@ -5,6 +5,7 @@ import ExternalLinkControl from './controls/ExternalLinkControl';
 import MuteControl from './controls/MuteControl';
 
 const AUDIO_STREAM_URL = 'https://player.turunwappuradio.com/wappuradio.mp3';
+const METADATA_SERVER_URL = process.env.METADATA_SERVER || 'ws://localhost:3031';
 
 export default class extends React.Component {
   constructor() {
@@ -12,13 +13,40 @@ export default class extends React.Component {
 
     this.state = {
       playing: false,
-      muted: false
+      muted: false,
+      socket: new WebSocket(METADATA_SERVER_URL),
+      song: ''
     };
 
     this.onPlayPause.bind(this);
     this.onVolumeOnOff.bind(this);
 
     this.audio = React.createRef();
+  }
+
+  componentDidMount() {
+    const { socket } = this.state;
+
+    // Connect client
+    socket.onopen = () => {
+      console.log('Music metadata websocket connected');
+    };
+
+    // When receiving a message
+    socket.onmessage = e => {
+      const song = e.data;
+      this.setState({ song });
+    };
+
+    // When connection closes
+    socket.onclose = () => {
+      console.log('WS disconnected');
+
+      // Try to reconnect
+      this.setState({
+        socket: new WebSocket(METADATA_SERVER_URL)
+      });
+    };
   }
 
   onPlayPause() {
@@ -44,7 +72,7 @@ export default class extends React.Component {
   }
 
   render() {
-    const { muted, playing } = this.state;
+    const { muted, playing, song } = this.state;
 
     return (
       <div className="RadioPlayer">
@@ -56,7 +84,7 @@ export default class extends React.Component {
           alt="Turun Wappuradio"
         />
         <div className="RadioPlayer__NowPlaying">
-          Nyt soi: Anssi Kela - 1972
+          Nyt soi: {song}
         </div>
         <div className="RadioPlayer__Controls">
           <MuteControl muted={muted} onClick={() => this.onVolumeOnOff()} />

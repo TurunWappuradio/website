@@ -8,8 +8,8 @@ const MusicLibrary = () => {
   const [state, setState] = useState({ filter: '', showAll: false });
   const filteredList = tracklist.filter(track => {
     return (
-      track.artist.toLowerCase().match(state.filter.toLowerCase()) ||
-      track.title.toLowerCase().match(state.filter.toLowerCase())
+      track.artist.toLowerCase().indexOf(state.filter.toLowerCase()) !== -1 ||
+      track.title.toLowerCase().indexOf(state.filter.toLowerCase()) !== -1
     );
   });
 
@@ -18,6 +18,8 @@ const MusicLibrary = () => {
 
     setState({ ...state, filter: ev.target.value });
   };
+
+  const listToShow = state.showAll ? filteredList : take(100, filteredList);
 
   return (
     <div className="MusicLibrary">
@@ -29,16 +31,16 @@ const MusicLibrary = () => {
           {!state.showAll ? 'Näytä kaikki' : 'Näytä vain 100'}
         </button>
       </div>
-      <div class="TracklistSearchContainer">
+      <div className="TracklistSearchContainer">
         <input
-          class="TracklistSearch"
+          className="TracklistSearch"
           onChange={changeValue}
           placeholder="Suodata kappaleita..."
         />
       </div>
       <ul>
-        {take(100, filteredList).map((track, index) => (
-          <li key={index} class="TracklistItem">
+        {listToShow.map((track, index) => (
+          <li key={index} className="TracklistItem">
             {track.artist} - {track.title}
           </li>
         ))}

@@ -1,17 +1,25 @@
-.sbTextFieldArea {
-  width: 75%;
-  float: left;
+.sbInputForm {
+  height: 100%;
+  display: flex;
+  flex-direction: row;
 }
 
-.sbTextFieldInnerArea {
-  width: 90%;
-  height: 80%;
-  margin: auto auto;
-  padding: 0.2rem;
+.sbTextFieldArea {
+  display: inherit;
+  height: 100%;
+  width: 75%;
+  flex-direction: column;
+  justify-content: space-around;
+  padding: 3px 5px;
+}
+
+.sbTextFieldArea input::placeholder {
+  font-size: 10px;
+  color: #ccc;
 }
 
 .sbNameInput {
-  width: 75%;
+  width: 100%;
   background-color: inherit;
   color: #ffffff;
   border: none;
@@ -28,14 +36,11 @@
 
 .sbButtonArea {
   width: 25%;
-  float: left;
-}
-
-.sbButtonInnerArea {
-  width: 80%;
-  height: 80%;
-  margin: auto auto;
-  padding: 0.3rem;
+  padding: 5px;
+  display: inherit;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .sbSubmitButton {

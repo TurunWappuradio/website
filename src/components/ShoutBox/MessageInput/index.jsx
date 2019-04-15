@@ -29,40 +29,36 @@ class MessageInput extends Component {
           this.props.onSubmitMessage(this.state.name, this.state.message);
           this.setState({ message: '', timeout: true });
         }}
-        style={{ margin: 0 }}>
+        className="sbInputForm">
         <div className="sbTextFieldArea">
-          <div className="sbTextFieldInnerArea">
-            <input
-              type="text"
-              id="name"
-              placeholder="Syötä nimimerkki (max. 10 merkkiä)"
-              value={this.state.name}
-              onChange={e => this.setState({ name: e.target.value })}
-              className="sbNameInput"
-            />
-            <input
-              type="text"
-              placeholder={'Syötä viesti (max. 200 merkkiä)'}
-              value={this.state.message}
-              onChange={e => this.setState({ message: e.target.value })}
-              className="sbTextInput"
-            />
-          </div>
+          <input
+            type="text"
+            id="name"
+            placeholder="Syötä nimimerkki (max. 10 merkkiä)"
+            value={this.state.name}
+            onChange={e => this.setState({ name: e.target.value })}
+            className="sbNameInput"
+          />
+          <input
+            type="text"
+            placeholder={'Syötä viesti (max. 200 merkkiä)'}
+            value={this.state.message}
+            onChange={e => this.setState({ message: e.target.value })}
+            className="sbTextInput"
+          />
         </div>
         <div className="sbButtonArea">
-          <div className="sbButtonInnerArea">
-            <button
-              type="submit"
-              value="Send"
-              className="sbSubmitButton"
-              disabled={isButtonDisabled(
-                this.state.name,
-                this.state.message,
-                this.state.timeout
-              )}>
-              Lähetä
-            </button>
-          </div>
+          <button
+            type="submit"
+            value="Send"
+            className="sbSubmitButton"
+            disabled={isButtonDisabled(
+              this.state.name,
+              this.state.message,
+              this.state.timeout
+            )}>
+            Lähetä
+          </button>
         </div>
       </form>
     );

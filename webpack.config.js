@@ -29,6 +29,7 @@ module.exports = {
     new webpack.DefinePlugin({
       'process.env': {
         'BROADCAST_MODE': JSON.stringify(process.env.BROADCAST_MODE),
+        'METADATA_SERVER': JSON.stringify(process.env.METADATA_SERVER),
       }
     })
   ]

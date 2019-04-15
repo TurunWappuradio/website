@@ -110,7 +110,9 @@ export default class extends React.Component {
                 ? format(groupedShows[date][0].startDatetime, 'dddd DD.M.', {
                     locale: fi
                   })
-                : date}
+                : format(groupedShows[date][0].startDatetime, 'dd DD.M.', {
+                  locale: fi
+                })}
             </button>
           ))}
         </div>

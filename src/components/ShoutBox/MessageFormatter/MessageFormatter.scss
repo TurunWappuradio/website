@@ -1,7 +1,7 @@
 .sbSingleMessageBox {
   height: auto;
   color: #ffffff;
-  padding: 2px 5px;
+  padding: 0.3rem 0.5rem;
   clear: both;
 }
 
@@ -10,12 +10,12 @@
 }
 
 .sbNameText {
-  font-size: 12px;
+  font-size: 1rem;
 }
 
 .sbMessageText {
-  font-size: 10px;
-  padding-left: 5px;
+  font-size: 0.8rem;
+  padding-left: 0.5rem;
   word-wrap: break-word;
   -webkit-hyphens: auto;
   -ms-hyphens: auto;

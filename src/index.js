@@ -25,20 +25,6 @@ function renderShoutBox() {
   }
 }
 
-function renderShoutBox() {
-  const mountPoint = document.getElementById('shoutbox-root');
-  if (mountPoint) {
-    ReactDOM.render(<ShoutBox />, mountPoint);
-  }
-}
-
-function renderShoutBox() {
-  const mountPoint = document.getElementById('shoutbox-root');
-  if (mountPoint) {
-    ReactDOM.render(<ShoutBox />, mountPoint);
-  }
-}
-
 function renderShows() {
   const mountPoint = document.getElementById('show-root');
   if (mountPoint) {
@@ -54,11 +40,11 @@ function renderMusic() {
 }
 
 function mountComponents() {
-  if (process.env.BROADCAST_MODE === 'live') {
+  if (process.env.BROADCAST_MODE !== 'live') {
     renderRadio();
     renderVideo();
+    renderShoutBox();
   }
-  renderShoutBox();
   renderMusic();
   renderShows();
 }

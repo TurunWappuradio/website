@@ -1,17 +1,24 @@
 .sbMainWrapper {
-  width: 20rem;
+  max-width: 20rem;
   background-color: #325b84;
   box-shadow: 2px 2px 3px 0px rgba(0, 0, 0, 0.21);
+  margin: 0px auto;
 }
 
 .sbMessageArea {
   height: 30rem;
   overflow: auto;
   overflow-x: hidden;
+  padding: 0.5rem 0;
 }
 
 .sbInputArea {
   width: 100%;
   background-color: rgba(0, 0, 0, 0.21);
   height: 3rem;
+}
+
+.sbNotConnectedText {
+  margin: 1rem;
+  color: #fff;
 }

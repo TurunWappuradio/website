@@ -9,7 +9,8 @@ class Chat extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      messages: []
+      messages: [],
+      wsConnected: false,
     };
 
     this.ws = new WebSocket(URL);
@@ -21,6 +22,7 @@ class Chat extends Component {
   componentDidMount() {
     // Connect client
     this.ws.onopen = () => {
+      this.setState({ wsConnected: true });
       console.log('WS connected');
     };
 
@@ -32,6 +34,7 @@ class Chat extends Component {
 
     // When connection closes
     this.ws.onclose = () => {
+      this.setState({ wsConnected: false });
       console.log('WS disconnected');
       // Try to reconnect
       this.setState({
@@ -61,6 +64,7 @@ class Chat extends Component {
               name={message.name}
             />
           ))}
+          {!this.state.wsConnected && <div className="sbNotConnectedText">Ei yhteyttä chat-palvelimeen</div>}
         </div>
         <div className="sbInputArea">
           <MessageInput

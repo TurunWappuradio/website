@@ -67,12 +67,12 @@
         align-items: flex-end;
         
         .ShowCard-hosts {
-          color: #fff;
           font-size: .8rem;
           font-weight: 600;
           border-radius: 3px;
           padding: 3px;
           margin-bottom: 3px;
+          color: #fff;
         }
       }
 
@@ -84,6 +84,15 @@
 
       .ShowCard-title {
         right: 10px;
+        font-size: 1.2rem;
+      }
+
+      .ShowCard-time {
+        font-size: 1rem;
+      }
+
+      .ShowCard-creators {
+        display: none;
       }
     }
   }
@@ -126,6 +135,14 @@
         > .ShowCard-hero {
           border: none;
         }
+
+
+        > .ShowCard-creators {
+          bottom: 40px;
+          top: auto;
+          display: flex;
+        }
+
       }
 
       > .ShowCard-description {

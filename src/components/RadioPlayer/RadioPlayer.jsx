@@ -5,7 +5,8 @@ import ExternalLinkControl from './controls/ExternalLinkControl';
 import MuteControl from './controls/MuteControl';
 
 const AUDIO_STREAM_URL = 'https://player.turunwappuradio.com/wappuradio.mp3';
-const METADATA_SERVER_URL = process.env.METADATA_SERVER || 'ws://localhost:3031';
+const METADATA_SERVER_URL =
+  process.env.METADATA_SERVER || 'ws://localhost:3031';
 
 export default class extends React.Component {
   constructor() {
@@ -83,9 +84,7 @@ export default class extends React.Component {
           src="leima.svg"
           alt="Turun Wappuradio"
         />
-        <div className="RadioPlayer__NowPlaying">
-          Nyt soi: {song}
-        </div>
+        <div className="RadioPlayer__NowPlaying">Nyt soi: {song}</div>
         <div className="RadioPlayer__Controls">
           <MuteControl muted={muted} onClick={() => this.onVolumeOnOff()} />
           <PlayControl playing={playing} onClick={() => this.onPlayPause()} />

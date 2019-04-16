@@ -32,6 +32,13 @@ function renderShoutBox() {
   }
 }
 
+function renderShoutBox() {
+  const mountPoint = document.getElementById('shoutbox-root');
+  if (mountPoint) {
+    ReactDOM.render(<ShoutBox />, mountPoint);
+  }
+}
+
 function renderShows() {
   const mountPoint = document.getElementById('show-root');
   if (mountPoint) {

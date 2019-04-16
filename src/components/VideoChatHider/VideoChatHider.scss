@@ -1,0 +1,56 @@
+.VideoChatHider {
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.VCButtons {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.VCElements {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+.VideoContainer {
+  margin-top: 20px;
+}
+
+.ShoutBoxContainer {
+  margin-top: 20px;
+}
+
+.VideoContainer > iframe {
+  width: 336px;
+  height: 189px;
+}
+
+.VCSingleButton {
+  margin: 2rem;
+}
+
+@media (min-width: 640px) {
+  .VideoContainer > iframe {
+    width: 640px;
+    height: 360px;
+  }
+  .ShoutBoxContainer {
+    width: 300px;
+    height: 360px;
+  }
+}
+
+@media (min-width: 960px) {
+  .VideoContainer > iframe {
+    width: 848px;
+    height: 480px;
+  }
+  .ShoutBoxContainer {
+    width: 300px;
+    height: 480px;
+  }
+}

@@ -1,13 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { VideoPlayer, RadioPlayer, ShoutBox, ShowList, MusicLibrary } from './components';
-
-function renderVideo() {
-  const mountPoint = document.getElementById('video-root');
-  if (mountPoint) {
-    ReactDOM.render(<VideoPlayer />, mountPoint);
-  }
-}
+import { RadioPlayer, VideoChatHider, ShowList, MusicLibrary } from './components';
 
 function renderRadio() {
   const mountPoint = document.getElementById('radio-root');
@@ -18,10 +11,10 @@ function renderRadio() {
   }
 }
 
-function renderShoutBox() {
-  const mountPoint = document.getElementById('shoutbox-root');
+function renderVideoChatHider() {
+  const mountPoint = document.getElementById('videochat-root');
   if (mountPoint) {
-    ReactDOM.render(<ShoutBox />, mountPoint);
+    ReactDOM.render(<VideoChatHider />, mountPoint);
   }
 }
 
@@ -40,10 +33,9 @@ function renderMusic() {
 }
 
 function mountComponents() {
-  if (process.env.BROADCAST_MODE !== 'live') {
+  if (process.env.BROADCAST_MODE === 'live') {
     renderRadio();
-    renderVideo();
-    renderShoutBox();
+    renderVideoChatHider();
   }
   renderMusic();
   renderShows();

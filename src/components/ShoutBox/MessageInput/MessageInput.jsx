@@ -55,14 +55,14 @@ class MessageInput extends Component {
             id="name"
             placeholder="Syötä nimimerkki (max. 10 merkkiä)"
             value={this.state.name}
-            onChange={this.changeName}
+            onChange={(ev) => this.changeName(ev)}
             className="sbNameInput"
           />
           <input
             type="text"
             placeholder={'Syötä viesti (max. 200 merkkiä)'}
             value={this.state.message}
-            onChange={this.changeMessage}
+            onChange={(ev) =>this.changeMessage(ev)}
             className="sbTextInput"
           />
         </div>

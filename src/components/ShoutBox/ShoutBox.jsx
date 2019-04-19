@@ -1,19 +1,16 @@
 import React, { Component } from 'react';
-import MessageInput from './MessageInput';
+import MessageInput from './MessageInput/MessageInput';
 import MessageFormatter from './MessageFormatter';
-
-//const URL = 'ws://localhost:3030';
-const URL = 'wss://shoutbox-metadata-backend.herokuapp.com';
 
 class Chat extends Component {
   constructor(props) {
     super(props);
     this.state = {
       messages: [],
-      wsConnected: false,
+      wsConnected: false
     };
 
-    this.ws = new WebSocket(URL);
+    this.ws = new WebSocket(process.env.SHOUTBOX_SOURCE);
 
     this.addMessage.bind(this);
     this.submitMessage.bind(this);
@@ -64,7 +61,11 @@ class Chat extends Component {
               name={message.name}
             />
           ))}
-          {!this.state.wsConnected && <div className="sbNotConnectedText">Ei yhteyttä chat-palvelimeen</div>}
+          {!this.state.wsConnected && (
+            <div className="sbNotConnectedText">
+              Ei yhteyttä chat-palvelimeen
+            </div>
+          )}
         </div>
         <div className="sbInputArea">
           <MessageInput

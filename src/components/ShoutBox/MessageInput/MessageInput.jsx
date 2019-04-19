@@ -11,13 +11,32 @@ class MessageInput extends Component {
       message: '',
       timeout: false
     };
+
+    this.changeMessage.bind(this);
+    this.changeName.bind(this);
   }
 
   componentDidUpdate() {
     if (this.state.timeout) {
       // Set 5 second timeout between messages
-      setTimeout(() => this.setState({ timeout: false }), 5000);
+      setTimeout(() => this.setState({ timeout: false }), 2000);
     }
+  }
+
+  changeMessage(ev) {
+    ev.preventDefault();
+    if (ev.target.value.length >= 200) {
+      return;
+    }
+    this.setState({ message: ev.target.value });
+  }
+
+  changeName(ev) {
+    ev.preventDefault();
+    if (ev.target.value.length >= 10) {
+      return;
+    }
+    this.setState({ name: ev.target.value });
   }
 
   render() {
@@ -36,14 +55,14 @@ class MessageInput extends Component {
             id="name"
             placeholder="Syötä nimimerkki (max. 10 merkkiä)"
             value={this.state.name}
-            onChange={e => this.setState({ name: e.target.value })}
+            onChange={this.changeName}
             className="sbNameInput"
           />
           <input
             type="text"
             placeholder={'Syötä viesti (max. 200 merkkiä)'}
             value={this.state.message}
-            onChange={e => this.setState({ message: e.target.value })}
+            onChange={this.changeMessage}
             className="sbTextInput"
           />
         </div>

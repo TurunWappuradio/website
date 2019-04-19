@@ -8,7 +8,6 @@ import Button from '../common/Button';
 class VideoChatHider extends React.Component {
   constructor() {
     super();
-
     this.state = {
       openVideo: false,
       openShout: false

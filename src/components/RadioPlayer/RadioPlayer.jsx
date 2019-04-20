@@ -34,11 +34,6 @@ export default class extends React.Component {
 
     this.setState({ socket });
 
-    // Connect client
-    socket.onopen = () => {
-      console.log('Music metadata websocket connected');
-    };
-
     // When receiving a message
     socket.onmessage = e => {
       if (e.data === 'PING') {
@@ -51,9 +46,6 @@ export default class extends React.Component {
 
     // When connection closes
     socket.onclose = () => {
-      console.log('Music metadata websocket disconnected');
-
-      // Try to reconnect
       setTimeout(this.connectWebSocket, 5000);
     };
   }

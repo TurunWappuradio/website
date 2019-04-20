@@ -15,18 +15,24 @@ export default class extends React.Component {
     this.state = {
       playing: false,
       muted: false,
-      socket: new WebSocket(METADATA_SERVER_URL),
       song: ''
     };
 
     this.onPlayPause.bind(this);
     this.onVolumeOnOff.bind(this);
+    this.connectWebSocket = this.connectWebSocket.bind(this);
 
     this.audio = React.createRef();
   }
 
   componentDidMount() {
-    const { socket } = this.state;
+    this.connectWebSocket();
+  }
+
+  connectWebSocket() {
+    const socket = new WebSocket(METADATA_SERVER_URL);
+
+    this.setState({ socket });
 
     // Connect client
     socket.onopen = () => {
@@ -35,18 +41,20 @@ export default class extends React.Component {
 
     // When receiving a message
     socket.onmessage = e => {
+      if (e.data === 'PING') {
+        return socket.send('PONG');
+      }
+
       const song = e.data;
       this.setState({ song });
     };
 
     // When connection closes
     socket.onclose = () => {
-      console.log('WS disconnected');
+      console.log('Music metadata websocket disconnected');
 
       // Try to reconnect
-      this.setState({
-        socket: new WebSocket(METADATA_SERVER_URL)
-      });
+      setTimeout(this.connectWebSocket, 5000);
     };
   }
 

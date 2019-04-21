@@ -15,21 +15,29 @@ class Chat extends Component {
       colorSwitcher: false
     };
 
-    this.ws = new WebSocket(wsURL);
-
     this.addMessage.bind(this);
     this.submitMessage.bind(this);
+    this.connectWebSocket = this.connectWebSocket.bind(this);
   }
 
   componentDidMount() {
+    this.connectWebSocket();
+  }
+
+  connectWebSocket() {
+    this.ws = new WebSocket(wsURL);
+
     // Connect client
     this.ws.onopen = () => {
       this.setState({ wsConnected: true });
-      console.log('WS connected');
     };
 
     // When receiving a message
     this.ws.onmessage = e => {
+      if (e.data === 'PING') {
+        return this.ws.send('PONG');
+      }
+
       const message = JSON.parse(e.data);
       if (message.name && message.message) {
         this.addMessage(message);
@@ -39,11 +47,9 @@ class Chat extends Component {
     // When connection closes
     this.ws.onclose = () => {
       this.setState({ wsConnected: false });
-      console.log('WS disconnected');
-      // Try to reconnect
-      this.setState({
-        ws: new WebSocket(wsURL)
-      });
+
+      // Try to reconnect after 5 seconds
+      setTimeout(this.connectWebSocket, 5000);
     };
   }
 

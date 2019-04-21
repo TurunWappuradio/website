@@ -18,6 +18,8 @@ class Chat extends Component {
     this.addMessage.bind(this);
     this.submitMessage.bind(this);
     this.connectWebSocket = this.connectWebSocket.bind(this);
+
+    this.messagesViewport = React.createRef();
   }
 
   componentDidMount() {
@@ -55,6 +57,7 @@ class Chat extends Component {
 
   addMessage(message) {
     this.setState(state => ({ messages: [...state.messages, message] }));
+    this.scrollToBottom();
   }
 
   submitMessage(messageString) {
@@ -68,10 +71,15 @@ class Chat extends Component {
     this.ws.send(JSON.stringify(message));
   }
 
+  scrollToBottom() {
+    const el = this.messagesViewport.current;
+    el.current.scrollTo(0, el.scrollHeight);
+  }
+
   render() {
     return (
       <div className="sbMainWrapper">
-        <div className="sbMessageArea">
+        <div className="sbMessageArea" ref={this.messagesViewport}>
           {this.state.messages.map((message, index) => (
             <MessageFormatter
               key={index}

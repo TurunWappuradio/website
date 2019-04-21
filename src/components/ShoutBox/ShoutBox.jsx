@@ -73,7 +73,7 @@ class Chat extends Component {
 
   scrollToBottom() {
     const el = this.messagesViewport.current;
-    el.current.scrollTo(0, el.scrollHeight);
+    el.scrollTo(0, el.scrollHeight);
   }
 
   render() {

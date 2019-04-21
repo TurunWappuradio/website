@@ -1,6 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { RadioPlayer, VideoChatHider, ShowList, MusicLibrary } from './components';
+import {
+  RadioPlayer,
+  VideoChatHider,
+  ShowList,
+  MusicLibrary
+} from './components';
 
 function renderRadio() {
   const mountPoint = document.getElementById('radio-root');

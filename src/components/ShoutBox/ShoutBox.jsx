@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
-import MessageInput from './MessageInput';
+import MessageInput from './MessageInput/MessageInput';
 import NameInput from './NameInput';
 import MessageFormatter from './MessageFormatter';
 
-//const URL = 'ws://localhost:3030';
-const URL = 'wss://shoutbox-metadata-backend.herokuapp.com';
+const wsURL = process.env.SHOUTBOX_SOURCE;
 
 class Chat extends Component {
   constructor(props) {
@@ -13,9 +12,10 @@ class Chat extends Component {
       name: null,
       messages: [],
       wsConnected: false,
+      colorSwitcher: false
     };
 
-    this.ws = new WebSocket(URL);
+    this.ws = new WebSocket(wsURL);
 
     this.addMessage.bind(this);
     this.submitMessage.bind(this);
@@ -31,7 +31,9 @@ class Chat extends Component {
     // When receiving a message
     this.ws.onmessage = e => {
       const message = JSON.parse(e.data);
-      this.addMessage(message);
+      if (message.name && message.message) {
+        this.addMessage(message);
+      }
     };
 
     // When connection closes
@@ -40,7 +42,7 @@ class Chat extends Component {
       console.log('WS disconnected');
       // Try to reconnect
       this.setState({
-        ws: new WebSocket(URL)
+        ws: new WebSocket(wsURL)
       });
     };
   }
@@ -51,9 +53,10 @@ class Chat extends Component {
 
   submitMessage(messageString) {
     // on submitting the MessageSend form, send the message, add it to the list and reset the input
-    const message = { 
-      name: this.state.name, 
-      message: messageString 
+    this.setState({ colorSwitcher: !this.state.colorSwitcher });
+    const message = {
+      message: messageString,
+      color: this.state.colorSwitcher
     };
     this.ws.send(JSON.stringify(message));
   }
@@ -67,9 +70,14 @@ class Chat extends Component {
               key={index}
               message={message.message}
               name={message.name}
+              color={message.color}
             />
           ))}
-          {!this.state.wsConnected && <div className="sbNotConnectedText">Ei yhteyttä chat-palvelimeen</div>}
+          {!this.state.wsConnected && (
+            <div className="sbNotConnectedText">
+              Ei yhteyttä chat-palvelimeen
+            </div>
+          )}
         </div>
         <div className="sbInputArea">
           {this.state.name

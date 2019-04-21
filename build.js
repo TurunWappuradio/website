@@ -19,6 +19,5 @@ metalsmith(__dirname)
   .use(filter(['!*.scss', '!dist/*', '*.md', '*.html', 'program-data.json']))
   .build(function(err){
     if(err) { throw err; }
-    console.log('Process', process.env)
     console.log('Metalsmith build successfull!');
   });

@@ -20,8 +20,8 @@ wss.on('connection', function connection(ws) {
     if (jData.name && jData.message && jData.name !== 'TWRToimitus') {
       wss.clients.forEach(function each(client) {
         if (client.readyState === WebSocket.OPEN) {
-          console.log("Relaying message");
-          data = data.replace(toimitusNick, "TWRToimitus");
+          console.log('Relaying message');
+          data = data.replace(toimitusNick, 'TWRToimitus');
           client.send(data);
         }
       });
@@ -33,7 +33,7 @@ app.post('newsong', (req, res) => {
   const song = req.body;
 
   if (!song || typeof song !== 'string') {
-    return res.sendStatus(400)
+    return res.sendStatus(400);
   }
 
   currentSong = song;
@@ -41,5 +41,5 @@ app.post('newsong', (req, res) => {
 });
 
 app.listen(PORT, () => {
-  console.log(`Listening for song metadata updates on port ${PORT}`)
+  console.log(`Listening for song metadata updates on port ${PORT}`);
 });

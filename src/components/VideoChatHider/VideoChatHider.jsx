@@ -5,10 +5,9 @@ import ShoutBox from '../ShoutBox/ShoutBox';
 
 import Button from '../common/Button';
 
-export default class extends React.Component {
+class VideoChatHider extends React.Component {
   constructor() {
     super();
-
     this.state = {
       openVideo: false,
       openShout: false
@@ -57,3 +56,5 @@ export default class extends React.Component {
     );
   }
 }
+
+export default VideoChatHider;

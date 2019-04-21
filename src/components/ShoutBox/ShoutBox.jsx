@@ -3,7 +3,7 @@ import MessageInput from './MessageInput/MessageInput';
 import NameInput from './NameInput';
 import MessageFormatter from './MessageFormatter';
 
-const wsURL = process.env.SHOUTBOX_SOURCE || 'wss://shoutbox-metadata-backend.herokuapp.com';
+const wsURL = process.env.SHOUTBOX_SOURCE;
 
 class Chat extends Component {
   constructor(props) {

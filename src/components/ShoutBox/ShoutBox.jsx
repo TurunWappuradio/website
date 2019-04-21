@@ -3,7 +3,7 @@ import MessageInput from './MessageInput/MessageInput';
 import NameInput from './NameInput';
 import MessageFormatter from './MessageFormatter';
 
-const wsURL = process.env.SHOUTBOX_SOURCE;
+const wsURL = 'ws://localhost:3030';
 
 class Chat extends Component {
   constructor(props) {
@@ -18,6 +18,7 @@ class Chat extends Component {
     this.addMessage.bind(this);
     this.submitMessage.bind(this);
     this.connectWebSocket = this.connectWebSocket.bind(this);
+    this.handleSubmitName = this.handleSubmitName.bind(this);
 
     this.messagesViewport = React.createRef();
   }
@@ -31,6 +32,10 @@ class Chat extends Component {
 
     // Connect client
     this.ws.onopen = () => {
+      if (!!this.state.name) {
+        this.handleSubmitName(this.state.name);
+      }
+
       this.setState({ wsConnected: true });
     };
 
@@ -64,10 +69,20 @@ class Chat extends Component {
     // on submitting the MessageSend form, send the message, add it to the list and reset the input
     this.setState({ colorSwitcher: !this.state.colorSwitcher });
     const message = {
+      type: 'message',
       name: this.state.name,
       message: messageString,
       color: this.state.colorSwitcher
     };
+    this.ws.send(JSON.stringify(message));
+  }
+
+  handleSubmitName(name) {
+    const message = {
+      type: 'init',
+      name
+    };
+
     this.ws.send(JSON.stringify(message));
   }
 
@@ -104,9 +119,10 @@ class Chat extends Component {
             />
             : <NameInput
               ws={this.ws}
-              onSubmitName={(name) =>
-                this.setState({ name: name })
-              }
+              onSubmitName={(name) => {
+                this.handleSubmitName(name);
+                this.setState({ name });
+              }}
             />}
         </div>
       </div>

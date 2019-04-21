@@ -12,7 +12,6 @@ class MessageInput extends Component {
     };
 
     this.changeMessage.bind(this);
-    this.changeName.bind(this);
   }
 
   componentDidUpdate() {
@@ -24,18 +23,10 @@ class MessageInput extends Component {
 
   changeMessage(ev) {
     ev.preventDefault();
-    if (ev.target.value.length >= 200) {
+    if (ev.target.value.length > 200) {
       return;
     }
     this.setState({ message: ev.target.value });
-  }
-
-  changeName(ev) {
-    ev.preventDefault();
-    if (ev.target.value.length >= 10) {
-      return;
-    }
-    this.setState({ name: ev.target.value });
   }
 
   render() {

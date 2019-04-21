@@ -7,6 +7,7 @@
 }
 
 .sbMessageArea {
+  text-align: start;
   height: 85%;
   overflow: auto;
   overflow-x: hidden;
@@ -19,6 +20,7 @@
 }
 
 .sbNotConnectedText {
+  text-align: center;
   margin: 1rem;
   color: #fff;
 }

@@ -3,7 +3,7 @@ import MessageInput from './MessageInput/MessageInput';
 import NameInput from './NameInput';
 import MessageFormatter from './MessageFormatter';
 
-const wsURL = process.env.SHOUTBOX_SOURCE;
+const wsURL = process.env.SHOUTBOX_SOURCE || 'wss://shoutbox-metadata-backend.herokuapp.com';
 
 class Chat extends Component {
   constructor(props) {
@@ -55,6 +55,7 @@ class Chat extends Component {
     // on submitting the MessageSend form, send the message, add it to the list and reset the input
     this.setState({ colorSwitcher: !this.state.colorSwitcher });
     const message = {
+      name: this.state.name,
       message: messageString,
       color: this.state.colorSwitcher
     };

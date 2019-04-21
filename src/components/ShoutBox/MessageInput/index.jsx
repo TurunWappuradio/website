@@ -1,13 +1,12 @@
 import React, { Component } from 'react';
 
-const isButtonDisabled = (name, message, timeout) =>
-  name === '' || message === '' || timeout;
+const isButtonDisabled = (message, timeout) => 
+  message === '' || timeout;
 
 class MessageInput extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      name: '',
       message: '',
       timeout: false
     };
@@ -26,19 +25,11 @@ class MessageInput extends Component {
         action="."
         onSubmit={e => {
           e.preventDefault();
-          this.props.onSubmitMessage(this.state.name, this.state.message);
+          this.props.onSubmitMessage(this.state.message);
           this.setState({ message: '', timeout: true });
         }}
         className="sbInputForm">
         <div className="sbTextFieldArea">
-          <input
-            type="text"
-            id="name"
-            placeholder="Syötä nimimerkki (max. 10 merkkiä)"
-            value={this.state.name}
-            onChange={e => this.setState({ name: e.target.value })}
-            className="sbNameInput"
-          />
           <input
             type="text"
             placeholder={'Syötä viesti (max. 200 merkkiä)'}
@@ -53,8 +44,7 @@ class MessageInput extends Component {
             value="Send"
             className="sbSubmitButton"
             disabled={isButtonDisabled(
-              this.state.name,
-              this.state.message,
+              this.state.message, 
               this.state.timeout
             )}>
             Lähetä

@@ -16,10 +16,73 @@
 .sbInputArea {
   width: 100%;
   background-color: rgba(0, 0, 0, 0.21);
-  height: 3rem;
 }
 
 .sbNotConnectedText {
   margin: 1rem;
   color: #fff;
+}
+
+.sbInputForm {
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  padding: 10px;
+}
+
+.sbTextFieldArea {
+  display: inherit;
+  width: 100%;
+  justify-content: space-around;
+  margin-right: 16px;
+}
+
+.sbTextFieldArea input::placeholder {
+  font-size: 10px;
+  color: #ccc;
+}
+
+.sbNameInput {
+  width: 100%;
+  background-color: inherit;
+  color: #ffffff;
+  border: none;
+  border-bottom: 1px solid #ffffff;
+}
+
+.sbTextInput {
+  width: 100%;
+  background-color: inherit;
+  color: #ffffff;
+  border: none;
+  border-bottom: 1px solid #ffffff;
+}
+
+.sbButtonArea {
+  display: inherit;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.sbSubmitButton {
+  cursor: pointer;
+  display: inline-block;
+  font-weight: 400;
+  color: #fff;
+  text-align: center;
+  vertical-align: middle;
+  user-select: none;
+  background-color: transparent;
+  padding: .375rem .75rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  border-radius: .25rem;
+  transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+  border: 3px solid #fff;
+  font-weight: 600;
+}
+
+.sbSubmitButton:disabled {
+  opacity: 0.5;
 }

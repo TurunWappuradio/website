@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import MessageInput from './MessageInput';
+import NameInput from './NameInput';
 import MessageFormatter from './MessageFormatter';
 
 //const URL = 'ws://localhost:3030';
@@ -9,6 +10,7 @@ class Chat extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      name: null,
       messages: [],
       wsConnected: false,
     };
@@ -44,12 +46,15 @@ class Chat extends Component {
   }
 
   addMessage(message) {
-    this.setState(state => ({ messages: [message, ...state.messages] }));
+    this.setState(state => ({ messages: [...state.messages, message] }));
   }
 
-  submitMessage(name, messageString) {
+  submitMessage(messageString) {
     // on submitting the MessageSend form, send the message, add it to the list and reset the input
-    const message = { name: name, message: messageString };
+    const message = { 
+      name: this.state.name, 
+      message: messageString 
+    };
     this.ws.send(JSON.stringify(message));
   }
 
@@ -67,12 +72,19 @@ class Chat extends Component {
           {!this.state.wsConnected && <div className="sbNotConnectedText">Ei yhteyttä chat-palvelimeen</div>}
         </div>
         <div className="sbInputArea">
-          <MessageInput
-            ws={this.ws}
-            onSubmitMessage={(name, messageString) =>
-              this.submitMessage(name, messageString)
-            }
-          />
+          {this.state.name
+            ? <MessageInput
+              ws={this.ws}
+              onSubmitMessage={(messageString) =>
+                this.submitMessage(messageString)
+              }
+            />
+            : <NameInput
+              ws={this.ws}
+              onSubmitName={(name) =>
+                this.setState({ name: name })
+              }
+            />}
         </div>
       </div>
     );

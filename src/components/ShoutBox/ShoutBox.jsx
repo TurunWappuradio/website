@@ -3,7 +3,7 @@ import MessageInput from './MessageInput/MessageInput';
 import NameInput from './NameInput';
 import MessageFormatter from './MessageFormatter';
 
-const wsURL = process.env.SHOUTBOX_SOURCE;
+const wsURL = process.env.SHOUTBOX_SOURCE || 'ws://localhost:3030';
 
 class Chat extends Component {
   constructor(props) {
@@ -18,6 +18,9 @@ class Chat extends Component {
     this.addMessage.bind(this);
     this.submitMessage.bind(this);
     this.connectWebSocket = this.connectWebSocket.bind(this);
+    this.handleSubmitName = this.handleSubmitName.bind(this);
+
+    this.messagesViewport = React.createRef();
   }
 
   componentDidMount() {
@@ -29,6 +32,10 @@ class Chat extends Component {
 
     // Connect client
     this.ws.onopen = () => {
+      if (!!this.state.name) {
+        this.handleSubmitName(this.state.name);
+      }
+
       this.setState({ wsConnected: true });
     };
 
@@ -63,21 +70,37 @@ class Chat extends Component {
       messages: [...this.state.messages, message],
       colorSwitcher: !this.state.colorSwitcher
     });
+    this.scrollToBottom();
   }
 
   submitMessage(messageString) {
     // on submitting the MessageSend form, send the message, add it to the list and reset the input
     const message = {
+      type: 'message',
       name: this.state.name,
       message: messageString
     };
     this.ws.send(JSON.stringify(message));
   }
 
+  handleSubmitName(name) {
+    const message = {
+      type: 'init',
+      name
+    };
+
+    this.ws.send(JSON.stringify(message));
+  }
+
+  scrollToBottom() {
+    const el = this.messagesViewport.current;
+    el.scrollTo(0, el.scrollHeight);
+  }
+
   render() {
     return (
       <div className="sbMainWrapper">
-        <div className="sbMessageArea">
+        <div className="sbMessageArea" ref={this.messagesViewport}>
           {this.state.messages.map((message, index) => (
             <MessageFormatter
               key={index}
@@ -103,9 +126,11 @@ class Chat extends Component {
           ) : (
             <NameInput
               ws={this.ws}
-              onSubmitName={name => this.setState({ name: name })}
-            />
-          )}
+              onSubmitName={(name) => {
+                this.handleSubmitName(name);
+                this.setState({ name });
+              }}
+            />}
         </div>
       </div>
     );

@@ -12,7 +12,7 @@ class Chat extends Component {
       name: null,
       messages: [],
       wsConnected: false,
-      colorSwitcher: false
+      colorSwitcher: true
     };
 
     this.addMessage.bind(this);
@@ -54,16 +54,22 @@ class Chat extends Component {
   }
 
   addMessage(message) {
-    this.setState(state => ({ messages: [...state.messages, message] }));
+    message = {
+      ...message,
+      color: this.state.colorSwitcher
+    };
+
+    this.setState({
+      messages: [...this.state.messages, message],
+      colorSwitcher: !this.state.colorSwitcher
+    });
   }
 
   submitMessage(messageString) {
     // on submitting the MessageSend form, send the message, add it to the list and reset the input
-    this.setState({ colorSwitcher: !this.state.colorSwitcher });
     const message = {
       name: this.state.name,
-      message: messageString,
-      color: this.state.colorSwitcher
+      message: messageString
     };
     this.ws.send(JSON.stringify(message));
   }
@@ -87,19 +93,19 @@ class Chat extends Component {
           )}
         </div>
         <div className="sbInputArea">
-          {this.state.name
-            ? <MessageInput
+          {this.state.name ? (
+            <MessageInput
               ws={this.ws}
-              onSubmitMessage={(messageString) =>
+              onSubmitMessage={messageString =>
                 this.submitMessage(messageString)
               }
             />
-            : <NameInput
+          ) : (
+            <NameInput
               ws={this.ws}
-              onSubmitName={(name) =>
-                this.setState({ name: name })
-              }
-            />}
+              onSubmitName={name => this.setState({ name: name })}
+            />
+          )}
         </div>
       </div>
     );

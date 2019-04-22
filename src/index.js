@@ -5,7 +5,7 @@ import {
   VideoChatHider,
   ShowList,
   MusicLibrary,
-  ShoutBox
+  Dashboard
 } from './components';
 
 function renderRadio() {
@@ -41,7 +41,7 @@ function renderMusic() {
 function renderShoutBox() {
   const mountPoint = document.getElementById('shoutbox-root');
   if (mountPoint) {
-    ReactDOM.render(<ShoutBox />, mountPoint);
+    ReactDOM.render(<Dashboard />, mountPoint);
   }
 }
 

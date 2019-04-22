@@ -79,7 +79,7 @@ class Chat extends Component {
     };
 
     this.setState({
-      messages: [...this.state.messages, message],
+      messages: [...this.state.messages, message].slice(-(this.props.limit || 20)),
       colorSwitcher: !this.state.colorSwitcher
     });
     this.scrollToBottom();

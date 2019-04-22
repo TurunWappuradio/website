@@ -1,0 +1,57 @@
+<!doctype html>
+<html>
+<head>
+  <title>{{title}}</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="{{description}}">
+  <link rel="shortcut icon" type="image/svg+xml" href="/leima.svg"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="google-site-verification" content="X2pkynnDkR9pDQ2GG5AhV8ykq5g_Mm0GOMaMUnwEnaY" />
+    <!-- Disable tap highlight on IE -->
+  <meta name="msapplication-tap-highlight" content="no">
+
+  <!-- Add to homescreen for Chrome on Android -->
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="application-name" content="Your website">
+  <!-- <link rel="icon" sizes="192x192" href="images/touch/chrome-touch-icon-192x192.png"> -->
+
+  <!-- Add to homescreen for Safari on iOS -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="Your website">
+
+  <!-- Tile icon for Win8 (144x144 + tile color) -->
+  <meta name="msapplication-TileImage" content="imnpm ages/touch/ms-touch-icon-144x144-precomposed.png">
+  <meta name="msapplication-TileColor" content="#1976d2">
+  
+  <meta name="theme-color" content="#1976d2">
+
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,600" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="styles.css?v={{buildTime "v"}}">
+  
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id={{setEnv "GA_ID"}}"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    
+    gtag('config', '{{setEnv "GA_ID"}}');
+    </script>
+</head>
+<body>
+  {{> Header}}
+  <div class="Headline">
+    <img src="leima.svg" alt="Turun Wappuradio"/>
+  </div>
+  <div class="Container">
+    {{{contents}}}
+  </div>
+  <div class="Page">
+    <div id="shoutbox-root" style="width: 100%;height: 600px;"></div>
+  </div>
+  {{> Footer}}
+  <script src="bundle.js?v={{buildTime "v"}}"></script>
+</body>
+</html>

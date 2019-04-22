@@ -3,7 +3,7 @@ import MessageInput from './MessageInput/MessageInput';
 import NameInput from './NameInput';
 import MessageFormatter from './MessageFormatter';
 
-const wsURL = 'ws://localhost:3030';
+const wsURL = process.env.SHOUTBOX_SOURCE || 'ws://localhost:3030';
 
 class Chat extends Component {
   constructor(props) {

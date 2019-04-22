@@ -3,7 +3,7 @@ import MessageInput from './MessageInput/MessageInput';
 import NameInput from './NameInput';
 import MessageFormatter from './MessageFormatter';
 
-const wsURL = process.env.SHOUTBOX_SOURCE || 'ws://localhost:3030';
+const wsURL = process.env.SHOUTBOX_SOURCE;
 
 class Chat extends Component {
   constructor(props) {
@@ -12,7 +12,7 @@ class Chat extends Component {
       name: null,
       messages: [],
       wsConnected: false,
-      colorSwitcher: true
+      colorSwitcher: false
     };
 
     this.addMessage.bind(this);
@@ -130,7 +130,7 @@ class Chat extends Component {
                 this.handleSubmitName(name);
                 this.setState({ name });
               }}
-            />}
+            />)}
         </div>
       </div>
     );

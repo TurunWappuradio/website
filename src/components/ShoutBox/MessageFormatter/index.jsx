@@ -1,15 +1,23 @@
 import React from 'react';
+import Button from "../../common/Button";
 
-const MessageFormatter = ({ name, message, color }) => (
+const MessageFormatter = ({ name, message, color, isAdmin, onBanClick }) => (
   <div
     className="sbSingleMessageBox"
     style={color ? { backgroundColor: 'rgba(0, 0, 0, 0.10)' } : undefined}>
-    <div
-      className="sbNameText"
-      style={findColor(name)}>
-      {name}:
+    <div className="sbMessageContent">
+      <div
+        className="sbNameText"
+        style={findColor(name)}>
+        {name}:
+      </div>
+      <div className="sbMessageText">{message}</div>
     </div>
-    <div className="sbMessageText">{message}</div>
+    {isAdmin && name !== 'Toimitus' && name !== 'Palvelin' && (
+      <Button title="Bännää" onClick={() => onBanClick(name)}>
+        Bännää
+      </Button>
+    )}
   </div>
 );
 

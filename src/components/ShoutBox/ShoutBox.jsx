@@ -3,13 +3,14 @@ import MessageInput from './MessageInput/MessageInput';
 import NameInput from './NameInput';
 import MessageFormatter from './MessageFormatter';
 
-const wsURL = process.env.SHOUTBOX_SOURCE;
+const wsURL = 'ws://localhost:3030';
 
 class Chat extends Component {
   constructor(props) {
     super(props);
     this.state = {
       name: null,
+      isAdmin: false,
       messages: [],
       wsConnected: false,
       colorSwitcher: false
@@ -19,6 +20,7 @@ class Chat extends Component {
     this.submitMessage.bind(this);
     this.connectWebSocket = this.connectWebSocket.bind(this);
     this.handleSubmitName = this.handleSubmitName.bind(this);
+    this.handleBanClick = this.handleBanClick.bind(this);
 
     this.messagesViewport = React.createRef();
   }
@@ -45,9 +47,13 @@ class Chat extends Component {
         return this.ws.send('PONG');
       }
 
-      const message = JSON.parse(e.data);
-      if (message.name && message.message) {
-        this.addMessage(message);
+      const { type, name, message } = JSON.parse(e.data);
+
+      if (type === 'message' && name && message) {
+        this.addMessage({ name, message });
+      }
+      else if (type === 'admin') {
+        this.setState({ isAdmin: true });
       }
     };
 
@@ -92,6 +98,16 @@ class Chat extends Component {
     this.ws.send(JSON.stringify(message));
   }
 
+  handleBanClick(name) {
+    const message = {
+      type: 'ban',
+      name: this.state.name,
+      message: name
+    };
+
+    this.ws.send(JSON.stringify(message));
+  }
+
   scrollToBottom() {
     const el = this.messagesViewport.current;
     el.scrollTo(0, el.scrollHeight);
@@ -107,6 +123,8 @@ class Chat extends Component {
               message={message.message}
               name={message.name}
               color={message.color}
+              isAdmin={this.state.isAdmin}
+              onBanClick={this.handleBanClick}
             />
           ))}
           {!this.state.wsConnected && (

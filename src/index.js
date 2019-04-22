@@ -4,7 +4,8 @@ import {
   RadioPlayer,
   VideoChatHider,
   ShowList,
-  MusicLibrary
+  MusicLibrary,
+  ShoutBox
 } from './components';
 
 function renderRadio() {
@@ -37,10 +38,18 @@ function renderMusic() {
   }
 }
 
+function renderShoutBox() {
+  const mountPoint = document.getElementById('shoutbox-root');
+  if (mountPoint) {
+    ReactDOM.render(<ShoutBox />, mountPoint);
+  }
+}
+
 function mountComponents() {
   if (process.env.BROADCAST_MODE === 'live') {
     renderRadio();
     renderVideoChatHider();
+    renderShoutBox();
   }
   renderMusic();
   renderShows();

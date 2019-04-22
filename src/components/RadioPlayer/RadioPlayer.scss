@@ -9,7 +9,7 @@
 .RadioPlayer__Brand {
     width: 75%;
     max-width: 300px;
-    margin-bottom: 30px;    
+    margin-bottom: 30px;
 }
 
 .RadioPlayer__NowPlaying {
@@ -17,6 +17,7 @@
     margin-bottom: 30px;
     font-weight: 600;
     color: #fff;
+    text-align: center;
 }
 
 .RadioPlayer__Controls {
@@ -52,7 +53,7 @@
     width: 80px;
     height: 80px;
     padding: 16px;
-    
+
     &.active {
         background: #ee6b60;
     }

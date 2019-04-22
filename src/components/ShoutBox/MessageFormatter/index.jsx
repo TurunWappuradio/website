@@ -5,7 +5,7 @@ const MessageFormatter = ({ name, message, color, isAdmin, onBanClick }) => (
   <div
     className="sbSingleMessageBox"
     style={color ? { backgroundColor: 'rgba(0, 0, 0, 0.10)' } : undefined}>
-    <div className="sbMessageContent">
+    <div style={{ width: isAdmin ? "calc(100% - 94px)" : "100%" }}>
       <div
         className="sbNameText"
         style={findColor(name)}>

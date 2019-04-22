@@ -3,7 +3,7 @@ import MessageInput from './MessageInput/MessageInput';
 import NameInput from './NameInput';
 import MessageFormatter from './MessageFormatter';
 
-const wsURL = process.env.SHOUTBOX_SOURCE;
+const wsURL = 'ws://localhost:3030';
 
 class Chat extends Component {
   constructor(props) {
@@ -16,8 +16,8 @@ class Chat extends Component {
       colorSwitcher: false
     };
 
-    this.addMessage.bind(this);
-    this.submitMessage.bind(this);
+    this.addMessage = this.addMessage.bind(this);
+    this.submitMessage = this.submitMessage.bind(this);
     this.connectWebSocket = this.connectWebSocket.bind(this);
     this.handleSubmitName = this.handleSubmitName.bind(this);
     this.handleBanClick = this.handleBanClick.bind(this);
@@ -54,6 +54,12 @@ class Chat extends Component {
       }
       else if (type === 'admin') {
         this.setState({ isAdmin: true });
+      }
+      // delete all messages from the banned person, unless this is them
+      else if (type === 'ban' && name === 'Toimitus' && message !== this.state.name) {
+        this.setState({
+          messages: this.state.messages.filter(m => m.name !== message)
+        });
       }
     };
 

@@ -84,7 +84,9 @@ export default class extends React.Component {
           src="leima.svg"
           alt="Turun Wappuradio"
         />
+        {Date.now() >= 1556010000000 && (
           <div className="RadioPlayer__NowPlaying">Nyt soi: {song}</div>
+        )}
         <div className="RadioPlayer__Controls">
           <MuteControl muted={muted} onClick={() => this.onVolumeOnOff()} />
           <PlayControl playing={playing} onClick={() => this.onPlayPause()} />

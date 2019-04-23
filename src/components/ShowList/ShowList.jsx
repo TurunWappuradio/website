@@ -45,20 +45,25 @@ export default class extends React.Component {
     });
   }
 
+  getFirstShow(groupedData, dateKey, currentTime) {
+    return groupedData[dateKey].find(item => {
+      return isWithinRange(
+        currentTime,
+        item.startDatetime,
+        item.endDatetime
+      );
+    }) || groupedData[dateKey][0]
+  }
+
   getInitialState() {
     const currentTime = new Date();
     const groupedData = this.getGroupedData();
     const dateKeys = Object.keys(groupedData);
     const dateKey = getDateKeyFormat(currentTime);
     const inRange = dateKeys.includes(dateKey);
+    console.log('Is in range', inRange)
     const currentShowId = inRange
-      ? groupedData[dateKey].find(item => {
-          return isWithinRange(
-            currentTime,
-            item.startDatetime,
-            item.endDatetime
-          );
-        }).id
+      ? this.getFirstShow(groupedData, dateKey, currentTime).id
       : '';
     return {
       selected: currentShowId,

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
+import NameFormatter from '../NameFormatter';
 
-const isButtonDisabled = (message, timeout) => 
+const isButtonDisabled = (message, timeout) =>
   message === '' || timeout;
 
 class MessageInput extends Component {
@@ -40,6 +41,7 @@ class MessageInput extends Component {
         }}
         className="sbInputForm">
         <div className="sbTextFieldArea">
+          <NameFormatter name={this.props.name} />
           <input
             type="text"
             placeholder={'Syötä viesti (max. 200 merkkiä)'}
@@ -54,7 +56,7 @@ class MessageInput extends Component {
             value="Send"
             className="sbSubmitButton"
             disabled={isButtonDisabled(
-              this.state.message, 
+              this.state.message,
               this.state.timeout
             )}>
             Lähetä

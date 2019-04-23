@@ -14,7 +14,7 @@ class NameInput extends Component {
 
   changeName(ev) {
     ev.preventDefault();
-    if (ev.target.value.length > 10) {
+    if (ev.target.value.length > 20) {
       return;
     }
     this.setState({ name: ev.target.value });
@@ -34,7 +34,7 @@ class NameInput extends Component {
           <input
             type="text"
             id="name"
-            placeholder="Syötä nimimerkki (max. 10 merkkiä)"
+            placeholder="Syötä nimimerkki (max. 20 merkkiä)"
             value={this.state.name}
             onChange={ev => this.changeName(ev)}
             className="sbNameInput"

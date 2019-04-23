@@ -2,16 +2,15 @@
   height: auto;
   color: #ffffff;
   padding: 0.3rem 0.5rem;
+  width: 100%;
+  display: inline-flex;
+  justify-content: space-between;
   clear: both;
 }
 
-.sbNameText {
-  font-size: 1rem;
-}
-
 .sbMessageText {
-  font-size: 0.8rem;
-  padding-left: 0.5rem;
+  font-size: 0.9rem;
+  margin-top: 0.5rem;
   word-wrap: break-word;
   -webkit-hyphens: auto;
   -ms-hyphens: auto;

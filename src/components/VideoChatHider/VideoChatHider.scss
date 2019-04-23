@@ -55,3 +55,27 @@
     height: 480px;
   }
 }
+
+@media (max-width: 639px) {
+  .ShoutBoxContainer {
+    height: 360px;
+  }
+}
+
+@media (orientation: portrait) and (max-width: 639px) {
+  .ShoutBoxContainer {
+    height: 360px;
+  }
+}
+
+@media (orientation: landscape) and (max-height: 639px) {
+  .ShoutBoxContainer {
+    height: 360px;
+  }
+}
+
+@media (orientation: landscape) and (max-height: 380px) {
+  .ShoutBoxContainer {
+    height: 300px;
+  }
+}

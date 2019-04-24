@@ -148,7 +148,7 @@ class Chat extends Component {
             {this.state.name ? (
               <MessageInput
                 ws={this.ws}
-                name={this.state.name}
+                name={this.state.isAdmin ? 'Toimitus' : this.state.name}
                 onSubmitMessage={messageString =>
                   this.submitMessage(messageString)
                 }

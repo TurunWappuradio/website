@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import TextField from '../../common/TextField';
 
 const isButtonDisabled = (name) => name === '';
 
@@ -30,16 +31,11 @@ class NameInput extends Component {
           this.setState({ name: '' });
         }}
         className="sbInputForm">
-        <div className="sbTextFieldArea">
-          <input
-            type="text"
-            id="name"
-            placeholder="Syötä nimimerkki (max. 20 merkkiä)"
-            value={this.state.name}
-            onChange={ev => this.changeName(ev)}
-            className="sbNameInput"
-          />
-        </div>
+        <TextField
+          placeholder="Syötä nimimerkki (max. 20 merkkiä)"
+          value={this.state.name}
+          onChange={ev => this.changeName(ev)}
+        />
         <div className="sbButtonArea">
           <button
             type="submit"

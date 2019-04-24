@@ -29,11 +29,21 @@ class Chat extends Component {
     this.connectWebSocket();
   }
 
+  componentDidUpdate(prevProps) {
+    if (!prevProps.isOpen && this.props.isOpen) {
+      this.scrollToBottom();
+    }
+  }
+
   connectWebSocket() {
     this.ws = new WebSocket(wsURL);
 
     // Connect client
     this.ws.onopen = () => {
+      this.ws.send(JSON.stringify({
+        type: 'reload'
+      }));
+
       if (!!this.state.name) {
         this.handleSubmitName(this.state.name);
       }
@@ -60,6 +70,10 @@ class Chat extends Component {
         this.setState({
           messages: this.state.messages.filter(m => m.name !== message)
         });
+      }
+      // load 20 newest messages on connect
+      else if (type === 'reload' && name === 'Palvelin' && message) {
+        message.forEach(m => this.addMessage(m));
       }
     };
 
@@ -116,7 +130,10 @@ class Chat extends Component {
 
   scrollToBottom() {
     const el = this.messagesViewport.current;
-    el.scrollTo(0, el.scrollHeight);
+
+    if (el) {
+      el.scrollTo(0, el.scrollHeight);
+    }
   }
 
   render() {

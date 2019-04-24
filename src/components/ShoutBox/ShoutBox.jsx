@@ -120,42 +120,48 @@ class Chat extends Component {
   }
 
   render() {
+    if (!this.props.isOpen) {
+      return null;
+    }
+
     return (
-      <div className="sbMainWrapper">
-        <div className="sbMessageArea" ref={this.messagesViewport}>
-          {this.state.messages.map((message, index) => (
-            <MessageFormatter
-              key={index}
-              message={message.message}
-              name={message.name}
-              color={message.color}
-              isAdmin={this.state.isAdmin}
-              onBanClick={this.handleBanClick}
-            />
-          ))}
-          {!this.state.wsConnected && (
-            <div className="sbNotConnectedText">
-              Ei yhteyttä chat-palvelimeen
-            </div>
-          )}
-        </div>
-        <div className="sbInputArea">
-          {this.state.name ? (
-            <MessageInput
-              ws={this.ws}
-              name={this.state.name}
-              onSubmitMessage={messageString =>
-                this.submitMessage(messageString)
-              }
-            />
-          ) : (
-            <NameInput
-              ws={this.ws}
-              onSubmitName={(name) => {
-                this.handleSubmitName(name);
-                this.setState({ name });
-              }}
-            />)}
+      <div className="ShoutBoxContainer">
+        <div className="sbMainWrapper">
+          <div className="sbMessageArea" ref={this.messagesViewport}>
+            {this.state.messages.map((message, index) => (
+              <MessageFormatter
+                key={index}
+                message={message.message}
+                name={message.name}
+                color={message.color}
+                isAdmin={this.state.isAdmin}
+                onBanClick={this.handleBanClick}
+              />
+            ))}
+            {!this.state.wsConnected && (
+              <div className="sbNotConnectedText">
+                Ei yhteyttä chat-palvelimeen
+              </div>
+            )}
+          </div>
+          <div className="sbInputArea">
+            {this.state.name ? (
+              <MessageInput
+                ws={this.ws}
+                name={this.state.name}
+                onSubmitMessage={messageString =>
+                  this.submitMessage(messageString)
+                }
+              />
+            ) : (
+              <NameInput
+                ws={this.ws}
+                onSubmitName={(name) => {
+                  this.handleSubmitName(name);
+                  this.setState({ name });
+                }}
+              />)}
+          </div>
         </div>
       </div>
     );

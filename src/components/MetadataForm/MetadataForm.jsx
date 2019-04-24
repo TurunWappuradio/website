@@ -38,7 +38,6 @@ class MetadataForm extends Component {
 
   handleSubmitClick(ev) {
     ev.preventDefault();
-    console.log('submit clicked')
 
     const { artist, track, password } = this.state;
 

@@ -1,7 +1,7 @@
 import React from 'react';
 
-export default ({ children, title, onClick }) => (
-  <button className="Button" title={title} onClick={onClick}>
+export default ({ children, ...rest }) => (
+  <button className="Button" {...rest}>
     {children}
   </button>
 );

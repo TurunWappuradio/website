@@ -30,7 +30,8 @@ module.exports = {
       'process.env': {
         'BROADCAST_MODE': JSON.stringify(process.env.BROADCAST_MODE),
         'METADATA_SERVER': JSON.stringify(process.env.METADATA_SERVER),
-        'SHOUTBOX_SOURCE': JSON.stringify(process.env.SHOUTBOX_SOURCE)
+        'SHOUTBOX_SOURCE': JSON.stringify(process.env.SHOUTBOX_SOURCE),
+        'METADATA_API': JSON.stringify(process.env.METADATA_API)
       }
     })
   ]

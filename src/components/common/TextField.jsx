@@ -1,11 +1,11 @@
 import React from 'react';
 
-const TextField = ({ label, placeholder, value, onChange }) => (
+const TextField = ({ label, placeholder, value, onChange, type }) => (
   <div className="TextFieldArea">
     {label}
     <input
       className="TextField"
-      type="text"
+      type={type || 'text'}
       placeholder={placeholder}
       value={value}
       onChange={onChange}

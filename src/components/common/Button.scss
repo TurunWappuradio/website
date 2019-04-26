@@ -23,3 +23,7 @@
         background: #fff;
     }
 }
+
+.Button:disabled {
+    opacity: 0.5;
+}

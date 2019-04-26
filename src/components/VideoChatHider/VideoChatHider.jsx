@@ -46,11 +46,7 @@ class VideoChatHider extends React.Component {
               <VideoPlayer />
             </div>
           )}
-          {this.state.openShout && (
-            <div className="ShoutBoxContainer">
-              <ShoutBox />
-            </div>
-          )}
+          <ShoutBox isOpen={this.state.openShout} />
         </div>
       </div>
     );

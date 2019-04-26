@@ -29,11 +29,21 @@ class Chat extends Component {
     this.connectWebSocket();
   }
 
+  componentDidUpdate(prevProps) {
+    if (!prevProps.isOpen && this.props.isOpen) {
+      this.scrollToBottom();
+    }
+  }
+
   connectWebSocket() {
     this.ws = new WebSocket(wsURL);
 
     // Connect client
     this.ws.onopen = () => {
+      this.ws.send(JSON.stringify({
+        type: 'reload'
+      }));
+
       if (!!this.state.name) {
         this.handleSubmitName(this.state.name);
       }
@@ -60,6 +70,10 @@ class Chat extends Component {
         this.setState({
           messages: this.state.messages.filter(m => m.name !== message)
         });
+      }
+      // load 20 newest messages on connect
+      else if (type === 'reload' && name === 'Palvelin' && message) {
+        message.forEach(m => this.addMessage(m));
       }
     };
 
@@ -116,46 +130,55 @@ class Chat extends Component {
 
   scrollToBottom() {
     const el = this.messagesViewport.current;
-    el.scrollTo(0, el.scrollHeight);
+
+    if (el) {
+      el.scrollTo(0, el.scrollHeight);
+    }
   }
 
   render() {
+    if (!this.props.isOpen) {
+      return null;
+    }
+
     return (
-      <div className="sbMainWrapper">
-        <div className="sbMessageArea" ref={this.messagesViewport}>
-          {this.state.messages.map((message, index) => (
-            <MessageFormatter
-              key={index}
-              message={message.message}
-              name={message.name}
-              color={message.color}
-              isAdmin={this.state.isAdmin}
-              onBanClick={this.handleBanClick}
-            />
-          ))}
-          {!this.state.wsConnected && (
-            <div className="sbNotConnectedText">
-              Ei yhteyttä chat-palvelimeen
-            </div>
-          )}
-        </div>
-        <div className="sbInputArea">
-          {this.state.name ? (
-            <MessageInput
-              ws={this.ws}
-              name={this.state.name}
-              onSubmitMessage={messageString =>
-                this.submitMessage(messageString)
-              }
-            />
-          ) : (
-            <NameInput
-              ws={this.ws}
-              onSubmitName={(name) => {
-                this.handleSubmitName(name);
-                this.setState({ name });
-              }}
-            />)}
+      <div className="ShoutBoxContainer">
+        <div className="sbMainWrapper">
+          <div className="sbMessageArea" ref={this.messagesViewport}>
+            {this.state.messages.map((message, index) => (
+              <MessageFormatter
+                key={index}
+                message={message.message}
+                name={message.name}
+                color={message.color}
+                isAdmin={this.state.isAdmin}
+                onBanClick={this.handleBanClick}
+              />
+            ))}
+            {!this.state.wsConnected && (
+              <div className="sbNotConnectedText">
+                Ei yhteyttä chat-palvelimeen
+              </div>
+            )}
+          </div>
+          <div className="sbInputArea">
+            {this.state.name ? (
+              <MessageInput
+                ws={this.ws}
+                name={this.state.isAdmin ? 'Toimitus' : this.state.name}
+                onSubmitMessage={messageString =>
+                  this.submitMessage(messageString)
+                }
+              />
+            ) : (
+              <NameInput
+                ws={this.ws}
+                onSubmitName={(name) => {
+                  this.handleSubmitName(name);
+                  this.setState({ name });
+                }}
+              />)}
+          </div>
         </div>
       </div>
     );

@@ -5,7 +5,8 @@ import {
   VideoChatHider,
   ShowList,
   MusicLibrary,
-  Dashboard
+  Dashboard,
+  MetadataForm
 } from './components';
 
 function renderRadio() {
@@ -45,11 +46,19 @@ function renderShoutBox() {
   }
 }
 
+function renderMetadataForm() {
+  const mountPoint = document.getElementById('metadata-root');
+  if (mountPoint) {
+    ReactDOM.render(<MetadataForm/>, mountPoint);
+  }
+}
+
 function mountComponents() {
   if (process.env.BROADCAST_MODE === 'live') {
     renderRadio();
     renderVideoChatHider();
     renderShoutBox();
+    renderMetadataForm();
   }
   renderMusic();
   renderShows();

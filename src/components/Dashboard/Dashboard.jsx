@@ -26,7 +26,7 @@ class Dashboard extends Component {
       <div style={{ height: 500 }}>
         <div className="dashboardTime">{this.state.time}</div>
         <h1>Shoutbox</h1>
-        <ShoutBox limit={200}/>
+        <ShoutBox limit={200} isOpen={true}/>
       </div>
     )
   }

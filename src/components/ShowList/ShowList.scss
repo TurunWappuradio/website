@@ -23,7 +23,7 @@
     cursor: pointer;
 
     &:hover, &:focus {
-      color: #ee6b60;
+      color: $colorDarkTeal;
       outline: none;
     }
   }
@@ -70,5 +70,5 @@
 }
 
 @media (min-width: 960px) {
-  
+
 }

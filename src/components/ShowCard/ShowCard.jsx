@@ -1,7 +1,7 @@
 import React from 'react';
 import { format, isWithinRange } from 'date-fns';
 
-const placeholderColors = ['#ee6b60', '#5bbfbf'];
+const placeholderColors = ['#a53a4d', '#2f8888'];
 const placeholderCards = ['blue_card.png', 'orange_card.png'];
 
 export default props => {

@@ -48,14 +48,14 @@
 
 .PlayControl {
     box-shadow: 0 15px 30px 0 rgba(11, 49, 87, 0.3), 0 5px 15px 0 rgba(10, 49, 87, 0.3);
-    background: #5bbfbf;
+    background: $colorDarkTeal;
     border-radius: 50%;
     width: 80px;
     height: 80px;
     padding: 16px;
 
     &.active {
-        background: #ee6b60;
+        background: $colorRed;
     }
 }
 

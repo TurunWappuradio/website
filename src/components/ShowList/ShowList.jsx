@@ -109,7 +109,7 @@ export default class extends React.Component {
             <button
               className="ShowList-dayButton"
               key={date}
-              style={openDate === date ? { color: '#5bbfbf' } : {}}
+              style={openDate === date ? { color: '#A53A4D' } : {}}
               onClick={() => this.selectDate(date)}>
               {openDate === date
                 ? format(groupedShows[date][0].startDatetime, 'dddd DD.M.', {

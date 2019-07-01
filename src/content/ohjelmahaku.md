@@ -4,12 +4,9 @@ draft: false
 layout: index.html
 ---
 
-# Ohjelmahaku on sulkeutunut vuodelta 2019
+# Syssyradion ohjelmahaku on tulossa pian
 
-Ensi vuonna uusiksi. Laita kuitenkin viestiä meille *toimitus[ät]turunwappuradio.com*, jos tahdot muuten lähteä mukaan tuottamaan Turkulaista Wappuradiota
-
-Päätoimitus
-
+Syssyradion ohjelmahaku ilmestyy tälle sivulle *15.7.* Malta vielä hetki.
 
 <div class="ImageContainer">
 <img alt="ideointi" src="/wapuradio.jpg" />

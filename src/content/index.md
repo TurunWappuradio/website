@@ -8,7 +8,7 @@ layout: index.html
 
 Turun Wappuradio tulee taas kahden vuorokauden mittaisen Syssyradion merkeissä.
 
-Turun Wappuradion ensimmäinen syssyradiolähetys paukahtaa bittiavaruuteen Yliopiston avajaisviikolla 3.9. kello 12.00 alkaen. Luvassa on kahden vuorokauden mittainen pop-up -lähetys sisältäen timanttista ohjelmaa kellon ympäri mukaan lukien livelähetyksen TYY:n avajaiskarnevaaleilta.
+Turun Wappuradion ensimmäinen syssyradiolähetys paukahtaa bittiavaruuteen Yliopiston avajaisviikolla 3.9. kello 12.00 alkaen. Luvassa on kahden vuorokauden mittainen pop-up -lähetys sisältäen timanttista ohjelmaa kellon ympäri mukaan lukien livelähetyksen TYYn avajaiskarnevaaleilta.
 
 ## Haluatko mukaan?
 

@@ -81,7 +81,6 @@ body {
     color: #fff;
     > em {
       font-weight: 600;
-      color: $colorRed;
     }
   }
 
@@ -101,6 +100,7 @@ body {
   }
 
   a {
+    font-weight: 600;
     color: $colorRed;
   }
 
@@ -178,7 +178,7 @@ body {
 }
 
 .Footer {
-  background-color: $colorDarkBlue;
+  background-color: #003366c4;
   color: #fff;
   max-width: 100%;
   margin-top: auto;

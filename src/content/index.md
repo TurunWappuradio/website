@@ -12,4 +12,4 @@ Turun Wappuradion ensimmäinen syssyradiolähetys paukahtaa bittiavaruuteen Ylio
 
 ## Haluatko mukaan?
 
-Ohjelmahaku aukeaa pian [tänne](/ohjelmahaku.html). Jos haluat mukaan tekemään radiota laita vaikka viestiä toimituksellemme *toimitus[ät]turunwappuradio.com* ja kerro mitä haluaisit tehdä. Tai tuu meidän kokoukseen. Ne on viikottain Proffassa.
+Ohjelmahaku aukeaa pian [tänne](/ohjelmahaku.html). Jos haluat mukaan tekemään radiota, laita vaikka viestiä toimituksellemme *toimitus[ät]turunwappuradio.com* ja kerro mitä haluaisit tehdä. Tai tuu meidän kokoukseen. Ne on viikottain Proffassa.

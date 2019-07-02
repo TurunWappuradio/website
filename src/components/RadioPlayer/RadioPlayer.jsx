@@ -81,7 +81,7 @@ export default class extends React.Component {
           className={
             'RadioPlayer__Brand ' + (this.state.playing ? 'pulse' : '')
           }
-          src="leima.svg"
+          src="leima-syssy.png"
           alt="Turun Wappuradio"
         />
         {Date.now() >= 1556010000000 && (

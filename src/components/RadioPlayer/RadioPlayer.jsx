@@ -77,13 +77,15 @@ export default class extends React.Component {
 
     return (
       <div className="RadioPlayer">
-        <img
-          className={
-            'RadioPlayer__Brand ' + (this.state.playing ? 'pulse' : '')
-          }
-          src="leima-syssy.png"
-          alt="Turun Wappuradio"
-        />
+        <div className="RadioPlayer__BrandContainer">
+          <img
+            className={
+              'RadioPlayer__Brand ' + (this.state.playing ? 'pulse' : '')
+            }
+            src="leima-syssy.png"
+            alt="Turun Wappuradio"
+          />
+        </div>
         {Date.now() >= 1556010000000 && (
           <div className="RadioPlayer__NowPlaying">Nyt soi: {song}</div>
         )}

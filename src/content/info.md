@@ -28,4 +28,7 @@ Turun Wappuradio on syksyllä 2018 käynnistynyt poikkitieteellinen opiskelijara
   <div>
     <img src="leima-syssy.png"/>
   </div>
+  <div>
+    <img src="logo-turunwappuradio-musta.svg">
+  </div>
 </div>

@@ -9,7 +9,7 @@ const TextField = ({ label, placeholder, value, onChange, type }) => (
       placeholder={placeholder}
       value={value}
       onChange={onChange}
-      />
+    />
   </div>
 );
 

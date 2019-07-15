@@ -49,7 +49,7 @@ function renderShoutBox() {
 function renderMetadataForm() {
   const mountPoint = document.getElementById('metadata-root');
   if (mountPoint) {
-    ReactDOM.render(<MetadataForm/>, mountPoint);
+    ReactDOM.render(<MetadataForm />, mountPoint);
   }
 }
 

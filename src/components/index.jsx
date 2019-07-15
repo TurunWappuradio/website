@@ -6,4 +6,12 @@ import ShoutBox from './ShoutBox/ShoutBox';
 import Dashboard from './Dashboard/Dashboard';
 import MetadataForm from './MetadataForm/MetadataForm';
 
-export { RadioPlayer, VideoChatHider, ShowList, MusicLibrary, ShoutBox, Dashboard, MetadataForm };
+export {
+  RadioPlayer,
+  VideoChatHider,
+  ShowList,
+  MusicLibrary,
+  ShoutBox,
+  Dashboard,
+  MetadataForm
+};

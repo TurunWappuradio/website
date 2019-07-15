@@ -40,9 +40,11 @@ class Chat extends Component {
 
     // Connect client
     this.ws.onopen = () => {
-      this.ws.send(JSON.stringify({
-        type: 'reload'
-      }));
+      this.ws.send(
+        JSON.stringify({
+          type: 'reload'
+        })
+      );
 
       if (!!this.state.name) {
         this.handleSubmitName(this.state.name);
@@ -61,12 +63,15 @@ class Chat extends Component {
 
       if (type === 'message' && name && message) {
         this.addMessage({ name, message });
-      }
-      else if (type === 'admin') {
+      } else if (type === 'admin') {
         this.setState({ isAdmin: true });
       }
       // delete all messages from the banned person, unless this is them
-      else if (type === 'ban' && name === 'Toimitus' && message !== this.state.name) {
+      else if (
+        type === 'ban' &&
+        name === 'Toimitus' &&
+        message !== this.state.name
+      ) {
         this.setState({
           messages: this.state.messages.filter(m => m.name !== message)
         });
@@ -93,7 +98,9 @@ class Chat extends Component {
     };
 
     this.setState({
-      messages: [...this.state.messages, message].slice(-(this.props.limit || 20)),
+      messages: [...this.state.messages, message].slice(
+        -(this.props.limit || 20)
+      ),
       colorSwitcher: !this.state.colorSwitcher
     });
     this.scrollToBottom();
@@ -173,11 +180,12 @@ class Chat extends Component {
             ) : (
               <NameInput
                 ws={this.ws}
-                onSubmitName={(name) => {
+                onSubmitName={name => {
                   this.handleSubmitName(name);
                   this.setState({ name });
                 }}
-              />)}
+              />
+            )}
           </div>
         </div>
       </div>

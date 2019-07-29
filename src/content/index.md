@@ -13,6 +13,6 @@ Turun Wappuradio on syksyllä 2018 käynnistynyt poikkitieteellinen opiskelijara
 
 ## Haluatko mukaan?
 
-Syksyn ohjelmaun ilmoittautumislomake on [täällä](/ohjelmahaku.html). 
+Syksyn ohjelmahaun ilmoittautumislomake on [täällä](/ohjelmahaku.html). 
 
 Jos haluat mukaan muuten tuottamaan radiota, laita viestiä toimituksellemme <a href="mailto: toimitus@turunwappuradio.com">toimitus[ät]turunwappuradio.com</a> ja kerro mitä haluaisit tehdä. Meillä on juontohommien lisäksi tarjolla mm. tekniikkaa ja markkinointia.

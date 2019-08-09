@@ -14,8 +14,4 @@ Keväällä 2019 Suomen ensimmäisessä Turun Wappuradiossa päästettiin ääne
 <img alt="ideointi" src="/wapuradio.jpg" />
 </div>
 
-Ohjelmahaku on auki maanantaihin 5.8.2019 kello 12.00 asti. *Älä missaa unelmiesi radiojuontoa, vaan ilmoita ohjelmasi välittömästi.*
-
-<div class="ButtonContainer">
-  <a target="_blank" href="https://docs.google.com/forms/d/e/1FAIpQLSc5XdDJf7j7OBb_H0xKfowXwvpQWfj4x2LsJ5Dbbp8wJWNQ6w/viewform?usp=sf_link">Ilmoittautumiseen</a>
-</div>
+Ohjelmahaku on tän syssyn osalta kerennyt menemään kiinni, mutta haethan meidän wappulähetyksen. Haku aukeaa tammikuussa.

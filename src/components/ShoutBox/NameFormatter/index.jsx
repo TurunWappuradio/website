@@ -9,7 +9,7 @@ const Index = ({ name }) => (
 const findColor = name => {
   switch (name) {
     case 'Toimitus':
-      return { color: '#ee6b60' };
+      return { color: '#a53a4d' };
     case 'Palvelin':
       return { color: '#fdfd96' };
     default:

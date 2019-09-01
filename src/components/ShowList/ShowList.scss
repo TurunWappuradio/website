@@ -1,7 +1,6 @@
 .ShowList {
   &-selector {
     padding: 20px 0px;
-    display: none;
   }
 
   &-selector--mobile {
@@ -59,14 +58,7 @@
 }
 
 @media (min-width: 640px) {
-  .ShowList-selector--mobile {
-    display: none;
-  }
 
-  .ShowList-selector {
-    display: flex;
-    justify-content: space-between;
-  }
 }
 
 @media (min-width: 960px) {

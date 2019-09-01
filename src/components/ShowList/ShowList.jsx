@@ -1,7 +1,6 @@
 import React from 'react';
 import { groupBy, keys, head } from 'ramda';
 import { format, isWithinRange, isBefore } from 'date-fns';
-import Dropdown from 'react-dropdown';
 import fi from 'date-fns/locale/fi';
 
 import ShowCard from '../ShowCard/ShowCard';
@@ -12,17 +11,6 @@ const getDateKeyFormat = dateTime => format(dateTime, 'DD.M');
 const byDate = groupBy(item => getDateKeyFormat(item.startDatetime));
 
 const showData = getProgramData();
-
-const mobileSelectorOptions = (groupedShows, dates) => {
-  return dates.map(date => {
-    return {
-      label: format(groupedShows[date][0].startDatetime, 'dddd DD.M.', {
-        locale: fi
-      }),
-      value: date
-    };
-  });
-};
 
 export default class extends React.Component {
   constructor(props) {
@@ -109,23 +97,12 @@ export default class extends React.Component {
               key={date}
               style={openDate === date ? { color: '#A53A4D' } : {}}
               onClick={() => this.selectDate(date)}>
-              {openDate === date
-                ? format(groupedShows[date][0].startDatetime, 'dddd DD.M.', {
-                    locale: fi
-                  })
-                : format(groupedShows[date][0].startDatetime, 'dd DD.M.', {
-                    locale: fi
-                  })}
+              {format(groupedShows[date][0].startDatetime, 'dddd D.M.', {
+                locale: fi
+              })}
             </button>
           ))}
         </div>
-        <Dropdown
-          className="ShowList-selector--mobile"
-          options={mobileSelectorOptions(groupedShows, dates)}
-          onChange={opt => this.selectDate(opt.value)}
-          value={openDate}
-          placeholder="Valitse päivä"
-        />
         {timesWithAppliedFilter &&
           timesWithAppliedFilter.map((item, idx) => (
             <ShowCard

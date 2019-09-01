@@ -8,6 +8,8 @@ layout: index.html
 
 Turun Wappuradio on syksyllä 2018 käynnistynyt poikkitieteellinen opiskelijaradio, joka lähettää ympärivuorokautisesti ohjelmaa wappuna. Turun Wappuradion ensimmäinen lähetys oli 23.–30.4.2019.
 
+Syssyradio on maistiainen ensi wapun isommasta lähetyksestä. Syssyradio pamahtaa internetaalloille 3.-4.9.2019.
+
 ## Turun Wappuradiosta kirjoitettua
 
 * [Vappu aloittaa kevään, TYY:n karkelot vapun](https://www.aamuset.fi/teemat/4556167/Vappu+aloittaa+kevaan+TYYn+karkelot+vapun) (Aamuset, 30.4.2019)

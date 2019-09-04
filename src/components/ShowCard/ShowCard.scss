@@ -59,6 +59,8 @@
       }
   
       > .ShowCard-creators {
+        max-width: calc(100% - 200px);
+        text-align: right;
         top: 10px;
         right: 10px;
         position: absolute;
@@ -138,6 +140,7 @@
 
 
         > .ShowCard-creators {
+          max-width: 100%;
           bottom: 40px;
           top: auto;
           display: flex;

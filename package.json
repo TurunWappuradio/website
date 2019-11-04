@@ -36,7 +36,7 @@
     "date-fns-timezone": "^0.1.4",
     "google-auth-library": "^3.1.2",
     "googleapis": "^37.2.0",
-    "handlebars": "^4.1.1",
+    "handlebars": "^4.1.2",
     "handlebars-helpers": "^0.10.0",
     "http-server": "^0.11.1",
     "metalsmith": "^2.1.0",

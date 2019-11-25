@@ -9,7 +9,7 @@
     "build-metalsmith": "node build.js",
     "build-js": "webpack",
     "build-all": "npm run clean && npm run build-extras && npm run build-js",
-    "copy-assets": "shx mkdir -p dist/ && cp -r src/assets/* dist/",
+    "copy-assets": "shx mkdir -p dist/ && shx cp -r src/assets/* dist/",
     "prettify": "prettier --write \"src/**/*.{js,jsx}\"",
     "clean": "shx rm -rf dist",
     "server": "http-server dist",

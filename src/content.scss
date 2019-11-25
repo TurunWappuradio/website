@@ -113,9 +113,20 @@ body {
     }
   }
 
-  ul {
+  ul, ol {
     padding-left: 20px;
-    color: white;
+    color: $colorOrange;
+  }
+
+  ol > li {
+    list-style-type: decimal;
+    font-size: 1.1rem;
+    padding-left: 10px;
+
+    > span {
+      color: white;
+      font-size: 1rem;
+    }
   }
 
   a {

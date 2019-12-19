@@ -21,9 +21,9 @@ korkeakoulurajojen!
 
 ## Pähkinänkuoressa
 
-* Olemme kuultavissa *23.4.–30.4.2020* osoitteessa turunwappuradio.com
+* Olemme kuultavissa *23.4.&#8209;30.4.2020* osoitteessa turunwappuradio.com
 * Tykitämme ohjelmaa koko viikon *24/7*
-* Ohjelmahaku on käynnissä *7.1.–7.2.2020*
+* Ohjelmahaku on käynnissä *7.1.&#8209;7.2.2020*
 * Studiomme löytyy Turun yliopistonmäeltä
 * Somesta meidät löydät [Facebookista](https://www.facebook.com/turunwappuradio) ja [Instagramista](https://www.instagram.com/turunwappuradio)
 

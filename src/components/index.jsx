@@ -5,5 +5,15 @@ import MusicLibrary from './MusicLibrary/MusicLibrary';
 import ShoutBox from './ShoutBox/ShoutBox';
 import Dashboard from './Dashboard/Dashboard';
 import MetadataForm from './MetadataForm/MetadataForm';
+import CalendarEvents from './CalendarEvents/CalendarEvents';
 
-export { RadioPlayer, VideoChatHider, ShowList, MusicLibrary, ShoutBox, Dashboard, MetadataForm };
+export {
+  RadioPlayer,
+  VideoChatHider,
+  ShowList,
+  MusicLibrary,
+  ShoutBox,
+  Dashboard,
+  MetadataForm,
+  CalendarEvents
+};

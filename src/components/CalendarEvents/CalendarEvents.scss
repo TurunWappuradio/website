@@ -1,0 +1,36 @@
+.CalendarContainer {
+  color: #fff;
+  line-height: 1.4;
+
+  h2 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    padding: 20px 0 10px;
+  }
+
+  .CalendarEvent {
+    padding: 10px;
+
+    &:nth-child(even) {
+      background-color: rgba(0, 0, 0, 0.21);
+    }
+
+    > h3 {
+      font-size: 1.4rem;
+      color: $colorOrange;
+    }
+  }
+
+  > .align-right {
+    width: 100%;
+    text-align: right;
+    margin-top: 5px;
+    
+    > a {
+      text-decoration: underline;
+      cursor: pointer;
+      margin-right: 10px;
+    }
+  }
+}
+

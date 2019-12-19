@@ -31,7 +31,9 @@ korkeakoulurajojen!
 
 Ohjelmahaku lisätietoineen löytyy [ohjelmahaku-sivulta](/ohjelmahaku.html). 
 Jos pelkkä ohjelman tekeminen ei riitä, vaan haluat mukaan esimerkiksi tekniikka- tai markkinointitiimiin, laita viestiä
-toimituksellemme: *toimitus[ät]turunwappuradio.com*.
+toimituksellemme: *toimitus[ät]turunwappuradio.com*. Tai tuu meidän kokoukseen. Ne on yleensä Proffassa.
 
 Mikäli haluat kohdentaa yrityksesi markkinointia korkeakouluopiskelijoille, ota yhteyttä 
 *toimitus[ät]turunwappuradio.com*.
+
+<div id="calendar-root"></div>

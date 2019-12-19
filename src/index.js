@@ -6,7 +6,8 @@ import {
   ShowList,
   MusicLibrary,
   Dashboard,
-  MetadataForm
+  MetadataForm,
+  CalendarEvents
 } from './components';
 
 function renderRadio() {
@@ -49,7 +50,14 @@ function renderShoutBox() {
 function renderMetadataForm() {
   const mountPoint = document.getElementById('metadata-root');
   if (mountPoint) {
-    ReactDOM.render(<MetadataForm/>, mountPoint);
+    ReactDOM.render(<MetadataForm />, mountPoint);
+  }
+}
+
+function renderCalendarEvents() {
+  const mountPoint = document.getElementById('calendar-root');
+  if (mountPoint) {
+    ReactDOM.render(<CalendarEvents />, mountPoint);
   }
 }
 
@@ -62,6 +70,7 @@ function mountComponents() {
   }
   renderMusic();
   renderShows();
+  renderCalendarEvents();
 }
 
 mountComponents();

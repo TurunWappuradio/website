@@ -4,24 +4,34 @@ draft: false
 layout: index.html
 ---
 
-# Syyskokous 2.12.
+# Turun Wappuradio - comeback!
 
-Turun Wappuradion syyskokous pidetään maanantaina 2.12.2019 kello 18:00 paikassa Proffan Kellari. Tervetuloa paikalle!
+Turun korkeakouluopiskelijoiden yhteinen kampusradio tulee taas! Ensimmäistä kertaa keväällä 2019 toteutettu Turun
+Wappuradio lähettää timanttista ohjelmaa kellon ympäri wappuviikolla. Edellisissä lähetyksissä on kuultu esimerkiksi
+dinosauruksia, vanhoja nahkoja, labraråttia, yritysjuttuja sekä tietysti musiikkia - 120 opiskelijan yhteistyönä yli
+korkeakoulurajojen!
 
-Esityslista pitää sisällään seuraavaa:
+<div class="QuoteContainer">
+  "Wappuradio on syväluotaava katsaus moderniin opiskelijaelämään. Sen parissa voi muistella menneitä ja valmistautua
+  suureen kansanjuhlaan eli vappuun."
+  <p>
+    –Turun Sanomat 23.4.2019
+  </p>
+</div>
 
-<ol>
-  <li><span>kokouksen avaus</span></li>
-  <li><span>puheenjohtajan, sihteerin, kahden pöytäkirjantarkastajan ja ääntenlaskijan valinta</span></li>
-  <li><span>kokouksen laillisuus ja päätösvaltaisuus</span></li>
-  <li><span>kokouksen työjärjestyksen hyväksyntä</span></li>
-  <li><span>ilmoitusasiat</span></li>
-  <li><span>toimintasuunnitelma sekä tulo- ja menoarvio</span></li>
-  <li><span>liittymis- ja jäsenmaksun suuruus</span></li>
-  <li><span>puheenjohtajan ja päätoimittajan valinta vuodelle 2020</span></li>
-  <li><span>muu hallitus vuodelle 2020</li>
-  <li><span>toiminnantarkastajan ja varatoiminnantarkastajan valinta</span></li>
-  <li><span>päätetään hallituksen ehdotuksesta TYYn järjestöksi hakemisesta</span></li>
-  <li><span>päätetään hallituksen ehdotuksesta TUOn kerhoksi hakemisesta</span></li>
-  <li><span>muut esille tulevat asiat</span></li>
-</ol>
+## Pähkinänkuoressa
+
+* Olemme kuultavissa *23.4.–30.4.2020* osoitteessa turunwappuradio.com
+* Tykitämme ohjelmaa koko viikon *24/7*
+* Ohjelmahaku on käynnissä *7.1.–7.2.2020*
+* Studiomme löytyy Turun yliopistonmäeltä
+* Somesta meidät löydät [Facebookista](https://www.facebook.com/turunwappuradio) ja [Instagramista](https://www.instagram.com/turunwappuradio)
+
+## Haluatko mukaan?
+
+Ohjelmahaku lisätietoineen löytyy [ohjelmahaku-sivulta](/ohjelmahaku.html). 
+Jos pelkkä ohjelman tekeminen ei riitä, vaan haluat mukaan esimerkiksi tekniikka- tai markkinointitiimiin, laita viestiä
+toimituksellemme: *toimitus[ät]turunwappuradio.com*.
+
+Mikäli haluat kohdentaa yrityksesi markkinointia korkeakouluopiskelijoille, ota yhteyttä 
+*toimitus[ät]turunwappuradio.com*.

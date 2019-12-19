@@ -4,12 +4,14 @@ draft: false
 layout: index.html
 ---
 
-# Ohjelmahaku on sulkeutunut vuodelta 2019
+# Turun Wappuradion ohjelmahaku käynnistyy 7.1.2020
 
-Ensi vuonna uusiksi. Laita kuitenkin viestiä meille *toimitus[ät]turunwappuradio.com*, jos tahdot muuten lähteä mukaan tuottamaan Turkulaista Wappuradiota
+Turun Wappuradio ravistaa jälleen taajuuksia wappuviikolla! Ohjelmaa tykitetään vuorokauden ympäri *23.–30.4.2020*. Nyt
+on sinun mahdollisuutesi tulla tekemään omaa radio-ohjelmaa - aikaisempaa kokemusta ei tarvita! Edellisissä lähetyksissä
+on kuultu improvisoitua live-musiikkia, labraråttia, liiga-avauksia, Siperian läpi matkanneita teekkareita,
+korkeakoulujen rehtoreita, monirakkauden sanansaattajia sekä muita radio-ohjelmien huipputekijöitä.
 
-Päätoimitus
-
+Mutta malta vielä! Turun Wappuradion ohjelmahakulomake ilmestyy tälle sivulle *tiistaina 7.1*.
 
 <div class="ImageContainer">
 <img alt="ideointi" src="/wapuradio.jpg" />

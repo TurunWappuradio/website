@@ -143,7 +143,6 @@ body {
 
   a {
     color: $colorOrange;
-    font-style: italic;
     font-weight: 700;
   }
 
@@ -221,7 +220,7 @@ body {
 }
 
 .Footer {
-  background-color: $colorOrange;
+  background-color: #000;
   color: #fff;
   max-width: 100%;
   margin-top: 50px;
@@ -266,14 +265,15 @@ body {
     > li > .social-icon {
       width: 32px;
       height: 32px;
+      text-decoration: none;
 
       > svg {
         width: 32px;
         margin: 16px;
-        fill: $colorBlue;
+        fill: #fff;
 
         &:hover {
-          fill: white;
+          fill: $colorBlue;
           transform: scale(1.05);
         }
       }

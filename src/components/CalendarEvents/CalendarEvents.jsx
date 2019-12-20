@@ -17,7 +17,7 @@ export default () => {
     fetch(eventsUrl)
       .then(response => response.json())
       .then(json => setEvents(json.items));
-  });
+  }, []);
   
   if (events.length === 0) return null;
 

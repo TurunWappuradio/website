@@ -50,11 +50,6 @@ body {
       -moz-box-shadow: 2px 2px 3px 0px rgba(0,0,0,0.21);
       box-shadow: 2px 2px 3px 0px rgba(0,0,0,0.21);
       transition: all ease-in-out .2s;
-
-      &:hover {
-        -webkit-filter: blur(3px); /* Safari 6.0 - 9.0 */
-        filter: blur(3px);
-      }
     }
 
     @media (max-width: 800px), (max-screen-width: 800px) {
@@ -181,6 +176,11 @@ body {
         margin: 20px;
       }
     }
+  }
+
+  > .SubText {
+    font-style: italic;
+    font-size: 0.9em;
   }
 }
 

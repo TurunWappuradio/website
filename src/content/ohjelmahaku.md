@@ -13,13 +13,17 @@ matkanneita teekkareita, korkeakoulujen rehtoreita, monirakkauden sanansaattajia
 huipputekijöitä.
 
 Nyt on sinun vuorosi! Täytä alle oleva lomake ja kerro hakemuksessasi:
+
 * Juontajien nimet ja yhteystiedot
 * Ohjelmaideasi
-* Ehdotus ohjelmasi *ajankohdasta* (aamu, iltapäivä, ilta, yö, aamuyö)
+* Ehdotus ohjelmasi ajankohdasta (aamu, iltapäivä, ilta, yö, aamuyö)
+
 Järjestämme ennen lähetystä toimittajakoulutuksen, joka pitää sisällään esimerkiksi jingleäänityksiä* sekä
 valokuvaussession ohjelmakuvaa varten.
 
-Kui sää viel orotat? Hae ny jo! Lomake sulkeutuu 7.2.2020.
+Kui sää viel orotat?
+[Hae ny jo!](https://docs.google.com/forms/d/e/1FAIpQLSc5FI8_tgP4-kKSyqvwIKtoUsQnEImtJ0PZVwMm6Vhe6L7r0Q/viewform?usp=sf_lin) 
+Lomake sulkeutuu 7.2.2020.
 
 Lisätiedot: *toimitus[ät]turunwappuradio.com*
 

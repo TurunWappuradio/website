@@ -28,7 +28,7 @@ Lomake sulkeutuu 7.2.2020.
 Lisätiedot: *toimitus[ät]turunwappuradio.com*
 
 <div class="ImageContainer">
-<img alt="Parrakas mieshenkilö studiossa" src="/iirostudiossa.jpeg" />
+<img alt="Turun Wappuradion studio" src="/studio.jpg" />
 </div>
 
 Turun Wappuradio on syksyllä 2018 käynnistynyt poikkitieteellinen opiskelijaradio, joka lähettää ympärivuorokautisesti

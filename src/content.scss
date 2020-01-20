@@ -40,6 +40,8 @@ body {
     margin: 20px 0px;
     width: 100%;
     display: flex;
+    flex-direction: column;
+    text-align: right;
     padding: 20px 60px;
     > img {
       border-radius: 5px;
@@ -54,6 +56,13 @@ body {
 
     @media (max-width: 800px), (max-screen-width: 800px) {
       padding: 20px;
+    }
+
+    > p {
+      color: #fff;
+      padding-top: 0.5rem;
+      padding-right: 1rem;
+      font-size: 0.9em;
     }
   }
 

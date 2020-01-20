@@ -29,6 +29,7 @@ Lisätiedot: *toimitus[ät]turunwappuradio.com*
 
 <div class="ImageContainer">
 <img alt="Turun Wappuradion studio" src="/studio.jpg" />
+<p>Turun Sanomat / Jori&nbsp;Liimatainen</p>
 </div>
 
 Turun Wappuradio on syksyllä 2018 käynnistynyt poikkitieteellinen opiskelijaradio, joka lähettää ympärivuorokautisesti

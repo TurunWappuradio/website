@@ -18,7 +18,7 @@ export default class extends React.Component {
       song: ''
     };
 
-    this.onPlayPause.bind(this);
+    this.onPlayStop.bind(this);
     this.onVolumeOnOff.bind(this);
     this.connectWebSocket = this.connectWebSocket.bind(this);
 
@@ -50,10 +50,13 @@ export default class extends React.Component {
     };
   }
 
-  onPlayPause() {
-    this.audio.current.paused
-      ? this.audio.current.play()
-      : this.audio.current.pause();
+  onPlayStop() {
+    if (this.audio.current.paused) this.audio.current.play();
+    else {
+      // Pause, but then load the stream again ready to start
+      this.audio.current.pause();
+      this.audio.current.src = AUDIO_STREAM_URL;
+    }
 
     this.setState({
       playing: !this.state.playing
@@ -89,7 +92,7 @@ export default class extends React.Component {
         )}
         <div className="RadioPlayer__Controls">
           <MuteControl muted={muted} onClick={() => this.onVolumeOnOff()} />
-          <PlayControl playing={playing} onClick={() => this.onPlayPause()} />
+          <PlayControl playing={playing} onClick={() => this.onPlayStop()} />
           <ExternalLinkControl onClick={this.onOpenExternal} />
         </div>
         <audio ref={this.audio}>

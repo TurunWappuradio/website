@@ -1,6 +1,6 @@
 import React from 'react';
 
-import PauseIcon from '../../../assets/icons/baseline-pause.svg';
+import StopIcon from '../../../assets/icons/baseline-stop.svg';
 import PlayIcon from '../../../assets/icons/baseline-play.svg';
 
 const ICON_SIZE = '48px';
@@ -11,7 +11,7 @@ export default ({ onClick, playing }) => (
     title="Play/Pause"
     onClick={() => onClick()}>
     {playing ? (
-      <PauseIcon
+      <StopIcon
         width={ICON_SIZE}
         height={ICON_SIZE}
         viewBox={[0, 0, 24, 24]}

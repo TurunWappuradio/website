@@ -15,7 +15,7 @@ CD-levyiltä ripattavan musiikin tulee olla pakkausmuodoltaan häviötön FLAC.
 
 Digitaalisesti ostetun musiikin tulee olla laadultaan FLAC (häviötön pakkaus). Jotta musiikin laillisuus saadaan
 varmistettua, tarvitsemme tositteen tämän laillisuudesta. Tositteeksi riittää ostokuitti. Joten älä ryhdy imuroimaan
-P2P-verkosta musiikkia, koska illegal as fuck.
+P2P-verkosta musiikkia, koska laitonta as fuck.
 
 Kun olet saanut kerättyä itsellesi laillisesti ostettua musiikkia FLAC-pakkausmuodossa kaikkine tarvittavine
 tositteineen, lähetä se meille alla olevan kaavakkeen kautta.

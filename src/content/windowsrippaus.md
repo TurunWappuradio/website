@@ -172,9 +172,9 @@ profiilillesi nimi. Tämä tallentaa asetukset erikseen valittavaan profiiliin (
 
 Ennen rippaamista:
 
-1. Tarkista, löytyykö levy jo [kirjastosta](/musiikki.html). Se löytyy hakemistosta <artistin nimi/albumin nimi>/ tai
+1. Tarkista, löytyvätkö kappaleet jo [kirjastosta](/musiikki.html). Se löytyy hakemistosta <artistin nimi/albumin nimi>/ tai
 <albumin nimi>, jos kyseessä on kokoelmalevy.
-2. Tarkista uudelleen, löytyykö levy jo [kirjastosta](/musiikki.html). Jos löytyy, älä kuluta tähän aikaa, vaan siirry
+2. Tarkista uudelleen, löytyvätkö kappaleet jo [kirjastosta](/musiikki.html). Jos löytyy, älä kuluta tähän aikaa, vaan siirry
 seuraavaan levyyn.
 3. Jos levyssäsi sattuu olemaan jonkinlainen kopiosuojaus, älä turhaan yritä rippailla sitä, vaan siirry seuraavaan.
 Kopiosuojaukset olivat yleisiä 2000-luvun alkuvuosina ja tällaisen levyn voi tunnistaa esim. kannen teksteistä Copy

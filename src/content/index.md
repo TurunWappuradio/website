@@ -29,11 +29,11 @@ korkeakoulurajojen!
 
 ## Haluatko mukaan?
 
-Ohjelmahaku lisätietoineen löytyy [ohjelmahaku-sivulta](/ohjelmahaku.html). 
-Jos pelkkä ohjelman tekeminen ei riitä, vaan haluat mukaan esimerkiksi tekniikka- tai markkinointitiimiin, laita viestiä
-toimituksellemme: *toimitus[ät]turunwappuradio.com*. Tai tuu meidän kokoukseen. Ne on yleensä Proffassa.
+Ohjelmahaku on tältä vuodelta sulkeutunut, mutta jos haluat mukaan esimerkiksi tekniikka- tai markkinointitiimiin, laita
+viestiä toimituksellemme: *toimitus[ät]turunwappuradio.com*. Tai tuu meidän kokoukseen. Ne on yleensä Proffassa.
 
-Mikäli haluat kohdentaa yrityksesi markkinointia korkeakouluopiskelijoille, ota yhteyttä 
-*toimitus[ät]turunwappuradio.com*.
+Tarjoamme myös loistavan mahdollisuuden kohdentaa markkinointia korkeakouluopiskelijoille.
+Yhteistyömahdollisuuksiimme kuuluu mm. radiomainos, yrityksen logo sivuille ja painokamaan sekä tunnin ohjelma
+primetimessa. Mikäli kiinnostuit, ota yhteyttä *toimitus[ät]turunwappuradio.com*.
 
 <div id="calendar-root"></div>

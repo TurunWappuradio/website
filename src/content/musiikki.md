@@ -4,10 +4,17 @@ draft: false
 layout: guide.html
 ---
 
-# Musiikin rippaaminen CD-levyltä ja digitaalisesti ostettu musiikki
+# Musiikin soittaminen radiossa
 
 Gramex myöntää digitaalisen musiikin soittoluvat nettiradioissa ja vaatii laillisesti ostetun musiikin käyttöä. 
-laillisesti ostetut CD-levyt ja digitaalinen ostettu musiikki ovat sallittuja.
+Musiikkia ei saa soittaa suoratoistopalveluista. *Ei siis Spotifya tai YouTubea.* Laillisesti ostetut CD-levyt ja
+digitaalinen ostettu musiikki ovat sallittuja.
+
+Wappuradion webcasting-soppari rajoittaa musiikin soittoa seuraavasti:
+1. Enempää kuin 3 uraa samalta albumilta eikä enempää kuin 2 saman albumin uraa peräkkäin tai  
+2. enempää kuin 4 uraa samalta artistilta eikä enempää kuin 3 saman artistin uraa peräkkäin.
+
+## Musiikin rippaaminen CD-levyltä
 
 CD-levyn tulee olla virallisesti julkaistu versio, itse tehdyt kotialbumit eivät kelpaa tähän tarkoitukseen. 
 CD-levyiltä ripattavan musiikin tulee olla pakkausmuodoltaan häviötön FLAC. 

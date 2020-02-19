@@ -7,7 +7,7 @@ layout: index.html
 # Ohjelmahaku on sulkeutunut vuodelta 2020
 
 Ensi vuonna uusiksi. Laita kuitenkin viestiä meille *toimitus[ät]turunwappuradio.com*, jos tahdot muuten lähteä mukaan
-tuottamaan Turkulaista Wappuradiota
+tuottamaan turkulaista Wappuradiota
 
 Päätoimitus
  

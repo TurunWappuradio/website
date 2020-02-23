@@ -26,8 +26,14 @@ export default () => {
       <h2>Tapahtumat</h2>
       {events.map((event, idx) => {
         const { summary, location } = event;
-        const startDateTime = new Date(event.start.date || event.start.dateTime)
-        const start = format(startDateTime, 'dddd, DD.MM. kello H:mm', { locale: fi })
+
+        const startDateTime = new Date(event.start.date || event.start.dateTime);
+
+        const dateFormat = event.start.dateTime
+          ? 'dddd, DD.MM. kello H:mm'
+          : 'dddd, DD.MM.';
+
+        const start = format(startDateTime, dateFormat, { locale: fi });
 
         return (
           <div className="CalendarEvent" key={idx}>

@@ -497,8 +497,17 @@ body {
     display: flex;
     justify-content: space-between; } }
 
-.TracklistItem {
+.Tracklist {
   color: white; }
+
+.TracklistHeading {
+  font-size: 1.5rem;
+  padding-right: 2rem;
+  padding-bottom: 1rem; }
+
+.TracklistItem {
+  padding-bottom: 0.3rem;
+  padding-left: 0.3rem; }
 
 .TracklistSearch {
   height: 3em;

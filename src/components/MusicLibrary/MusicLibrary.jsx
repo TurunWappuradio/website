@@ -9,6 +9,7 @@ const MusicLibrary = () => {
   const filteredList = tracklist.filter(track => {
     return (
       track.artist.toLowerCase().indexOf(state.filter.toLowerCase()) !== -1 ||
+      track.album.toLowerCase().indexOf(state.filter.toLowerCase()) !== -1 ||
       track.title.toLowerCase().indexOf(state.filter.toLowerCase()) !== -1
     );
   });
@@ -38,13 +39,28 @@ const MusicLibrary = () => {
           placeholder="Suodata kappaleita..."
         />
       </div>
-      <ul>
-        {listToShow.map((track, index) => (
-          <li key={index} className="TracklistItem">
-            {track.artist} - {track.title}
-          </li>
-        ))}
-      </ul>
+      <table className="Tracklist">
+        <thead>
+          <td className="TracklistHeading">Artisti</td>
+          <td className="TracklistHeading">Albumi</td>
+          <td className="TracklistHeading">Kappale</td>
+        </thead>
+        <tbody>
+          {listToShow.map((track, index) => (
+            <tr key={index}>
+              <td className="TracklistItem">
+                {track.artist}
+              </td>
+              <td className="TracklistItem">
+                {track.album}
+              </td>
+              <td className="TracklistItem">
+                {track.title}
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
     </div>
   );
 };

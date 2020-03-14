@@ -4,6 +4,19 @@ draft: false
 layout: index.html
 ---
 
+# Koronaviiruspäivitys
+
+Viime päivien aikana on jouduttu perumaan monia tapahtumia, kun on pyritty hillitsemään koronaviruksen leviämistä. On 
+hienoa, miten aktiivisesti eri tahot ovat tähän osallistuneet, sillä terveys ja hyvinvointi on hyvin tärkeää.
+
+Turun  Wappuradion toimituksessa olemme pohtineet samoja kysymyksiä, mutta olemme päättäneet ainakin tämänhetkisen
+tiedon valossa *jatkaa radiomme järjestämistä normaalisti* erityisolosuhteet huomioiden. Wappu on kuitenkin meille
+tärkeä, ja haluaisimmekin pystyä tuottamaan viihdykettä kuuntelijoillemme niin monen muun asian peruuntuessa. 
+
+Studiossa tulee olemaan noin 5 ihmistä kerrallaan, joten arvioimme tapahtumamme riskit suhteellisen pieniksi. Lisäksi 
+tulemme kiinnittämään erityishuomiota myös studion hygieenisyyteen. Suunniteltu juontajakoulutus tullaan järjestämään 
+etäyhteyksien avulla, ja juontajia informoidaan tästä erikseen.
+
 # Turun Wappuradio - comeback!
 
 Turun korkeakouluopiskelijoiden yhteinen kampusradio tulee taas! Ensimmäistä kertaa keväällä 2019 toteutettu Turun

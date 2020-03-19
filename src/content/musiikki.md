@@ -8,11 +8,7 @@ layout: guide.html
 
 Gramex myöntää digitaalisen musiikin soittoluvat nettiradioissa ja vaatii laillisesti ostetun musiikin käyttöä. 
 Musiikkia ei saa soittaa suoratoistopalveluista. *Ei siis Spotifya tai YouTubea.* Laillisesti ostetut CD-levyt ja
-digitaalinen ostettu musiikki ovat sallittuja.
-
-Wappuradion webcasting-soppari rajoittaa musiikin soittoa seuraavasti:
-1. Enempää kuin 3 uraa samalta albumilta eikä enempää kuin 2 saman albumin uraa peräkkäin tai  
-2. enempää kuin 4 uraa samalta artistilta eikä enempää kuin 3 saman artistin uraa peräkkäin.
+digitaalinen ostettu musiikki ovat sallittuja. Wappuradion webcasting-soppari *ei rajoita* musiikin soittoa vuonna 2020.
 
 ## Musiikin rippaaminen CD-levyltä
 
@@ -36,7 +32,8 @@ Musansyöttö
 ## Löytyykö haluamasi musiikki kaupungin kirjastoista?
 
 Tänä keväänä meillä on käytössä myös Kirjasto-Iiro, joka hakee ja rippaa levykannasta puuttuvia levyjä kirjastosta.
-Täytä alla oleva kaavake ja Kirjasto-Iiro hoitaa loput.
+Täytä alla oleva kaavake ja Kirjasto-Iiro hoitaa loput. Kirjasto-Iiro on karanteenissa kirjastojen aukeamiseen saakka,
+mutta rippailtavaa saa toki silti ehdottaa.
 
 <div class="ButtonContainer">
 <a href="https://docs.google.com/forms/d/e/1FAIpQLSenV00_NDnDBw1lgZn1z2jGmnyWi5RPRKm34RG_Zn5vfb7IMA/viewform?usp=sf_link">

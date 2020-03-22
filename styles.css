@@ -498,18 +498,21 @@ body {
     justify-content: space-between; } }
 
 .Tracklist {
-  color: white; }
+  color: white;
+  width: 100%; }
+  .Tracklist tr:nth-child(even) {
+    background-color: rgba(0, 0, 0, 0.21); }
 
 .TracklistHeading {
   font-size: 1.5rem;
-  padding-right: 2rem;
-  padding-left: 0.3rem;
-  padding-bottom: 1rem; }
+  padding-left: 0.6rem;
+  padding-bottom: 1rem;
+  width: 33%; }
 
 .TracklistItem {
-  padding-bottom: 0.3rem;
-  padding-left: 0.3rem;
-  line-height: 1.2; }
+  padding: 0.2rem 0.3rem;
+  line-height: 1.2;
+  width: 33%; }
 
 .TracklistSearch {
   height: 3em;

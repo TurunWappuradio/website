@@ -1,16 +1,22 @@
 .Tracklist {
   color: white;
+  width: 100%;
+
+  tr:nth-child(even) {
+    background-color: rgba(0, 0, 0, 0.21);
+  }
 }
 
 .TracklistHeading {
   font-size: 1.5rem;
-  padding-right: 2rem;
-  padding-bottom: 1rem;
+  padding: 0.6rem 0.2rem;
+  width: 33%;
 }
 
 .TracklistItem {
-  padding-bottom: 0.3rem;
-  padding-left: 0.3rem;
+  padding: 0.3rem 0.2rem;
+  line-height: 1.2;
+  width: 33%;
 }
 
 .TracklistSearch {

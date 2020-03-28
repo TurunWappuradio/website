@@ -21,7 +21,17 @@ jobs:
 
       - name: Build static website
         env:
-
+          BROADCAST_MODE: ${{secrets.BROADCAST_MODE}}
+          GA_ID: ${{secrets.GA_ID}}
+          GOOGLE_API_KEY: ${{secrets.GOOGLE_API_KEY}}
+          GOOGLE_AUTH: ${{secrets.GOOGLE_AUTH}}
+          GOOGLE_CALENDAR_API_KEY: ${{secrets.GOOGLE_CALENDAR_API_KEY}}
+          GOOGLE_CALENDAR_ID: ${{secrets.GOOGLE_CALENDAR_ID}}
+          GOOGLE_CALENDAR_SHARE_URL: ${{secrets.GOOGLE_CALENDAR_SHARE_URL}}
+          GOOGLE_SPREADSHEET_ID: ${{secrets.GOOGLE_SPREADSHEET_ID}}
+          METADATA_API: ${{secrets.METADATA_API}}
+          METADATA_SERVER: ${{secrets.METADATA_SERVER}}
+          SHOUTBOX_SOURCE: ${{secrets.SHOUTBOX_SOURCE}}
         run: |
           npm install
           npm run build-all

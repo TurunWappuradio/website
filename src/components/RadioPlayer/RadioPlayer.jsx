@@ -2,7 +2,7 @@ import React from 'react';
 
 import PlayControl from './controls/PlayControl';
 import ExternalLinkControl from './controls/ExternalLinkControl';
-import MuteControl from './controls/MuteControl';
+import VolumeControl from './controls/VolumeControl';
 
 const AUDIO_STREAM_URL = 'https://player.turunwappuradio.com/wappuradio.mp3';
 const METADATA_SERVER_URL =
@@ -15,11 +15,13 @@ export default class extends React.Component {
     this.state = {
       playing: false,
       muted: false,
-      song: ''
+      song: '',
+      volumeLevel: 100,
     };
 
     this.onPlayStop.bind(this);
     this.onVolumeOnOff.bind(this);
+    this.changeVolume = this.changeVolume.bind(this);
     this.connectWebSocket = this.connectWebSocket.bind(this);
 
     this.audio = React.createRef();
@@ -71,12 +73,20 @@ export default class extends React.Component {
     });
   }
 
+  changeVolume(e) {
+    if (e.currentTarget && e.currentTarget.value) {
+      this.setState({ volumeLevel: e.currentTarget.value });
+      this.audio.current.volume = e.currentTarget.value / 100;
+      this.state.muted && this.onVolumeOnOff();
+    }
+  }
+
   onOpenExternal() {
     window.open(AUDIO_STREAM_URL, '_blank');
   }
 
   render() {
-    const { muted, playing, song } = this.state;
+    const { muted, playing, song, volumeLevel } = this.state;
 
     return (
       <div className="RadioPlayer">
@@ -91,7 +101,7 @@ export default class extends React.Component {
           <div className="RadioPlayer__NowPlaying">Nyt soi: {song}</div>
         )}
         <div className="RadioPlayer__Controls">
-          <MuteControl muted={muted} onClick={() => this.onVolumeOnOff()} />
+          <VolumeControl muted={muted} onClickMute={() => this.onVolumeOnOff()} volumeLevel={volumeLevel} changeVolume={this.changeVolume} />
           <PlayControl playing={playing} onClick={() => this.onPlayStop()} />
           <ExternalLinkControl onClick={this.onOpenExternal} />
         </div>

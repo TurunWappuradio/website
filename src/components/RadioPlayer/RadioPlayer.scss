@@ -69,6 +69,40 @@
     transition: all 0.3s ease;
 }
 
+.VolumeControl {
+  position: relative;
+  display: inline-block;
+}
+
+.VolumeSliderArea {
+  width: auto;
+  height: 12rem;
+  background-color: #325b84;
+  position: absolute;
+  bottom: 3rem;
+  border-radius: 5rem;
+}
+
+.VolumeSliderMute {
+  background-color: #ee6b60;
+  fill: white;
+  border-radius: 5rem;
+  margin: 0.3rem;
+  border: none;
+  height: 2.2rem;
+  width: 2.2rem;
+  cursor: pointer;
+}
+
+
+.VolumeSlider {
+  writing-mode: bt-lr; /* IE */
+  -webkit-appearance: slider-vertical; /* WebKit */
+  width: 100%;
+  height: 100%;
+  margin: 0;
+}
+
 @keyframes pulse {
     from {
         -webkit-transform: scale3d(1, 1, 1);

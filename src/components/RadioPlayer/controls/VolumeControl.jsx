@@ -15,8 +15,8 @@ const sliderStyle = {
 const railStyle = {
   margin: 'auto',
   height: '100%',
-  width: '0.5rem',
-  borderRadius: '0.5rem',
+  width: '8px',
+  borderRadius: '50px',
   cursor: 'pointer',
   backgroundColor: '#bbbbbb'
 };
@@ -84,7 +84,7 @@ export default ({ onClickMute, muted, volumeLevel, changeVolume }) => {
                 />
             </button>
           </div>
-          <div style={{ height: '80%', padding: "1.2rem 0 1.5rem 0" }}>
+          <div style={{ height: '80%', padding: "14px 0 25px 0" }}>
             {renderSlider([volumeLevel], changeVolume)}
           </div>
         </div>

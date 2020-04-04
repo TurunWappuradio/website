@@ -55,6 +55,7 @@
     "date-fns-timezone": "^0.1.4",
     "ramda": "^0.26.1",
     "react": "^16.8.6",
+    "react-compound-slider": "^2.5.0",
     "react-dom": "^16.8.6",
     "react-dropdown": "^1.6.4"
   }

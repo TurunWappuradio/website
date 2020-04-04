@@ -73,10 +73,10 @@ export default class extends React.Component {
     });
   }
 
-  changeVolume(e) {
-    if (e.currentTarget && e.currentTarget.value) {
-      this.setState({ volumeLevel: e.currentTarget.value });
-      this.audio.current.volume = e.currentTarget.value / 100;
+  changeVolume(valueArray) {
+    if (valueArray && valueArray.length === 1) {
+      this.setState({ volumeLevel: valueArray[0] });
+      this.audio.current.volume =  valueArray[0] / 100;
       this.state.muted && this.onVolumeOnOff();
     }
   }
@@ -101,7 +101,12 @@ export default class extends React.Component {
           <div className="RadioPlayer__NowPlaying">Nyt soi: {song}</div>
         )}
         <div className="RadioPlayer__Controls">
-          <VolumeControl muted={muted} onClickMute={() => this.onVolumeOnOff()} volumeLevel={volumeLevel} changeVolume={this.changeVolume} />
+          <VolumeControl
+            muted={muted}
+            onClickMute={() => this.onVolumeOnOff()}
+            volumeLevel={volumeLevel}
+            changeVolume={this.changeVolume}
+          />
           <PlayControl playing={playing} onClick={() => this.onPlayStop()} />
           <ExternalLinkControl onClick={this.onOpenExternal} />
         </div>

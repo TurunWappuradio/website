@@ -335,6 +335,14 @@ body {
     color: $colorOrange;
     padding: 10px 10px;
   }
+
+  &--interactive {
+    @media (min-width: 1400px), (min-device-width: 1400px) {
+      width: 100%;
+      max-width: 1600px;
+      padding: 20px;
+    }
+  }
 }
 
 .SectionHeader {

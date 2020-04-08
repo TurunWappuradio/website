@@ -1,4 +1,8 @@
 .ShowList {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
   &-selector {
     padding: 20px 0px;
     display: none;
@@ -28,16 +32,29 @@
     }
   }
 
+  &-dayTitle {
+    display: inline-block;
+    text-align: center;
+    width: 100%;
+    padding: 20px;
+    color: white;
+    font-size: 1.2rem;
+    font-weight: 600;
+  }
+
   &-header {
     display: flex;
     flex-direction: row;
+    margin-right: 10px;
+    width: 100%;
+    max-width: 900px;
 
     > h1 {
       flex: 1;
     }
   }
 
-  &-filterButton {
+  &-filterButton, &-widescreenButton {
     background: transparent;
     border: none;
     cursor: pointer;
@@ -55,6 +72,91 @@
     &:hover {
       color: $colorOrange;
     }
+  }
+
+  &-widescreenButton {
+    @media (max-width: 1400px), (max-device-width: 1400px) {
+      display: none;
+    }
+  }
+
+  &-widescreenCardContainer, &-daySpacer {
+    padding: 10px;
+
+    &.height-0 { height: 40px; }
+    &.height-1 { height: 80px; }
+    &.height-2 { height: 160px; }
+    &.height-3 { height: 240px; }
+    &.height-4 { height: 320px; }
+    &.height-5 { height: 400px; }
+    &.height-6 { height: 480px; }
+    &.height-7 { height: 560px; }
+    &.height-8 { height: 640px; }
+    &.height-9 { height: 720px; }
+    &.height-10 { height: 800px; }
+    &.height-11 { height: 880px; }
+    &.height-12 { height: 960px; }
+  }
+
+  &-widescreenCard {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 2px;
+    position: relative;
+    background-color: #ee6b60;
+    box-shadow: 2px 2px 3px 0px rgba(0,0,0,0.21);
+    height: 100%;
+
+    > h1 {
+      color: white;
+      font-size: 0.9rem;
+      width: 100%;
+      line-height: 1.2;
+    }
+
+    &.color-1,
+    &.color-2,
+    &.color-3,
+    &.color-4,
+    &.color-5,
+    &.color-6,
+    &.color-7 {
+      background-color: #325b84;
+    }
+
+    &.color-14 {
+      background-color: #5bbfbf;
+    }
+  }
+
+  &-responsive {
+    max-width: 900px;
+  }
+
+  &-widescreen {
+    display: flex;
+    max-width: 100%;
+
+  }
+  
+  &-timestampContainer {
+    padding-top: 50px;
+  }
+
+  &-timestamp {
+    height: 80px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: white;
+  }
+
+  &-day {
+    width: 12.5%;
+    box-sizing: border-box;
   }
 }
 

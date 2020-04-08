@@ -9,6 +9,7 @@
   box-shadow: 2px 2px 3px 0px rgba(0,0,0,0.21);
   overflow: hidden;
   height: 150px;
+  max-width: 900px;
 
   > .ShowCard-heroContainer {
     position: relative;
@@ -94,6 +95,24 @@
       .ShowCard-creators {
         display: none;
       }
+    }
+  }
+
+  > .ShowCard-widescreenContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    text-align: center;
+
+    > h2 {
+      color: white;
+    }
+
+    > h1 {
+      color: white;
+      font-size: 1.4rem;
     }
   }
 

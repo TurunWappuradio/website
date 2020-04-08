@@ -23,7 +23,10 @@ export default props => {
       key={`showCard-${id}`}
       className={`ShowCard ${open ? 'ShowCard-open' : ''}`}
       onClick={selectFn}
-      style={{ backgroundColor: placeholderColors[index % 2] }}
+      style={{
+        backgroundColor: placeholderColors[index % 2],
+        cursor: selectFn ? 'pointer' : ''
+      }}
       role="button">
       <div className="ShowCard-heroContainer">
         <img className="ShowCard-hero" src={background} />

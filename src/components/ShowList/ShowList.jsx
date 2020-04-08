@@ -127,10 +127,7 @@ export default class extends React.Component {
           </button>
         </div>
         {widescreen ? (
-          <WidescreenShowList
-            groupedShows={groupedShows}
-            onChangeSelected={item => this.changeSelected(item)}
-          />
+          <WidescreenShowList showData={showData} groupedShows={groupedShows} />
         ) : (
           <ResponsiveShowList
             dates={dates}

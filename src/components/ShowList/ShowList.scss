@@ -118,23 +118,24 @@
       line-height: 1.2;
     }
 
-    &.color-1,
-    &.color-2,
-    &.color-3,
-    &.color-4,
-    &.color-5,
-    &.color-6,
-    &.color-7 {
-      background-color: #325b84;
+    &.color-night {
+      background-color: #457bb1;
     }
 
-    &.color-14 {
+    &.color-promote {
       background-color: #5bbfbf;
     }
   }
 
   &-responsive {
     max-width: 900px;
+  }
+
+  &-widescreenContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 20px;
   }
 
   &-widescreen {
@@ -144,7 +145,8 @@
   }
   
   &-timestampContainer {
-    padding-top: 50px;
+    padding-top: 48px;
+    padding-right: 10px;
   }
 
   &-timestamp {

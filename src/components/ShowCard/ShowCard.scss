@@ -128,6 +128,11 @@
 
     > .ShowCard-heroContainer {
       flex: 2;
+      max-height: 382px;
+
+      @media (any-pointer:coarse) {
+        max-height: 362px;
+      }
       
       > .ShowCard-hero {
         background: #fff;

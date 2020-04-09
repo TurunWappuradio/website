@@ -46,9 +46,8 @@ export default props => {
         </div>
         <h2
           className="ShowCard-title"
-          style={{ backgroundColor: placeholderColors[(index + 1) % 2] }}>
-          {title}
-        </h2>
+          style={{ backgroundColor: placeholderColors[(index + 1) % 2] }}
+          dangerouslySetInnerHTML={{ __html: title }} />
       </div>
       {open && (
         <div className="ShowCard-description">

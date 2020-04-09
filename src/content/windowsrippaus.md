@@ -77,9 +77,9 @@ asetukset samoin kuin kuvassa.
 %tracknr2% tarkoittaa, että raidan numerointi tehdään kahdella numerolla. Asetusten mukaisesti tiedostot nimetään 
 tyyliin 01 - Dodo-sorsa. Kokoelmalevyillä tiedostonimeen tulee mukaan myös artisti, esim. 01 - Siiri Nuora - Dodo-sorsa.
 
-Naming scheme: *%albumartist%\%albumtitle%\%tracknr2% - %title%*
+Naming scheme: *%albumartist% - %albumtitle% - %year%\\%tracknr2% - %title%*
 
-Various artist naming scheme: *%albumtitle%\%tracknr2% - %artist% - %title%*
+Various artist naming scheme: *Various Artists - %albumtitle% - %year%\\%tracknr2% - %artist% - %title%*
 
 ### Vaihe 4: CD-aseman asetukset
 
@@ -172,8 +172,8 @@ profiilillesi nimi. Tämä tallentaa asetukset erikseen valittavaan profiiliin (
 
 Ennen rippaamista:
 
-1. Tarkista, löytyvätkö kappaleet jo [kirjastosta](/musiikki.html). Se löytyy hakemistosta <artistin nimi/albumin nimi>/ tai
-<albumin nimi>, jos kyseessä on kokoelmalevy.
+1. Tarkista, löytyvätkö kappaleet jo [kirjastosta](/musiikki.html). Haku on filtteröivä eli suodattaa pois tulokset,
+joista ei löydy kirjoittamaasi merkkiriviä.
 2. Tarkista uudelleen, löytyvätkö kappaleet jo [kirjastosta](/musiikki.html). Jos löytyy, älä kuluta tähän aikaa, vaan siirry
 seuraavaan levyyn.
 3. Jos levyssäsi sattuu olemaan jonkinlainen kopiosuojaus, älä turhaan yritä rippailla sitä, vaan siirry seuraavaan.
@@ -224,21 +224,29 @@ varsinaisen suorituksen, joka kestää yleensä 15 min - 3 tuntia levyn pituudes
 asennosta riippuen. Data luetaan kahteen kertaa, jolloin voidaan varmistua, että CRC pysyy samana. Kyllä, se on hidasta.
 Kyllä, se on tarpeellista.
 
+<div class="ScreenshotContainer">
+  <img alt="Kuva EAC:n tervetuloaruudusta" src="/windows-rippaus/rippaussuoritettu.png" />
+</div>
+
 Jos rippauksen aika status-ikkunaan ilmestyy taikasanoja “Read error” tai “Sync error”, on levyssä sellaisia naarmuja,
 joista asemasi ei selviä. Tällöin rippaus kannattaa suosiolla keskeyttää, tiedostot poistaa ja vaihtaa seuraavaan
 levyyn. Esim. kirjaston levyt ovat monesti todella huonossa kunnossa ja myös kopiosuojatut (2000-luvulla esiintyi näitä)
 aiheuttavat harmia. Jos kopiointi ei syystä tai toisesta onnistu, *ÄLÄ LISÄÄ SITÄ KIRJASTOON*. Kaikkien kappaleiden
 täytyy olla onnistuneesti kopioituneita, jotta rippaus voidaan arkistoida.
 
-Rippauksen jälkeen pitäisi löytyä tekstejä kuten All tracks accurately ripped, logi rippauksesta tallentuu samaan
-kansioon ja se on tapa todistaa, että levy on todellakin kopioitu sallitusta lähteestä onnistuneesti, joten se on
-arkistoon menevistä levyistä löydyttävä.
+<div class="ScreenshotContainer">
+  <img alt="Kuva EAC:n tervetuloaruudusta" src="/windows-rippaus/logi.png" />
+</div>
+
+Rippauksen jälkeen pitäisi logitiedostosta löytyä tekstejä kuten All tracks accurately ripped. Logi rippauksesta tallentuu samaan
+kansioon *painettuasi OK* ja se on tapa todistaa, että levy on todellakin kopioitu sallitusta lähteestä onnistuneesti, joten se on
+arkistoon menevistä levyistä löydyttävä. 
 
 Siinä kaikki. Toista kohdat 1-3 jokaiselle levylle erikseen.
 
 ## Albumin lisääminen kirjastoon
 
-Albumeiden lisääminen kirjastoon on äärimmäisen yksinkertaista. Klikkaa alla olevaa nappia ja syötä tiedostot.
+Albumeiden lisääminen kirjastoon on äärimmäisen yksinkertaista. Klikkaa alla olevaa nappia ja syötä tiedostot lomakkeen ohjeen mukaan.
 
 <div class="ButtonContainer">
 <a href="https://docs.google.com/forms/d/e/1FAIpQLSetqnhzrpfOdbkaK4GmUHTGFMZH0h6NBMeKESC4rQEh3JqatA/viewform?usp=sf_link">

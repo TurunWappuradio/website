@@ -135,7 +135,7 @@ export default class extends React.Component {
             selected={selected}
             groupedShows={groupedShows}
             timesWithAppliedFilter={timesWithAppliedFilter}
-            onSelectDate={this.selectDate}
+            onSelectDate={date => this.selectDate(date)}
             onSelectShow={item => this.changeSelected(item)}
           />
         )}

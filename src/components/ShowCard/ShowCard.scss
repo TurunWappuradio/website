@@ -79,7 +79,7 @@
 
     @media (max-width: 700px), (max-device-width: 700px) {
       .ShowCard-hero {
-        margin-top: -50px;
+        margin-top: -20px;
       }
 
       .ShowCard-title {
@@ -121,6 +121,10 @@
     flex-direction: row;
     height: auto;
     max-height: 382px;
+
+    @media (any-pointer:coarse) {
+      max-height: 362px;
+    }
 
     > .ShowCard-heroContainer {
       flex: 2;

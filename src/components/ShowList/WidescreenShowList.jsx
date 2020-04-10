@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { format, differenceInHours, startOfDay, getHours } from 'date-fns';
+import { format, differenceInHours, startOfDay } from 'date-fns';
 import fi from 'date-fns/locale/fi';
 
 import ShowCard from '../ShowCard/ShowCard';
@@ -10,11 +10,17 @@ const timeStamps = ['00', '01', '02', '03', '04', '05', '06', '07', '08', '09', 
 
 export default ({ showData, groupedShows }) => {
   const [selected, setSelected] = useState(null);
-  const selectedShow = showData.find(item => item.id === selected);
+  const selectedIdx = showData.findIndex(item => item.id === selected);
 
   return (
     <div className="ShowList-widescreenContainer">
-      {selected !== null && <ShowCard show={selectedShow} open={true} />}
+      {selected !== null && (
+        <ShowCard
+          show={showData[selectedIdx]}
+          open={true}
+          index={selectedIdx}
+        />
+      )}
       <div className="ShowList-widescreen">
         <div className="ShowList-timestampContainer">
           {timeStamps.map((time, idx) => (

@@ -38,7 +38,7 @@
     width: 100%;
     padding: 20px;
     color: white;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     font-weight: 600;
   }
 
@@ -70,7 +70,7 @@
     }
 
     &:hover {
-      color: $colorOrange;
+      color: #ee6b60;
     }
   }
 
@@ -82,20 +82,20 @@
 
   &-widescreenCardContainer, &-daySpacer {
     padding: 10px;
+    $base-height: 72px;
 
-    &.height-0 { height: 40px; }
-    &.height-1 { height: 80px; }
-    &.height-2 { height: 160px; }
-    &.height-3 { height: 240px; }
-    &.height-4 { height: 320px; }
-    &.height-5 { height: 400px; }
-    &.height-6 { height: 480px; }
-    &.height-7 { height: 560px; }
-    &.height-8 { height: 640px; }
-    &.height-9 { height: 720px; }
-    &.height-10 { height: 800px; }
-    &.height-11 { height: 880px; }
-    &.height-12 { height: 960px; }
+    &.height-1 { height: $base-height; }
+    &.height-2 { height: 2 * $base-height; }
+    &.height-3 { height: 3 * $base-height; }
+    &.height-4 { height: 4 * $base-height; }
+    &.height-5 { height: 5 * $base-height; }
+    &.height-6 { height: 6 * $base-height; }
+    &.height-7 { height: 7 * $base-height; }
+    &.height-8 { height: 8 * $base-height; }
+    &.height-9 { height: 9 * $base-height; }
+    &.height-10 { height: 10 * $base-height; }
+    &.height-11 { height: 11 * $base-height; }
+    &.height-12 { height: 12 * $base-height; }
   }
 
   &-widescreenCard {
@@ -148,13 +148,13 @@
   }
   
   &-timestampContainer {
-    padding-top: 48px;
+    padding-top: 46px;
     padding-right: 10px;
   }
 
   &-timestamp {
-    height: 80px;
-    font-size: 1.2rem;
+    height: 72px;
+    font-size: 1.1rem;
     font-weight: 600;
     color: white;
   }

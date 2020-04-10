@@ -67,6 +67,8 @@
         align-items: flex-end;
         
         .ShowCard-hosts {
+          max-width: 400px;
+          text-align: right;
           font-size: .8rem;
           font-weight: 600;
           border-radius: 3px;

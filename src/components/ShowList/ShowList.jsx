@@ -108,7 +108,7 @@ export default class extends React.Component {
     const timesWithAppliedFilter = shouldApplyFilter
       ? selectedTimes.filter(show => !isBefore(show.endDatetime, new Date()))
       : selectedTimes;
-    const widescreen = screenWidth >= 1400 && widescreenMode;
+    const widescreen = screenWidth >= 1200 && widescreenMode;
     return (
       <div className="ShowList">
         <div className="ShowList-header">

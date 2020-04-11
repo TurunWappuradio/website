@@ -4,12 +4,32 @@ draft: false
 layout: index.html
 ---
 
+# Koronaviiruksesta
+
+Tämän kevään aikana on jouduttu perumaan monia tapahtumia, kun on pyritty hillitsemään koronaviruksen leviämistä. On 
+hienoa, miten aktiivisesti eri tahot ovat tähän osallistuneet, sillä terveys ja hyvinvointi on hyvin tärkeää.
+
+Turun Wappuradion toimituksessa olemme pohtineet samoja kysymyksiä, mutta olemme päättäneet ainakin tämänhetkisen
+tiedon valossa *jatkaa radiomme järjestämistä normaalisti* erityisolosuhteet huomioiden. Wappu on kuitenkin meille
+tärkeä, ja haluaisimmekin pystyä tuottamaan viihdykettä kuuntelijoillemme niin monen muun asian peruuntuessa. 
+
+Studiossa tulee olemaan noin 5 ihmistä kerrallaan, joten arvioimme tapahtumamme riskit suhteellisen pieniksi. Lisäksi 
+tulemme kiinnittämään erityishuomiota myös studion hygieenisyyteen.
+
 # Mikä ihmeen Turun Wappuradio?
 
 Turun Wappuradio on syksyllä 2018 käynnistynyt poikkitieteellinen opiskelijaradio, joka lähettää ympärivuorokautisesti ohjelmaa wappuna. Turun Wappuradion ensimmäinen lähetys oli 23.–30.4.2019.
 
+## Pähkinänkuoressa
+
+* Olemme kuultavissa 23.‑30.4.2020 osoitteessa turunwappuradio.com ja FM-taajudella 93,8 MHz
+* Tykitämme ohjelmaa koko viikon 24/7
+* Studiomme sijaitsee Yliopiston kupeessa, Turku-salissa 
+* Somesta meidät löydät [Facebookista](https://www.facebook.com/turunwappuradio/) ja [Instagramista](https://www.instagram.com/turunwappuradio/)
+
 ## Turun Wappuradiosta kirjoitettua
 
+* ["Suurin ja karanteeniystävällisin opiskelijatapahtuma" – Turun Wappuradio tulee taas](https://www.turkulainen.fi/artikkeli/856071-suurin-ja-karanteeniystavallisin-opiskelijatapahtuma-turun-wappuradio-tulee-taas) (Turkulainen, 10.4.2020)
 * [Vappu aloittaa kevään, TYY:n karkelot vapun](https://www.aamuset.fi/teemat/4556167/Vappu+aloittaa+kevaan+TYYn+karkelot+vapun) (Aamuset, 30.4.2019)
 * [Turkulainen opiskelijavappu vie kaupungin karnevaalihenkeen](https://www.turku.fi/uutinen/2019-04-26_turkulainen-opiskelijavappu-vie-kaupungin-karnevaalihenkeen) (Turun kaupungin uutiset, 26.4.2019)
 * [Turun Wappuradio soi tauotta tiistaista vappuaattoon asti](https://www.ts.fi/tstv/1074829915/Turun+Wappuradio+soi+tauotta+tiistaista+vappuaattoon+asti) (Turun Sanomat, 25.4.2019)

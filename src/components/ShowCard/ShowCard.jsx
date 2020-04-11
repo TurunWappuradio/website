@@ -23,7 +23,10 @@ export default props => {
       key={`showCard-${id}`}
       className={`ShowCard ${open ? 'ShowCard-open' : ''}`}
       onClick={selectFn}
-      style={{ backgroundColor: placeholderColors[index % 2] }}
+      style={{
+        backgroundColor: placeholderColors[index % 2],
+        cursor: selectFn ? 'pointer' : ''
+      }}
       role="button">
       <div className="ShowCard-heroContainer">
         <img className="ShowCard-hero" src={background} />
@@ -37,15 +40,19 @@ export default props => {
             {format(startDatetime, 'HH:mm')} - {format(endDatetime, 'HH:mm')}
           </h2>
         </div>
-        <div className="ShowCard-creators">
+        <div
+          className="ShowCard-creators"
+          style={{
+            textShadow: `1px 1px 0px ${placeholderColors[(index + 1) % 2]}`
+          }}>
           <h2 className="ShowCard-hosts">Juontaa: {hosts}</h2>
           <h2 className="ShowCard-hosts">Tuottaa: {producers}</h2>
         </div>
         <h2
           className="ShowCard-title"
-          style={{ backgroundColor: placeholderColors[(index + 1) % 2] }}>
-          {title}
-        </h2>
+          style={{ backgroundColor: placeholderColors[(index + 1) % 2] }}
+          dangerouslySetInnerHTML={{ __html: title }}
+        />
       </div>
       {open && (
         <div className="ShowCard-description">

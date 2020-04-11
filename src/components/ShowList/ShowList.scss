@@ -1,4 +1,8 @@
 .ShowList {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
   &-selector {
     padding: 20px 0px;
     display: none;
@@ -28,16 +32,29 @@
     }
   }
 
+  &-dayTitle {
+    display: inline-block;
+    text-align: center;
+    width: 100%;
+    padding: 20px;
+    color: white;
+    font-size: 1.1rem;
+    font-weight: 600;
+  }
+
   &-header {
     display: flex;
     flex-direction: row;
+    margin-right: 10px;
+    width: 100%;
+    max-width: 900px;
 
     > h1 {
       flex: 1;
     }
   }
 
-  &-filterButton {
+  &-filterButton, &-widescreenButton {
     background: transparent;
     border: none;
     cursor: pointer;
@@ -53,8 +70,98 @@
     }
 
     &:hover {
-      color: $colorOrange;
+      color: #ee6b60;
     }
+  }
+
+  &-widescreenButton {
+    @media (max-width: 1200px), (max-device-width: 1200px) {
+      display: none;
+    }
+  }
+
+  &-widescreenCardContainer, &-daySpacer {
+    padding: 10px;
+    $base-height: 72px;
+
+    &.height-1 { height: $base-height; }
+    &.height-2 { height: 2 * $base-height; }
+    &.height-3 { height: 3 * $base-height; }
+    &.height-4 { height: 4 * $base-height; }
+    &.height-5 { height: 5 * $base-height; }
+    &.height-6 { height: 6 * $base-height; }
+    &.height-7 { height: 7 * $base-height; }
+    &.height-8 { height: 8 * $base-height; }
+    &.height-9 { height: 9 * $base-height; }
+    &.height-10 { height: 10 * $base-height; }
+    &.height-11 { height: 11 * $base-height; }
+    &.height-12 { height: 12 * $base-height; }
+  }
+
+  &-widescreenCard {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 2px;
+    position: relative;
+    background-color: #ee6b60;
+    box-shadow: 2px 2px 3px 0px rgba(0,0,0,0.21);
+    height: 100%;
+
+    > h1 {
+      color: white;
+      font-size: 0.9rem;
+      width: 100%;
+      line-height: 1.2;
+
+      @media (max-width: 1400px), (max-device-width: 1400px) {
+        font-size: 12.5px;
+      }
+    }
+
+    &.color-night {
+      background-color: #457bb1;
+    }
+
+    &.color-promote {
+      background-color: #5bbfbf;
+    }
+  }
+
+  &-responsive {
+    max-width: 900px;
+  }
+
+  &-widescreenContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 20px;
+  }
+
+  &-widescreen {
+    display: flex;
+    max-width: 100%;
+  }
+  
+  &-timestampContainer {
+    padding-top: 46px;
+    padding-right: 10px;
+  }
+
+  &-timestamp {
+    height: 72px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: white;
+  }
+
+  &-day {
+    width: 12.5%;
+    box-sizing: border-box;
   }
 }
 

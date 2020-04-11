@@ -1,5 +1,4 @@
 .ShowCard {
-  cursor: pointer;
   margin-bottom: 20px;
   border-radius: 2px;
   display: flex;
@@ -9,6 +8,7 @@
   box-shadow: 2px 2px 3px 0px rgba(0,0,0,0.21);
   overflow: hidden;
   height: 150px;
+  max-width: 900px;
 
   > .ShowCard-heroContainer {
     position: relative;
@@ -67,6 +67,8 @@
         align-items: flex-end;
         
         .ShowCard-hosts {
+          max-width: 400px;
+          text-align: right;
           font-size: .8rem;
           font-weight: 600;
           border-radius: 3px;
@@ -79,7 +81,7 @@
 
     @media (max-width: 700px), (max-device-width: 700px) {
       .ShowCard-hero {
-        margin-top: -50px;
+        margin-top: -20px;
       }
 
       .ShowCard-title {
@@ -97,16 +99,42 @@
     }
   }
 
+  > .ShowCard-widescreenContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    text-align: center;
+
+    > h2 {
+      color: white;
+    }
+
+    > h1 {
+      color: white;
+      font-size: 1.4rem;
+    }
+  }
+
   &-open {
     padding-top: 0;
     box-shadow: 3px 4px 3px 0px rgba(0,0,0,0.21);
     flex-direction: row;
     height: auto;
-    max-height: 250px;
+    max-height: 382px;
+
+    @media (any-pointer:coarse) {
+      max-height: 362px;
+    }
 
     > .ShowCard-heroContainer {
       flex: 2;
-      max-height: 250px;
+      max-height: 382px;
+
+      @media (any-pointer:coarse) {
+        max-height: 362px;
+      }
       
       > .ShowCard-hero {
         background: #fff;
@@ -117,10 +145,18 @@
     > .ShowCard-description {
       flex: 1;
       background: #fff;
-      font-size: 1.2rem;
+      font-size: 1.1rem;
       padding: 20px;
       overflow: auto;
       line-height: 1.4;
+    }
+
+    @media (max-width: 960px), (max-device-width: 960px) {
+      max-height: 250px;
+
+      > .ShowCard-heroContainer {
+        max-height: 250px;
+      }
     }
 
     @media (max-width: 700px), (max-device-width: 700px) {

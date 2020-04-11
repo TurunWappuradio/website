@@ -150,6 +150,10 @@
       overflow: auto;
       line-height: 1.4;
       max-width: 286px;
+
+      @media (max-width: 960px), (max-device-width: 960px) {
+        max-width: none;
+      }
     }
 
     @media (max-width: 960px), (max-device-width: 960px) {

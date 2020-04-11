@@ -40,14 +40,19 @@ export default props => {
             {format(startDatetime, 'HH:mm')} - {format(endDatetime, 'HH:mm')}
           </h2>
         </div>
-        <div className="ShowCard-creators">
+        <div
+          className="ShowCard-creators"
+          style={{
+            textShadow: `1px 1px 0px ${placeholderColors[(index + 1) % 2]}`
+          }}>
           <h2 className="ShowCard-hosts">Juontaa: {hosts}</h2>
           <h2 className="ShowCard-hosts">Tuottaa: {producers}</h2>
         </div>
         <h2
           className="ShowCard-title"
           style={{ backgroundColor: placeholderColors[(index + 1) % 2] }}
-          dangerouslySetInnerHTML={{ __html: title }} />
+          dangerouslySetInnerHTML={{ __html: title }}
+        />
       </div>
       {open && (
         <div className="ShowCard-description">

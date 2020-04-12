@@ -102,6 +102,7 @@ export default class extends React.Component {
     } = this.state;
     const groupedShows = this.getGroupedData();
     const dates = keys(groupedShows);
+    const inRange = dates.includes(getDateKeyFormat(new Date()));
     const selectedTimes = openDate && groupedShows[openDate];
     const shouldApplyFilter =
       filtered && openDate === getDateKeyFormat(new Date());
@@ -113,7 +114,7 @@ export default class extends React.Component {
       <div className="ShowList">
         <div className="ShowList-header">
           <h1 className="ShowList-title">Ohjelmistossa</h1>
-          {!widescreen && (
+          {!widescreen && inRange && (
             <button
               className="ShowList-filterButton"
               onClick={() => this.setFilter()}>

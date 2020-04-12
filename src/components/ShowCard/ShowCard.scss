@@ -47,21 +47,26 @@
       background: #fff;
     }
   
+    > .ShowCard-info {
+      position: absolute;
+      bottom: 10px;
+      left: 10px;
+      width: calc(100% - 20px);
+      height: calc(100% - 20px);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+
       > .ShowCard-title {
         font-size: 1.5rem;
-        bottom: 10px;
-        left: 10px;
         font-weight: 500;
         color: #fff;
         padding: 5px;
-        position: absolute;
         border-radius: 4px;
+        width: fit-content;
       }
   
       > .ShowCard-creators {
-        top: 10px;
-        right: 10px;
-        position: absolute;
         display: flex;
         flex-direction: column;
         align-items: flex-end;
@@ -77,24 +82,29 @@
           color: #fff;
         }
       }
-
+    }
 
     @media (max-width: 700px), (max-device-width: 700px) {
       .ShowCard-hero {
         margin-top: -20px;
       }
 
-      .ShowCard-title {
-        right: 10px;
-        font-size: 1.2rem;
+      .ShowCard-info {
+        justify-content: flex-end;
+
+        > .ShowCard-creators {
+          display: none;
+        }
+
+        > .ShowCard-title {
+          right: 10px;
+          font-size: 1.2rem;
+          width: 100%;
+        }
       }
 
       .ShowCard-time {
         font-size: 1rem;
-      }
-
-      .ShowCard-creators {
-        display: none;
       }
     }
   }
@@ -177,11 +187,12 @@
           border: none;
         }
 
+        > .ShowCard-info {
+          justify-content: flex-end;
 
-        > .ShowCard-creators {
-          bottom: 40px;
-          top: auto;
-          display: flex;
+          > .ShowCard-creators {
+            display: flex;
+          }
         }
 
       }

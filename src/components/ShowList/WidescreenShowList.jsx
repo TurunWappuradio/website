@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { format, differenceInHours, startOfDay } from 'date-fns';
+import { format, differenceInMinutes, startOfDay } from 'date-fns';
 import fi from 'date-fns/locale/fi';
 
 import ShowCard from '../ShowCard/ShowCard';
@@ -41,7 +41,7 @@ export default ({ showData, groupedShows }) => {
               <div
                 className={
                   'ShowList-daySpacer height-' +
-                  differenceInHours(
+                  differenceInMinutes(
                     day[0].startDatetime,
                     startOfDay(day[0].startDatetime)
                   )
@@ -51,7 +51,7 @@ export default ({ showData, groupedShows }) => {
             {day.map((item, idx) => (
               <WidescreenCard
                 title={item.title}
-                showLength={differenceInHours(
+                showLength={differenceInMinutes(
                   item.endDatetime,
                   item.startDatetime
                 )}

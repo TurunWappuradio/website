@@ -2,13 +2,16 @@ $colorTeal: #5bbfbf;
 $colorBlue: #60a3ee;
 $colorOrange: #ee6b60;
 
-@import "_reset";
-@import "content";
+@import '_reset';
+@import 'content';
 @import 'components/ShowCard/ShowCard';
 @import 'components/ShowList/ShowList';
 @import 'components/MusicLibrary/MusicLibrary';
 @import 'components/RadioPlayer/RadioPlayer';
 @import 'components/RadioPlayer/RadioControlPanel';
+
+@import 'components/RadioPlayer/controls/PlayControl';
+@import 'components/RadioPlayer/controls/VolumeControl';
 
 @import 'components/common/Button';
 @import 'components/common/Dropdown';

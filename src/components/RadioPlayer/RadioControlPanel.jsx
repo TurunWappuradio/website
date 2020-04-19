@@ -7,16 +7,32 @@ export default function RadioControlPanel(props) {
   return (
     <div className="RadioControlPanel-wrapper">
       <div className="RadioControlPanel">
-        <PlayControl playing={props.playing} onClick={props.onPlayingClick} />
-        <VolumeControl
-          muted={props.muted}
-          onClickMute={props.onClickMute}
-          volumeLevel={props.volumeLevel}
-          changeVolume={props.changeVolume}
-        />
-        <div className="RadioControlPanel--infoContainer">
-          <h2>Wappustartti</h2>
-          <h2>Hindu & Make - Leipää</h2>
+        <div className="RadioControlPanel-playerControls">
+          <PlayControl playing={props.playing} onClick={props.onPlayingClick} />
+          <span>
+            <VolumeControl
+              muted={props.muted}
+              onClickMute={props.onClickMute}
+              volumeLevel={props.volumeLevel}
+              changeVolume={props.changeVolume}
+            />
+          </span>
+        </div>
+        <div className="RadioControlPanel-metaContainer">
+          <span>Nyt soi</span>
+          <span>{props.song}</span>
+        </div>
+        <div className="RadioControlPanel-infoContainer RadioControlPanel-infoContainer--Details">
+          <div className="RadioControlPanel-contactWrapper">
+            <h2>Turun Wappuradio</h2>
+
+            <div>
+              <span>Taajudella</span> <b>93,8 MHz</b>
+            </div>
+            <div>
+              <span> Studio</span> <b>023 619 0123</b>
+            </div>
+          </div>
         </div>
       </div>
     </div>

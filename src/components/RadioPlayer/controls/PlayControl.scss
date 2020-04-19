@@ -1,0 +1,50 @@
+.PlayControl {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+
+  &-iconWrapper {
+    display: fleX;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    line-height: 0;
+    font-size: 20px;
+    border: 2px solid;
+    border-color: #fff;
+    border-radius: 50%;
+    color: #fff;
+  }
+
+  &--Active {
+    .PlayControl-iconWrapper {
+      color: #ee6b60;
+      border-color: #ee6b60;
+    }
+  }
+
+  &--Large {
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+    background: #5bbfbf;
+    border-radius: 50%;
+    padding: 5px;
+
+    .PlayControl-iconWrapper {
+      border: none;
+      width: 80px;
+      height: 80px;
+      font-size: 40px;
+      border-width: 3px;
+    }
+  }
+
+  &--Active.PlayControl--Large {
+    background: #ee6b60;
+
+    > .PlayControl-iconWrapper > svg {
+      color: #2f2f2f;
+    }
+  }
+}

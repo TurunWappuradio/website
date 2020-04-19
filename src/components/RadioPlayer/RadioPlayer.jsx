@@ -19,7 +19,7 @@ export default class extends React.Component {
       muted: false,
       song: '',
       volumeLevel: 100,
-      playClicked: true // FIXME: switch to false
+      playClicked: false
     };
 
     this.onPlayStop.bind(this);

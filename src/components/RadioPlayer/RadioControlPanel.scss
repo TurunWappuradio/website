@@ -1,0 +1,36 @@
+.RadioControlPanel-wrapper {
+  position: fixed;
+  bottom: 0;
+  padding: 10px;
+  width: 100vw;
+  z-index: 1000;
+  background-color: #0f243a;
+  display: inline-flex;
+  justify-content: center;
+
+  .RadioControlPanel {
+    width: 900px;
+    max-width: 100%;
+    display: inline-flex;
+    justify-content: start;
+    align-items: center;
+
+    > .PlayControl {
+      box-shadow: none;
+      background: none;
+      height: 40px;
+      width: 40px;
+      padding: 0;
+
+      > svg {
+        height: 34px;
+        width: 34px;
+      }
+    }
+
+    &--infoContainer {
+      width: 100%;
+      text-align: right;
+    }
+  }
+}

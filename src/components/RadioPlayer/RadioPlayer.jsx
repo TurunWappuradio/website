@@ -3,6 +3,7 @@ import React from 'react';
 import PlayControl from './controls/PlayControl';
 import ExternalLinkControl from './controls/ExternalLinkControl';
 import VolumeControl from './controls/VolumeControl';
+import RadioContolPanel from './RadioControlPanel';
 
 const AUDIO_STREAM_URL = 'https://player.turunwappuradio.com/wappuradio.mp3';
 const METADATA_SERVER_URL =
@@ -17,6 +18,7 @@ export default class extends React.Component {
       muted: false,
       song: '',
       volumeLevel: 100,
+      playClicked: false
     };
 
     this.onPlayStop.bind(this);
@@ -61,7 +63,8 @@ export default class extends React.Component {
     }
 
     this.setState({
-      playing: !this.state.playing
+      playing: !this.state.playing,
+      playClicked: true
     });
   }
 
@@ -76,7 +79,7 @@ export default class extends React.Component {
   changeVolume(valueArray) {
     if (valueArray && valueArray.length === 1) {
       this.setState({ volumeLevel: valueArray[0] });
-      this.audio.current.volume =  valueArray[0] / 100;
+      this.audio.current.volume = valueArray[0] / 100;
       this.state.muted && this.onVolumeOnOff();
     }
   }
@@ -113,6 +116,16 @@ export default class extends React.Component {
         <audio ref={this.audio}>
           <source src={AUDIO_STREAM_URL} />
         </audio>
+        {this.state.playClicked && (
+          <RadioContolPanel
+            playing={playing}
+            onPlayingClick={() => this.onPlayStop()}
+            muted={muted}
+            onClickMute={() => this.onVolumeOnOff()}
+            volumeLevel={volumeLevel}
+            changeVolume={this.changeVolume}
+          />
+        )}
       </div>
     );
   }

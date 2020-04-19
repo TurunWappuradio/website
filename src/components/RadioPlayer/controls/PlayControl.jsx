@@ -11,11 +11,7 @@ export default ({ onClick, playing }) => (
     title="Play/Pause"
     onClick={() => onClick()}>
     {playing ? (
-      <StopIcon
-        width={ICON_SIZE}
-        height={ICON_SIZE}
-        viewBox={[0, 0, 24, 24]}
-      />
+      <StopIcon width={ICON_SIZE} height={ICON_SIZE} viewBox={[0, 0, 24, 24]} />
     ) : (
       <PlayIcon width={ICON_SIZE} height={ICON_SIZE} viewBox={[0, 0, 24, 24]} />
     )}

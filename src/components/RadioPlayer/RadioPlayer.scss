@@ -1,120 +1,143 @@
 .RadioPlayer {
-    display: flex;
+  display: flex;
+  flex-direction: column;
+  color: white;
+  align-items: center;
+  margin-bottom: 42px;
+}
+
+.RadioPlayer-inPage {
+  display: flex;
+  flex-direction: row;
+  max-width: 900px;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+
+  @media (max-width: 600px), (max-device-width: 600px) {
     flex-direction: column;
-    color: white;
-    align-items: center;
-    margin-bottom: 42px;
+  }
 }
 
-.RadioPlayer__Brand {
-    width: 75%;
-    max-width: 300px;
-    margin-bottom: 30px;
+.RadioPlayer-Brand {
+  max-width: 300px;
+  min-width: 150px;
+  flex: 1;
+  margin-bottom: 30px;
+  @media (max-width: 600px), (max-device-width: 600px) {
+    width: 300px;
+  }
 }
 
-.RadioPlayer__NowPlaying {
-    font-size: 1.5rem;
-    margin-bottom: 30px;
+.RadioPlayer-contact {
+  > * {
+    padding: 0.25rem 0rem;
+    font-size: 0.9rem;
+    > b {
+      color: #ee6b60;
+      font-weight: 600;
+    }
+  }
+}
+
+.RadioPlayer-streamLink {
+  margin-top: 1rem;
+  color: #fff;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: fit-content;
+  font-size: 0.9rem;
+
+  > svg {
+    margin-right: 0.5rem;
+  }
+}
+
+.RadioPlayer-controlWrapper {
+  flex: 2;
+  background-color: #0f243a;
+  padding: 2rem;
+  border-radius: 5px;
+  margin-left: 2rem;
+  display: flex;
+  flex-direction: column;
+  @media (max-width: 600px), (max-device-width: 600px) {
+    margin-left: 0;
+  }
+}
+
+.RadioPlayer-NowPlaying {
+  flex: 1;
+  font-size: 1.2rem;
+  margin-left: 1rem;
+  font-weight: 600;
+  color: #fff;
+  text-align: left;
+
+  > span {
+    display: block;
+    padding: 0.25rem;
+  }
+
+  > span:last-child {
+    font-size: 1.1rem;
     font-weight: 600;
-    color: #fff;
-    text-align: center;
+    color: #ee6b60;
+  }
 }
 
-.RadioPlayer__Controls {
-    width: 100%;
-    max-width: 300px;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
+.RadioPlayer-Controls {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1rem;
 }
 
 .RadioPlayerControl {
-    background: transparent;
-    border: none;
-    cursor: pointer;
-    padding: 0;
-    width: 42px;
-    height: 42px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  width: 42px;
+  height: 42px;
 
-    svg {
-        fill: #fff;
-        color: #fff;
-    }
+  svg {
+    fill: #fff;
+    color: #fff;
+  }
 
-    :hover {
-        outline: none;
-    }
-}
-
-.PlayControl {
-    box-shadow: 0 15px 30px 0 rgba(11, 49, 87, 0.3), 0 5px 15px 0 rgba(10, 49, 87, 0.3);
-    background: #5bbfbf;
-    border-radius: 50%;
-    width: 80px;
-    height: 80px;
-    padding: 16px;
-
-    &.active {
-        background: #ee6b60;
-    }
+  :hover {
+    outline: none;
+  }
 }
 
 .pulse {
-    fill: #fff;
-    fill-opacity: 0;
-    transform-origin: 50% 50%;
-    animation-duration: 2s;
-    animation-name: pulse;
-    animation-iteration-count: infinite;
-    transition: all 0.3s ease;
-}
-
-.VolumeControl {
-  position: relative;
-  display: inline-block;
-}
-
-.VolumeSliderArea {
-  width: 42px; // Icon size
-  height: 180px;
-  background-color: #325b84;
-  position: absolute;
-  bottom: 50px;
-  border-radius: 50px;
-}
-
-.VolumeSliderMute {
-  background-color: #ee6b60;
-  fill: white;
-  border-radius: 50px;
-  margin: 7px auto;
-  border: none;
-  height: 32px;
-  width: 32px;
-  cursor: pointer;
-  display: block;
-}
-
-
-.VolumeSlider {
-  width: 100%;
-  height: 100%;
-  margin: 0;
+  fill: #fff;
+  fill-opacity: 0;
+  transform-origin: 50% 50%;
+  animation-duration: 2s;
+  animation-name: pulse;
+  animation-iteration-count: infinite;
+  transition: all 0.3s ease;
 }
 
 @keyframes pulse {
-    from {
-        -webkit-transform: scale3d(1, 1, 1);
-        transform: scale3d(1, 1, 1);
-    }
+  from {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
 
-    50% {
-        -webkit-transform: scale3d(1.03, 1.03, 1.03);
-        transform: scale3d(1.03, 1.03, 1.03);
-    }
+  50% {
+    -webkit-transform: scale3d(1.03, 1.03, 1.03);
+    transform: scale3d(1.03, 1.03, 1.03);
+  }
 
-    to {
-        -webkit-transform: scale3d(1, 1, 1);
-        transform: scale3d(1, 1, 1);
-    }
+  to {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
 }

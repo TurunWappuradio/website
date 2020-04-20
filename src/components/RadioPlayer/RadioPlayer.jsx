@@ -130,7 +130,7 @@ export default class extends React.Component {
             </div>
             <div className="RadioPlayer-contact">
               <h2>
-                Taajudella <b>93,8 MHz</b>
+                Taajuudella <b>93,8 MHz</b>
               </h2>
               <h2>
                 Studio <b>023 619 0123</b>

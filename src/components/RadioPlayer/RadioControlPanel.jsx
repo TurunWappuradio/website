@@ -27,7 +27,7 @@ export default function RadioControlPanel(props) {
             <h2>Turun Wappuradio</h2>
 
             <div>
-              <span>Taajudella</span> <b>93,8 MHz</b>
+              <span>Taajuudella</span> <b>93,8 MHz</b>
             </div>
             <div>
               <span> Studio</span> <b>023 619 0123</b>

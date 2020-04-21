@@ -21,7 +21,7 @@ jobs:
 
       - name: Build static website
         env:
-          BROADCAST_MODE: ${{secrets.BROADCAST_MODE}}
+          BROADCAST_MODE: ${{secrets.BROADCAST_MODE_DEV}}
           GA_ID: ${{secrets.GA_ID}}
           GOOGLE_API_KEY: ${{secrets.GOOGLE_API_KEY}}
           GOOGLE_AUTH: ${{secrets.GOOGLE_AUTH}}

@@ -3,6 +3,8 @@ import React from 'react';
 import PlayControl from './controls/PlayControl';
 import ExternalLinkControl from './controls/ExternalLinkControl';
 import VolumeControl from './controls/VolumeControl';
+import RadioControlPanel from './RadioControlPanel';
+import { FiMaximize2 } from 'react-icons/fi';
 
 const AUDIO_STREAM_URL = 'https://player.turunwappuradio.com/wappuradio.mp3';
 const METADATA_SERVER_URL =
@@ -17,6 +19,7 @@ export default class extends React.Component {
       muted: false,
       song: '',
       volumeLevel: 100,
+      playClicked: false
     };
 
     this.onPlayStop.bind(this);
@@ -61,7 +64,8 @@ export default class extends React.Component {
     }
 
     this.setState({
-      playing: !this.state.playing
+      playing: !this.state.playing,
+      playClicked: true
     });
   }
 
@@ -76,7 +80,7 @@ export default class extends React.Component {
   changeVolume(valueArray) {
     if (valueArray && valueArray.length === 1) {
       this.setState({ volumeLevel: valueArray[0] });
-      this.audio.current.volume =  valueArray[0] / 100;
+      this.audio.current.volume = valueArray[0] / 100;
       this.state.muted && this.onVolumeOnOff();
     }
   }
@@ -90,25 +94,59 @@ export default class extends React.Component {
 
     return (
       <div className="RadioPlayer">
-        <img
-          className={
-            'RadioPlayer__Brand ' + (this.state.playing ? 'pulse' : '')
-          }
-          src="leima.svg"
-          alt="Turun Wappuradio"
-        />
-        {Date.now() >= 1556010000000 && (
-          <div className="RadioPlayer__NowPlaying">Nyt soi: {song}</div>
-        )}
-        <div className="RadioPlayer__Controls">
-          <VolumeControl
+        {this.state.playClicked && (
+          <RadioControlPanel
+            playing={playing}
+            onPlayingClick={() => this.onPlayStop()}
             muted={muted}
             onClickMute={() => this.onVolumeOnOff()}
+            song={this.state.song}
             volumeLevel={volumeLevel}
             changeVolume={this.changeVolume}
           />
-          <PlayControl playing={playing} onClick={() => this.onPlayStop()} />
-          <ExternalLinkControl onClick={this.onOpenExternal} />
+        )}
+        <div className="RadioPlayer-inPage">
+          <img
+            className={
+              'RadioPlayer-Brand ' + (this.state.playing ? 'pulse' : '')
+            }
+            src="leima.svg"
+            alt="Turun Wappuradio"
+          />
+
+          <div className="RadioPlayer-controlWrapper">
+            <div className="RadioPlayer-Controls">
+              <PlayControl
+                large
+                playing={playing}
+                onClick={() => this.onPlayStop()}
+              />
+              {Date.now() >= 1556010000000 && (
+                <div className="RadioPlayer-NowPlaying">
+                  <span>Nyt soi</span>
+                  <span>{song}</span>
+                </div>
+              )}
+            </div>
+            <div className="RadioPlayer-contact">
+              <h2>
+                Taajuudella <b>93,8 MHz</b>
+              </h2>
+              <h2>
+                Studio <b>023 619 0123</b>
+              </h2>
+              <h2>
+                <b>toimitus[at]turunwappuradio.com</b>
+              </h2>
+            </div>
+            <a
+              className="RadioPlayer-streamLink"
+              href="https://player.turunwappuradio.com/wappuradio.mp3"
+              target="_blank">
+              <FiMaximize2 />
+              Avaa uuteen ikkunaan
+            </a>
+          </div>
         </div>
         <audio ref={this.audio}>
           <source src={AUDIO_STREAM_URL} />

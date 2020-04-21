@@ -20,7 +20,7 @@
     "upload": "export NODE_ENV=production && node lib/awsUpload.js"
   },
   "engines": {
-    "node": "10.11.0"
+    "node": "10.18.0"
   },
   "author": "Julius Rajala",
   "license": "MIT",
@@ -57,6 +57,7 @@
     "react": "^16.8.6",
     "react-compound-slider": "^2.5.0",
     "react-dom": "^16.8.6",
-    "react-dropdown": "^1.6.4"
+    "react-dropdown": "^1.6.4",
+    "react-icons": "~3.9.0"
   }
 }

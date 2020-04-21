@@ -1,0 +1,136 @@
+.RadioControlPanel-wrapper {
+  position: fixed;
+  bottom: 0;
+  padding: 20px 10px;
+  width: 100vw;
+  z-index: 1000;
+  background-color: #0f243a;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+
+  .RadioControlPanel {
+    width: 900px;
+    max-width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    justify-content: start;
+    align-items: center;
+    > * {
+      flex: 1;
+    }
+
+    &-playerControls {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: start;
+
+      > * {
+        margin-right: 1rem;
+      }
+    }
+
+    > .PlayControl {
+      box-shadow: none;
+      background: none;
+      height: 40px;
+      width: 40px;
+      padding: 0;
+
+      > svg {
+        height: 34px;
+        width: 34px;
+      }
+    }
+
+    &-metaContainer {
+      border-left: 1px solid #fff;
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+
+      @media (max-width: 800px), (max-device-width: 800px) {
+        text-align: right;
+        align-items: flex-end;
+        flex: 2;
+      }
+
+      > span {
+        padding: 0.25rem;
+        max-width: 300px;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap;
+      }
+
+      > span:last-child {
+        font-size: 1.1rem;
+        font-weight: 600;
+        color: #ee6b60;
+      }
+
+      @media (max-width: 600px), (max-device-width: 600px) {
+        > span:last-child {
+          font-size: 0.9rem;
+        }
+      }
+    }
+
+    &-contactWrapper {
+      display: flex;
+      flex-direction: column;
+      align-self: flex-end;
+      width: fit-content;
+      margin-left: auto;
+
+      > * {
+        margin: 0.125rem;
+      }
+
+      > div {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        > span {
+          text-align: left;
+        }
+      }
+    }
+
+    &-infoContainer {
+      width: 100%;
+
+      &--Details {
+        font-size: 0.9rem;
+        text-align: right;
+        border-left: 1px solid #fff;
+        display: flex;
+
+        @media (max-width: 800px), (max-device-width: 800px) {
+          display: none;
+        }
+
+        h2 {
+          font-size: 1.3rem;
+          font-weight: 600;
+          color: #ee6b60;
+          margin-bottom: 0.5rem;
+        }
+
+        > * {
+          padding: 0.125rem 0rem;
+        }
+
+        b {
+          font-size: 1.2rem;
+          font-family: monospace;
+          color: #ee6b60;
+          display: inline-block;
+        }
+      }
+    }
+  }
+}

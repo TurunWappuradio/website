@@ -115,14 +115,14 @@ export default class extends React.Component {
           />
 
           <div className="RadioPlayer-controlWrapper">
-            <div className="RadioPlayer-Controls">
+            <div className="RadioPlayer-controls">
               <PlayControl
                 large
                 playing={playing}
                 onClick={() => this.onPlayStop()}
               />
               {Date.now() >= 1556010000000 && (
-                <div className="RadioPlayer-NowPlaying">
+                <div className="RadioPlayer-nowPlaying">
                   <span>Nyt soi</span>
                   <span>{song}</span>
                 </div>

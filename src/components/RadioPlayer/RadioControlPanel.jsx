@@ -9,7 +9,7 @@ export default function RadioControlPanel(props) {
       <div className="RadioControlPanel">
         <div className="RadioControlPanel-playerControls">
           <PlayControl playing={props.playing} onClick={props.onPlayingClick} />
-          <span>
+          <span className="RadioControlPanel-volumeControl">
             <VolumeControl
               muted={props.muted}
               onClickMute={props.onClickMute}
@@ -25,7 +25,6 @@ export default function RadioControlPanel(props) {
         <div className="RadioControlPanel-infoContainer RadioControlPanel-infoContainer--Details">
           <div className="RadioControlPanel-contactWrapper">
             <h2>Turun Wappuradio</h2>
-
             <div>
               <span>Taajuudella</span> <b>93,8 MHz</b>
             </div>

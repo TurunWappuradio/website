@@ -22,6 +22,12 @@
       flex: 1;
     }
 
+    &-volumeControl {
+      @media (max-width: 600px), (max-device-width: 600px) {
+        display: none;
+      }
+    }
+
     &-playerControls {
       display: flex;
       flex-direction: row;
@@ -60,7 +66,7 @@
 
       > span {
         padding: 0.25rem;
-        max-width: 300px;
+        max-width: 250px;
         text-overflow: ellipsis;
         overflow: hidden;
         white-space: nowrap;
@@ -75,6 +81,10 @@
       @media (max-width: 600px), (max-device-width: 600px) {
         > span:last-child {
           font-size: 0.9rem;
+        }
+
+        > span:last-child {
+          max-width: calc(0.5 * 100vw);
         }
       }
     }

@@ -56,6 +56,9 @@
       border-left: 1px solid #fff;
       display: flex;
       flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
       text-align: center;
 
       @media (max-width: 800px), (max-device-width: 800px) {

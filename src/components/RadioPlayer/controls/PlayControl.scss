@@ -3,6 +3,8 @@
   border: none;
   cursor: pointer;
 
+  @extend .RoundButtonOutline;
+
   &-iconWrapper {
     display: fleX;
     flex-direction: column;

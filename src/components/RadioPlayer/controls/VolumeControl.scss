@@ -25,6 +25,8 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
+
+  @extend .RoundButtonOutline;
 }
 
 .VolumeSlider {
@@ -47,6 +49,8 @@
   color: #fff;
   border-radius: 50%;
   background: transparent;
+
+  @extend .RoundButtonOutline;
 
   &--Active {
     border-color: #ee6b60;

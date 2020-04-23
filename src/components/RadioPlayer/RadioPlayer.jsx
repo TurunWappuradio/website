@@ -1,10 +1,9 @@
 import React from 'react';
 
 import PlayControl from './controls/PlayControl';
-import ExternalLinkControl from './controls/ExternalLinkControl';
-import VolumeControl from './controls/VolumeControl';
 import RadioControlPanel from './RadioControlPanel';
 import { FiMaximize2 } from 'react-icons/fi';
+import { FaTelegramPlane } from 'react-icons/fa';
 
 const AUDIO_STREAM_URL = 'https://player.turunwappuradio.com/wappuradio.mp3';
 const METADATA_SERVER_URL =
@@ -144,7 +143,14 @@ export default class extends React.Component {
               href="https://player.turunwappuradio.com/wappuradio.mp3"
               target="_blank">
               <FiMaximize2 />
-              Avaa uuteen ikkunaan
+              Avaa lähetys uuteen ikkunaan
+            </a>
+            <a
+              className="RadioPlayer-streamLink"
+              href="https://t.me/turunwappuradio"
+              target="_blank">
+              <FaTelegramPlane />
+              Keskustele telegrammissa
             </a>
           </div>
         </div>

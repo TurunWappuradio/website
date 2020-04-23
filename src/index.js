@@ -65,7 +65,9 @@ function mountComponents() {
   if (process.env.BROADCAST_MODE === 'live') {
     renderRadio();
     renderVideoChatHider();
-    renderShoutBox();
+    if (process.env.CHAT_MODE === 'live') {
+      renderShoutBox();
+    }
     renderMetadataForm();
   }
   renderMusic();

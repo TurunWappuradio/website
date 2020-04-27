@@ -58,7 +58,7 @@ export default props => {
       </div>
       {open && (
         <div className="ShowCard-description">
-          <p>{description}</p>
+          <p dangerouslySetInnerHTML={{ __html: description }} />
         </div>
       )}
     </div>

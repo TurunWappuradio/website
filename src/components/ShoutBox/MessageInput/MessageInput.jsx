@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
 import NameFormatter from '../NameFormatter';
-import TextField from "../../common/TextField";
+import TextField from '../../common/TextField';
 
-const isButtonDisabled = (message, timeout) =>
-  message === '' || timeout;
+const isButtonDisabled = (message, timeout) => message === '' || timeout;
 
 class MessageInput extends Component {
   constructor(props) {
@@ -42,20 +41,17 @@ class MessageInput extends Component {
         }}
         className="sbInputForm">
         <TextField
-          label={<NameFormatter name={this.props.name}/>}
+          label={<NameFormatter name={this.props.name} />}
           placeholder={'Syötä viesti (max. 200 merkkiä)'}
           value={this.state.message}
-          onChange={(ev) =>this.changeMessage(ev)}
+          onChange={ev => this.changeMessage(ev)}
         />
         <div className="sbButtonArea">
           <button
             type="submit"
             value="Send"
             className="sbSubmitButton"
-            disabled={isButtonDisabled(
-              this.state.message,
-              this.state.timeout
-            )}>
+            disabled={isButtonDisabled(this.state.message, this.state.timeout)}>
             Lähetä
           </button>
         </div>

@@ -48,15 +48,9 @@ const MusicLibrary = () => {
         <tbody>
           {listToShow.map((track, index) => (
             <tr key={index}>
-              <td className="TracklistItem">
-                {track.artist}
-              </td>
-              <td className="TracklistItem">
-                {track.album}
-              </td>
-              <td className="TracklistItem">
-                {track.title}
-              </td>
+              <td className="TracklistItem">{track.artist}</td>
+              <td className="TracklistItem">{track.album}</td>
+              <td className="TracklistItem">{track.title}</td>
             </tr>
           ))}
         </tbody>

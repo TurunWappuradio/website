@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
-import Button from "../common/Button";
-import TextField from "../common/TextField";
+import Button from '../common/Button';
+import TextField from '../common/TextField';
 
-const METADATA_API = process.env.METADATA_API || 'http://localhost:3031/newsong';
+const METADATA_API =
+  process.env.METADATA_API || 'http://localhost:3031/newsong';
 
 class MetadataForm extends Component {
   constructor(props) {
@@ -49,47 +50,51 @@ class MetadataForm extends Component {
     fetch(METADATA_API, {
       method: 'POST',
       headers: {
-        'Content-Type': 'text/plain',
+        'Content-Type': 'text/plain'
       },
       body
-    })
-      .catch(err => console.error(err));
+    }).catch(err => console.error(err));
   }
 
   render() {
     const { artist, track, password, error } = this.state;
 
-    const renderLabel = label => (
-      <div className="FieldLabel">{label}</div>
-    );
+    const renderLabel = label => <div className="FieldLabel">{label}</div>;
 
     return (
       <div className="MetadataFormContainer">
         {error}
         <div className="FieldWrapper">
-          <TextField label={renderLabel('Artisti')}
-                     placeholder="Artistin nimi"
-                     value={artist}
-                     onChange={this.handleArtistChange}/>
+          <TextField
+            label={renderLabel('Artisti')}
+            placeholder="Artistin nimi"
+            value={artist}
+            onChange={this.handleArtistChange}
+          />
         </div>
         <div className="FieldWrapper">
-          <TextField label={renderLabel('Kappale')}
-                     placeholder="Kappaleen nimi"
-                     value={track}
-                     onChange={this.handleTrackChange}/>
+          <TextField
+            label={renderLabel('Kappale')}
+            placeholder="Kappaleen nimi"
+            value={track}
+            onChange={this.handleTrackChange}
+          />
         </div>
         <div className="FieldWrapper">
-          <TextField label={renderLabel('Salasana')}
-                     placeholder="Ootsä varmasti Wappuradion tyyppi?"
-                     value={password}
-                     onChange={this.handlePasswordChange}
-                     type="password"/>
+          <TextField
+            label={renderLabel('Salasana')}
+            placeholder="Ootsä varmasti Wappuradion tyyppi?"
+            value={password}
+            onChange={this.handlePasswordChange}
+            type="password"
+          />
         </div>
         <div className="ButtonWrapper">
-          <Button disabled={artist === '' || track === '' || password === ''}
-                  type="submit"
-                  value="Send"
-                  onClick={this.handleSubmitClick}>
+          <Button
+            disabled={artist === '' || track === '' || password === ''}
+            type="submit"
+            value="Send"
+            onClick={this.handleSubmitClick}>
             Tallenna
           </Button>
         </div>

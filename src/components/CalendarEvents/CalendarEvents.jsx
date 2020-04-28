@@ -38,7 +38,11 @@ export default () => {
             )
           : formatRange(
               format(new Date(start.date), 'dddd DD.MM.', loc),
-              format(new Date(end.date) - ONE_DAY_IN_MILLISECONDS, 'dddd DD.MM.', loc)
+              format(
+                new Date(end.date) - ONE_DAY_IN_MILLISECONDS,
+                'dddd DD.MM.',
+                loc
+              )
             );
 
         return (

@@ -86,12 +86,20 @@
   > span {
     display: block;
     padding: 0.25rem;
+    color: #fff;
   }
 
-  > span:last-child {
+  > span:nth-child(2) {
     font-size: 1.1rem;
     font-weight: 600;
     color: #ee6b60;
+  }
+  > span:last-child {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #ee6b60;
+    opacity: 0.6;
+    padding-top: 0;
   }
 }
 

@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { format } from 'date-fns';
-import ShoutBox from "../ShoutBox/ShoutBox";
+import ShoutBox from '../ShoutBox/ShoutBox';
 
 const getTime = () => {
-  return format(new Date(), 'HH:mm')
+  return format(new Date(), 'HH:mm');
 };
 
 class Dashboard extends Component {
@@ -12,13 +12,17 @@ class Dashboard extends Component {
 
     this.state = {
       time: getTime()
-    }
+    };
   }
 
   componentDidMount() {
-    setInterval(() => this.setState({
-      time: getTime()
-    }), 5000);
+    setInterval(
+      () =>
+        this.setState({
+          time: getTime()
+        }),
+      5000
+    );
   }
 
   render() {
@@ -26,11 +30,10 @@ class Dashboard extends Component {
       <div style={{ height: 500 }}>
         <div className="dashboardTime">{this.state.time}</div>
         <h1>Shoutbox</h1>
-        <ShoutBox limit={200} isOpen={true}/>
+        <ShoutBox limit={200} isOpen={true} />
       </div>
-    )
+    );
   }
 }
-
 
 export default Dashboard;

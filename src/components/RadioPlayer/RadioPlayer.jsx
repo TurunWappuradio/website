@@ -16,7 +16,7 @@ export default class extends React.Component {
     this.state = {
       playing: false,
       muted: false,
-      song: '',
+      song: null, // { song, artist }
       volumeLevel: 100,
       playClicked: false
     };
@@ -26,24 +26,27 @@ export default class extends React.Component {
     this.changeVolume = this.changeVolume.bind(this);
 
     this.audio = React.createRef();
+  }
+
+  componentDidMount() {
     this.getSongTitle();
+    const interval = setInterval(() => {
+      this.getSongTitle();
+    }, 10000);
   }
 
   getSongTitle() {
     fetch('https://json.turunwappuradio.com/metadata.json', {
       method: 'GET', // *GET, POST, PUT, DELETE, etc.
-      mode: 'cors', // no-cors, *cors, same-origin
-      headers: {
-      },
+      mode: 'cors' // no-cors, *cors, same-origin
     })
       .then(res => res.json())
       .then(metadata => {
         this.setState({
-          song: metadata.artist + ' - ' + metadata.song
-        })
+          song: metadata
+        });
       })
-      .catch(err => console.error(err))
-      .finally(() => { setTimeout(() => {this.getSongTitle()}, 10000) });
+      .catch(console.error);
   }
 
   onPlayStop() {
@@ -115,7 +118,8 @@ export default class extends React.Component {
               {Date.now() >= 1556010000000 && (
                 <div className="RadioPlayer-nowPlaying">
                   <span>Nyt soi</span>
-                  <span>{song}</span>
+                  <span>{song ? song.song : '-'}</span>
+                  <span>{song ? song.artist : ''}</span>
                 </div>
               )}
             </div>

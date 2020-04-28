@@ -20,7 +20,8 @@ export default function RadioControlPanel(props) {
         </div>
         <div className="RadioControlPanel-metaContainer">
           <span>Nyt soi</span>
-          <span>{props.song}</span>
+          <span>{props.song && props.song.song}</span>
+          <span>{props.song && props.song.artist}</span>
         </div>
         <div className="RadioControlPanel-infoContainer RadioControlPanel-infoContainer--Details">
           <div className="RadioControlPanel-contactWrapper">

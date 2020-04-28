@@ -10,7 +10,7 @@ class Chat extends Component {
     super(props);
     this.state = {
       name: null,
-      isAdmin: false,
+      role: null,
       messages: [],
       wsConnected: false,
       colorSwitcher: false
@@ -40,9 +40,11 @@ class Chat extends Component {
 
     // Connect client
     this.ws.onopen = () => {
-      this.ws.send(JSON.stringify({
-        type: 'reload'
-      }));
+      this.ws.send(
+        JSON.stringify({
+          type: 'reload'
+        })
+      );
 
       if (!!this.state.name) {
         this.handleSubmitName(this.state.name);
@@ -57,16 +59,19 @@ class Chat extends Component {
         return this.ws.send('PONG');
       }
 
-      const { type, name, message } = JSON.parse(e.data);
+      const { type, name, message, role } = JSON.parse(e.data);
 
       if (type === 'message' && name && message) {
-        this.addMessage({ name, message });
-      }
-      else if (type === 'admin') {
-        this.setState({ isAdmin: true });
+        this.addMessage({ name, message, role });
+      } else if (type === 'role') {
+        this.setState({ role });
       }
       // delete all messages from the banned person, unless this is them
-      else if (type === 'ban' && name === 'Toimitus' && message !== this.state.name) {
+      else if (
+        type === 'ban' &&
+        name === 'Toimitus' &&
+        message !== this.state.name
+      ) {
         this.setState({
           messages: this.state.messages.filter(m => m.name !== message)
         });
@@ -93,7 +98,9 @@ class Chat extends Component {
     };
 
     this.setState({
-      messages: [...this.state.messages, message].slice(-(this.props.limit || 100)),
+      messages: [...this.state.messages, message].slice(
+        -(this.props.limit || 100)
+      ),
       colorSwitcher: !this.state.colorSwitcher
     });
     this.scrollToBottom();
@@ -141,6 +148,8 @@ class Chat extends Component {
       return null;
     }
 
+    const isAdmin = this.state.role === 'moderator' || this.state.role === 'admin';
+
     return (
       <div className="ShoutBoxContainer">
         <div className="sbMainWrapper">
@@ -151,7 +160,8 @@ class Chat extends Component {
                 message={message.message}
                 name={message.name}
                 color={message.color}
-                isAdmin={this.state.isAdmin}
+                role={message.role}
+                isAdmin={isAdmin}
                 onBanClick={this.handleBanClick}
               />
             ))}
@@ -165,7 +175,8 @@ class Chat extends Component {
             {this.state.name ? (
               <MessageInput
                 ws={this.ws}
-                name={this.state.isAdmin ? 'Toimitus' : this.state.name}
+                name={this.state.name}
+                role={this.state.role}
                 onSubmitMessage={messageString =>
                   this.submitMessage(messageString)
                 }
@@ -173,11 +184,12 @@ class Chat extends Component {
             ) : (
               <NameInput
                 ws={this.ws}
-                onSubmitName={(name) => {
+                onSubmitName={name => {
                   this.handleSubmitName(name);
                   this.setState({ name });
                 }}
-              />)}
+              />
+            )}
           </div>
         </div>
       </div>

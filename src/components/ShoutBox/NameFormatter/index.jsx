@@ -1,21 +1,20 @@
 import React from 'react';
 
-const Index = ({ name }) => (
-  <div
-    className="sbNameText"
-    style={findColor(name)}>
+const Index = ({ name, role }) => (
+  <div className="sbNameText" style={findColor(role)}>
     {name}:
   </div>
 );
 
-const findColor = name => {
-  switch (name) {
-    case 'Toimitus':
+const findColor = role => {
+  switch (role) {
+    case 'admin':
+    case 'moderator':
       return { color: '#ee6b60' };
-    case 'Palvelin':
+    case 'server':
       return { color: '#fdfd96' };
     default:
-      return { color: '#ffffff'};
+      return { color: '#ffffff' };
   }
 };
 

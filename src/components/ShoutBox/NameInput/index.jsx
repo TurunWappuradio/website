@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import TextField from '../../common/TextField';
 
-const isButtonDisabled = (name) => name === '';
+const isButtonDisabled = name => name === '';
 
 class NameInput extends Component {
   constructor(props) {

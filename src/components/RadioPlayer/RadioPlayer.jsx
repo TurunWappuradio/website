@@ -18,7 +18,8 @@ export default class extends React.Component {
       muted: false,
       song: '',
       volumeLevel: 100,
-      playClicked: false
+      playClicked: false,
+      prevMetadataFetchTime: 'Tue, 7 Apr 2020 15:25:34 GMT',
     };
 
     this.onPlayStop.bind(this);
@@ -30,16 +31,19 @@ export default class extends React.Component {
   }
 
   getSongTitle() {
+    console.log(this.state.prevMetadataFetchTime)
     fetch('https://json.turunwappuradio.com/metadata.json', {
       method: 'GET', // *GET, POST, PUT, DELETE, etc.
       mode: 'cors', // no-cors, *cors, same-origin
       headers: {
+        'If-Modified-Since': this.state.prevMetadataFetchTime
       },
     })
       .then(res => res.json())
       .then(metadata => {
         this.setState({
-          song: metadata.artist + ' - ' + metadata.song
+          song: metadata.artist + ' - ' + metadata.song,
+          prevMetadataFetchTime: new Date().toUTCString()
         })
       })
       .catch(err => console.error(err))

@@ -24,34 +24,26 @@ export default class extends React.Component {
     this.onPlayStop.bind(this);
     this.onVolumeOnOff.bind(this);
     this.changeVolume = this.changeVolume.bind(this);
-    this.connectWebSocket = this.connectWebSocket.bind(this);
 
     this.audio = React.createRef();
+    this.getSongTitle();
   }
 
-  componentDidMount() {
-    this.connectWebSocket();
-  }
-
-  connectWebSocket() {
-    const socket = new WebSocket(METADATA_SERVER_URL);
-
-    this.setState({ socket });
-
-    // When receiving a message
-    socket.onmessage = e => {
-      if (e.data === 'PING') {
-        return socket.send('PONG');
-      }
-
-      const song = e.data;
-      this.setState({ song });
-    };
-
-    // When connection closes
-    socket.onclose = () => {
-      setTimeout(this.connectWebSocket, 5000);
-    };
+  getSongTitle() {
+    fetch('https://json.turunwappuradio.com/metadata.json', {
+      method: 'GET', // *GET, POST, PUT, DELETE, etc.
+      mode: 'cors', // no-cors, *cors, same-origin
+      headers: {
+      },
+    })
+      .then(res => res.json())
+      .then(metadata => {
+        this.setState({
+          song: metadata.artist + ' - ' + metadata.song
+        })
+      })
+      .catch(err => console.error(err))
+      .finally(() => { setTimeout(() => {this.getSongTitle()}, 10000) });
   }
 
   onPlayStop() {

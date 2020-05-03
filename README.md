@@ -2,7 +2,8 @@
 
 # Turun Wappuradio website
 
-Something of a mutant project that builds a mostly static site with a couple of dynamic react-components to provide extra functionality.
+Something of a mutant project that builds a mostly static site with a couple of
+dynamic react-components to provide extra functionality.
 
 ## Project stack
 
@@ -14,7 +15,9 @@ Something of a mutant project that builds a mostly static site with a couple of 
 
 ## Running:
 
-You need nodejs to get the build running smoothly. After the project has been build, dist can be served via any http-server. The start-script of this repo also starts a http-server that serves the files from dist.
+You need nodejs to get the build running smoothly. After the project has been
+build, dist can be served via any http-server. The start-script of this repo
+also starts a http-server that serves the files from dist.
 
 1. `$ npm install` Installs dependencies
 2. `$ npm run dev` Starts webpack-dev-server
@@ -27,4 +30,4 @@ You need nodejs to get the build running smoothly. After the project has been bu
 
 ## License
 
-MIT 2019 Julius Rajala, Turun Wappuradio
+MIT 2020 Julius Rajala, Turun Wappuradio ry

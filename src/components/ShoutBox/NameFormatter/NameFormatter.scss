@@ -1,0 +1,18 @@
+.sbNameText {
+  font-weight: 600;
+  font-size: 0.9rem;
+  padding-right: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  &-Staff {
+    color: $colorLightOrange;
+  }
+  &-Server {
+    color: $colorPink;
+  }
+  &-Default {
+    color: $colorStraw;
+  }
+}

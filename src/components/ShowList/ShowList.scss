@@ -1,0 +1,193 @@
+@import '../../styles/common.scss';
+
+.ShowList {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &-selector {
+    padding: 20px 0px;
+    display: none;
+  }
+
+  &-selector--mobile {
+    margin: 20px 0;
+    font-weight: 600;
+    font-size: 1.3rem;
+  }
+
+  &-dayButton {
+    display: inline-block;
+    padding: 0;
+    margin: .5rem;
+    font-size: 1rem;
+    font-weight: 600;
+    color: $colorPink;
+    text-transform: capitalize;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+
+    &:hover, &:focus {
+      color: #ee6b60;
+      outline: none;
+    }
+
+    &-open-day {
+      color: $colorStraw;
+  
+      &:hover, &:focus {
+        color: $colorStraw;
+      }
+    }
+  }
+
+  &-dayTitle {
+    display: inline-block;
+    text-align: center;
+    width: 100%;
+    padding: 20px;
+    color: $colorStraw;
+    font-size: 1.1rem;
+    font-weight: 600;
+  }
+
+  &-header {
+    display: flex;
+    flex-direction: row;
+    margin-right: 10px;
+    width: 100%;
+    max-width: 900px;
+
+    > h1 {
+      flex: 1;
+    }
+  }
+
+  &-filterButton, &-widescreenButton {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    color: $colorStraw;
+    padding: 0;
+    margin: 0;
+    margin-left: 1rem;
+    text-decoration: underline;
+
+    &:focus, &:active {
+      outline: none;
+    }
+
+    &:hover {
+      color: #ee6b60;
+    }
+  }
+
+  &-widescreenButton {
+    @media (max-width: 1200px), (max-device-width: 1200px) {
+      display: none;
+    }
+  }
+
+  &-widescreenCardContainer, &-daySpacer {
+    padding: 10px;
+    $base-height: 72px; // height of a 1 hour long program
+
+    // the number is program length in minutes
+    &.height-60 { height: $base-height; }
+    &.height-90 { height: 1.5 * $base-height; }
+    &.height-120 { height: 2 * $base-height; }
+    &.height-180 { height: 3 * $base-height; }
+    &.height-240 { height: 4 * $base-height; }
+    &.height-300 { height: 5 * $base-height; }
+    &.height-360 { height: 6 * $base-height; }
+    &.height-420 { height: 7 * $base-height; }
+    &.height-480 { height: 8 * $base-height; }
+    &.height-540 { height: 9 * $base-height; }
+    &.height-600 { height: 10 * $base-height; }
+    &.height-660 { height: 11 * $base-height; }
+    &.height-720 { height: 12 * $base-height; }
+  }
+
+  &-widescreenCard {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 2px;
+    position: relative;
+    background-color: #ee6b60;
+    box-shadow: 2px 2px 3px 0px rgba(0,0,0,0.21);
+    height: 100%;
+
+    > h1 {
+      color: white;
+      font-size: 0.9rem;
+      width: 100%;
+      line-height: 1.2;
+
+      @media (max-width: 1400px), (max-device-width: 1400px) {
+        font-size: 12.5px;
+      }
+    }
+
+    &.color-night {
+      background-color: #457bb1;
+    }
+
+    &.color-promote {
+      background-color: #5bbfbf;
+    }
+  }
+
+  &-responsive {
+    max-width: 900px;
+  }
+
+  &-widescreenContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 20px;
+  }
+
+  &-widescreen {
+    display: flex;
+    max-width: 100%;
+  }
+  
+  &-timestampContainer {
+    padding-top: 46px;
+    padding-right: 10px;
+  }
+
+  &-timestamp {
+    height: 72px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: white;
+  }
+
+  &-day {
+    width: 12.5%;
+    box-sizing: border-box;
+  }
+}
+
+@media (min-width: 640px) {
+  .ShowList-selector--mobile {
+    display: none;
+  }
+
+  .ShowList-selector {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+@media (min-width: 960px) {
+  
+}

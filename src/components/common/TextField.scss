@@ -1,0 +1,19 @@
+.TextFieldArea {
+  display: inline-flex;
+  width: 100%;
+  justify-content: space-around;
+  margin-right: 16px;
+}
+
+.TextFieldArea input::placeholder {
+  font-size: 10px;
+  color: #ccc;
+}
+
+.TextField {
+  width: 100%;
+  background-color: inherit;
+  color: #ffffff;
+  border: none;
+  border-bottom: 1px solid #ffffff;
+}

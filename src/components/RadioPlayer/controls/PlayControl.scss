@@ -1,0 +1,52 @@
+.PlayControl {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+
+  @extend .RoundButtonOutline;
+
+  &-iconWrapper {
+    display: fleX;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    line-height: 0;
+    font-size: 20px;
+    border: 2px solid;
+    border-color: $colorStraw;
+    border-radius: 50%;
+    color: $colorStraw;
+  }
+
+  &--Active {
+    .PlayControl-iconWrapper {
+      color: $colorLightOrange;
+      border-color: $colorLightOrange;
+    }
+  }
+
+  &--Large {
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+    background: $colorPink;
+    border-radius: 50%;
+    padding: 5px;
+
+    .PlayControl-iconWrapper {
+      border: none;
+      width: 80px;
+      height: 80px;
+      font-size: 40px;
+      border-width: 3px;
+    }
+  }
+
+  &--Active.PlayControl--Large {
+    background: $colorLightOrange;
+
+    > .PlayControl-iconWrapper > svg {
+      color: $colorPink;
+    }
+  }
+}

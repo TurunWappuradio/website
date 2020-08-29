@@ -1,0 +1,60 @@
+.VolumeControl {
+  position: relative;
+  display: inline-block;
+}
+
+.VolumeSliderArea {
+  width: 42px; // Icon size
+  height: 180px;
+  background-color: $colorLightPurple;
+  position: absolute;
+  bottom: 50px;
+  border-radius: 50px;
+  margin-left: -6px;
+}
+
+.VolumeSliderMute {
+  background-color: $colorLightOrange;
+  border-radius: 50%;
+  margin: 7px auto;
+  border: none;
+  height: 32px;
+  width: 32px;
+  font-size: 16px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+
+  @extend .RoundButtonOutline;
+}
+
+.VolumeSlider {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+}
+
+.VolumeSliderButton {
+  display: fleX;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  line-height: 0;
+  font-size: 15px;
+  border: 2px solid;
+  border-color: $colorStraw;
+  color: $colorStraw;
+  border-radius: 50%;
+  background: transparent;
+
+  @extend .RoundButtonOutline;
+
+  &--Active {
+    border-color: $colorLightOrange;
+    color: $colorLightOrange;
+  }
+}

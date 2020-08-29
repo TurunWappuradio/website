@@ -1,0 +1,92 @@
+@import '../../styles/common.scss';
+
+.VideoChatHider {
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.VCButtons {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.VCElements {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.VideoContainer {
+  margin-top: 20px;
+}
+
+.ShoutBoxContainer {
+  width: 100%;
+  max-width: 900px;
+  margin-top: 20px;
+}
+
+.VideoContainer > iframe {
+  width: 336px;
+  height: 189px;
+}
+
+.VCSingleButton {
+  margin: 2rem 1rem;
+  > .Button {
+    color: $colorStraw;
+    border-color: $colorStraw;
+    &:hover {
+      background-color: $colorStraw;
+      color: $colorPink;
+    }
+  }
+}
+
+@media (min-width: 640px) {
+  .VideoContainer > iframe {
+    width: 640px;
+    height: 360px;
+  }
+  .ShoutBoxContainer {
+    height: 360px;
+  }
+}
+
+@media (min-width: 960px) {
+  .VideoContainer > iframe {
+    width: 848px;
+    height: 480px;
+  }
+  .ShoutBoxContainer {
+    height: 480px;
+  }
+}
+
+@media (max-width: 639px) {
+  .ShoutBoxContainer {
+    height: 360px;
+  }
+}
+
+@media (orientation: portrait) and (max-width: 639px) {
+  .ShoutBoxContainer {
+    height: 360px;
+  }
+}
+
+@media (orientation: landscape) and (max-height: 639px) {
+  .ShoutBoxContainer {
+    height: 360px;
+  }
+}
+
+@media (orientation: landscape) and (max-height: 380px) {
+  .ShoutBoxContainer {
+    height: 300px;
+  }
+}

@@ -35,6 +35,14 @@
 
 .VCSingleButton {
   margin: 2rem 1rem;
+  > .Button {
+    color: $colorStraw;
+    border-color: $colorStraw;
+    &:hover {
+      background-color: $colorStraw;
+      color: $colorPink;
+    }
+  }
 }
 
 @media (min-width: 640px) {

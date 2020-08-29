@@ -21,10 +21,9 @@ export default props => {
   return (
     <div
       key={`showCard-${id}`}
-      className={`ShowCard ${open ? 'ShowCard-open' : ''}`}
+      className={`ShowCard ${open ? 'ShowCard-open' : ''} ${index % 2 === 0 ? 'ShowCard-even': 'ShowCard-odd'}`}
       onClick={selectFn}
       style={{
-        backgroundColor: placeholderColors[index % 2],
         cursor: selectFn ? 'pointer' : ''
       }}
       role="button">
@@ -33,25 +32,17 @@ export default props => {
         <div className="ShowCard-timeContainer">
           {playingNow && <h2 className="ShowCard-playingNow">Soi nyt</h2>}
           <h2
-            className="ShowCard-time"
-            style={{
-              textShadow: `2px 2px 0px ${placeholderColors[(index + 1) % 2]}`
-            }}>
+            className={`ShowCard-time ${index % 2 === 0 ? 'ShowCard-time-even': 'ShowCard-time-odd'}`}>
             {format(startDatetime, 'HH:mm')} - {format(endDatetime, 'HH:mm')}
           </h2>
         </div>
         <div className="ShowCard-info">
-          <div
-            className="ShowCard-creators"
-            style={{
-              textShadow: `1px 1px 0px ${placeholderColors[(index + 1) % 2]}`
-            }}>
+          <div className={`ShowCard-creators  ${index % 2 === 0 ? 'ShowCard-creators-even': 'ShowCard-creators-odd'}`}>
             <h2 className="ShowCard-hosts">Juontaa: {hosts}</h2>
             <h2 className="ShowCard-hosts">Tuottaa: {producers}</h2>
           </div>
           <h2
-            className="ShowCard-title"
-            style={{ backgroundColor: placeholderColors[(index + 1) % 2] }}
+            className={`ShowCard-title  ${index % 2 === 0 ? 'ShowCard-title-even': 'ShowCard-title-odd'}`}
             dangerouslySetInnerHTML={{ __html: title }}
           />
         </div>

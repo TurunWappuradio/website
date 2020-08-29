@@ -20,7 +20,7 @@
     margin: .5rem;
     font-size: 1rem;
     font-weight: 600;
-    color: #fff;
+    color: $colorPink;
     text-transform: capitalize;
     background: transparent;
     border: none;
@@ -30,6 +30,14 @@
       color: #ee6b60;
       outline: none;
     }
+
+    &-open-day {
+      color: $colorStraw;
+  
+      &:hover, &:focus {
+        color: $colorStraw;
+      }
+    }
   }
 
   &-dayTitle {
@@ -37,7 +45,7 @@
     text-align: center;
     width: 100%;
     padding: 20px;
-    color: white;
+    color: $colorStraw;
     font-size: 1.1rem;
     font-weight: 600;
   }
@@ -59,7 +67,7 @@
     border: none;
     cursor: pointer;
     font-size: 1rem;
-    color: #fff;
+    color: $colorStraw;
     padding: 0;
     margin: 0;
     margin-left: 1rem;

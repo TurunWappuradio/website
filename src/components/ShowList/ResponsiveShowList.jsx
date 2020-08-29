@@ -19,9 +19,8 @@ export default ({
       <div className="ShowList-selector">
         {dates.map(date => (
           <button
-            className="ShowList-dayButton"
+            className= {`ShowList-dayButton ${openDate === date ? 'ShowList-dayButton-open-day' : ''}`}
             key={date}
-            style={openDate === date ? { color: '#5bbfbf' } : {}}
             onClick={() => onSelectDate(date)}>
             {openDate === date
               ? format(groupedShows[date][0].startDatetime, 'dddd DD.M.', {

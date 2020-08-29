@@ -16,11 +16,11 @@ body {
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  background: #003366;
-  background: -moz-linear-gradient(top, #003366 0%, #325b84 100%);
-  background: -webkit-linear-gradient(top, #003366 0%,#325b84 100%);
-  background: #003366 linear-gradient(to bottom, #003366 0%,#325b84 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#003366', endColorstr='#325b84',GradientType=0 );
+  background: $colorPurple;
+  background: -moz-linear-gradient(top, $colorPurple 0%, 66%, $colorLightPurple 100%);
+  background: -webkit-linear-gradient(top, $colorPurple 0%, 66%,$colorLightPurple 100%);
+  background: $colorPurple linear-gradient(to bottom, $colorPurple 0%, 66%,$colorLightPurple 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr=$colorPurple, endColorstr=$colorLightPurple,GradientType=0 );
 }
 
 .Container {
@@ -63,7 +63,7 @@ body {
     }
 
     > p {
-      color: #fff;
+      color: $colorLightOrange;
       padding-top: 0.5rem;
       padding-right: 1rem;
       font-size: 0.9em;
@@ -88,7 +88,7 @@ body {
   }
 
   .QuoteContainer {
-    color: #fff;
+    color: $colorLightOrange;
     font-style: italic;
     line-height: 1.4;
     margin: 0 10px;
@@ -102,7 +102,7 @@ body {
   > h1 {
     font-size: 2rem;
     font-weight: 600;
-    color: $colorOrange;
+    color: $colorLightOrange;
     padding: 10px 0;
   }
 
@@ -110,23 +110,23 @@ body {
     padding: 20px 0 10px;
     font-size: 1.5rem;
     font-weight: 600;
-    color: white;
+    color: $colorLightOrange;
   }
 
   > h3 {
     padding: 10px 0 10px;
     font-size: 1.1rem;
     font-weight: 600;
-    color: white;
+    color: $colorLightOrange;
   }
 
   > p {
     line-height: 1.4;
     padding: 7px 0;
-    color: #fff;
+    color: $colorLightOrange;
     > em {
       font-weight: 600;
-      color: $colorTeal;
+      color: $colorStraw;
     }
   }
 
@@ -136,13 +136,13 @@ body {
     list-style: disc;
     > em {
       font-weight: 600;
-      color: $colorTeal;
+      color: $colorStraw;
     }
   }
 
   ul, ol {
     padding-left: 20px;
-    color: #fff;
+    color: $colorLightOrange;
   }
 
   ol > li {
@@ -151,13 +151,13 @@ body {
     padding-left: 10px;
 
     > span {
-      color: white;
+      color: $colorLightOrange;
       font-size: 1rem;
     }
   }
 
   a {
-    color: $colorOrange;
+    color: $colorStraw;
     font-weight: 700;
   }
 
@@ -174,9 +174,9 @@ body {
       text-decoration: none;
       display: inline-block;
       background: transparent;
-      color: #fff;
+      color: $colorStraw;
       font-weight: 600;
-      border: 2px solid #fff;
+      border: 2px solid $colorStraw;
       border-radius: 5px;
       padding: 10px 20px;
       font-size: 1.5rem;
@@ -184,8 +184,8 @@ body {
       transition: .1s ease-in-out all;
 
       &:hover {
-        color: $colorBlue;
-        border-color: $colorBlue;
+        color: $colorLightOrange;
+        border-color: $colorLightOrange;
       }
     }
 
@@ -215,7 +215,7 @@ body {
     padding: 2rem;
   }
   li > a {
-    color: $colorTeal;
+    color: $colorPink;
     font-weight: 600;
     text-decoration: none;
     &:hover {
@@ -241,7 +241,7 @@ body {
 
 .Footer {
   background-color: #000;
-  color: #fff;
+  color: $colorLightOrange;
   max-width: 100%;
   margin-top: 50px;
   display: flex;
@@ -293,14 +293,14 @@ body {
         fill: #fff;
 
         &:hover {
-          fill: $colorBlue;
+          fill: $colorLightOrange;
           transform: scale(1.05);
         }
       }
     }
 
     > li > a {
-      color: #fff;
+      color: $colorStraw;
     }
   }
 }
@@ -317,7 +317,7 @@ body {
   }
 
   bold {
-    color: #1976d2;
+    color: $colorStraw;
   }
 }
 
@@ -332,7 +332,7 @@ body {
   h1 {
     font-size: 2rem;
     font-weight: 600;
-    color: $colorOrange;
+    color: $colorLightOrange;
     padding: 10px 10px;
   }
 
@@ -348,7 +348,7 @@ body {
 .SectionHeader {
   font-size: 2rem;
   font-weight: 600;
-  color: $colorOrange;
+  color: $colorLightOrange;
   padding: 10px 10px;
   width: 100%;
   max-width: 900px;
@@ -358,7 +358,7 @@ body {
 .Subtitle {
   font-size: 1.5rem;
   font-weight: 500;
-  color: #fff;
+  color: $colorLightOrange;
   padding: 10px 10px;
   max-width: 900px;
   width: 100%;

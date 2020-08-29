@@ -10,6 +10,14 @@
   height: 150px;
   max-width: 900px;
 
+  &-even {
+    background-color: $colorPink;
+  }
+
+  &-odd {
+    background-color: $colorLightOrange;
+  }
+
   > .ShowCard-heroContainer {
     position: relative;
     line-height: 0;
@@ -37,6 +45,14 @@
       > .ShowCard-time {
         color: #fff;
         font-size: 1.2rem;
+      
+        &-even {
+          text-shadow: 2px 2px 0px $colorLightOrange;
+        }
+
+        &-odd {
+          text-shadow: 2px 2px 0px $colorPink;
+        }
       }
     }
 
@@ -64,12 +80,28 @@
         padding: 5px;
         border-radius: 4px;
         width: fit-content;
+
+        &-even {
+          background-color: $colorLightOrange;
+        }
+      
+        &-odd {
+          background-color: $colorPink;
+        }
       }
   
       > .ShowCard-creators {
         display: flex;
         flex-direction: column;
         align-items: flex-end;
+        
+        &-even {
+          text-shadow: 1px 1px 0px $colorLightOrange;
+        }
+
+        &-odd {
+          text-shadow: 1px 1px 0px $colorPink;
+        }
         
         .ShowCard-hosts {
           max-width: 400px;

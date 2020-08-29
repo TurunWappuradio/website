@@ -1,5 +1,5 @@
 .CalendarContainer {
-  color: #fff;
+  color: $colorStraw;
   line-height: 1.4;
 
   h2 {
@@ -17,7 +17,7 @@
 
     > h3 {
       font-size: 1.4rem;
-      color: $colorOrange;
+      color: $colorLightOrange;
     }
   }
 

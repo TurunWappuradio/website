@@ -15,21 +15,21 @@
     line-height: 0;
     font-size: 20px;
     border: 2px solid;
-    border-color: #fff;
+    border-color: $colorStraw;
     border-radius: 50%;
-    color: #fff;
+    color: $colorStraw;
   }
 
   &--Active {
     .PlayControl-iconWrapper {
-      color: #ee6b60;
-      border-color: #ee6b60;
+      color: $colorLightOrange;
+      border-color: $colorLightOrange;
     }
   }
 
   &--Large {
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
-    background: #5bbfbf;
+    background: $colorPink;
     border-radius: 50%;
     padding: 5px;
 
@@ -43,10 +43,10 @@
   }
 
   &--Active.PlayControl--Large {
-    background: #ee6b60;
+    background: $colorLightOrange;
 
     > .PlayControl-iconWrapper > svg {
-      color: #2f2f2f;
+      color: $colorPink;
     }
   }
 }

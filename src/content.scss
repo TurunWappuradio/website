@@ -256,31 +256,10 @@ body {
     display: -ms-flexbox;
     display: -webkit-flex;
     display: flex;
-    flex-flow: row;
-    -webkit-flex-flow: row wrap;
+    flex-direction: column;
     width: 100%;
     max-width: 900px;
     text-align: center;
-    align-items: center;
-    align-content: space-around;
-
-    > li {
-      flex: 1 1 100%;
-    }
-
-    > .social {
-      flex: 1 1 100%;
-    }
-    
-    @media (min-width: 801px) {
-      > li {
-        flex: 1 1 auto;
-      }
-  
-      > .social {
-        flex: 1 1 auto;
-      }
-    }
 
     > li > .social-icon {
       width: 32px;

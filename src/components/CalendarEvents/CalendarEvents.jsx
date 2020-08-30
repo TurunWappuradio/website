@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { startOfDay, format } from 'date-fns';
 import fi from 'date-fns/locale/fi';
+import './CalendarEvents.scss'
 
 const EVENT_COUNT = 3;
 const dateMax = new Date();

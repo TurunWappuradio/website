@@ -1,5 +1,6 @@
 import React from 'react';
 import { FiPlay, FiPause } from 'react-icons/fi';
+import './PlayControl.scss';
 
 const ICON_SIZE = '48px';
 

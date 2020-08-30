@@ -2,6 +2,7 @@ import React from 'react';
 
 import VideoPlayer from '../VideoPlayer/VideoPlayer';
 import ShoutBox from '../ShoutBox/ShoutBox';
+import './VideoChatHider.scss'
 
 import Button from '../common/Button';
 

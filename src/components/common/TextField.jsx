@@ -1,4 +1,5 @@
 import React from 'react';
+import './TextField.scss';
 
 const TextField = ({ label, placeholder, value, onChange, type }) => (
   <div className="TextFieldArea">

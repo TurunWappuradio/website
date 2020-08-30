@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Button from '../common/Button';
 import TextField from '../common/TextField';
+import './MetadataForm.scss';
 
 const METADATA_API =
   process.env.METADATA_API || 'http://localhost:3031/newsong';

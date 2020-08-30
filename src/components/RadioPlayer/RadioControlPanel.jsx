@@ -2,6 +2,7 @@ import React from 'react';
 
 import PlayControl from './controls/PlayControl';
 import VolumeControl from './controls/VolumeControl';
+import './RadioControlPanel.scss'
 
 export default function RadioControlPanel(props) {
   return (

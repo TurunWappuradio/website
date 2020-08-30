@@ -1,8 +1,9 @@
 import React from 'react';
+import './Sponsors.scss';
 
 export default () => {
   return(
-    <div className="Sponsors">
+    <div className="RadioSponsors">
 
     </div>
   )

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import MessageInput from './MessageInput/MessageInput';
 import NameInput from './NameInput';
 import MessageFormatter from './MessageFormatter';
+import './ShoutBox.scss'
 
 const wsURL = process.env.SHOUTBOX_SOURCE || 'ws://localhost:3030';
 

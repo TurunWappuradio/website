@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { take } from 'ramda';
 import resolveAssetUrl from '../../utils/assetUrlResolver';
 import { useDataSource } from '../../utils/dataEffect';
+import './MusicLibrary.scss';
 
 const MusicLibrary = () => {
   const tracklistResult = useDataSource(resolveAssetUrl("6FTzYKVi3VpLvL1m3DPIjq"));

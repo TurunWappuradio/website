@@ -1,6 +1,7 @@
 import React from 'react';
 import { Slider, Handles } from 'react-compound-slider';
 import { FiVolume1, FiVolume2, FiVolumeX } from 'react-icons/fi';
+import './VolumeControl.scss';
 
 const ICON_SIZE = '34px';
 

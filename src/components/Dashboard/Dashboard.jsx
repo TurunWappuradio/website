@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { format } from 'date-fns';
 import ShoutBox from '../ShoutBox/ShoutBox';
+import './Dashboard.scss';
 
 const getTime = () => {
   return format(new Date(), 'HH:mm');

@@ -1,4 +1,5 @@
 import React from 'react';
+import './NameFormatter.scss';
 
 const Index = ({ name }) => (
   <div className={`sbNameText ${findStyle(name)}`}>

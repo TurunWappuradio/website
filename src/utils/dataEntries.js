@@ -12,10 +12,11 @@ export default (queryObject) => {
   const [entries, setEntries] = useState({ data: null, result: "" });
   useEffect(() => {
     if (entries.result === "") {
+      setEntries({data:null, result: "PENDING"})
       client.getEntries(queryObject)
         .then((response => {
           console.log(response);
-          setEntries({ data: response.items, result: "SUCCESS" });
+          setEntries({ data: response.toPlainObject(), result: "SUCCESS" });
         }))
     }
   });

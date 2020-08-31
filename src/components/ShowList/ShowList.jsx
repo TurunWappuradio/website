@@ -23,7 +23,7 @@ export default () => {
   const showDataResult = fetchEntries({
     content_type: 'programme',
   });
-  const showData = showDataResult.data ? showDataResult.data[0].fields.shows : null;
+  const showData = showDataResult.result !== "SUCCESS" ? null : showDataResult.data.items[0].fields.shows;
   const groupedShows = showData ? byDate(showData) : [];
 
   useEffect(() => {
@@ -46,7 +46,8 @@ export default () => {
     const initialOpenDate = inRange ? dateKey : dateKeys[0];
     setSelected(currentShowId);
     setOpenDate(initialOpenDate);
-  }, [])
+  }, [groupedShows])
+
   const dates = keys(groupedShows);
   const inRange = dates.includes(getDateKeyFormat(new Date()));
   const selectedTimes = openDate && groupedShows[openDate];
@@ -56,6 +57,7 @@ export default () => {
     ? selectedTimes.filter(show => !isBefore(show.endDatetime, new Date()))
     : selectedTimes;
   const widescreen = screenWidth >= 1200 && widescreenMode;
+
   return (
     <div className="ShowList">
       <div className="ShowList-header">

@@ -332,12 +332,3 @@ body {
   text-align: left;
 }
 
-.RoundButtonOutline {
-  border-radius: 50%;
-  padding: 0;
-
-  &:focus {
-    outline: none;
-    box-shadow: 0 0 5px aliceblue;
-  }
-}

@@ -123,10 +123,10 @@ body {
   > p {
     line-height: 1.4;
     padding: 7px 0;
-    color: $colorLightOrange;
+    color: $colorStraw;
     > em {
       font-weight: 600;
-      color: $colorStraw;
+      color: $colorLightOrange;
     }
   }
 
@@ -136,13 +136,13 @@ body {
     list-style: disc;
     > em {
       font-weight: 600;
-      color: $colorStraw;
+      color: $colorLightOrange;
     }
   }
 
   ul, ol {
     padding-left: 20px;
-    color: $colorLightOrange;
+    color: $colorStraw;
   }
 
   ol > li {

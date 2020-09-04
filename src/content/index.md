@@ -20,6 +20,11 @@ mittainen pop-up -lähetys sisältäen timanttista ohjelmaa kellon ympäri.
 * *Misä:* www.turunwappuradio.com
 * *Kui pal:* Ilmane
 
+## Haluatko mukaan?
+Syksyn ohjelmahaun ilmoittautumislomake on [täällä](/ohjelmahaku.html).
+
+Jos haluat mukaan muuten tuottamaan radiota, laita viestiä toimituksellemme *toimitus[ät]turunwappuradio.com* ja kerro mitä haluaisit tehdä. Meillä on juontohommien lisäksi tarjolla mm. tekniikkaa ja markkinointia.
+
 <div class="ImageContainer">
 <img alt="Wappuradion Rami tuulettumassa" src="/rami-partsilla.jpg" />
 </div>

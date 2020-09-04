@@ -22,9 +22,8 @@ Turun Wappuradio on syksyllä 2018 käynnistynyt poikkitieteellinen opiskelijara
 
 ## Pähkinänkuoressa
 
-* Olemme kuultavissa 23.‑30.4.2020 osoitteessa turunwappuradio.com ja FM-taajudella 93,8 MHz
-* Tykitämme ohjelmaa koko viikon 24/7
-* Studiomme sijaitsee Yliopiston kupeessa, Turku-salissa 
+* Olemme kuultavissa wappuisin ja sillontällön pop-up -lähetyksinä
+* Tykitämme ohjelmaa koko lähetyksen ajan 24/7
 * Somesta meidät löydät [Facebookista](https://www.facebook.com/turunwappuradio/) ja [Instagramista](https://www.instagram.com/turunwappuradio/)
 
 ## Turun Wappuradiosta kirjoitettua

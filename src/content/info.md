@@ -10,7 +10,7 @@ Tämän kevään aikana on jouduttu perumaan monia tapahtumia, kun on pyritty hi
 hienoa, miten aktiivisesti eri tahot ovat tähän osallistuneet, sillä terveys ja hyvinvointi on hyvin tärkeää.
 
 Turun Wappuradion toimituksessa olemme pohtineet samoja kysymyksiä, mutta olemme päättäneet ainakin tämänhetkisen
-tiedon valossa *jatkaa radiomme järjestämistä normaalisti* erityisolosuhteet huomioiden. Wappu on kuitenkin meille
+tiedon valossa *jatkaa radiomme järjestämistä normaalisti* erityisolosuhteet huomioiden. Syssyradio on kuitenkin meille
 tärkeä, ja haluaisimmekin pystyä tuottamaan viihdykettä kuuntelijoillemme niin monen muun asian peruuntuessa. 
 
 Studiossa tulee olemaan noin 5 ihmistä kerrallaan, joten arvioimme tapahtumamme riskit suhteellisen pieniksi. Lisäksi 

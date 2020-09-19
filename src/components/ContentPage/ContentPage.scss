@@ -1,0 +1,83 @@
+@import '../../styles/common.scss';
+
+.ContentPage {
+  font-family: Montserrat, sans-serif;
+  max-width: 100%;
+  width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 60px;
+  padding: 20px;
+  text-align: left;
+
+  > img {
+    max-width: 100%;
+  }
+
+  > h1 {
+    font-size: 2rem;
+    font-weight: 600;
+    color: $colorLightOrange;
+    padding: 10px 0;
+  }
+
+  > h2 {
+    padding: 20px 0 10px;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: $colorLightOrange;
+  }
+
+  > h3 {
+    padding: 10px 0 10px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: $colorLightOrange;
+  }
+
+  > p {
+    line-height: 1.4;
+    padding: 7px 0;
+    color: $colorLightOrange;
+
+    > b {
+      font-weight: 600;
+      color: $colorStraw;
+    }
+
+    > i {
+      font-style: italic;
+    }
+  }
+
+  a {
+    color: $colorStraw;
+    font-weight: 700;
+  }
+
+  li {
+    padding: 5px 0;
+    line-height: 1.4;
+    list-style: disc;
+    > em {
+      font-weight: 600;
+      color: $colorStraw;
+    }
+  }
+
+  ul, ol {
+    padding-left: 20px;
+    color: $colorLightOrange;
+  }
+
+  ol > li {
+    list-style-type: decimal;
+    font-size: 1.1rem;
+    padding-left: 10px;
+
+    > span {
+      color: $colorLightOrange;
+      font-size: 1rem;
+    }
+  }
+}

@@ -1,15 +1,16 @@
 import React from 'react';
+import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import {
   useParams
 } from "react-router-dom";
 
+import './ContentPage.scss';
+
 export default (props) => {
   const { id } = useParams();
-  console.log(props.content);
   const content = getContent(props.content, id);
-  console.log(content);
   return (
-  <div className="ContentPage">{content && content.fields.name}</div>
+  <div className="ContentPage"> {content && documentToReactComponents(content.fields.content, options)} </div>
   )
 }
 
@@ -22,4 +23,11 @@ const getContent = (content, id) => {
     }
   });
   return returnVal;
+}
+
+let options = {
+  renderNode: {
+    'embedded-asset-block': (node) =>
+      <img className="embedded-image" src={node.data.target.fields.file.url}/>
+  }
 }

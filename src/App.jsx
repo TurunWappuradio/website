@@ -26,6 +26,10 @@ export default () => {
   const content = fetchEntries({
     content_type: 'content-page',
   }).data;
+  const nav = fetchEntries({
+    content_type: 'navigation',
+  }).data;
+
   return (
     <div className="App">
       <Router>
@@ -34,7 +38,7 @@ export default () => {
             <li>
               <Link to="/">Etusivu</Link>
             </li>
-            {content && content.items && content.items.map(item => item.fields.nav_enabled &&
+            {nav && nav.items && nav.items[0].fields.pages.map(item =>
               <li>
                 <Link to={`/${item.fields.name}`}>{item.fields.name}</Link>
               </li>)}

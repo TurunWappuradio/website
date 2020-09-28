@@ -1,1 +1,17 @@
 @import '../../styles/common.scss';
+
+
+.Header {
+  width:100%;
+  margin-left: auto;
+  margin-right: auto;
+
+  > ul {
+    display: flex;
+    flex-flow: row;
+    justify-content: flex-end;
+    > li {
+      display: list-item;
+    }
+  }
+}

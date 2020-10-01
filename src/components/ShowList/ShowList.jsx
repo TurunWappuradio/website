@@ -11,8 +11,6 @@ const getDateKeyFormat = dateTime => format(dateTime, 'dd.M');
 
 const byDate = groupBy(item => getDateKeyFormat(Date.parse(item.fields.start)));
 
-
-
 export default () => {
   const [filtered, setFiltered] = useState(true);
   const [widescreenMode, setWidescreenMode] = useState(false);

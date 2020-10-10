@@ -51,7 +51,7 @@ export default () => {
           <Route path="/">
             {process.env.REACT_APP_BROADCAST_MODE !== 'live'
               && <div id="logoContainer" className="Headline">
-                <img src={resolveAssetUrl("42UqcWCsSZ4IZyvq0Ucy6b")} alt="Turun Wappuradio" />
+                <img src={resolveAssetUrl("2KyFepzwzH0Jd9TFyTf4yr")} alt="Turun Wappuradio" />
               </div>
             }
             {process.env.REACT_APP_BROADCAST_MODE === 'live' && <RadioPlayer />}

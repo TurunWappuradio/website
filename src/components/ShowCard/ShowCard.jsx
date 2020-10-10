@@ -4,23 +4,22 @@ import './ShowCard.scss';
 
 export default props => {
   const { show, open, selectFn, index } = props;
-  const start = Date.parse(show.fields.start);
-  const end = Date.parse(show.fields.end);
+  console.log(show)
   const {
-    title,
-    imgSrc,
+    name,
     description,
-    startDatetime,
-    endDatetime,
-    id,
+    start,
+    end,
     hosts,
-    producers
+    producer,
+    picture
   } = show;
-  const background = imgSrc ? imgSrc : 'kuva_puuttuu_v2.jpg';
-  const playingNow = isWithinInterval(new Date(),{start, end});
+  // const background = imgSrc ? imgSrc : 'kuva_puuttuu_v2.jpg';
+
+  const playingNow = isWithinInterval(new Date(), { start, end });
   return (
     <div
-      key={`showCard-${id}`}
+      key={`showCard-${'id'}`}
       className={`ShowCard ${open ? 'ShowCard-open' : ''} ${index % 2 === 0 ? 'ShowCard-even': 'ShowCard-odd'}`}
       onClick={selectFn}
       style={{
@@ -28,7 +27,7 @@ export default props => {
       }}
       role="button">
       <div className="ShowCard-heroContainer">
-        <img className="ShowCard-hero" src={background} />
+        <img className="ShowCard-hero" src={picture} />
         <div className="ShowCard-timeContainer">
           {playingNow && <h2 className="ShowCard-playingNow">Soi nyt</h2>}
           <h2
@@ -39,11 +38,11 @@ export default props => {
         <div className="ShowCard-info">
           <div className={`ShowCard-creators  ${index % 2 === 0 ? 'ShowCard-creators-even': 'ShowCard-creators-odd'}`}>
             <h2 className="ShowCard-hosts">Juontaa: {hosts}</h2>
-            <h2 className="ShowCard-hosts">Tuottaa: {producers}</h2>
+            <h2 className="ShowCard-hosts">Tuottaa: {producer}</h2>
           </div>
           <h2
             className={`ShowCard-title  ${index % 2 === 0 ? 'ShowCard-title-even': 'ShowCard-title-odd'}`}
-            dangerouslySetInnerHTML={{ __html: title }}
+            dangerouslySetInnerHTML={{ __html: name }}
           />
         </div>
       </div>

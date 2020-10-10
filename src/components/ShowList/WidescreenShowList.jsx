@@ -32,7 +32,7 @@ export default ({ showData, groupedShows }) => {
         {Object.values(groupedShows).map((day, idx) => (
           <div className="ShowList-day" key={idx}>
             <p className="ShowList-dayTitle">
-              {format(day[0].startDatetime, 'dd DD.M.', {
+              {format(day[0].start, 'dd dd.M.', {
                 locale: fi
               })}
             </p>
@@ -42,21 +42,18 @@ export default ({ showData, groupedShows }) => {
                 className={
                   'ShowList-daySpacer height-' +
                   differenceInMinutes(
-                    day[0].startDatetime,
-                    startOfDay(day[0].startDatetime)
+                    day[0].start,
+                    startOfDay(day[0].start)
                   )
                 }
               />
             )}
-            {day.map((item, idx) => (
+            {day.map(({ name, start, end, color, id }, idx) => (
               <WidescreenCard
-                title={item.title}
-                showLength={differenceInMinutes(
-                  item.endDatetime,
-                  item.startDatetime
-                )}
-                color={item.color}
-                onClick={() => setSelected(item.id)}
+                title={name}
+                showLength={differenceInMinutes(end, start)}
+                color={color}
+                onClick={() => setSelected(id)}
                 key={idx}
               />
             ))}

@@ -12,7 +12,24 @@ const useLiveShows = () => {
       const currentShowList = await contentful.getEntries({ content_type: CURRENT_SHOWLIST });
       const currentShowListId = currentShowList.includes.Entry[0].sys.id;
       const showList = await contentful.getEntry(currentShowListId);
-      setLiveShowList(showList.toPlainObject().fields.shows);
+
+      const showListMapped = showList.toPlainObject().fields.shows.map(show => {
+        const { start, end, name, description, hosts, producer, picture, color } = show.fields;
+
+        return {
+          id: show.sys.id,
+          start: Date.parse(start),
+          end: Date.parse(end),
+          name: name || 'Salainen ohjelma',
+          description: description || 'Tämä ohjelmanumero on salainen. Me ei kerrota mikä se on.',
+          hosts: hosts || 'Haamujuontaja',
+          producer: producer || 'Toimitus',
+          picture: picture ? picture.fields.file.url : 'kuva_puuttuu_v2.jpg',
+          color: color || 'normal',
+        };
+      });
+
+      setLiveShowList(showListMapped);
     };
     getLiveShowList();
   }, []);

@@ -10,12 +10,6 @@
     display: none;
   }
 
-  &-selector--mobile {
-    margin: 20px 0;
-    font-weight: 600;
-    font-size: 1.3rem;
-  }
-
   &-dayButton {
     display: inline-block;
     padding: 0;
@@ -60,6 +54,9 @@
     max-width: 900px;
 
     > h1 {
+      font-size: 2rem;
+      font-weight: 600;
+      color: $colorMainTextColor;
       flex: 1;
     }
   }
@@ -152,11 +149,13 @@
     flex-direction: column;
     align-items: center;
     padding-top: 20px;
+    width: 100%;
+    max-width: 800px;
   }
 
   &-widescreen {
     display: flex;
-    max-width: 100%;
+    width: 100%;
   }
   
   &-timestampContainer {
@@ -172,7 +171,7 @@
   }
 
   &-day {
-    width: 12.5%;
+    flex: 1;
     box-sizing: border-box;
   }
 }

@@ -9,6 +9,7 @@ import Helmet from 'react-helmet';
 
 import resolveAssetUrl from './utils/assetUrlResolver';
 import fetchEntries from './utils/dataEntries';
+import { pageview } from './utils/analytics';
 import './App.scss';
 import {
   Footer,
@@ -44,31 +45,34 @@ export default () => {
           </ul>
         </Header>
         <div class="Container">
-        <Switch>
-          <Route path="/:id">
-            <ContentPage pageContent={content} />
-          </Route>
-          <Route path="/">
-            <Helmet>
-              <title>Turun Syssyradio</title>
-              <meta name="description" content="Syssyradio 27. - 28.10.2020"></meta>
-            </Helmet>
-            {process.env.REACT_APP_BROADCAST_MODE !== 'live'
-              && <div id="logoContainer" className="Headline">
-                <img src={resolveAssetUrl("2KyFepzwzH0Jd9TFyTf4yr")} alt="Turun Wappuradio" />
-              </div>
-            }
-            {process.env.REACT_APP_BROADCAST_MODE === 'live' && <RadioPlayer />}
-            {process.env.REACT_APP_BROADCAST_MODE === 'live' && <VideoChatHider />}
-            <ShowList list="live" />
-          </Route>
-        </Switch>
-      </div>
+          <Switch>
+            <Route path="/:id">
+              <ContentPage pageContent={content} />
+            </Route>
+            <Route path="/">
+              <Helmet>
+                <title>Turun Syssyradio</title>
+                <meta name="description" content="Syssyradio 27. - 28.10.2020"></meta>
+              </Helmet>
+              {pageview("/")}
+              {process.env.REACT_APP_BROADCAST_MODE !== 'live'
+                && <div id="logoContainer" className="Headline">
+                  <img src={resolveAssetUrl("2KyFepzwzH0Jd9TFyTf4yr")} alt="Turun Wappuradio" />
+                </div>
+              }
+              {process.env.REACT_APP_BROADCAST_MODE === 'live' && <RadioPlayer />}
+              {process.env.REACT_APP_BROADCAST_MODE === 'live' && <VideoChatHider />}
+              <ShowList list="live" />
+            </Route>
+          </Switch>
+        </div>
       </Router>
       <Footer className="Footer" />
     </div>
   );
 }
+
+
 
 
 

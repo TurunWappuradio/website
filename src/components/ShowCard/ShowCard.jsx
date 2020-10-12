@@ -14,6 +14,8 @@ export default props => {
     picture
   } = show;
 
+  const pictureResized = `${picture}?w=900`;
+
   const playingNow = isWithinInterval(new Date(), { start, end });
 
   return (
@@ -26,7 +28,7 @@ export default props => {
       }}
       role="button">
       <div className="ShowCard-heroContainer">
-        <img className="ShowCard-hero" src={picture} alt="" />
+        <img className="ShowCard-hero" src={pictureResized} alt="" />
         <div className="ShowCard-timeContainer">
           {playingNow && <h2 className="ShowCard-playingNow">Soi nyt</h2>}
           <h2

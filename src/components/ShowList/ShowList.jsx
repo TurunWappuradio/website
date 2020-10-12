@@ -53,7 +53,7 @@ const ShowList = () => {
       {
         widescreenMode
           ? <WidescreenShowList showData={shows} groupedShows={groupedShows} />
-          : <ResponsiveShowList showData={shows} groupedShows={groupedShows} />
+          : <ResponsiveShowList showData={shows} groupedShows={groupedShows} filtered={filtered} />
       }
     </div>
   )

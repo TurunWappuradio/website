@@ -119,7 +119,7 @@
     cursor: pointer;
     border-radius: 2px;
     position: relative;
-    background-color: #ee6b60;
+    background-color: $colorPink;
     box-shadow: 2px 2px 3px 0px rgba(0,0,0,0.21);
     height: 100%;
 
@@ -135,11 +135,11 @@
     }
 
     &.color-night {
-      background-color: #457bb1;
+      background-color: $colorPurpleInbetween;
     }
 
     &.color-promote {
-      background-color: #5bbfbf;
+      background-color: $colorLightOrange;
     }
   }
 
@@ -170,7 +170,7 @@
     height: 72px;
     font-size: 1.1rem;
     font-weight: 600;
-    color: white;
+    color: $colorStraw;
   }
 
   &-day {

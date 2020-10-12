@@ -1,17 +1,14 @@
 // Created with love using inspiration provided by Julius Rajala :)
 
 import { useState, useEffect } from 'react';
-import {createClient} from 'contentful';
 
-const client = createClient({
-  space: process.env.REACT_APP_TWR_SPACE,
-  accessToken: process.env.REACT_APP_TWR_CMS_API_KEY
-});
+import contentful from './contentful';
 
 export default (assetId) => {
   const [url, setUrl] = useState("");
+
   useEffect(() => {
-    client.getAsset(assetId)
+    contentful.getAsset(assetId)
       .then((response => 
         setUrl(response.fields.file.url)))
   });

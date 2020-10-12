@@ -1,45 +1,59 @@
-import React from 'react';
-import { format } from 'date-fns';
+import React, { useState } from 'react';
+import { format, isBefore } from 'date-fns';
 import fi from 'date-fns/locale/fi';
-import Dropdown from 'react-dropdown';
 
 import ShowCard from '../ShowCard/ShowCard';
-import './ShowList.scss';
 
-export default ({
-  dates,
-  openDate,
-  selected,
-  groupedShows,
-  timesWithAppliedFilter,
-  onSelectDate,
-  onSelectShow
-}) => {
+const getDateKeyFormat = dateTime => format(dateTime, 'dd.M');
+
+const initialDate = (dateKeys) => {
+  const currentTime = new Date();
+  const dateKey = getDateKeyFormat(currentTime);
+  const inRange = dateKeys.includes(dateKey);
+  const initial = inRange ? dateKey : dateKeys[0];
+  return initial;
+}
+
+export default ({ showData, groupedShows }) => {
+  // wait for shows to load.
+  if (showData.length === 0) {
+    return null;
+  }
+
+  const dateKeys = Object.keys(groupedShows);
+
+  const [selected, setSelected] = useState();
+  const [openDate, setOpenDate] = useState(initialDate(dateKeys));
+  const [filtered, setFiltered] = useState(false);
+
+  const selectedTimes = openDate && groupedShows[openDate];
+  const shouldApplyFilter =
+    filtered && openDate === getDateKeyFormat(new Date());
+  const timesWithAppliedFilter = shouldApplyFilter
+    ? selectedTimes.filter(show => !isBefore(show.endDatetime, new Date()))
+    : selectedTimes;
+
   return (
     <div className="ShowList-responsive">
+        {dateKeys.includes(new Date()) && (
+          <button
+            className="ShowList-filterButton"
+            onClick={() => setFiltered(!filtered)}>
+            {filtered ? 'Näytä menneet' : 'Piilota menneet'}
+          </button>
+        )}
       <div className="ShowList-selector">
-        {dates.map(date => (
+        {dateKeys.map(date => (
           <button
             className= {`ShowList-dayButton ${openDate === date ? 'ShowList-dayButton-open-day' : ''}`}
             key={date}
-            onClick={() => onSelectDate(date)}>
-            {openDate === date
-              ? format(Date.parse(groupedShows[date][0].fields.start), 'EEEE dd.M.', {
-                  locale: fi
-                })
-              : format(Date.parse(groupedShows[date][0].fields.start), 'E dd.M.', {
-                  locale: fi
-                })}
+            onClick={() => setOpenDate(date)}>
+            {format(groupedShows[date][0].start, 'EEEE dd.M.', {
+              locale: fi
+            })}
           </button>
         ))}
       </div>
-      <Dropdown
-        className="ShowList-selector--mobile"
-        options={mobileSelectorOptions(groupedShows, dates)}
-        onChange={opt => onSelectDate(opt.value)}
-        value={openDate}
-        placeholder="Valitse päivä"
-      />
       {timesWithAppliedFilter &&
         timesWithAppliedFilter.map((item, idx) => (
           <ShowCard
@@ -47,20 +61,9 @@ export default ({
             key={idx}
             show={item}
             open={item.id === selected}
-            selectFn={() => onSelectShow(item)}
+            selectFn={() => setSelected(selected === item.id ? '' : item.id)}
           />
         ))}
     </div>
   );
-};
-
-const mobileSelectorOptions = (groupedShows, dates) => {
-  return dates.map(date => {
-    return {
-      label: format(Date.parse(groupedShows[date][0].fields.start), 'EEEE dd.M.', {
-        locale: fi
-      }),
-      value: date
-    };
-  });
 };

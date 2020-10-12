@@ -1,10 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Link,
-  useParams
+  Link
 } from "react-router-dom";
 import resolveAssetUrl from './utils/assetUrlResolver';
 import fetchEntries from './utils/dataEntries';
@@ -14,10 +13,6 @@ import {
   RadioPlayer,
   VideoChatHider,
   ShowList,
-  MusicLibrary,
-  Dashboard,
-  MetadataForm,
-  CalendarEvents,
   Header,
   ContentPage
 } from './components';
@@ -56,7 +51,7 @@ export default () => {
             }
             {process.env.REACT_APP_BROADCAST_MODE === 'live' && <RadioPlayer />}
             {process.env.REACT_APP_BROADCAST_MODE === 'live' && <VideoChatHider />}
-            <ShowList />
+            <ShowList list="live" />
           </Route>
         </Switch>
       </Router>

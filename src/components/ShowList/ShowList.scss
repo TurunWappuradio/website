@@ -4,16 +4,13 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  text-align: start;
+  padding: 20px;
 
   &-selector {
     padding: 20px 0px;
-    display: none;
-  }
-
-  &-selector--mobile {
-    margin: 20px 0;
-    font-weight: 600;
-    font-size: 1.3rem;
+    display: flex;
+    justify-content: space-around; // space-between;
   }
 
   &-dayButton {
@@ -60,6 +57,9 @@
     max-width: 900px;
 
     > h1 {
+      font-size: 2rem;
+      font-weight: 600;
+      color: $colorMainTextColor;
       flex: 1;
     }
   }
@@ -152,11 +152,13 @@
     flex-direction: column;
     align-items: center;
     padding-top: 20px;
+    width: 100%;
+    max-width: 800px;
   }
 
   &-widescreen {
     display: flex;
-    max-width: 100%;
+    width: 100%;
   }
   
   &-timestampContainer {
@@ -172,22 +174,7 @@
   }
 
   &-day {
-    width: 12.5%;
+    flex: 1;
     box-sizing: border-box;
   }
-}
-
-@media (min-width: 640px) {
-  .ShowList-selector--mobile {
-    display: none;
-  }
-
-  .ShowList-selector {
-    display: flex;
-    justify-content: space-between;
-  }
-}
-
-@media (min-width: 960px) {
-  
 }

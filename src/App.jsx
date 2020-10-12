@@ -62,6 +62,8 @@ export default () => {
   );
 }
 
+
+
 const getNavItems = (content) => {
   if (!content || !content.items) return [];
   content.items.map(item => { if (item.fields.nav_enabled) return item.fields.name; });

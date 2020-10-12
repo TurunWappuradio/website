@@ -1,7 +1,8 @@
 import React from 'react';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import {
-  useParams
+  useParams,
+  Redirect
 } from "react-router-dom";
 
 import './ContentPage.scss';
@@ -10,7 +11,10 @@ export default (props) => {
   const { id } = useParams();
   const content = getContent(props.content, id);
   return (
-    <div className="ContentPage"> {content && documentToReactComponents(content.fields.content, options)} </div>
+    content ?
+        <div className="ContentPage"> {documentToReactComponents(content.fields.content, options)} </div>
+      :
+        <Redirect to='/' />
   )
 }
 

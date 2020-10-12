@@ -10,6 +10,7 @@ import Footer from './Footer/Footer';
 import Header from './Header/Header';
 import Sponsors from './Sponsors/Sponsors';
 import ContentPage from './ContentPage/ContentPage';
+import Head from './Head';
 
 export {
   RadioPlayer,
@@ -23,5 +24,6 @@ export {
   Footer,
   Header,
   Sponsors,
-  ContentPage
+  ContentPage,
+  Head
 };

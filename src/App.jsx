@@ -5,6 +5,8 @@ import {
   Route,
   Link
 } from "react-router-dom";
+import Helmet from 'react-helmet';
+
 import resolveAssetUrl from './utils/assetUrlResolver';
 import fetchEntries from './utils/dataEntries';
 import './App.scss';
@@ -14,7 +16,8 @@ import {
   VideoChatHider,
   ShowList,
   Header,
-  ContentPage
+  ContentPage,
+  Head
 } from './components';
 
 export default () => {
@@ -27,6 +30,7 @@ export default () => {
 
   return (
     <div className="App">
+      <Head />
       <Router>
         <Header>
           <ul>
@@ -35,16 +39,20 @@ export default () => {
             </li>
             {nav && nav.items && nav.items[0].fields.pages.map(item =>
               <li>
-                <Link to={`/${item.fields.name.toLowerCase()}`}>{item.fields.name}</Link>
+                <Link to={`/${item.fields.slug.toLowerCase()}`}>{item.fields.name}</Link>
               </li>)}
           </ul>
         </Header>
         <div class="Container">
         <Switch>
           <Route path="/:id">
-            <ContentPage content={content} />
+            <ContentPage pageContent={content} />
           </Route>
           <Route path="/">
+            <Helmet>
+              <title>Turun Syssyradio</title>
+              <meta name="description" content="Syssyradio 27. - 28.10.2020"></meta>
+            </Helmet>
             {process.env.REACT_APP_BROADCAST_MODE !== 'live'
               && <div id="logoContainer" className="Headline">
                 <img src={resolveAssetUrl("2KyFepzwzH0Jd9TFyTf4yr")} alt="Turun Wappuradio" />

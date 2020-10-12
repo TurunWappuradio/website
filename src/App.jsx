@@ -39,6 +39,7 @@ export default () => {
               </li>)}
           </ul>
         </Header>
+        <div class="Container">
         <Switch>
           <Route path="/:id">
             <ContentPage content={content} />
@@ -54,6 +55,7 @@ export default () => {
             <ShowList list="live" />
           </Route>
         </Switch>
+      </div>
       </Router>
       <Footer className="Footer" />
     </div>

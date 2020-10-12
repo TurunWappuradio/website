@@ -28,6 +28,10 @@ body {
 }
 
 .Container {
+  min-height: calc(100vh - #{$footerHeight} - #{$headerHeight});
+
+  /** Legacy styles from the previous static website.
+    * Preserved for future use.
 
   .ImageContainer, .ScreenshotContainer {
     margin: 20px 0px;
@@ -132,6 +136,7 @@ body {
   > .SubText {
     font-size: 0.9em;
   }
+  */
 }
 
 .Header, .Footer {
@@ -166,51 +171,6 @@ body {
   @media (max-width: 500px), (max-device-width: 500px) {
     > ul >li {
       font-size: .9rem;
-    }
-  }
-}
-
-.Footer {
-  height: $footerHeight;
-  background-color: #000;
-  color: $colorLightOrange;
-  max-width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  -webkit-box-shadow: 0px -2px 3px 0px rgba(0,0,0,0.21);
-  -moz-box-shadow: 0px -2px 3px 0px rgba(0,0,0,0.21);
-  box-shadow: 0px -2px 3px 0px rgba(0,0,0,0.21);
-
-  > ul {
-    display: -moz-box;
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    max-width: 900px;
-    text-align: center;
-
-    > li > .social-icon {
-      width: 32px;
-      height: 32px;
-      text-decoration: none;
-
-      > svg {
-        width: 32px;
-        margin: 16px;
-        fill: #fff;
-
-        &:hover {
-          fill: $colorLightOrange;
-          transform: scale(1.05);
-        }
-      }
-    }
-
-    > li > a {
-      color: $colorStraw;
     }
   }
 }

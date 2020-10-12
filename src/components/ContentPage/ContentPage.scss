@@ -3,7 +3,6 @@
 .ContentPage {
   font-family: Montserrat, sans-serif;
   color: $colorStraw;
-  min-height: calc(100vh - #{$footerHeight} - #{$headerHeight});
   max-width: 100%;
   width: 900px;
   margin-left: auto;

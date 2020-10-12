@@ -1,10 +1,11 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { format } from 'date-fns';
-import { groupBy, keys } from 'ramda';
+import { groupBy } from 'ramda';
 
 import useLiveShows from '../../utils/liveShows';
 import WidescreenShowList from './WidescreenShowList';
 import './ShowList.scss';
+import ResponsiveShowList from './ResponsiveShowList';
 
 const getDateKeyFormat = dateTime => format(dateTime, 'dd.M');
 
@@ -12,8 +13,10 @@ const byDate = groupBy(item => getDateKeyFormat(item.start));
 
 const ShowList = () => {
   const shows = useLiveShows();
-  const [filtered, setFiltered] = useState(true);
   const [widescreenMode, setWidescreenMode] = useState(false);
+
+  /* temporarily removed blocking fullsize showlist on mobile for Syssyradio. Uncomment for wappu.
+
   const [screenWidth, setScreenWidth] = useState(window.innerWidth);
 
   useEffect(() => {
@@ -24,33 +27,26 @@ const ShowList = () => {
     }
   });
 
-  console.log(shows);
-
-
-  const groupedShows = byDate(shows)
-  const dates = keys(groupedShows);
-  const inRange = dates.includes(getDateKeyFormat(new Date()));
   const widescreen = screenWidth >= 1200 && widescreenMode;
+  */
 
+  const groupedShows = byDate(shows);
 
   return (
     <div className="ShowList">
       <div className="ShowList-header">
         <h1 className="ShowList-title">Ohjelmistossa</h1>
-        {inRange && (
-          <button
-            className="ShowList-filterButton"
-            onClick={() => setFiltered(!filtered)}>
-            {filtered ? 'Näytä menneet' : 'Piilota menneet'}
-          </button>
-        )}
         <button
           className="ShowList-widescreenButton"
           onClick={() => setWidescreenMode(!widescreenMode)}>
           {widescreenMode ? 'Ohjelmalista' : 'Ohjelmakartta'}
         </button>
       </div>
-      <WidescreenShowList showData={shows} groupedShows={groupedShows} />
+      {
+        widescreenMode
+          ? <WidescreenShowList showData={shows} groupedShows={groupedShows} />
+          : <ResponsiveShowList showData={shows} groupedShows={groupedShows} />
+      }
     </div>
   )
 }

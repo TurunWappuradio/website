@@ -4,10 +4,13 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  text-align: start;
+  padding: 20px;
 
   &-selector {
     padding: 20px 0px;
-    display: none;
+    display: flex;
+    justify-content: space-around; // space-between;
   }
 
   &-dayButton {
@@ -174,19 +177,4 @@
     flex: 1;
     box-sizing: border-box;
   }
-}
-
-@media (min-width: 640px) {
-  .ShowList-selector--mobile {
-    display: none;
-  }
-
-  .ShowList-selector {
-    display: flex;
-    justify-content: space-between;
-  }
-}
-
-@media (min-width: 960px) {
-  
 }

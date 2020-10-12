@@ -4,7 +4,6 @@ import './ShowCard.scss';
 
 export default props => {
   const { show, open, selectFn, index } = props;
-  console.log(show)
   const {
     name,
     description,
@@ -14,9 +13,9 @@ export default props => {
     producer,
     picture
   } = show;
-  // const background = imgSrc ? imgSrc : 'kuva_puuttuu_v2.jpg';
 
   const playingNow = isWithinInterval(new Date(), { start, end });
+
   return (
     <div
       key={`showCard-${'id'}`}
@@ -27,7 +26,7 @@ export default props => {
       }}
       role="button">
       <div className="ShowCard-heroContainer">
-        <img className="ShowCard-hero" src={picture} />
+        <img className="ShowCard-hero" src={picture} alt="" />
         <div className="ShowCard-timeContainer">
           {playingNow && <h2 className="ShowCard-playingNow">Soi nyt</h2>}
           <h2

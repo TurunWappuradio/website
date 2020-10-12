@@ -14,6 +14,7 @@ const byDate = groupBy(item => getDateKeyFormat(item.start));
 const ShowList = () => {
   const shows = useLiveShows();
   const [widescreenMode, setWidescreenMode] = useState(false);
+  const [filtered, setFiltered] = useState(true);
 
   /* temporarily removed blocking fullsize showlist on mobile for Syssyradio. Uncomment for wappu.
 
@@ -36,8 +37,15 @@ const ShowList = () => {
     <div className="ShowList">
       <div className="ShowList-header">
         <h1 className="ShowList-title">Ohjelmistossa</h1>
+        {Object.keys(groupedShows).includes(new Date()) && (
+          <button
+            className="Button ShowList-button"
+            onClick={() => setFiltered(!filtered)}>
+            {filtered ? 'Näytä menneet' : 'Piilota menneet'}
+          </button>
+        )}
         <button
-          className="ShowList-widescreenButton"
+          className="Button ShowList-button"
           onClick={() => setWidescreenMode(!widescreenMode)}>
           {widescreenMode ? 'Ohjelmalista' : 'Ohjelmakartta'}
         </button>

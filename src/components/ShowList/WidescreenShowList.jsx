@@ -32,7 +32,7 @@ export default ({ showData, groupedShows }) => {
         {Object.values(groupedShows).map((day, idx) => (
           <div className="ShowList-day" key={idx}>
             <p className="ShowList-dayTitle">
-              {format(day[0].start, 'dd dd.M.', {
+              {format(day[0].start, 'EEEEEE dd.M.', {
                 locale: fi
               })}
             </p>

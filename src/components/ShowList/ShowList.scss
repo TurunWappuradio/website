@@ -52,19 +52,26 @@
   &-header {
     display: flex;
     flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
     margin-right: 10px;
     width: 100%;
     max-width: 900px;
+
+    @media (min-width: 500px), (min-device-width: 500px) {
+      flex-direction: row;
+    }
 
     > h1 {
       font-size: 2rem;
       font-weight: 600;
       color: $colorMainTextColor;
       flex: 1;
+      margin-bottom: 1.3rem;
     }
   }
 
-  &-filterButton, &-widescreenButton {
+  &-filterButton {
     background: transparent;
     border: none;
     cursor: pointer;
@@ -84,11 +91,15 @@
     }
   }
 
-  &-widescreenButton {
-    @media (max-width: 1200px), (max-device-width: 1200px) {
-      display: none;
-    }
+  &-button {
+    margin: 0.3rem;
   }
+
+  // &-widescreenButton {
+  //   @media (max-width: 1200px), (max-device-width: 1200px) {
+  //     display: none;
+  //   }
+  // }
 
   &-widescreenCardContainer, &-daySpacer {
     padding: 10px;
@@ -128,6 +139,8 @@
       font-size: 0.9rem;
       width: 100%;
       line-height: 1.2;
+      padding: 0.5rem;
+      hyphens: auto;
 
       @media (max-width: 1400px), (max-device-width: 1400px) {
         font-size: 12.5px;

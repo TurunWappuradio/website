@@ -14,7 +14,7 @@ const initialDate = (dateKeys) => {
   return initial;
 }
 
-export default ({ showData, groupedShows }) => {
+export default ({ showData, groupedShows, filtered }) => {
   // wait for shows to load.
   if (showData.length === 0) {
     return null;
@@ -24,7 +24,6 @@ export default ({ showData, groupedShows }) => {
 
   const [selected, setSelected] = useState();
   const [openDate, setOpenDate] = useState(initialDate(dateKeys));
-  const [filtered, setFiltered] = useState(false);
 
   const selectedTimes = openDate && groupedShows[openDate];
   const shouldApplyFilter =
@@ -35,13 +34,6 @@ export default ({ showData, groupedShows }) => {
 
   return (
     <div className="ShowList-responsive">
-        {dateKeys.includes(new Date()) && (
-          <button
-            className="ShowList-filterButton"
-            onClick={() => setFiltered(!filtered)}>
-            {filtered ? 'Näytä menneet' : 'Piilota menneet'}
-          </button>
-        )}
       <div className="ShowList-selector">
         {dateKeys.map(date => (
           <button

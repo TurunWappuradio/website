@@ -35,7 +35,7 @@ export default () => {
             </li>
             {nav && nav.items && nav.items[0].fields.pages.map(item =>
               <li>
-                <Link to={`/${item.fields.name}`}>{item.fields.name}</Link>
+                <Link to={`/${item.fields.name.toLowerCase()}`}>{item.fields.name}</Link>
               </li>)}
           </ul>
         </Header>

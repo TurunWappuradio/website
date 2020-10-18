@@ -7,6 +7,10 @@ import {
 import Helmet from 'react-helmet';
 
 import { pageview } from '../../utils/analytics';
+import CalendarEvents from '../CalendarEvents/CalendarEvents';
+import MetadataForm from '../MetadataForm/MetadataForm';
+import MusicLibrary from '../MusicLibrary/MusicLibrary';
+import Chat from '../ShoutBox/ShoutBox';
 import './ContentPage.scss';
 
 export default ({ pageContent }) => {
@@ -20,7 +24,7 @@ export default ({ pageContent }) => {
   // redirect invalid slugs back to index.
   if (!page) return <Redirect to="/" />
 
-  const { name, description, content } = page.fields;
+  const { name, description, content, customComponent } = page.fields;
   
   pageview("/" + id);
 
@@ -33,6 +37,7 @@ export default ({ pageContent }) => {
       <div className="ContentPage">
         {documentToReactComponents(content, options)}
       </div>
+      {customComponent && getCustomComponent(customComponent)}
     </>
   );
 }
@@ -41,5 +46,18 @@ let options = {
   renderNode: {
     'embedded-asset-block': (node) =>
       <img className="embedded-image" src={node.data.target.fields.file.url} />
+  }
+}
+
+const getCustomComponent = (componentName) => {
+  switch(componentName) {
+    case "Kalenteri":
+      return <CalendarEvents />;
+    case "Metadata-formi":
+      return <MetadataForm />;
+    case "Musakirjasto":
+      return <MusicLibrary />;
+    case "Shoutboxi":
+      return <Chat />;
   }
 }

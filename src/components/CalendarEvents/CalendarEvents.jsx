@@ -9,7 +9,7 @@ const dateMax = new Date();
 dateMax.setMonth(new Date().getMonth() + 3);
 const TIME_MIN = startOfDay(new Date()).toISOString();
 const TIME_MAX = dateMax.toISOString();
-const eventsUrl = `https://content.googleapis.com/calendar/v3/calendars/${process.env.GOOGLE_CALENDAR_ID}/events?alwaysIncludeEmail=false&maxResults=${EVENT_COUNT}&timeMin=${TIME_MIN}&timeMax=${TIME_MAX}&showDeleted=false&showHiddenInvitations=false&singleEvents=true&key=${process.env.GOOGLE_CALENDAR_API_KEY}&orderBy=startTime`;
+const eventsUrl = `https://content.googleapis.com/calendar/v3/calendars/${process.env.REACT_APP_GOOGLE_CALENDAR_ID}/events?alwaysIncludeEmail=false&maxResults=${EVENT_COUNT}&timeMin=${TIME_MIN}&timeMax=${TIME_MAX}&showDeleted=false&showHiddenInvitations=false&singleEvents=true&key=${process.env.REACT_APP_GOOGLE_CALENDAR_API_KEY}&orderBy=startTime`;
 
 export default () => {
   const [events, setEvents] = useState([]);

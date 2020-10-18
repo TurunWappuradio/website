@@ -9,7 +9,6 @@ import contentful from './utils/contentful';
 
 import resolveAssetUrl from './utils/assetUrlResolver';
 import fetchEntries from './utils/dataEntries';
-import { pageview } from './utils/analytics';
 import './App.scss';
 import {
   Footer,
@@ -24,6 +23,7 @@ import {
 import { INDEX_PAGE, CONTENT_PAGE, NAVIGATION } from './constants/contentTypes';
 import useLiveShowListId from './utils/liveShows';
 import useShowList from './utils/shows';
+import { pageview } from './utils/analytics';
 
 export default () => {
   const content = fetchEntries({
@@ -46,6 +46,8 @@ export default () => {
     fetchIndex();
   }, []);
 
+  pageview();
+
   return (
     <div className="App">
       <Head />
@@ -67,7 +69,6 @@ export default () => {
               <SubPage pageContent={content} />
             </Route>
             <Route path="/">
-              {pageview("/")}
               {process.env.REACT_APP_BROADCAST_MODE !== 'live'
                 && <div id="logoContainer" className="Headline">
                   <img src={resolveAssetUrl("2KyFepzwzH0Jd9TFyTf4yr")} alt="Turun Wappuradio" />

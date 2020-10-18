@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { format } from 'date-fns';
 import { groupBy } from 'ramda';
 
-import useLiveShows from '../../utils/liveShows';
 import WidescreenShowList from './WidescreenShowList';
 import './ShowList.scss';
 import ResponsiveShowList from './ResponsiveShowList';
@@ -11,8 +10,7 @@ const getDateKeyFormat = dateTime => format(dateTime, 'dd.M');
 
 const byDate = groupBy(item => getDateKeyFormat(item.start));
 
-const ShowList = () => {
-  const shows = useLiveShows();
+const ShowList = ({ shows }) => {
   const [widescreenMode, setWidescreenMode] = useState(false);
   const [filtered, setFiltered] = useState(true);
 

@@ -5,7 +5,6 @@ import {
   Route,
   Link
 } from "react-router-dom";
-import Helmet from 'react-helmet';
 
 import resolveAssetUrl from './utils/assetUrlResolver';
 import fetchEntries from './utils/dataEntries';
@@ -19,14 +18,21 @@ import {
   ContentPage,
   Head
 } from './components';
+import { CONTENT_PAGE, NAVIGATION } from './constants/contentTypes';
+import useLiveShowListId from './utils/liveShows';
+import useShowList from './utils/shows';
 
 export default () => {
   const content = fetchEntries({
-    content_type: 'content-page',
+    content_type: CONTENT_PAGE,
   }).data;
+
   const nav = fetchEntries({
-    content_type: 'navigation',
+    content_type: NAVIGATION,
   }).data;
+
+  const liveShowListId = useLiveShowListId();
+  const showList = useShowList(liveShowListId);
 
   return (
     <div className="App">
@@ -43,16 +49,12 @@ export default () => {
               </li>)}
           </ul>
         </Header>
-        <div class="Container">
+        <div className="Container">
         <Switch>
           <Route path="/:id">
             <ContentPage pageContent={content} />
           </Route>
           <Route path="/">
-            <Helmet>
-              <title>Turun Syssyradio</title>
-              <meta name="description" content="Syssyradio 27. - 28.10.2020"></meta>
-            </Helmet>
             {process.env.REACT_APP_BROADCAST_MODE !== 'live'
               && <div id="logoContainer" className="Headline">
                 <img src={resolveAssetUrl("2KyFepzwzH0Jd9TFyTf4yr")} alt="Turun Wappuradio" />
@@ -60,7 +62,7 @@ export default () => {
             }
             {process.env.REACT_APP_BROADCAST_MODE === 'live' && <RadioPlayer />}
             {process.env.REACT_APP_BROADCAST_MODE === 'live' && <VideoChatHider />}
-            <ShowList list="live" />
+            <ShowList shows={showList} />
           </Route>
         </Switch>
       </div>
@@ -69,8 +71,6 @@ export default () => {
     </div>
   );
 }
-
-
 
 const getNavItems = (content) => {
   if (!content || !content.items) return [];

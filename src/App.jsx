@@ -8,6 +8,7 @@ import {
 
 import resolveAssetUrl from './utils/assetUrlResolver';
 import fetchEntries from './utils/dataEntries';
+import { pageview } from './utils/analytics';
 import './App.scss';
 import {
   Footer,
@@ -49,30 +50,26 @@ export default () => {
               </li>)}
           </ul>
         </Header>
-        <div className="Container">
-        <Switch>
-          <Route path="/:id">
-            <ContentPage pageContent={content} />
-          </Route>
-          <Route path="/">
-            {process.env.REACT_APP_BROADCAST_MODE !== 'live'
-              && <div id="logoContainer" className="Headline">
-                <img src={resolveAssetUrl("2KyFepzwzH0Jd9TFyTf4yr")} alt="Turun Wappuradio" />
-              </div>
-            }
-            {process.env.REACT_APP_BROADCAST_MODE === 'live' && <RadioPlayer />}
-            {process.env.REACT_APP_BROADCAST_MODE === 'live' && <VideoChatHider />}
-            <ShowList shows={showList} />
-          </Route>
-        </Switch>
-      </div>
+        <div class="Container">
+          <Switch>
+            <Route path="/:id">
+              <ContentPage pageContent={content} />
+            </Route>
+            <Route path="/">
+              {pageview("/")}
+              {process.env.REACT_APP_BROADCAST_MODE !== 'live'
+                && <div id="logoContainer" className="Headline">
+                  <img src={resolveAssetUrl("2KyFepzwzH0Jd9TFyTf4yr")} alt="Turun Wappuradio" />
+                </div>
+              }
+              {process.env.REACT_APP_BROADCAST_MODE === 'live' && <RadioPlayer />}
+              {process.env.REACT_APP_BROADCAST_MODE === 'live' && <VideoChatHider />}
+              <ShowList shows={showList} />
+            </Route>
+          </Switch>
+        </div>
       </Router>
       <Footer className="Footer" />
     </div>
   );
-}
-
-const getNavItems = (content) => {
-  if (!content || !content.items) return [];
-  content.items.map(item => { if (item.fields.nav_enabled) return item.fields.name; });
 }

@@ -6,6 +6,7 @@ import {
 } from "react-router-dom";
 import Helmet from 'react-helmet';
 
+import { pageview } from '../../utils/analytics';
 import './ContentPage.scss';
 
 export default ({ pageContent }) => {
@@ -20,6 +21,8 @@ export default ({ pageContent }) => {
   if (!page) return <Redirect to="/" />
 
   const { name, description, content } = page.fields;
+  
+  pageview("/" + id);
 
   return (
     <>

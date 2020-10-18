@@ -1,4 +1,4 @@
-name: Deploy Test
+name: Deploy Production
 
 on:
   push:
@@ -21,7 +21,7 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
 
-      - name: Development Build
+      - name: Build
         env:
           REACT_APP_BROADCAST_MODE: ${{ secrets.BROADCAST_MODE }}
           REACT_APP_CHAT_MODE: ${{ secrets.CHAT_MODE }}

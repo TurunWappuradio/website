@@ -1,10 +1,11 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import {
   BrowserRouter as Router,
   Switch,
   Route,
   Link
 } from "react-router-dom";
+import contentful from './utils/contentful';
 
 import resolveAssetUrl from './utils/assetUrlResolver';
 import fetchEntries from './utils/dataEntries';
@@ -16,10 +17,11 @@ import {
   VideoChatHider,
   ShowList,
   Header,
-  ContentPage,
+  SubPage,
+  IndexPage,
   Head
 } from './components';
-import { CONTENT_PAGE, NAVIGATION } from './constants/contentTypes';
+import { INDEX_PAGE, CONTENT_PAGE, NAVIGATION } from './constants/contentTypes';
 import useLiveShowListId from './utils/liveShows';
 import useShowList from './utils/shows';
 
@@ -35,6 +37,15 @@ export default () => {
   const liveShowListId = useLiveShowListId();
   const showList = useShowList(liveShowListId);
 
+  // TODO: create a hook for fetching index content.
+  const [indexContent, setIndexContent] = useState(null);
+
+  useEffect(() => {
+    const fetchIndex = () => contentful.getEntries({ content_type: INDEX_PAGE })
+      .then(res => setIndexContent(res.items[0].fields.content));
+    fetchIndex();
+  }, []);
+
   return (
     <div className="App">
       <Head />
@@ -44,16 +55,16 @@ export default () => {
             <li>
               <Link to="/">Etusivu</Link>
             </li>
-            {nav && nav.items && nav.items[0].fields.pages.map(item =>
-              <li>
+            {nav && nav.items && nav.items[0].fields.pages.map((item, idx) =>
+              <li key={idx}>
                 <Link to={`/${item.fields.slug.toLowerCase()}`}>{item.fields.name}</Link>
               </li>)}
           </ul>
         </Header>
-        <div class="Container">
+        <div className="Container">
           <Switch>
             <Route path="/:id">
-              <ContentPage pageContent={content} />
+              <SubPage pageContent={content} />
             </Route>
             <Route path="/">
               {pageview("/")}
@@ -62,9 +73,10 @@ export default () => {
                   <img src={resolveAssetUrl("2KyFepzwzH0Jd9TFyTf4yr")} alt="Turun Wappuradio" />
                 </div>
               }
-              {process.env.REACT_APP_BROADCAST_MODE === 'live' && <RadioPlayer />}
+              <IndexPage content={indexContent} />
+              {/* {process.env.REACT_APP_BROADCAST_MODE === 'live' && <RadioPlayer />}
               {process.env.REACT_APP_BROADCAST_MODE === 'live' && <VideoChatHider />}
-              <ShowList shows={showList} />
+              <ShowList shows={showList} /> */}
             </Route>
           </Switch>
         </div>

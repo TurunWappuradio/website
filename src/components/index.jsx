@@ -9,7 +9,8 @@ import CalendarEvents from './CalendarEvents/CalendarEvents';
 import Footer from './Footer/Footer';
 import Header from './Header/Header';
 import Sponsors from './Sponsors/Sponsors';
-import ContentPage from './ContentPage/ContentPage';
+import SubPage from './ContentPage/SubPage';
+import IndexPage from './ContentPage/IndexPage';
 import Head from './Head';
 
 export {
@@ -24,6 +25,7 @@ export {
   Footer,
   Header,
   Sponsors,
-  ContentPage,
+  SubPage,
+  IndexPage,
   Head
 };

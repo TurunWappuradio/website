@@ -18,7 +18,6 @@ import {
   Header,
   SubPage,
   IndexPage,
-  Head
 } from './components';
 import { INDEX_PAGE, CONTENT_PAGE, NAVIGATION } from './constants/contentTypes';
 import useLiveShowListId from './utils/liveShows';
@@ -50,7 +49,6 @@ export default () => {
 
   return (
     <div className="App">
-      <Head />
       <Router>
         <Header>
           <ul>

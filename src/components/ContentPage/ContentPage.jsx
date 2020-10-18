@@ -12,6 +12,8 @@ export default ({ content }) => (
 let options = {
   renderNode: {
     'embedded-asset-block': (node) =>
-      <img className="embedded-image" src={node.data.target.fields.file.url} />
+      <div className="ImageContainer">
+        <img className="embedded-image" src={node.data.target.fields.file.url + '?w=900'} />
+      </div>
   }
 }

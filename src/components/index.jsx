@@ -11,7 +11,6 @@ import Header from './Header/Header';
 import Sponsors from './Sponsors/Sponsors';
 import SubPage from './ContentPage/SubPage';
 import IndexPage from './ContentPage/IndexPage';
-import Head from './Head';
 
 export {
   RadioPlayer,
@@ -27,5 +26,4 @@ export {
   Sponsors,
   SubPage,
   IndexPage,
-  Head
 };

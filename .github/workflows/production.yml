@@ -1,0 +1,51 @@
+name: Deploy Test
+
+on:
+  push:
+    branches: [ master ]
+
+jobs:
+
+  build:
+
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [14.x]
+
+    steps:
+      - uses: actions/checkout@v1
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+
+      - name: Development Build
+        env:
+          REACT_APP_BROADCAST_MODE: ${{ secrets.BROADCAST_MODE }}
+          REACT_APP_CHAT_MODE: ${{ secrets.CHAT_MODE }}
+          REACT_APP_METADATA_SERVER: ${{ secrets.METADATA_SERVER }}
+          REACT_APP_SHOUTBOX_SOURCE: ${{ secrets.SHOUTBOX_SOURCE }}
+          REACT_APP_METADATA_API: ${{ secrets.METADATA_API }}
+          REACT_APP_GOOGLE_CALENDAR_ID: ${{ secrets.GOOGLE_CALENDER_ID }}
+          REACT_APP_GOOGLE_CALENDAR_API_KEY: ${{ secrets.GOOGLE_CALENDEAR_API_KEY }}
+          REACT_APP_GOOGLE_CALENDAR_SHARE_URL: ${{ secrets.GOOGLE_CALENDAR_SHARE_URL }}
+          REACT_APP_TWR_SPACE: ${{ secrets.TWR_SPACE }}
+          REACT_APP_TWR_ENV: ${{ secrets.TWR_ENV }}
+          REACT_APP_TWR_CMS_API_KEY: ${{ secrets.TWR_CMS_API_KEY }}
+          CI: ""
+        run: |
+          yarn install
+          yarn build
+
+      - name: Deploy to S3
+        uses: jakejarvis/s3-sync-action@master
+        with:
+          args: --acl public-read --follow-symlinks --delete
+        env:
+          AWS_S3_BUCKET: ${{ secrets.AWS_S3_BUCKET }}
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          AWS_REGION: 'eu-north-1'
+          SOURCE_DIR: "build"

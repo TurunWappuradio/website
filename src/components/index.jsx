@@ -9,8 +9,8 @@ import CalendarEvents from './CalendarEvents/CalendarEvents';
 import Footer from './Footer/Footer';
 import Header from './Header/Header';
 import Sponsors from './Sponsors/Sponsors';
-import ContentPage from './ContentPage/ContentPage';
-import Head from './Head';
+import SubPage from './ContentPage/SubPage';
+import IndexPage from './ContentPage/IndexPage';
 
 export {
   RadioPlayer,
@@ -24,6 +24,6 @@ export {
   Footer,
   Header,
   Sponsors,
-  ContentPage,
-  Head
+  SubPage,
+  IndexPage,
 };

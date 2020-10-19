@@ -6,8 +6,12 @@ import './MusicLibrary.scss';
 
 const MusicLibrary = () => {
   const tracklistResult = useDataSource(resolveAssetUrl("6FTzYKVi3VpLvL1m3DPIjq"));
-  const tracklist = tracklistResult.data;
   const [state, setState] = useState({ filter: '', showAll: false });
+
+  if (tracklistResult.status !== "SUCCESS")
+    return null;
+
+  const tracklist = tracklistResult.data;
   const filteredList = tracklist.filter(track => {
     return (
       track.artist.toLowerCase().indexOf(state.filter.toLowerCase()) !== -1 ||

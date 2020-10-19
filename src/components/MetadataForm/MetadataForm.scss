@@ -1,7 +1,9 @@
+@import '../../styles/common.scss';
+
 .MetadataFormContainer {
   margin: -10px;
   padding: 10px;
-  background-color: #003366;
+  background-color: $colorMainBackgroundDark;
 }
 
 .FieldWrapper {

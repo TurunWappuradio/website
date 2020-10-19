@@ -7,7 +7,8 @@ const getRequest = uri => {
 export const useDataSource = uri => {
   const [dataState, setData] = useState({ data: {}, status: "" });
   useEffect(() => {
-    if (dataState.status === "") {
+    if (dataState.status === "" && uri !== "") {
+      setData({...dataState, status: "PENDING"});
       getRequest(uri)
         .then(data => setData({ data, status: "SUCCESS" }))
         .catch(err => {

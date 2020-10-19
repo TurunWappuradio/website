@@ -6,11 +6,17 @@ import contentful from './contentful';
 
 export default (assetId) => {
   const [url, setUrl] = useState("");
+  const [status, setStatus] = useState("");
 
   useEffect(() => {
-    contentful.getAsset(assetId)
-      .then((response => 
-        setUrl(response.fields.file.url)))
+    if (status === "") {
+      setStatus("PENDING");
+      contentful.getAsset(assetId)
+        .then((response => {
+          setStatus("SUCCESS");
+          setUrl(response.fields.file.url);
+        }))
+    }
   });
   return url;
 }

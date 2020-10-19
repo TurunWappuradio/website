@@ -36,14 +36,14 @@ export default () => {
   const liveShowListId = useLiveShowListId();
   const showList = useShowList(liveShowListId);
 
-  // TODO: create a hook for fetching index content.
-  const [indexContent, setIndexContent] = useState(null);
+  // // TODO: create a hook for fetching index content.
+  // const [indexContent, setIndexContent] = useState(null);
 
-  useEffect(() => {
-    const fetchIndex = () => contentful.getEntries({ content_type: INDEX_PAGE })
-      .then(res => setIndexContent(res.items[0].fields.content));
-    fetchIndex();
-  }, []);
+  // useEffect(() => {
+  //   const fetchIndex = () => contentful.getEntries({ content_type: INDEX_PAGE })
+  //     .then(res => setIndexContent(res.items[0].fields.content));
+  //   fetchIndex();
+  // }, []);
 
   pageview();
 
@@ -72,10 +72,10 @@ export default () => {
                   <img src={resolveAssetUrl("2KyFepzwzH0Jd9TFyTf4yr")} alt="Turun Wappuradio" />
                 </div>
               }
-              <IndexPage content={indexContent} />
-              {/* {process.env.REACT_APP_BROADCAST_MODE === 'live' && <RadioPlayer />}
+              {/* <IndexPage content={indexContent} /> */}
+              {process.env.REACT_APP_BROADCAST_MODE === 'live' && <RadioPlayer />}
               {process.env.REACT_APP_BROADCAST_MODE === 'live' && <VideoChatHider />}
-              <ShowList shows={showList} /> */}
+              <ShowList shows={showList} />
             </Route>
           </Switch>
         </div>

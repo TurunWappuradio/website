@@ -34,14 +34,14 @@ export default () => {
         const ONE_DAY_IN_MILLISECONDS = 86400000;
         const time = start.dateTime
           ? formatRange(
-              format(new Date(start.dateTime), 'dddd, DD.MM. kello H:mm', loc),
+              format(new Date(start.dateTime), 'EEEE, dd.MM. \'kello\' H:mm', loc),
               format(new Date(end.dateTime), 'H:mm', loc)
             )
           : formatRange(
-              format(new Date(start.date), 'dddd DD.MM.', loc),
+              format(new Date(start.date), 'EEEE dd.MM.', loc),
               format(
                 new Date(end.date) - ONE_DAY_IN_MILLISECONDS,
-                'dddd DD.MM.',
+                'EEEE dd.MM.',
                 loc
               )
             );
@@ -55,7 +55,7 @@ export default () => {
         );
       })}
       <div className="align-right">
-        <a href={process.env.GOOGLE_CALENDAR_SHARE_URL}>
+        <a href={process.env.REACT_APP_GOOGLE_CALENDAR_SHARE_URL}>
           Lisää omaan kalenteriin
         </a>
       </div>

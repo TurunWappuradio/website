@@ -15,6 +15,7 @@
     "react-compound-slider": "^2.5.0",
     "react-dom": "^16.13.1",
     "react-dropdown": "^1.8.0",
+    "react-ga": "^3.2.0",
     "react-helmet": "^6.1.0",
     "react-icons": "^3.11.0",
     "react-router-dom": "^5.2.0",

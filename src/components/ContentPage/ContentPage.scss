@@ -58,7 +58,8 @@
     padding: 5px 0;
     line-height: 1.4;
     list-style: disc;
-    > em {
+
+    em, b {
       font-weight: 600;
       color: $colorLightOrange;
     }
@@ -75,6 +76,29 @@
 
     > span {
       font-size: 1rem;
+    }
+  }
+
+  .ImageContainer, .ScreenshotContainer {
+    margin: 20px 0px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    text-align: right;
+    padding: 20px 60px;
+    > img {
+      border-radius: 5px;
+      max-width: 100%;
+      width: 100%;
+      height: 100%;
+      -webkit-box-shadow: 2px 2px 3px 0px rgba(0,0,0,0.21);
+      -moz-box-shadow: 2px 2px 3px 0px rgba(0,0,0,0.21);
+      box-shadow: 2px 2px 3px 0px rgba(0,0,0,0.21);
+      transition: all ease-in-out .2s;
+    }
+    
+    &.ScreenshotContainer > img {
+      max-width: 550px;
     }
   }
 }

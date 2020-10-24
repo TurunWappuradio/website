@@ -103,10 +103,7 @@ export default () => {
           </div>
           <div className="RadioPlayer-contact">
             <h2>
-              Taajuudella <b>93,8 MHz</b>
-            </h2>
-            <h2>
-              Studio <b>023 619 0123</b>
+              Studio <b>023 619 0420</b>
             </h2>
             <h2>
               <b>toimitus[at]turunwappuradio.com</b>

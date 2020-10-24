@@ -16,7 +16,10 @@ const MessageFormatter = ({ name, message, color, isAdmin, onBanClick }) => (
       <div className="sbMessageText">{message}</div>
     </div>
     {isAdmin && name !== 'Toimitus' && name !== 'Palvelin' && (
-      <Button title="Bännää" onClick={() => onBanClick(name)}>
+      <Button title="Bännää" onClick={() => onBanClick(name)}
+        style={{
+          paddingBottom: '0.5rem',
+        }}>
         Bännää
       </Button>
     )}

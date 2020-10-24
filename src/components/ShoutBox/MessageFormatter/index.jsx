@@ -9,7 +9,8 @@ const MessageFormatter = ({ name, message, color, isAdmin, onBanClick }) => (
     <div
       style={{
         width: isAdmin ? 'calc(100% - 94px)' : '100%',
-        paddingLeft: '0.5rem'
+        paddingLeft: '0.5rem',
+        paddingBottom: '0.5rem',
       }}>
       <NameFormatter name={name} />
       <div className="sbMessageText">{message}</div>

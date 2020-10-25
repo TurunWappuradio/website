@@ -5,7 +5,7 @@ import {
   Route,
   Link
 } from "react-router-dom";
-import contentful from './utils/contentful';
+import Helmet from 'react-helmet';
 
 import resolveAssetUrl from './utils/assetUrlResolver';
 import fetchEntries from './utils/dataEntries';
@@ -67,6 +67,10 @@ export default () => {
               <SubPage pageContent={content} />
             </Route>
             <Route path="/">
+              <Helmet>
+                <title>Turun Syssyradio</title>
+                <meta name="description" content="Syssyradio 27.-28.10."></meta>
+              </Helmet>
               {process.env.REACT_APP_BROADCAST_MODE !== 'live'
                 && <div id="logoContainer" className="Headline">
                   <img src={`${resolveAssetUrl("2KyFepzwzH0Jd9TFyTf4yr")}?w=300`} alt="Turun Wappuradio" />

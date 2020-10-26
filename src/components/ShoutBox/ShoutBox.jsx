@@ -4,7 +4,7 @@ import NameInput from './NameInput';
 import MessageFormatter from './MessageFormatter';
 import './ShoutBox.scss'
 
-const wsURL = process.env.SHOUTBOX_SOURCE || 'ws://localhost:3030';
+const wsURL = process.env.REACT_APP_SHOUTBOX_SOURCE || 'ws://localhost:3030';
 
 class Chat extends Component {
   constructor(props) {

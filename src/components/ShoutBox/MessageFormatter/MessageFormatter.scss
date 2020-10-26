@@ -1,11 +1,18 @@
+@import '../../../styles/common.scss';
+
 .sbSingleMessageBox {
   height: auto;
-  color: $colorStraw;
+  color: $colorShoutboxMessageText;
   padding: 0.3rem 0.5rem;
+  padding-bottom: 0.5rem;
   width: 100%;
   display: inline-flex;
   justify-content: space-between;
   clear: both;
+
+  &-dark {
+    background-color: rgba(0, 0, 0, 0.10);
+  }
 }
 
 .sbMessageText {

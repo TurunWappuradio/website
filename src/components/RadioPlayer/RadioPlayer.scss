@@ -27,6 +27,7 @@
   min-width: 150px;
   flex: 1;
   margin-bottom: 30px;
+  object-fit: contain;
   @media (max-width: 600px), (max-device-width: 600px) {
     width: 300px;
   }

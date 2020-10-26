@@ -1,11 +1,11 @@
 import React from 'react';
 import Button from '../../common/Button';
 import NameFormatter from '../NameFormatter';
+import './MessageFormatter.scss';
 
 const MessageFormatter = ({ name, message, color, isAdmin, onBanClick }) => (
   <div
-    className="sbSingleMessageBox"
-    style={color ? { backgroundColor: 'rgba(0, 0, 0, 0.10)' } : undefined}>
+    className={`sbSingleMessageBox ${color ? 'sbSingleMessageBox-dark': ''}`}>
     <div
       style={{
         width: isAdmin ? 'calc(100% - 94px)' : '100%',

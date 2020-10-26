@@ -4,7 +4,7 @@ import TextField from '../common/TextField';
 import './MetadataForm.scss';
 
 const METADATA_API =
-  process.env.METADATA_API || 'http://localhost:3031/newsong';
+  process.env.REACT_APP_METADATA_API || 'http://localhost:3031/newsong';
 
 class MetadataForm extends Component {
   constructor(props) {

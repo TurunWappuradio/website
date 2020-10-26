@@ -1,11 +1,11 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import {
   BrowserRouter as Router,
   Switch,
   Route,
   Link
 } from "react-router-dom";
-import contentful from './utils/contentful';
+import Helmet from 'react-helmet';
 
 import resolveAssetUrl from './utils/assetUrlResolver';
 import fetchEntries from './utils/dataEntries';
@@ -18,6 +18,7 @@ import {
   Header,
   SubPage,
   IndexPage,
+  Sponsors
 } from './components';
 import { INDEX_PAGE, CONTENT_PAGE, NAVIGATION } from './constants/contentTypes';
 import useLiveShowListId from './utils/liveShows';
@@ -67,6 +68,10 @@ export default () => {
               <SubPage pageContent={content} />
             </Route>
             <Route path="/">
+              <Helmet>
+                <title>Turun Syssyradio</title>
+                <meta name="description" content="Syssyradio 27.-28.10."></meta>
+              </Helmet>
               {process.env.REACT_APP_BROADCAST_MODE !== 'live'
                 && <div id="logoContainer" className="Headline">
                   <img src={`${resolveAssetUrl("2KyFepzwzH0Jd9TFyTf4yr")}?w=300`} alt="Turun Wappuradio" />
@@ -80,6 +85,7 @@ export default () => {
           </Switch>
         </div>
       </Router>
+      <Sponsors />
       <Footer className="Footer" />
     </div>
   );

@@ -10,8 +10,6 @@ const useSponsors = () => {
     const getSponsors = async () => {
       const result = await contentful.getEntries({ content_type: SPONSORS });
 
-      console.log({ result })
-
       const sponsorsList = result.includes.Entry.map(sponsor => {
         const { title, link, logoImage } = sponsor.fields;
 

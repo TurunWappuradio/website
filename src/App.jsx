@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import {
   BrowserRouter as Router,
   Switch,
@@ -18,6 +18,7 @@ import {
   Header,
   SubPage,
   IndexPage,
+  Sponsors
 } from './components';
 import { INDEX_PAGE, CONTENT_PAGE, NAVIGATION } from './constants/contentTypes';
 import useLiveShowListId from './utils/liveShows';
@@ -84,6 +85,7 @@ export default () => {
           </Switch>
         </div>
       </Router>
+      <Sponsors />
       <Footer className="Footer" />
     </div>
   );

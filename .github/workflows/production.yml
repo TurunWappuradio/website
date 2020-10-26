@@ -34,6 +34,7 @@ jobs:
           REACT_APP_TWR_SPACE: ${{ secrets.TWR_SPACE }}
           REACT_APP_TWR_ENV: ${{ secrets.TWR_ENV }}
           REACT_APP_TWR_CMS_API_KEY: ${{ secrets.TWR_CMS_API_KEY }}
+          REACT_APP_GA_ID: ${{ secrets.GA_ID }}
           CI: ""
         run: |
           yarn install

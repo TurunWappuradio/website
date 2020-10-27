@@ -38,7 +38,7 @@ class VideoChatHider extends React.Component {
                 {!this.state.openVideo ? 'Katso lähetystä' : 'Piilota video'}
               </Button>
             </div>
-          )};
+          )}
           <div className="VCSingleButton">
             <Button onClick={() => this.toggleShoutBox()}>
               {!this.state.openShout ? 'Avaa chat' : 'Piilota chat'}

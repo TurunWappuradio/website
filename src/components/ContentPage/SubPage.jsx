@@ -10,6 +10,7 @@ import MusicLibrary from '../MusicLibrary/MusicLibrary';
 import MetadataForm from '../MetadataForm/MetadataForm';
 import CalendarEvents from '../CalendarEvents/CalendarEvents';
 import ShoutBox from '../ShoutBox/ShoutBox';
+import Dashboard from '../Dashboard/Dashboard';
 import './ContentPage.scss';
 import ContentPage from './ContentPage';
 
@@ -50,5 +51,7 @@ const getCustomComponent = (componentName) => {
       return <MusicLibrary />;
     case "Shoutboxi":
       return <ShoutBox />;
+    case "Studionäkymä":
+      return <Dashboard />;
   }
 }

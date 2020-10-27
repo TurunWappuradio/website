@@ -28,7 +28,7 @@ class Dashboard extends Component {
 
   render() {
     return (
-      <div style={{ height: 500 }}>
+      <div style={{ height: 500, marginBottom: 100 }}>
         <div className="dashboardTime">{this.state.time}</div>
         <h1>Shoutbox</h1>
         <ShoutBox limit={200} isOpen={true} />

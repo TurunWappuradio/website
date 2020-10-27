@@ -82,7 +82,7 @@ export default () => {
           className={
             'RadioPlayer-Brand ' + (playing ? 'pulse' : '')
           }
-          src={resolveAssetUrl("2KyFepzwzH0Jd9TFyTf4yr")}
+          src={`${resolveAssetUrl("2KyFepzwzH0Jd9TFyTf4yr")}?w=400`}
           alt="Turun Wappuradio"
         />
 

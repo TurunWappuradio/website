@@ -25,6 +25,7 @@ jobs:
         env:
           REACT_APP_BROADCAST_MODE: ${{ secrets.BROADCAST_MODE }}
           REACT_APP_CHAT_MODE: ${{ secrets.CHAT_MODE }}
+          REACT_APP_WEBCAM_MODE: ${{ secrets.WEBCAM_MODE }}
           REACT_APP_METADATA_SERVER: ${{ secrets.METADATA_SERVER }}
           REACT_APP_SHOUTBOX_SOURCE: ${{ secrets.SHOUTBOX_SOURCE }}
           REACT_APP_METADATA_API: ${{ secrets.METADATA_API }}

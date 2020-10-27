@@ -6,6 +6,8 @@ import './VideoChatHider.scss'
 
 import Button from '../common/Button';
 
+const WEBCAM_MODE = process.env.REACT_APP_WEBCAM_MODE;
+
 class VideoChatHider extends React.Component {
   constructor() {
     super();
@@ -30,11 +32,13 @@ class VideoChatHider extends React.Component {
     return (
       <div className="VideoChatHider">
         <div className="VCButtons">
-          <div className="VCSingleButton">
-            <Button onClick={() => this.toggleVideo()}>
-              {!this.state.openVideo ? 'Katso lähetystä' : 'Piilota video'}
-            </Button>
-          </div>
+          {WEBCAM_MODE === 'live' && (
+            <div className="VCSingleButton">
+              <Button onClick={() => this.toggleVideo()}>
+                {!this.state.openVideo ? 'Katso lähetystä' : 'Piilota video'}
+              </Button>
+            </div>
+          )};
           <div className="VCSingleButton">
             <Button onClick={() => this.toggleShoutBox()}>
               {!this.state.openShout ? 'Avaa chat' : 'Piilota chat'}

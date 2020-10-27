@@ -29,7 +29,7 @@ export default ({ showData, groupedShows, filtered }) => {
   const shouldApplyFilter =
     filtered && openDate === getDateKeyFormat(new Date());
   const timesWithAppliedFilter = shouldApplyFilter
-    ? selectedTimes.filter(show => !isBefore(show.endDatetime, new Date()))
+    ? selectedTimes.filter(show => !isBefore(show.end, new Date()))
     : selectedTimes;
 
   return (

@@ -86,7 +86,7 @@ export default () => {
           </Switch>
         </div>
       </Router>
-      <Sponsors />
+      {/* <Sponsors /> */}
       <Footer className="Footer" />
     </div>
   );

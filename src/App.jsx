@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import {
   BrowserRouter as Router,
   Switch,
@@ -21,9 +21,10 @@ import {
   Sponsors
 } from './components';
 import { INDEX_PAGE, CONTENT_PAGE, NAVIGATION } from './constants/contentTypes';
-import useLiveShowListId from './utils/liveShows';
-import useShowList from './utils/shows';
+// import useLiveShowListId from './utils/liveShows';
+// import useShowList from './utils/shows';
 import { pageview } from './utils/analytics';
+import contentful from './utils/contentful';
 
 export default () => {
   const content = fetchEntries({
@@ -34,17 +35,17 @@ export default () => {
     content_type: NAVIGATION,
   }).data;
 
-  const liveShowListId = useLiveShowListId();
-  const showList = useShowList(liveShowListId);
+  // const liveShowListId = useLiveShowListId();
+  // const showList = useShowList(liveShowListId);
 
-  // // TODO: create a hook for fetching index content.
-  // const [indexContent, setIndexContent] = useState(null);
+  // TODO: create a hook for fetching index content.
+  const [indexContent, setIndexContent] = useState(null);
 
-  // useEffect(() => {
-  //   const fetchIndex = () => contentful.getEntries({ content_type: INDEX_PAGE })
-  //     .then(res => setIndexContent(res.items[0].fields.content));
-  //   fetchIndex();
-  // }, []);
+  useEffect(() => {
+    const fetchIndex = () => contentful.getEntries({ content_type: INDEX_PAGE })
+      .then(res => setIndexContent(res.items[0].fields.content));
+    fetchIndex();
+  }, []);
 
   pageview();
 
@@ -77,10 +78,10 @@ export default () => {
                   <img src={`${resolveAssetUrl("2KyFepzwzH0Jd9TFyTf4yr")}?w=300`} alt="Turun Wappuradio" />
                 </div>
               }
-              {/* <IndexPage content={indexContent} /> */}
-              {process.env.REACT_APP_BROADCAST_MODE === 'live' && <RadioPlayer />}
+              <IndexPage content={indexContent} />
+              {/* {process.env.REACT_APP_BROADCAST_MODE === 'live' && <RadioPlayer />}
               {process.env.REACT_APP_BROADCAST_MODE === 'live' && <VideoChatHider />}
-              <ShowList shows={showList} />
+              <ShowList shows={showList} /> */}
             </Route>
           </Switch>
         </div>

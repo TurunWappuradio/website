@@ -2,7 +2,7 @@
 
 .Footer {
   background-color: #000;
-  color: $colorEmTextColor;
+  color: $colorLinkTextColor;
   max-width: 100%;
   display: flex;
   align-items: center;
@@ -33,7 +33,7 @@
         transition: .1s ease-in-out;
 
         &:hover {
-          fill: $colorEmTextColor;
+          fill: $colorLinkTextColor;
           transform: scale(1.2);
         }
       }

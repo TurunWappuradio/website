@@ -12,7 +12,7 @@
   > h1 {
     font-size: 2rem;
     font-weight: 600;
-    color: $colorEmTextColor;
+    color: $colorMainHeader;
     padding: 10px 0;
   }
 
@@ -20,14 +20,14 @@
     padding: 20px 0 10px;
     font-size: 1.5rem;
     font-weight: 600;
-    color: $colorEmTextColor;
+    color: $colorSubHeader;
   }
 
   > h3 {
     padding: 10px 0 10px;
     font-size: 1.1rem;
     font-weight: 600;
-    color: $colorEmTextColor;
+    color: $colorSubHeader;
   }
 
   > p {

@@ -9,8 +9,8 @@ const IndexPage = ({ content }) => {
   return (
     <>
       <Helmet>
-        <title>Turun Syssyradio</title>
-        <meta name="description" content="Syssyradio 27.-28.10."></meta>
+        <title>Turun Wappuradio</title>
+        <meta name="description" content="Wappuradio 21.-30.4."></meta>
       </Helmet>
       <ContentPage content={content} />
     </>

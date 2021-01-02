@@ -70,12 +70,12 @@ export default () => {
             </Route>
             <Route path="/">
               <Helmet>
-                <title>Turun Syssyradio</title>
-                <meta name="description" content="Syssyradio 27.-28.10."></meta>
+                <title>Turun Wappuradio</title>
+                <meta name="description" content="Wappuradio 21.-30.4."></meta>
               </Helmet>
               {process.env.REACT_APP_BROADCAST_MODE !== 'live'
                 && <div id="logoContainer" className="Headline">
-                  <img src={`${resolveAssetUrl("2KyFepzwzH0Jd9TFyTf4yr")}?w=300`} alt="Turun Wappuradio" />
+                  <img src={`${resolveAssetUrl("42UqcWCsSZ4IZyvq0Ucy6b")}?w=300`} alt="Turun Wappuradio" />
                 </div>
               }
               <IndexPage content={indexContent} />

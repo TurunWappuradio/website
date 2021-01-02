@@ -1,6 +1,9 @@
+$colorDarkBlue: #003366;
+$colorNotAsDarkBlue: #325b84;
 $colorTeal: #5bbfbf;
 $colorBlue: #60a3ee;
 $colorOrange: #ee6b60;
+$colorWhite: #fff;
 
 $colorPurple: #230127;
 $colorLightPurple: #58265D;
@@ -9,15 +12,15 @@ $colorLightOrange: #DB8841;
 $colorPink: #9B3970;
 $colorPurpleInbetween: #57355A;
 
-$colorMainBackgroundDark: $colorPurple;
-$colorMainBackgroundLight: $colorLightPurple;
+$colorMainBackgroundDark: $colorDarkBlue;
+$colorMainBackgroundLight: $colorNotAsDarkBlue;
 
-$colorMainTextColor: $colorLightOrange;
-$colorEmTextColor: $colorStraw;
+$colorMainTextColor: $colorWhite;
+$colorEmTextColor: $colorOrange;
 
-$colorLinkTextColor: $colorStraw;
+$colorLinkTextColor: $colorOrange;
 
-$colorShoutboxMessageText: white;
+$colorShoutboxMessageText: $colorWhite;
 
 $headerHeight: 80px;
 $footerHeight: 216px;

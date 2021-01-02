@@ -32,7 +32,7 @@ export default ({ pageContent }) => {
   return (
     <>
       <Helmet>
-        <title>{name} | Turun Syssyradio</title>
+        <title>{name} | Turun Wappuradio</title>
         <meta name="description" content={description}></meta>
       </Helmet>
       <ContentPage content={content} />

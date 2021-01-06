@@ -1,7 +1,7 @@
 @import '../../styles/common.scss';
 
 .CalendarContainer {
-  color: $colorStraw;
+  color: $colorMainTextColor;
   line-height: 1.4;
 
   h2 {
@@ -20,7 +20,7 @@
 
     > h3 {
       font-size: 1.4rem;
-      color: $colorLightOrange;
+      color: $colorSubHeader;
     }
   }
 
@@ -33,7 +33,7 @@
       text-decoration: underline;
       cursor: pointer;
       margin-right: 10px;
-      color: $colorLightOrange;
+      color: $colorLinkTextColor;
     }
   }
 }

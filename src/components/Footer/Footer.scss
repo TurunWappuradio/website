@@ -2,7 +2,7 @@
 
 .Footer {
   background-color: #000;
-  color: $colorLightOrange;
+  color: $colorLinkTextColor;
   max-width: 100%;
   display: flex;
   align-items: center;
@@ -30,16 +30,17 @@
         width: 32px;
         margin: 16px;
         fill: #fff;
+        transition: .1s ease-in-out;
 
         &:hover {
-          fill: $colorLightOrange;
-          transform: scale(1.05);
+          fill: $colorLinkTextColor;
+          transform: scale(1.2);
         }
       }
     }
 
     > li > a {
-      color: $colorStraw;
+      color: $colorLinkTextColor;
     }
   }
 }

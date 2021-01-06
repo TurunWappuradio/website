@@ -16,11 +16,11 @@ body {
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  background: $colorPurple;
-  background: -moz-linear-gradient(top, $colorPurple 0%, 66%, $colorLightPurple 100%);
-  background: -webkit-linear-gradient(top, $colorPurple 0%, 66%,$colorLightPurple 100%);
-  background: $colorPurple linear-gradient(to bottom, $colorPurple 0%, 66%,$colorLightPurple 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr=$colorPurple, endColorstr=$colorLightPurple,GradientType=0 );
+  background: $colorMainBackgroundDark;
+  background: -moz-linear-gradient(top, $colorMainBackgroundDark 0%, 66%, $colorMainBackgroundLight 100%);
+  background: -webkit-linear-gradient(top, $colorMainBackgroundDark 0%, 66%, $colorMainBackgroundLight 100%);
+  background: $colorMainBackgroundDark linear-gradient(to bottom, $colorMainBackgroundDark 0%, 66%, $colorMainBackgroundLight 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr=$colorMainBackgroundDark, endColorstr=$colorMainBackgroundLight,GradientType=0 );
 
   > div {
     width:100%;
@@ -155,7 +155,7 @@ body {
     padding: 2rem;
   }
   li > a {
-    color: $colorPink;
+    color: $colorNavLink;
     font-weight: 600;
     text-decoration: none;
     &:hover {
@@ -180,6 +180,8 @@ body {
   }
 }
 
+/** Legacy styles. Couldn't bring myself to delete these.
+
 .Page {
   font-family: Montserrat, sans-serif;
   max-width: 100%;
@@ -203,6 +205,8 @@ body {
     }
   }
 }
+
+*/
 
 .SectionHeader {
   font-size: 2rem;

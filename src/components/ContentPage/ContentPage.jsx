@@ -1,5 +1,6 @@
 import React from 'react';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
+import { MARKS, BLOCKS } from '@contentful/rich-text-types';
 
 import './ContentPage.scss';
 
@@ -10,6 +11,13 @@ export default ({ content }) => (
 );
 
 let options = {
+  renderMark: {
+    [MARKS.ITALIC]: text => (
+      <div className="QuoteContainer">
+        {text}
+      </div>
+    )
+  },
   renderNode: {
     'embedded-asset-block': (node) => {
       const { contentType, url } = node.data.target.fields.file;

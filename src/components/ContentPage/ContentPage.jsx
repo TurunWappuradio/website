@@ -20,7 +20,10 @@ let options = {
   },
   renderNode: {
     'embedded-asset-block': (node) => {
-      const { contentType, url } = node.data.target.fields.file;
+      console.log(node)
+      const { description, file } = node.data.target.fields;
+      const { contentType, url } = file;
+      console.log(description)
 
       switch (contentType) {
         case 'image/jpeg':
@@ -28,6 +31,7 @@ let options = {
           return (
             <div className="ImageContainer">
               <img className="embedded-image" src={url + '?w=900'} />
+              <p>{description}</p>
             </div>
           );
         case 'video/mp4':

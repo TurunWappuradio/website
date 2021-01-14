@@ -1,6 +1,6 @@
 import React from 'react';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
-import { MARKS } from '@contentful/rich-text-types';
+import { BLOCKS } from '@contentful/rich-text-types';
 
 import MusicLibrary from '../MusicLibrary/MusicLibrary';
 import MetadataForm from '../MetadataForm/MetadataForm';
@@ -11,23 +11,16 @@ import './ContentPage.scss';
 
 export default ({ content, customComponent }) => (
   <>
-  <div className="ContentPage">
-    {documentToReactComponents(content, options)}
-  </div>
-  {getCustomComponent(customComponent)}
+    <div className="ContentPage">
+      {documentToReactComponents(content, options)}
+    </div>
+    {getCustomComponent(customComponent)}
   </>
 );
 
 let options = {
-  renderMark: {
-    [MARKS.ITALIC]: text => (
-      <div className="QuoteContainer">
-        {text}
-      </div>
-    )
-  },
   renderNode: {
-    'embedded-asset-block': (node) => {
+    [BLOCKS.EMBEDDED_ASSET]: (node) => {
       const { description, file } = node.data.target.fields;
       const { contentType, url } = file;
 

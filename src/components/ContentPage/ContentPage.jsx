@@ -1,13 +1,21 @@
 import React from 'react';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
-import { MARKS, BLOCKS } from '@contentful/rich-text-types';
+import { MARKS } from '@contentful/rich-text-types';
 
+import MusicLibrary from '../MusicLibrary/MusicLibrary';
+import MetadataForm from '../MetadataForm/MetadataForm';
+import CalendarEvents from '../CalendarEvents/CalendarEvents';
+import ShoutBox from '../ShoutBox/ShoutBox';
+import Dashboard from '../Dashboard/Dashboard';
 import './ContentPage.scss';
 
-export default ({ content }) => (
+export default ({ content, customComponent }) => (
+  <>
   <div className="ContentPage">
     {documentToReactComponents(content, options)}
   </div>
+  {getCustomComponent(customComponent)}
+  </>
 );
 
 let options = {
@@ -20,10 +28,8 @@ let options = {
   },
   renderNode: {
     'embedded-asset-block': (node) => {
-      console.log(node)
       const { description, file } = node.data.target.fields;
       const { contentType, url } = file;
-      console.log(description)
 
       switch (contentType) {
         case 'image/jpeg':
@@ -42,5 +48,20 @@ let options = {
           )
       }
     }
+  }
+}
+
+const getCustomComponent = (componentName) => {
+  switch(componentName) {
+    case "Kalenteri":
+      return <CalendarEvents />;
+    case "Metadata-formi":
+      return <MetadataForm />;
+    case "Musakirjasto":
+      return <MusicLibrary />;
+    case "Shoutboxi":
+      return <ShoutBox />;
+    case "Studionäkymä":
+      return <Dashboard />;
   }
 }

@@ -1,10 +1,22 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import contentful from '../../utils/contentful';
+import { INDEX_PAGE } from '../../constants/contentTypes';
 import Helmet from 'react-helmet';
 import ContentPage from './ContentPage';
 
-const IndexPage = ({ content }) => {
+const IndexPage = () => {
+  // TODO: create a hook for fetching index content. Or don't.
+  const [pageContent, setContent] = useState(null);
 
-  if (!content) return null;
+  useEffect(() => {
+    const fetchIndex = () => contentful.getEntries({ content_type: INDEX_PAGE })
+      .then(res => setContent(res.items[0].fields));
+    fetchIndex();
+  }, []);
+
+  if (!pageContent) return null;
+
+  const { content, customComponent } = pageContent;
 
   return (
     <>
@@ -12,7 +24,7 @@ const IndexPage = ({ content }) => {
         <title>Turun Wappuradio</title>
         <meta name="description" content="Wappuradio 21.-30.4."></meta>
       </Helmet>
-      <ContentPage content={content} />
+      <ContentPage content={content} customComponent={customComponent} />
     </>
   );
 }

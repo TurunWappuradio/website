@@ -13,11 +13,11 @@
   max-width: 900px;
 
   &-even {
-    background-color: $colorPink;
+    background-color: $showCardOdd;
   }
 
   &-odd {
-    background-color: $colorLightOrange;
+    background-color: $showCardEven;
   }
 
   > .ShowCard-heroContainer {
@@ -84,11 +84,11 @@
         width: fit-content;
 
         &-even {
-          background-color: $colorLightOrange;
+          background-color: $showCardEven;
         }
       
         &-odd {
-          background-color: $colorPink;
+          background-color: $showCardOdd;
         }
       }
   

@@ -7,6 +7,7 @@ import MetadataForm from '../MetadataForm/MetadataForm';
 import CalendarEvents from '../CalendarEvents/CalendarEvents';
 import ShoutBox from '../ShoutBox/ShoutBox';
 import Dashboard from '../Dashboard/Dashboard';
+import ArchiveLinks from '../ArchiveLinks/ArchiveLinks';
 import './ContentPage.scss';
 
 export default ({ content, customComponent }) => (
@@ -56,5 +57,7 @@ const getCustomComponent = (componentName) => {
       return <ShoutBox />;
     case "Studionäkymä":
       return <Dashboard />;
+    case "Ohjelmakarttalinkit":
+      return <ArchiveLinks />;
   }
 }

@@ -13,6 +13,7 @@ import {
   Header,
   SubPage,
   IndexPage,
+  ArchivedShowList
 } from './components';
 import { pageview } from './utils/analytics';
 
@@ -23,8 +24,16 @@ export default () => {
     <div className="App">
       <Router>
         <Header />
+        {process.env.REACT_APP_BROADCAST_MODE !== 'live'
+          && <div id="logoContainer" className="Headline">
+            <img src={`${resolveAssetUrl("42UqcWCsSZ4IZyvq0Ucy6b")}?w=300`} alt="Turun Wappuradio" />
+          </div>
+        }
         <div className="Container">
           <Switch>
+            <Route path="/ohjelmakartta/:showListKey">
+              <ArchivedShowList />
+            </Route>
             <Route path="/:id">
               <SubPage />
             </Route>
@@ -33,11 +42,6 @@ export default () => {
                 <title>Turun Wappuradio</title>
                 <meta name="description" content="Wappuradio 21.-30.4."></meta>
               </Helmet>
-              {process.env.REACT_APP_BROADCAST_MODE !== 'live'
-                && <div id="logoContainer" className="Headline">
-                  <img src={`${resolveAssetUrl("42UqcWCsSZ4IZyvq0Ucy6b")}?w=300`} alt="Turun Wappuradio" />
-                </div>
-              }
               <IndexPage />
               {/* {process.env.REACT_APP_BROADCAST_MODE === 'live' && <RadioPlayer />}
               {process.env.REACT_APP_BROADCAST_MODE === 'live' && <VideoChatHider />}

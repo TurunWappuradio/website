@@ -3,6 +3,7 @@ import { format, isBefore } from 'date-fns';
 import fi from 'date-fns/locale/fi';
 
 import ShowCard from '../ShowCard/ShowCard';
+import Dropdown from '../common/Dropdown';
 
 const getDateKeyFormat = dateTime => format(dateTime, 'dd.M');
 
@@ -40,12 +41,19 @@ export default ({ showData, groupedShows, filtered }) => {
             className= {`ShowList-dayButton ${openDate === date ? 'ShowList-dayButton-open-day' : ''}`}
             key={date}
             onClick={() => setOpenDate(date)}>
-            {format(groupedShows[date][0].start, 'EEEE dd.M.', {
+            {format(groupedShows[date][0].start, 'EE d.M.', {
               locale: fi
             })}
           </button>
         ))}
       </div>
+      <Dropdown
+        className="ShowList-selector--mobile"
+        options={mobileSelectorOptions(groupedShows, dateKeys)}
+        onChange={opt => setOpenDate(opt.value)}
+        value={openDate}
+        placeholder="Valitse päivä"
+      />
       {timesWithAppliedFilter &&
         timesWithAppliedFilter.map((item, idx) => (
           <ShowCard
@@ -58,4 +66,15 @@ export default ({ showData, groupedShows, filtered }) => {
         ))}
     </div>
   );
+};
+
+const mobileSelectorOptions = (groupedShows, dates) => {
+  return dates.map(date => {
+    return {
+      label: format(groupedShows[date][0].start, 'EEEE d.M.', {
+        locale: fi
+      }),
+      value: date
+    };
+  });
 };

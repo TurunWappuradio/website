@@ -3,6 +3,7 @@ import contentful from '../../utils/contentful';
 import { INDEX_PAGE } from '../../constants/contentTypes';
 import Helmet from 'react-helmet';
 import ContentPage from './ContentPage';
+import ArchiveLinks from '../ArchiveLinks/ArchiveLinks';
 
 const IndexPage = () => {
   // TODO: create a hook for fetching index content. Or don't.

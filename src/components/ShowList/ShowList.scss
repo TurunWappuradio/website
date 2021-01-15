@@ -8,8 +8,14 @@
 
   &-selector {
     padding: 20px 0px;
-    display: flex;
+    display: none;
     justify-content: space-around; // space-between;
+  }
+
+  &-selector--mobile {
+    margin: 20px 0;
+    font-weight: 600;
+    font-size: 1.3rem;
   }
 
   &-dayButton {
@@ -18,22 +24,22 @@
     margin: .5rem;
     font-size: 1rem;
     font-weight: 600;
-    color: $colorPink;
+    color: $showListLink;
     text-transform: capitalize;
     background: transparent;
     border: none;
     cursor: pointer;
 
     &:hover, &:focus {
-      color: #ee6b60;
+      color: $showLinkLinkHover;
       outline: none;
     }
 
     &-open-day {
-      color: $colorStraw;
+      color: $showListSelected;
   
       &:hover, &:focus {
-        color: $colorStraw;
+        color: $showListSelected;
       }
     }
   }
@@ -64,7 +70,7 @@
     > h1 {
       font-size: 2rem;
       font-weight: 600;
-      color: $colorMainTextColor;
+      color: $colorMainHeader;
       flex: 1;
       margin-bottom: 1.3rem;
     }
@@ -75,7 +81,7 @@
     border: none;
     cursor: pointer;
     font-size: 1rem;
-    color: $colorStraw;
+    color: $colorMainTextColor;
     padding: 0;
     margin: 0;
     margin-left: 1rem;
@@ -188,5 +194,16 @@
   &-day {
     flex: 1;
     box-sizing: border-box;
+  }
+}
+
+@media (min-width: 640px) {
+  .ShowList-selector--mobile {
+    display: none;
+  }
+
+  .ShowList-selector {
+    display: flex;
+    justify-content: space-between;
   }
 }

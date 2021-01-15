@@ -6,15 +6,17 @@ import {
 import Helmet from 'react-helmet';
 
 import { pageview } from '../../utils/analytics';
-import MusicLibrary from '../MusicLibrary/MusicLibrary';
-import MetadataForm from '../MetadataForm/MetadataForm';
-import CalendarEvents from '../CalendarEvents/CalendarEvents';
-import ShoutBox from '../ShoutBox/ShoutBox';
-import Dashboard from '../Dashboard/Dashboard';
-import './ContentPage.scss';
 import ContentPage from './ContentPage';
+import fetchEntries from '../../utils/dataEntries';
+import { CONTENT_PAGE } from '../../constants/contentTypes';
 
-export default ({ pageContent }) => {
+import './ContentPage.scss';
+
+export default () => {
+  const pageContent = fetchEntries({
+    content_type: CONTENT_PAGE,
+  }).data;
+
   const { id } = useParams();
 
   // wait for content to load.
@@ -35,23 +37,7 @@ export default ({ pageContent }) => {
         <title>{name} | Turun Wappuradio</title>
         <meta name="description" content={description}></meta>
       </Helmet>
-      <ContentPage content={content} />
-      {getCustomComponent(customComponent)}
+      <ContentPage content={content} customComponent={customComponent} />
     </>
   );
-}
-
-const getCustomComponent = (componentName) => {
-  switch(componentName) {
-    case "Kalenteri":
-      return <CalendarEvents />;
-    case "Metadata-formi":
-      return <MetadataForm />;
-    case "Musakirjasto":
-      return <MusicLibrary />;
-    case "Shoutboxi":
-      return <ShoutBox />;
-    case "Studionäkymä":
-      return <Dashboard />;
-  }
 }

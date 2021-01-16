@@ -12,8 +12,7 @@ import {
   Footer,
   Header,
   SubPage,
-  IndexPage,
-  ArchivedShowList
+  IndexPage
 } from './components';
 import { pageview } from './utils/analytics';
 
@@ -31,9 +30,6 @@ export default () => {
         }
         <div className="Container">
           <Switch>
-            <Route path="/ohjelmakartta/:showListKey">
-              <ArchivedShowList />
-            </Route>
             <Route path="/:id">
               <SubPage />
             </Route>

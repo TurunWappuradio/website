@@ -10,7 +10,7 @@ const getDateKeyFormat = dateTime => format(dateTime, 'dd.M');
 
 const byDate = groupBy(item => getDateKeyFormat(item.start));
 
-const ShowList = ({ title, shows }) => {
+const ShowList = ({ shows }) => {
   const [widescreenMode, setWidescreenMode] = useState(false);
   const [filtered, setFiltered] = useState(true);
 
@@ -34,7 +34,7 @@ const ShowList = ({ title, shows }) => {
   return (
     <div className="ShowList">
       <div className="ShowList-header">
-        <h1 className="ShowList-title">{title}</h1>
+        <h1 className="ShowList-title">Ohjelmistossa</h1>
         {Object.keys(groupedShows).includes(getDateKeyFormat(new Date())) && (
           <button
             className="Button ShowList-button"

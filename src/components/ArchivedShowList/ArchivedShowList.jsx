@@ -1,27 +1,18 @@
-import React from 'react';
-import { useParams } from 'react-router-dom';
+import React, { useEffect } from 'react';
 import { useDataSource } from '../../utils/dataEffect';
 import ShowList from '../ShowList/ShowList'
 import { SHOWLISTS } from '../../constants/showLists';
 import useShowList from '../../utils/shows'
 
-const ArchivedShowList = () => {
-  const { showListKey } = useParams();
+const ArchivedShowList = ({ showListKey }) => {
+  const { contentfulId, folder } = SHOWLISTS[showListKey];
 
-  const { contentfulId, title, folder } = SHOWLISTS[showListKey];
-
-  if (contentfulId) {
-    return (
-      <NewSchoolShowList title={title} contentfulId={contentfulId} />
-    );
-  }
-
-  return (
-    <OldSchoolShowList title={title} folder={folder} />
-  )
+  return contentfulId
+    ? <NewSchoolShowList contentfulId={contentfulId} />
+    : <OldSchoolShowList folder={folder} />;
 }
 
-const OldSchoolShowList = ({ title, folder }) => {
+const OldSchoolShowList = ({ folder }) => {
   const { data, status } = useDataSource(`${folder}/program_data.json`);
   
   if (status !== 'SUCCESS') return null;
@@ -35,15 +26,15 @@ const OldSchoolShowList = ({ title, folder }) => {
   }));
 
   return (
-    <ShowList title={title} shows={timesConverted} />
+    <ShowList shows={timesConverted} />
   );
 }
 
-const NewSchoolShowList = ({ title, contentfulId }) => {
+const NewSchoolShowList = ({ contentfulId }) => {
   const shows = useShowList(contentfulId);
 
   return (
-    <ShowList title={title} shows={shows} />
+    <ShowList shows={shows} />
   );
 }
 

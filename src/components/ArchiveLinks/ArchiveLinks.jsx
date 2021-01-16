@@ -7,7 +7,6 @@ import './ArchiveLinks.scss';
 const ArchiveLinks = () => {
   return (
     <div className="ArchiveLinks">
-      <h1>Aiemmat lähetykset</h1>
       {Object.values(SHOWLISTS).map(({ title, url, buttonImage }, idx) => (
         <LinkCard text={title} url={url} backgroundImage={buttonImage} idx={idx} key={idx} />
       ))}

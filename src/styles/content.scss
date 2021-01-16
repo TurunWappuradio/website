@@ -28,7 +28,7 @@ body {
 }
 
 .Container {
-  min-height: calc(100vh - #{$footerHeight} - #{$headerHeight});
+  min-height: calc(100vh - #{$footerHeight} - #{$logoHeight} - #{$headerHeight});
   width: 900px;
   max-width: 100%;
   margin-left: auto;

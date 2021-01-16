@@ -1,13 +1,8 @@
 import React from 'react';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import { BLOCKS } from '@contentful/rich-text-types';
+import { MusicLibrary, MetadataForm, CalendarEvents, ShoutBox, Dashboard, ArchiveLinks, ArchivedShowList } from '..';
 
-import MusicLibrary from '../MusicLibrary/MusicLibrary';
-import MetadataForm from '../MetadataForm/MetadataForm';
-import CalendarEvents from '../CalendarEvents/CalendarEvents';
-import ShoutBox from '../ShoutBox/ShoutBox';
-import Dashboard from '../Dashboard/Dashboard';
-import ArchiveLinks from '../ArchiveLinks/ArchiveLinks';
 import './ContentPage.scss';
 
 export default ({ content, customComponent }) => (
@@ -59,5 +54,13 @@ const getCustomComponent = (componentName) => {
       return <Dashboard />;
     case "Ohjelmakarttalinkit":
       return <ArchiveLinks />;
+    case "Ohjelmakartta-wappu2019":
+      return <ArchivedShowList showListKey="wappuradio2019" />;
+    case "Ohjelmakartta-syssy2019":
+      return <ArchivedShowList showListKey="syssyradio2019" />;
+    case "Ohjelmakartta-wappu2020":
+      return <ArchivedShowList showListKey="wappuradio2020" />;
+    case "Ohjelmakartta-syssy2020":
+      return <ArchivedShowList showListKey="syssyradio2020" />;
   }
 }

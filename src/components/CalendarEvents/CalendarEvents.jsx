@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { startOfDay, format } from 'date-fns';
+import { startOfDay, format, differenceInDays } from 'date-fns';
 import fi from 'date-fns/locale/fi';
 import './CalendarEvents.scss'
 
@@ -28,27 +28,9 @@ export default () => {
       {events.map((event, idx) => {
         const { summary, location, start, end } = event;
 
-        const formatRange = (start, end) => start + ' - ' + end;
-
-        const loc = { locale: fi };
-        const ONE_DAY_IN_MILLISECONDS = 86400000;
-        const time = start.dateTime
-          ? formatRange(
-              format(new Date(start.dateTime), 'EEEE, dd.MM. \'kello\' H:mm', loc),
-              format(new Date(end.dateTime), 'H:mm', loc)
-            )
-          : formatRange(
-              format(new Date(start.date), 'EEEE dd.MM.', loc),
-              format(
-                new Date(end.date) - ONE_DAY_IN_MILLISECONDS,
-                'EEEE dd.MM.',
-                loc
-              )
-            );
-
         return (
           <div className="CalendarEvent" key={idx}>
-            <p>{time}</p>
+            <p>{formatTimestamp(start, end)}</p>
             <h3>{summary}</h3>
             <p>{location}</p>
           </div>
@@ -62,3 +44,32 @@ export default () => {
     </div>
   );
 };
+
+const formatTimestamp = (start, end) => {
+  const loc = { locale: fi };
+
+  // includes time for event.
+  if (start.dateTime) {
+    const startFormatted = format(new Date(start.dateTime), 'EEEE, dd.MM. \'kello\' H:mm', loc);
+    const endFormatted = format(new Date(end.dateTime), 'H:mm', loc);
+    return concat(startFormatted, endFormatted);
+  }
+
+  const startDate = new Date(start.date);
+  const endDate = new Date(end.date);
+
+  // event length is 1 day.
+  if (differenceInDays(endDate, startDate) === 1) {
+    return format(startDate, 'EEEE dd.MM.', loc);
+  }
+
+  const startFormatted = format(startDate, 'EEEE dd.MM.', loc);
+
+  // subtract one, as the end date is always set to midnight causing an off-by-one
+  const ONE_DAY_IN_MILLISECONDS = 86400000;
+  const endFormatted = format(endDate - ONE_DAY_IN_MILLISECONDS, 'EEEE dd.MM.', loc);
+
+  return concat(startFormatted, endFormatted);
+}
+
+const concat = (start, end) => `${start} - ${end}`;

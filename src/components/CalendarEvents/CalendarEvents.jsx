@@ -4,9 +4,10 @@ import fi from 'date-fns/locale/fi';
 import './CalendarEvents.scss'
 
 const EVENT_COUNT = 3;
+const MONTHS_COUNT = 3;
 const dateMax = new Date();
-// Fetch next 4 events but not more than six months from now
-dateMax.setMonth(new Date().getMonth() + 3);
+// Fetch next events but not more than 3 months from now
+dateMax.setMonth(new Date().getMonth() + MONTHS_COUNT);
 const TIME_MIN = startOfDay(new Date()).toISOString();
 const TIME_MAX = dateMax.toISOString();
 const eventsUrl = `https://content.googleapis.com/calendar/v3/calendars/${process.env.REACT_APP_GOOGLE_CALENDAR_ID}/events?alwaysIncludeEmail=false&maxResults=${EVENT_COUNT}&timeMin=${TIME_MIN}&timeMax=${TIME_MAX}&showDeleted=false&showHiddenInvitations=false&singleEvents=true&key=${process.env.REACT_APP_GOOGLE_CALENDAR_API_KEY}&orderBy=startTime`;
@@ -20,7 +21,7 @@ export default () => {
       .then(json => setEvents(json.items));
   }, []);
 
-  if (events.length === 0) return null;
+  if (!events || events.length === 0) return null;
 
   return (
     <div className="CalendarContainer">

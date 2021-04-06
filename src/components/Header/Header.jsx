@@ -1,25 +1,59 @@
 import React from 'react';
-import fetchEntries from '../../utils/dataEntries';
-import { NAVIGATION } from '../../constants/contentTypes';
 import { Link } from 'react-router-dom';
+import { useQuery, gql } from '@apollo/client';
+
 import './Header.scss';
 
+const query = gql`
+  query getNavigation {
+    navigation: navigationCollection(limit: 1) {
+      items {
+        links: pagesCollection(limit: 3) {
+          items {
+            name,
+            slug
+          }
+        },
+        burgerMenuLinks: burgerMenuLinksCollection(limit: 20) {
+          items {
+            name,
+            slug
+          }
+        },
+        burgerMenuLinksExt: burgerMenuLinksExtCollection(limit: 3) {
+          items {
+            title,
+            url
+          }
+        }
+      }
+    }
+  }
+`;
 
-export default () => {
-  const nav = fetchEntries({
-    content_type: NAVIGATION,
-  }).data;
+const Header = () => {
+  const { loading, error, data } = useQuery(query)
+
+  if (loading || error) {
+    return (
+      <header className="Header"></header>
+    );
+  }
+
+  const { links, burgerMenuLinks, burgerMenuLinksExt } = data.navigation.items[0];
 
   return (
     <div className="Header">
       <ul>
         <li>
-          <Link to="/">Radio</Link>
+          <Link to="/">
+            Radio
+          </Link>
         </li>
-        {nav && nav.items && nav.items[0].fields.pages.map((item, idx) => (
+        {links.items.map((item, idx) => (
           <li key={idx}>
-            <Link to={`/${item.fields.slug.toLowerCase()}`}>
-              {item.fields.name}
+            <Link to={`/${item.slug.toLowerCase()}`}>
+              {item.name}
             </Link>
           </li>
         ))}
@@ -27,3 +61,5 @@ export default () => {
     </div>
   );
 }
+
+export default Header;

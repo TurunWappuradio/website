@@ -2,35 +2,6 @@
 @import 'styles/reset';
 @import 'styles/content.scss';
 
-.Headline {
-  margin-bottom: 60px;
-  font-family: Montserrat, sans-serif;
-  font-weight: 600;
-  text-align: center;
-  background-color: $colorDarkerBlue;
-  padding: 3rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  > h1 {
-    color: $colorOrange;
-    font-size: 2rem;
-    margin-bottom: 0.5em;
-  }
-  color: $colorWhite;
-  font-size: 1.3rem;
-
-  > img {
-    max-width: 100%;
-    width: 300px;
-    padding-bottom: 3rem;
-  }
-
-  bold {
-    color: $colorStraw;
-  }
-}
-
 .App {
   text-align: center;
   width: 100%;

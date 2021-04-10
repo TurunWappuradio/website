@@ -11,6 +11,7 @@ import fetchEntries from '../../utils/dataEntries';
 import { CONTENT_PAGE } from '../../constants/contentTypes';
 
 import './ContentPage.scss';
+import Hero from '../Hero/Hero';
 
 export default () => {
   const pageContent = fetchEntries({
@@ -37,6 +38,7 @@ export default () => {
         <title>{name} | Turun Wappuradio</title>
         <meta name="description" content={description}></meta>
       </Helmet>
+      <Hero text={name} />
       <ContentPage content={content} customComponent={customComponent} />
     </>
   );

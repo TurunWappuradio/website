@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useQuery, gql } from '@apollo/client';
+import { BiRadio } from 'react-icons/bi';
 
 import './Header.scss';
 import Hamburger from './Hamburger';
@@ -52,16 +53,9 @@ const Header = () => {
       <ul className="HeaderLinks">
         <li>
           <Link to="/">
-            Radio
+            <BiRadio />
           </Link>
         </li>
-        {links.items.map((item, idx) => (
-          <li key={idx}>
-            <Link to={`/${item.slug.toLowerCase()}`}>
-              {item.name}
-            </Link>
-          </li>
-        ))}
         <Hamburger onClick={() => toggleMenu(!isMenuOpen)} isActive={isMenuOpen} />
         {isMenuOpen && <Navigation links={burgerMenuLinks.items} extLinks={burgerMenuLinksExt.items} />}
       </ul>

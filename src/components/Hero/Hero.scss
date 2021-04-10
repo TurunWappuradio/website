@@ -1,0 +1,54 @@
+@import '../../styles/common.scss';
+
+.Hero {
+  margin-bottom: 30px;
+  font-family: Montserrat, sans-serif;
+  font-weight: 600;
+  background-color: $colorDarkerBlue;
+  padding: 3rem;
+  display: flex;
+  justify-content: center;
+  
+  &-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 750px;
+    max-width: 100vw;
+    > h1 {
+      color: $colorOrange;
+      font-size: 2.5rem;
+      margin-bottom: 0.5em;
+    }
+    color: $colorWhite;
+    font-size: 1.3rem;
+
+    
+    > img {
+      max-width: 100%;
+      width: 300px;
+      padding-bottom: 3rem;
+    }
+    
+    bold {
+      color: $colorStraw;
+    }
+
+    @media (min-width: 1000px), (min-device-width: 1000px) {
+      flex-direction: row;
+
+      > h1 {
+        margin-left: .5em;
+        font-size: 3.5rem;
+        width: 400px;
+        max-width: 50%;
+      }
+
+      > img {
+        width: 280px;
+        max-width: 40%;
+        padding-bottom: 0;
+      }
+    } 
+  }
+}

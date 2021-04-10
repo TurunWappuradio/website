@@ -6,12 +6,12 @@ import { MusicLibrary, MetadataForm, CalendarEvents, ShoutBox, Dashboard, Archiv
 import './ContentPage.scss';
 
 export default ({ content, customComponent }) => (
-  <>
+  <div className="Container">
     <div className="ContentPage">
       {documentToReactComponents(content, options)}
     </div>
     {getCustomComponent(customComponent)}
-  </>
+  </div>
 );
 
 let options = {

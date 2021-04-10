@@ -13,6 +13,7 @@ import SubPage from './ContentPage/SubPage';
 import IndexPage from './ContentPage/IndexPage';
 import ArchivedShowList from './ArchivedShowList/ArchivedShowList';
 import ArchiveLinks from './ArchiveLinks/ArchiveLinks';
+import Hero from './Hero/Hero';
 
 export {
   RadioPlayer,
@@ -29,5 +30,6 @@ export {
   SubPage,
   IndexPage,
   ArchivedShowList,
-  ArchiveLinks
+  ArchiveLinks,
+  Hero
 };

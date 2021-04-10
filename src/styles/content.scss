@@ -144,7 +144,7 @@ body {
   */
 }
 
-.Header, .Footer {
+.Footer {
   padding: 0;
   font-family: Montserrat, sans-serif;
   width: 100%;
@@ -160,22 +160,6 @@ body {
     text-decoration: none;
     &:hover {
       text-decoration: underline;
-    }
-  }
-}
-
-.Header {
-  height: $headerHeight;
-
-  @media (max-width: 700px), (max-device-width: 700px) {
-    > ul >li {
-      padding: 1rem;
-    }
-  }
-
-  @media (max-width: 500px), (max-device-width: 500px) {
-    > ul >li {
-      font-size: .9rem;
     }
   }
 }

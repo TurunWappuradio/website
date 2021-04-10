@@ -1,29 +1,53 @@
-import React from 'react';
-import fetchEntries from '../../utils/dataEntries';
-import { NAVIGATION } from '../../constants/contentTypes';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { useQuery, gql } from '@apollo/client';
+import { BiRadio } from 'react-icons/bi';
+
 import './Header.scss';
+import Hamburger from './Hamburger';
+import Navigation from './Navigation';
 
+const query = gql`
+  query getNavigation {
+    navigation: navigationCollection(limit: 1) {
+      items {
+        links: pagesCollection(limit: 20) {
+          items {
+            name,
+            slug
+          }
+        }
+      }
+    }
+  }
+`;
 
-export default () => {
-  const nav = fetchEntries({
-    content_type: NAVIGATION,
-  }).data;
+// FIXME: Nav position is off. Causes horizontal scroll.
+const Header = () => {
+  const { loading, error, data } = useQuery(query);
+  const [isMenuOpen, toggleMenu] = useState(false);
+
+  if (loading || error) {
+    return (
+      <header className="Header"></header>
+    );
+  }
+
+  const { links } = data.navigation.items[0];
 
   return (
     <div className="Header">
-      <ul>
+      <ul className="HeaderLinks">
         <li>
-          <Link to="/">Radio</Link>
+          <Link to="/">
+            <BiRadio />
+          </Link>
         </li>
-        {nav && nav.items && nav.items[0].fields.pages.map((item, idx) => (
-          <li key={idx}>
-            <Link to={`/${item.fields.slug.toLowerCase()}`}>
-              {item.fields.name}
-            </Link>
-          </li>
-        ))}
+        <Hamburger onClick={() => toggleMenu(!isMenuOpen)} isActive={isMenuOpen} />
       </ul>
+      {isMenuOpen && <Navigation links={links.items} closeNav={() => toggleMenu(false)} />}
     </div>
   );
 }
+
+export default Header;

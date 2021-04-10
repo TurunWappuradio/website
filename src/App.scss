@@ -2,22 +2,6 @@
 @import 'styles/reset';
 @import 'styles/content.scss';
 
-.Headline {
-  margin-bottom: 60px;
-  font-family: Montserrat, sans-serif;
-  font-weight: 600;
-  text-align: center;
-
-  > img {
-    max-width: 100%;
-    width: 300px;
-  }
-
-  bold {
-    color: $colorStraw;
-  }
-}
-
 .App {
   text-align: center;
   width: 100%;

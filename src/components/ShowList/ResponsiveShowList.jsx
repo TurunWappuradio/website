@@ -23,7 +23,6 @@ export default ({ showData, groupedShows, filtered }) => {
 
   const dateKeys = Object.keys(groupedShows);
 
-  const [selected, setSelected] = useState();
   const [openDate, setOpenDate] = useState(initialDate(dateKeys));
 
   const selectedTimes = openDate && groupedShows[openDate];
@@ -61,8 +60,6 @@ export default ({ showData, groupedShows, filtered }) => {
               index={idx}
               key={idx}
               show={item}
-              open={item.id === selected}
-              selectFn={() => setSelected(selected === item.id ? '' : item.id)}
             />
           ))}
       </div>

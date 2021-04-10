@@ -17,7 +17,7 @@ export default ({ showData, groupedShows }) => {
       {selected !== null && (
         <ShowCard
           show={showData[selectedIdx]}
-          open={true}
+          forceOpen={true}
           index={selectedIdx}
         />
       )}

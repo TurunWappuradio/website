@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { format } from 'date-fns';
 import { groupBy } from 'ramda';
 
@@ -14,8 +14,6 @@ const ShowList = ({ shows }) => {
   const [widescreenMode, setWidescreenMode] = useState(false);
   const [filtered, setFiltered] = useState(true);
 
-  /* temporarily removed blocking fullsize showlist on mobile for Syssyradio. Uncomment for wappu.
-
   const [screenWidth, setScreenWidth] = useState(window.innerWidth);
 
   useEffect(() => {
@@ -26,8 +24,7 @@ const ShowList = ({ shows }) => {
     }
   });
 
-  const widescreen = screenWidth >= 1200 && widescreenMode;
-  */
+  const widescreen = screenWidth >= 1000;
 
   const groupedShows = byDate(shows);
 
@@ -42,14 +39,16 @@ const ShowList = ({ shows }) => {
             {filtered ? 'Näytä menneet' : 'Piilota menneet'}
           </button>
         )}
-        {/* <button
-          className="Button ShowList-button"
-          onClick={() => setWidescreenMode(!widescreenMode)}>
-          {widescreenMode ? 'Ohjelmalista' : 'Ohjelmakartta'}
-        </button> */}
+        {widescreen && (
+          <button
+            className="Button ShowList-button"
+            onClick={() => setWidescreenMode(!widescreenMode)}>
+            {widescreenMode ? 'Ohjelmalista' : 'Ohjelmakartta'}
+          </button>
+        )}
       </div>
       {
-        widescreenMode
+        widescreen && widescreenMode
           ? <WidescreenShowList showData={shows} groupedShows={groupedShows} />
           : <ResponsiveShowList showData={shows} groupedShows={groupedShows} filtered={filtered} />
       }

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { format, isWithinInterval } from 'date-fns';
 import './ShowCard.scss';
 
@@ -16,6 +16,13 @@ export default props => {
 
   const [isOpen, toggleOpen] = useState(forceOpen);
 
+  // close cards on day change.
+  useEffect(() => {
+    if (!forceOpen) {
+      toggleOpen(false);
+    }
+  }, [name, forceOpen]);
+
   const handleClick = () => toggleOpen(!isOpen);
 
   const pictureResized = `${picture}?w=900`;
@@ -31,7 +38,7 @@ export default props => {
         ${index % 2 === 0 ? 'ShowCard-even': 'ShowCard-odd'}
         ${forceOpen ? '' : 'ShowCard-clickable'}
       `}
-      onClick={!forceOpen && handleClick}
+      onClick={forceOpen ? undefined : handleClick}
       role="button">
       <div className="ShowCard-heroContainer">
         <img className="ShowCard-hero" src={pictureResized} alt="" />

@@ -176,15 +176,15 @@
     max-height: 382px;
 
     @media (any-pointer:coarse) {
-      max-height: 362px;
+      max-height: 230px;
     }
 
     > .ShowCard-heroContainer {
       flex: 2;
-      max-height: 382px;
+      max-height: 300px;
 
       @media (any-pointer:coarse) {
-        max-height: 362px;
+        max-height: 230px;
       }
       
       > .ShowCard-hero {
@@ -252,8 +252,12 @@
         z-index: 3;
         min-height: 100px;
       }
-
     }
   }
 
+  @media (max-width: 1275px), (max-device-width: 1275px) {
+    .ShowCard-open {
+      max-height: 250px;
+    }
+  }
 }

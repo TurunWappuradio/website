@@ -66,7 +66,7 @@ $selectorWidth: 200px;
     text-align: center;
     width: 100%;
     padding: 20px;
-    color: $colorStraw;
+    color: $colorMainTextColor;
     font-size: 1.1rem;
     font-weight: 600;
   }
@@ -120,6 +120,10 @@ $selectorWidth: 200px;
     max-height: 50px;
   }
 
+  &-weekselector {
+    margin-bottom: 20px;
+  }
+
   // &-widescreenButton {
   //   @media (max-width: 1200px), (max-device-width: 1200px) {
   //     display: none;
@@ -128,9 +132,10 @@ $selectorWidth: 200px;
 
   &-widescreenCardContainer, &-daySpacer {
     padding: 10px;
-    $base-height: 72px; // height of a 1 hour long program
+    $base-height: 60px; // height of a 1 hour long program
 
     // the number is program length in minutes
+    &.height-0 { padding: 0 };
     &.height-60 { height: $base-height; }
     &.height-90 { height: 1.5 * $base-height; }
     &.height-120 { height: 2 * $base-height; }
@@ -155,7 +160,7 @@ $selectorWidth: 200px;
     cursor: pointer;
     border-radius: 2px;
     position: relative;
-    background-color: $colorPink;
+    background-color: $colorOrange;
     box-shadow: 2px 2px 3px 0px rgba(0,0,0,0.21);
     height: 100%;
 
@@ -173,11 +178,11 @@ $selectorWidth: 200px;
     }
 
     &.color-night {
-      background-color: $colorPurpleInbetween;
+      background-color: #457bb1;
     }
 
     &.color-promote {
-      background-color: $colorLightOrange;
+      background-color: $colorTeal;
     }
   }
 
@@ -189,9 +194,9 @@ $selectorWidth: 200px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding-top: 20px;
-    width: 100%;
-    max-width: 800px;
+    padding: 20px 10px;
+    max-width: 100%;
+    width: 1100px;
   }
 
   &-widescreen {
@@ -205,10 +210,10 @@ $selectorWidth: 200px;
   }
 
   &-timestamp {
-    height: 72px;
+    height: 60px;
     font-size: 1.1rem;
     font-weight: 600;
-    color: $colorStraw;
+    color: $colorMainTextColor;
   }
 
   &-day {
@@ -222,7 +227,7 @@ $selectorWidth: 200px;
   }
 }
 
-@media (min-width: 800px) {
+@media (min-width: 1000px) {
   .ShowList-selector--mobile {
     display: none;
   }

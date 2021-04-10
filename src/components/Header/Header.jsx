@@ -11,22 +11,10 @@ const query = gql`
   query getNavigation {
     navigation: navigationCollection(limit: 1) {
       items {
-        links: pagesCollection(limit: 3) {
+        links: pagesCollection(limit: 20) {
           items {
             name,
             slug
-          }
-        },
-        burgerMenuLinks: burgerMenuLinksCollection(limit: 20) {
-          items {
-            name,
-            slug
-          }
-        },
-        burgerMenuLinksExt: burgerMenuLinksExtCollection(limit: 3) {
-          items {
-            title,
-            url
           }
         }
       }
@@ -34,6 +22,7 @@ const query = gql`
   }
 `;
 
+// FIXME: Nav position is off. Causes horizontal scroll.
 const Header = () => {
   const { loading, error, data } = useQuery(query);
   const [isMenuOpen, toggleMenu] = useState(false);
@@ -44,9 +33,7 @@ const Header = () => {
     );
   }
 
-  const { links, burgerMenuLinks, burgerMenuLinksExt } = data.navigation.items[0];
-
-  console.log({ links, burgerMenuLinks, burgerMenuLinksExt })
+  const { links } = data.navigation.items[0];
 
   return (
     <div className="Header">
@@ -57,8 +44,8 @@ const Header = () => {
           </Link>
         </li>
         <Hamburger onClick={() => toggleMenu(!isMenuOpen)} isActive={isMenuOpen} />
-        {isMenuOpen && <Navigation links={burgerMenuLinks.items} extLinks={burgerMenuLinksExt.items} />}
       </ul>
+      {isMenuOpen && <Navigation links={links.items} closeNav={() => toggleMenu(false)} />}
     </div>
   );
 }

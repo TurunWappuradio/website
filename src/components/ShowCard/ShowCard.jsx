@@ -21,11 +21,13 @@ export default props => {
   return (
     <div
       key={`showCard-${'id'}`}
-      className={`ShowCard ${open ? 'ShowCard-open' : ''} ${index % 2 === 0 ? 'ShowCard-even': 'ShowCard-odd'}`}
+      className={`
+        ShowCard
+        ${open ? 'ShowCard-open' : ''}
+        ${index % 2 === 0 ? 'ShowCard-even': 'ShowCard-odd'}
+        ${selectFn ? 'ShowCard-clickable' : ''}
+      `}
       onClick={selectFn}
-      style={{
-        cursor: selectFn ? 'pointer' : ''
-      }}
       role="button">
       <div className="ShowCard-heroContainer">
         <img className="ShowCard-hero" src={pictureResized} alt="" />
@@ -49,6 +51,7 @@ export default props => {
       </div>
       {open && (
         <div className="ShowCard-description">
+          <h1 dangerouslySetInnerHTML={{ __html: name }}></h1>
           <p dangerouslySetInnerHTML={{ __html: description }} />
         </div>
       )}

@@ -34,6 +34,7 @@ export default ({ showData, groupedShows }) => {
             <p className="ShowList-dayTitle">
               {format(day[0].start, 'EEEEEE dd.M.', {
                 locale: fi
+                
               })}
             </p>
             {// spacer for the first day, broadcast never starts at 00:00

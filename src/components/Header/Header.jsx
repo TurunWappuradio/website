@@ -1,8 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useQuery, gql } from '@apollo/client';
 
 import './Header.scss';
+import Hamburger from './Hamburger';
+import Navigation from './Navigation';
 
 const query = gql`
   query getNavigation {
@@ -32,7 +34,8 @@ const query = gql`
 `;
 
 const Header = () => {
-  const { loading, error, data } = useQuery(query)
+  const { loading, error, data } = useQuery(query);
+  const [isMenuOpen, toggleMenu] = useState(false);
 
   if (loading || error) {
     return (
@@ -42,9 +45,11 @@ const Header = () => {
 
   const { links, burgerMenuLinks, burgerMenuLinksExt } = data.navigation.items[0];
 
+  console.log({ links, burgerMenuLinks, burgerMenuLinksExt })
+
   return (
     <div className="Header">
-      <ul>
+      <ul className="HeaderLinks">
         <li>
           <Link to="/">
             Radio
@@ -57,6 +62,8 @@ const Header = () => {
             </Link>
           </li>
         ))}
+        <Hamburger onClick={() => toggleMenu(!isMenuOpen)} isActive={isMenuOpen} />
+        {isMenuOpen && <Navigation links={burgerMenuLinks.items} extLinks={burgerMenuLinksExt.items} />}
       </ul>
     </div>
   );

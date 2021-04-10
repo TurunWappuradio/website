@@ -6,7 +6,6 @@ import {
 } from "react-router-dom";
 import Helmet from 'react-helmet';
 
-import resolveAssetUrl from './utils/assetUrlResolver';
 import './App.scss';
 import {
   Footer,
@@ -25,7 +24,9 @@ export default () => {
         <Header />
         {process.env.REACT_APP_BROADCAST_MODE !== 'live'
           && <div id="logoContainer" className="Headline">
-            <img src={`${resolveAssetUrl("42UqcWCsSZ4IZyvq0Ucy6b")}?w=300`} alt="Turun Wappuradio" />
+            <img src="leima.svg" alt="Turun Wappuradio" />
+            <h1>Wappuradio starttaa 21.4.</h1>
+            Verkossa ja taajuudella 93,8MHz
           </div>
         }
         <div className="Container">

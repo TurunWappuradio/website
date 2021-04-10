@@ -12,12 +12,20 @@ import {
   Header,
   SubPage,
   IndexPage,
-  Hero
+  Hero,
+  RadioPlayer,
+  VideoChatHider,
+  ShowList
 } from './components';
 import { pageview } from './utils/analytics';
+import useLiveShowListId from './utils/liveShows';
+import useShowList from './utils/shows';
 
 export default () => {
   pageview();
+
+  const showListId = useLiveShowListId();
+  const showList = useShowList(showListId);
 
   return (
     <div className="App">
@@ -35,10 +43,10 @@ export default () => {
             {process.env.REACT_APP_BROADCAST_MODE !== 'live'
               && <Hero text="Lähetys 21.-30.4."/>
             }
-            <IndexPage />
-            {/* {process.env.REACT_APP_BROADCAST_MODE === 'live' && <RadioPlayer />}
+            {/* <IndexPage /> */}
+            {process.env.REACT_APP_BROADCAST_MODE === 'live' && <RadioPlayer />}
             {process.env.REACT_APP_BROADCAST_MODE === 'live' && <VideoChatHider />}
-            <ShowList shows={showList} /> */}
+            <ShowList shows={showList} />
           </Route>
         </Switch>
       </Router>

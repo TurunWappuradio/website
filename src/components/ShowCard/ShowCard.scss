@@ -20,6 +20,13 @@
     background-color: $showCardEven;
   }
 
+  &-clickable {
+    cursor: pointer;
+    &:hover {
+      box-shadow: 6px 4px 6px 6px rgba(0,0,0,0.5);
+    }
+  }
+
   > .ShowCard-heroContainer {
     position: relative;
     line-height: 0;
@@ -118,7 +125,7 @@
       }
     }
 
-    @media (max-width: 700px), (max-device-width: 700px) {
+    @media (max-width: 900px), (max-device-width: 900px) {
       .ShowCard-hero {
         margin-top: -20px;
       }
@@ -169,15 +176,15 @@
     max-height: 382px;
 
     @media (any-pointer:coarse) {
-      max-height: 362px;
+      max-height: 230px;
     }
 
     > .ShowCard-heroContainer {
       flex: 2;
-      max-height: 382px;
+      max-height: 300px;
 
       @media (any-pointer:coarse) {
-        max-height: 362px;
+        max-height: 230px;
       }
       
       > .ShowCard-hero {
@@ -188,12 +195,20 @@
     }
     > .ShowCard-description {
       flex: 1;
-      background: #fff;
+      background: $colorDarkestBlue;
+      color: $colorWhite;
       font-size: 1.1rem;
       padding: 20px;
       overflow: auto;
       line-height: 1.4;
       max-width: 286px;
+
+      > h1 {
+        color: $colorOrange;
+        font-size: 1.3rem;
+        margin-bottom: .4em;
+        font-weight: 700;
+      }
 
       @media (max-width: 960px), (max-device-width: 960px) {
         max-width: none;
@@ -237,8 +252,12 @@
         z-index: 3;
         min-height: 100px;
       }
-
     }
   }
 
+  @media (max-width: 1275px), (max-device-width: 1275px) {
+    .ShowCard-open {
+      max-height: 250px;
+    }
+  }
 }

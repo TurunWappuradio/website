@@ -1,5 +1,18 @@
 @import '../../styles/common.scss';
 
+$selectorWidth: 200px;
+
+.ShowListContainer {
+  min-height: calc(100% - #{$footerHeight} - #{$logoHeight} - #{$headerHeight});
+  width: $selectorWidth + 900px + $selectorWidth;
+  max-width: 100%;
+  padding: 0 20px 60px 20px;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  flex-direction: row;
+}
+
 .ShowList {
   display: flex;
   flex-direction: column;
@@ -7,9 +20,10 @@
   text-align: start;
 
   &-selector {
-    padding: 20px 0px;
     display: none;
-    justify-content: space-around; // space-between;
+    flex-direction: column;
+    justify-content: flex-start;
+    min-width: $selectorWidth;
   }
 
   &-selector--mobile {
@@ -20,15 +34,17 @@
 
   &-dayButton {
     display: inline-block;
-    padding: 0;
+    padding: .5rem .5rem;
     margin: .5rem;
     font-size: 1rem;
     font-weight: 600;
-    color: $showListLink;
+    background-color: $colorDarkestBlue;
+    border-radius: 4px;
+    color: white;
     text-transform: capitalize;
-    background: transparent;
     border: none;
     cursor: pointer;
+    text-align: start;
 
     &:hover, &:focus {
       color: $showLinkLinkHover;
@@ -37,6 +53,7 @@
 
     &-open-day {
       color: $showListSelected;
+      background-color: $colorDarkerBlue;
   
       &:hover, &:focus {
         color: $showListSelected;
@@ -49,7 +66,7 @@
     text-align: center;
     width: 100%;
     padding: 20px;
-    color: $colorStraw;
+    color: $colorMainTextColor;
     font-size: 1.1rem;
     font-weight: 600;
   }
@@ -60,8 +77,9 @@
     justify-content: center;
     flex-wrap: wrap;
     margin-right: 10px;
-    width: 100%;
-    max-width: 900px;
+    width: 900px;
+    max-width: 100%;
+    padding: 0 20px;
 
     @media (min-width: 500px), (min-device-width: 500px) {
       flex-direction: row;
@@ -99,6 +117,11 @@
 
   &-button {
     margin: 0.3rem;
+    max-height: 50px;
+  }
+
+  &-weekselector {
+    margin-bottom: 20px;
   }
 
   // &-widescreenButton {
@@ -109,9 +132,10 @@
 
   &-widescreenCardContainer, &-daySpacer {
     padding: 10px;
-    $base-height: 72px; // height of a 1 hour long program
+    $base-height: 60px; // height of a 1 hour long program
 
     // the number is program length in minutes
+    &.height-0 { padding: 0 };
     &.height-60 { height: $base-height; }
     &.height-90 { height: 1.5 * $base-height; }
     &.height-120 { height: 2 * $base-height; }
@@ -136,7 +160,7 @@
     cursor: pointer;
     border-radius: 2px;
     position: relative;
-    background-color: $colorPink;
+    background-color: $colorOrange;
     box-shadow: 2px 2px 3px 0px rgba(0,0,0,0.21);
     height: 100%;
 
@@ -154,11 +178,11 @@
     }
 
     &.color-night {
-      background-color: $colorPurpleInbetween;
+      background-color: #457bb1;
     }
 
     &.color-promote {
-      background-color: $colorLightOrange;
+      background-color: $colorTeal;
     }
   }
 
@@ -170,9 +194,9 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding-top: 20px;
-    width: 100%;
-    max-width: 800px;
+    padding: 20px 10px;
+    max-width: 100%;
+    width: 1100px;
   }
 
   &-widescreen {
@@ -186,25 +210,34 @@
   }
 
   &-timestamp {
-    height: 72px;
+    height: 60px;
     font-size: 1.1rem;
     font-weight: 600;
-    color: $colorStraw;
+    color: $colorMainTextColor;
   }
 
   &-day {
     flex: 1;
     box-sizing: border-box;
   }
+
+  &-filler {
+    display: none;
+    min-width: $selectorWidth;
+  }
 }
 
-@media (min-width: 640px) {
+@media (min-width: 1000px) {
   .ShowList-selector--mobile {
     display: none;
   }
 
-  .ShowList-selector {
+  .ShowList-selector,
+  .ShowList-filler {
     display: flex;
-    justify-content: space-between;
+  }
+
+  .ShowList-header {
+    max-width: calc(100vw - #{$selectorWidth} - #{$selectorWidth});
   }
 }

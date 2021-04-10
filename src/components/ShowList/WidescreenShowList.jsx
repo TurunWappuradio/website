@@ -1,23 +1,47 @@
 import React, { useState } from 'react';
-import { format, differenceInMinutes, startOfDay } from 'date-fns';
+import { getISOWeek, format, differenceInMinutes, startOfDay } from 'date-fns';
 import fi from 'date-fns/locale/fi';
+import { groupBy } from 'ramda';
 
 import ShowCard from '../ShowCard/ShowCard';
+
+const groupByWeek = groupBy(day => getISOWeek(day[0].start)); 
+
+const getInitialWeek = (weeks) => {
+  const currentWeek = getISOWeek(new Date());
+  if (weeks.includes(currentWeek)) {
+    return currentWeek;
+  }
+  return weeks[0];
+}
 
 // prettier-ignore
 const timeStamps = ['00', '01', '02', '03', '04', '05', '06', '07', '08', '09', '10', '11',
                     '12', '13', '14', '15', '16', '17', '18', '19', '20', '21', '22', '23'];
 
 export default ({ showData, groupedShows }) => {
+  const showsGroupedByWeek = groupByWeek(Object.values(groupedShows))
+
+  const [openWeek, setWeek] = useState(getInitialWeek(Object.keys(showsGroupedByWeek)));
   const [selected, setSelected] = useState(null);
   const selectedIdx = showData.findIndex(item => item.id === selected);
 
   return (
     <div className="ShowList-widescreenContainer">
+      <div className="ShowList-weekselector">
+        {Object.keys(showsGroupedByWeek).map(week => (
+          <button
+            className= {`ShowList-dayButton ${openWeek === week ? 'ShowList-dayButton-open-day' : ''}`}
+            key={week}
+            onClick={() => setWeek(week)}>
+            Viikko {week}
+          </button>
+        ))}
+      </div>
       {selected !== null && (
         <ShowCard
           show={showData[selectedIdx]}
-          open={true}
+          forceOpen={true}
           index={selectedIdx}
         />
       )}
@@ -29,11 +53,12 @@ export default ({ showData, groupedShows }) => {
             </p>
           ))}
         </div>
-        {Object.values(groupedShows).map((day, idx) => (
+        {Object.values(showsGroupedByWeek[openWeek]).map((day, idx) => (
           <div className="ShowList-day" key={idx}>
             <p className="ShowList-dayTitle">
               {format(day[0].start, 'EEEEEE dd.M.', {
                 locale: fi
+                
               })}
             </p>
             {// spacer for the first day, broadcast never starts at 00:00

@@ -1,9 +1,9 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { format, isWithinInterval } from 'date-fns';
 import './ShowCard.scss';
 
 export default props => {
-  const { show, open, selectFn, index } = props;
+  const { show, forceOpen, index } = props;
   const {
     name,
     description,
@@ -14,6 +14,17 @@ export default props => {
     picture
   } = show;
 
+  const [isOpen, toggleOpen] = useState(forceOpen);
+
+  // close cards on day change.
+  useEffect(() => {
+    if (!forceOpen) {
+      toggleOpen(false);
+    }
+  }, [name, forceOpen]);
+
+  const handleClick = () => toggleOpen(!isOpen);
+
   const pictureResized = `${picture}?w=900`;
 
   const playingNow = isWithinInterval(new Date(), { start, end });
@@ -21,11 +32,13 @@ export default props => {
   return (
     <div
       key={`showCard-${'id'}`}
-      className={`ShowCard ${open ? 'ShowCard-open' : ''} ${index % 2 === 0 ? 'ShowCard-even': 'ShowCard-odd'}`}
-      onClick={selectFn}
-      style={{
-        cursor: selectFn ? 'pointer' : ''
-      }}
+      className={`
+        ShowCard
+        ${isOpen ? 'ShowCard-open' : ''}
+        ${index % 2 === 0 ? 'ShowCard-even': 'ShowCard-odd'}
+        ${forceOpen ? '' : 'ShowCard-clickable'}
+      `}
+      onClick={forceOpen ? undefined : handleClick}
       role="button">
       <div className="ShowCard-heroContainer">
         <img className="ShowCard-hero" src={pictureResized} alt="" />
@@ -47,8 +60,9 @@ export default props => {
           />
         </div>
       </div>
-      {open && (
+      {isOpen && (
         <div className="ShowCard-description">
+          <h1 dangerouslySetInnerHTML={{ __html: name }}></h1>
           <p dangerouslySetInnerHTML={{ __html: description }} />
         </div>
       )}

@@ -62,7 +62,9 @@ export default props => {
       </div>
       {isOpen && (
         <div className="ShowCard-description">
-          <h1 dangerouslySetInnerHTML={{ __html: name }}></h1>
+          <h1
+            className={`ShowCard-descTitle ${index % 2 === 0 ? 'ShowCard-descTitle-even' : 'ShowCard-descTitle-odd'}`} 
+            dangerouslySetInnerHTML={{ __html: name }}></h1>
           <p dangerouslySetInnerHTML={{ __html: description }} />
         </div>
       )}

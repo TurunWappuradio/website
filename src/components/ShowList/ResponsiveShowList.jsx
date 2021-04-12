@@ -4,6 +4,7 @@ import fi from 'date-fns/locale/fi';
 
 import ShowCard from '../ShowCard/ShowCard';
 import Dropdown from '../common/Dropdown';
+import SelectButton from '../common/SelectButton';
 
 const getDateKeyFormat = dateTime => format(dateTime, 'dd.M');
 
@@ -36,14 +37,11 @@ export default ({ showData, groupedShows, filtered }) => {
     <div className="ShowListContainer">
       <div className="ShowList-selector">
         {dateKeys.map(date => (
-          <button
-            className= {`ShowList-dayButton ${openDate === date ? 'ShowList-dayButton-open-day' : ''}`}
-            key={date}
-            onClick={() => setOpenDate(date)}>
+          <SelectButton key={date} selected={openDate === date} onClick={() => setOpenDate(date)}>
             {format(groupedShows[date][0].start, 'EEEE d.M.', {
               locale: fi
             })}
-          </button>
+          </SelectButton>
         ))}
       </div>
       <div className="ShowList-responsive">

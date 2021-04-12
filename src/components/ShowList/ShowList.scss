@@ -1,6 +1,6 @@
 @import '../../styles/common.scss';
 
-$selectorWidth: 200px;
+$selectorWidth: 205px;
 
 .ShowListContainer {
   min-height: calc(100% - #{$footerHeight} - #{$logoHeight} - #{$headerHeight});
@@ -24,41 +24,18 @@ $selectorWidth: 200px;
     flex-direction: column;
     justify-content: flex-start;
     min-width: $selectorWidth;
+    padding-right: 1rem;
+
+    > .SelectButton {
+      padding: .7rem;
+      margin: .2rem;
+    }
   }
 
   &-selector--mobile {
     margin: 20px 0;
     font-weight: 600;
     font-size: 1.3rem;
-  }
-
-  &-dayButton {
-    display: inline-block;
-    padding: .5rem .5rem;
-    margin: .5rem;
-    font-size: 1rem;
-    font-weight: 600;
-    background-color: $colorDarkestBlue;
-    border-radius: 4px;
-    color: white;
-    text-transform: capitalize;
-    border: none;
-    cursor: pointer;
-    text-align: start;
-
-    &:hover, &:focus {
-      color: $showLinkLinkHover;
-      outline: none;
-    }
-
-    &-open-day {
-      color: $showListSelected;
-      background-color: $colorDarkerBlue;
-  
-      &:hover, &:focus {
-        color: $showListSelected;
-      }
-    }
   }
 
   &-dayTitle {
@@ -74,9 +51,8 @@ $selectorWidth: 200px;
   &-header {
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: flex-start;
     flex-wrap: wrap;
-    margin-right: 10px;
     width: 900px;
     max-width: 100%;
     padding: 0 20px;
@@ -90,8 +66,13 @@ $selectorWidth: 200px;
       font-weight: 600;
       color: $colorMainHeader;
       flex: 1;
-      margin-bottom: 1.3rem;
       margin-top: 1.3rem;
+    }
+
+    > .SelectButton {
+      align-self: center;
+      padding: .7rem .7rem;
+      margin: .2rem;
     }
   }
 
@@ -122,6 +103,11 @@ $selectorWidth: 200px;
 
   &-weekselector {
     margin-bottom: 20px;
+
+    > .SelectButton {
+      padding: .7rem;
+      margin: .2rem;
+    }
   }
 
   // &-widescreenButton {
@@ -188,6 +174,7 @@ $selectorWidth: 200px;
 
   &-responsive {
     max-width: 900px;
+    margin: auto;
   }
 
   &-widescreenContainer {
@@ -227,7 +214,7 @@ $selectorWidth: 200px;
   }
 }
 
-@media (min-width: 1000px) {
+@media (min-width: 1100px) {
   .ShowList-selector--mobile {
     display: none;
   }
@@ -238,6 +225,10 @@ $selectorWidth: 200px;
   }
 
   .ShowList-header {
-    max-width: calc(100vw - #{$selectorWidth} - #{$selectorWidth});
+    max-width: calc(100% - #{$selectorWidth} - #{$selectorWidth});
+
+    > h1 {
+      margin-bottom: 1.3rem;
+    }
   }
 }

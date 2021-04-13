@@ -1,11 +1,8 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import { useQuery, gql } from '@apollo/client';
-import { BiRadio } from 'react-icons/bi';
 
 import './Header.scss';
-import Hamburger from './Hamburger';
-import Navigation from './Navigation';
 
 const query = gql`
   query getNavigation {
@@ -25,7 +22,6 @@ const query = gql`
 // FIXME: Nav position is off. Causes horizontal scroll.
 const Header = () => {
   const { loading, error, data } = useQuery(query);
-  const [isMenuOpen, toggleMenu] = useState(false);
 
   if (loading || error) {
     return (
@@ -37,15 +33,20 @@ const Header = () => {
 
   return (
     <div className="Header">
-      <ul className="HeaderLinks">
+      <ul>
         <li>
           <Link to="/">
-            <BiRadio />
+            Radio
           </Link>
         </li>
-        <Hamburger onClick={() => toggleMenu(!isMenuOpen)} isActive={isMenuOpen} />
+        {links.items.map(link => (
+          <li>
+            <Link to={link.slug}>
+              {link.name}
+            </Link>
+          </li>
+        ))}
       </ul>
-      {isMenuOpen && <Navigation links={links.items} closeNav={() => toggleMenu(false)} />}
     </div>
   );
 }

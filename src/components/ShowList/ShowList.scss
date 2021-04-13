@@ -4,7 +4,7 @@ $selectorWidth: 205px;
 
 .ShowListContainer {
   min-height: calc(100% - #{$footerHeight} - #{$logoHeight} - #{$headerHeight});
-  width: $selectorWidth + 900px + $selectorWidth;
+  width: $selectorWidth + 910px + $selectorWidth;
   max-width: 100%;
   padding: 0 20px 60px 20px;
   margin-left: auto;
@@ -56,6 +56,7 @@ $selectorWidth: 205px;
     width: 900px;
     max-width: 100%;
     padding: 0 20px;
+    margin-left: 0;
 
     @media (min-width: 500px), (min-device-width: 500px) {
       flex-direction: row;
@@ -208,7 +209,7 @@ $selectorWidth: 205px;
     box-sizing: border-box;
   }
 
-  &-filler {
+  .ShowList-header-filler {
     display: none;
     min-width: $selectorWidth;
   }
@@ -220,15 +221,20 @@ $selectorWidth: 205px;
   }
 
   .ShowList-selector,
-  .ShowList-filler {
-    display: flex;
+  .ShowList-header-filler {
+    display: flex !important;
   }
 
   .ShowList-header {
-    max-width: calc(100% - #{$selectorWidth} - #{$selectorWidth});
+    max-width: calc(100% - #{$selectorWidth});
+    margin-left: 40px;
 
     > h1 {
       margin-bottom: 1.3rem;
     }
+  }
+
+  .ShowList-responsive {
+    margin: 0 !important;
   }
 }

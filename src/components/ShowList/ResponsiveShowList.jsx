@@ -61,7 +61,6 @@ export default ({ showData, groupedShows, filtered }) => {
             />
           ))}
       </div>
-      <div className="ShowList-filler"/>
     </div>
   );
 };

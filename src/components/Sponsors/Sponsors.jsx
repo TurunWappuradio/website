@@ -1,18 +1,45 @@
 import React from 'react';
+import { useQuery, gql } from '@apollo/client';
 
-import useSponsors from '../../utils/sponsors';
 import './Sponsors.scss';
 
+const query = gql`
+  query {
+    sponsors: sponsorsCollection(limit:1) {
+      items {
+        sponsorsCollection {
+          items {
+            title,
+            link,
+            isRoundedBorders,
+            logoImage {
+              url
+            }
+          }
+        }
+      }
+    }
+  }
+`;
+
 export default () => {
-  const sponsors = useSponsors();
+  const { loading, error, data } = useQuery(query);
+
+  if (loading || error) return null;
+
+  const sponsors = data.sponsors.items[0].sponsorsCollection.items;
 
   return (
     <div className="RadioSponsors">
-      <h2 className="Subtitle">Syssyradion tukena</h2>
+      <h2 className="Subtitle">Wappuradion tukena</h2>
       <div className="RadioSponsors-items">
-        {sponsors.map(sponsor => (
-          <a className="RadioSponsors-container" target="_blank" href={sponsor.link} key={sponsor.title}>
-            <img className="RadioSponsors-logo" src={sponsor.imageUrl} alt={sponsor.title} />
+        {sponsors.map(({ link, title, isRoundedBorders, logoImage }) => (
+          <a className="RadioSponsors-container" target="_blank" href={link} key={title}>
+            <img 
+              className="RadioSponsors-logo"
+              style={{ borderRadius: isRoundedBorders ? '4px' : 0 }}
+              src={logoImage.url}
+              alt={title} />
           </a>
         ))}
       </div>

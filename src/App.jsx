@@ -9,13 +9,13 @@ import Helmet from 'react-helmet';
 import './App.scss';
 import {
   Footer,
-  Header,
   SubPage,
   IndexPage,
   Hero,
   RadioPlayer,
   VideoChatHider,
-  ShowList
+  ShowList,
+  Sponsors
 } from './components';
 import { pageview } from './utils/analytics';
 import useLiveShowListId from './utils/liveShows';
@@ -30,7 +30,6 @@ export default () => {
   return (
     <div className="App">
       <Router>
-        <Header />
         <Switch>
           <Route path="/:id">
             <SubPage />
@@ -40,9 +39,7 @@ export default () => {
               <title>Turun Wappuradio</title>
               <meta name="description" content="Wappuradio 21.-30.4."></meta>
             </Helmet>
-            {process.env.REACT_APP_BROADCAST_MODE !== 'live'
-              && <Hero text="Lähetys 21.-30.4."/>
-            }
+            <Hero text="Lähetys 21.-30.4." />
             {/* <IndexPage /> */}
             {process.env.REACT_APP_BROADCAST_MODE === 'live' && <RadioPlayer />}
             {process.env.REACT_APP_BROADCAST_MODE === 'live' && <VideoChatHider />}
@@ -50,7 +47,7 @@ export default () => {
           </Route>
         </Switch>
       </Router>
-      {/* <Sponsors /> */}
+      <Sponsors />
       <Footer />
     </div>
   );

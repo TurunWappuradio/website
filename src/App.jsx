@@ -9,13 +9,13 @@ import Helmet from 'react-helmet';
 import './App.scss';
 import {
   Footer,
-  Header,
   SubPage,
   IndexPage,
   Hero,
   RadioPlayer,
   VideoChatHider,
-  ShowList
+  ShowList,
+  Sponsors
 } from './components';
 import { pageview } from './utils/analytics';
 import useLiveShowListId from './utils/liveShows';
@@ -47,7 +47,7 @@ export default () => {
           </Route>
         </Switch>
       </Router>
-      {/* <Sponsors /> */}
+      <Sponsors />
       <Footer />
     </div>
   );

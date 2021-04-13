@@ -4,6 +4,7 @@ import fi from 'date-fns/locale/fi';
 import { groupBy } from 'ramda';
 
 import ShowCard from '../ShowCard/ShowCard';
+import SelectButton from '../common/SelectButton';
 
 const groupByWeek = groupBy(day => getISOWeek(day[0].start)); 
 
@@ -30,12 +31,12 @@ export default ({ showData, groupedShows }) => {
     <div className="ShowList-widescreenContainer">
       <div className="ShowList-weekselector">
         {Object.keys(showsGroupedByWeek).map(week => (
-          <button
-            className= {`ShowList-dayButton ${openWeek === week ? 'ShowList-dayButton-open-day' : ''}`}
+          <SelectButton
+            selected={openWeek === week}
             key={week}
             onClick={() => setWeek(week)}>
             Viikko {week}
-          </button>
+          </SelectButton>
         ))}
       </div>
       {selected !== null && (

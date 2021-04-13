@@ -5,6 +5,7 @@ import { groupBy } from 'ramda';
 import WidescreenShowList from './WidescreenShowList';
 import './ShowList.scss';
 import ResponsiveShowList from './ResponsiveShowList';
+import SelectButton from '../common/SelectButton';
 
 const getDateKeyFormat = dateTime => format(dateTime, 'dd.M');
 
@@ -24,7 +25,7 @@ const ShowList = ({ shows }) => {
     }
   });
 
-  const widescreen = screenWidth >= 1000;
+  const widescreen = screenWidth >= 1100;
 
   const groupedShows = byDate(shows);
 
@@ -40,11 +41,14 @@ const ShowList = ({ shows }) => {
           </button>
         )}
         {widescreen && (
-          <button
-            className="Button ShowList-button"
-            onClick={() => setWidescreenMode(!widescreenMode)}>
-            {widescreenMode ? 'Ohjelmalista' : 'Ohjelmakartta'}
-          </button>
+          <>
+            <SelectButton selected={!widescreenMode} onClick={() => setWidescreenMode(false)}>
+              Ohjelmalista
+            </SelectButton>
+            <SelectButton selected={widescreenMode} onClick={() => setWidescreenMode(true)}>
+              Ohjelmakartta
+            </SelectButton>
+          </>
         )}
       </div>
       {

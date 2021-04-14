@@ -1,10 +1,11 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { format } from 'date-fns';
 import { groupBy } from 'ramda';
 
 import WidescreenShowList from './WidescreenShowList';
 import './ShowList.scss';
 import ResponsiveShowList from './ResponsiveShowList';
+import SelectButton from '../common/SelectButton';
 
 const getDateKeyFormat = dateTime => format(dateTime, 'dd.M');
 
@@ -13,8 +14,6 @@ const byDate = groupBy(item => getDateKeyFormat(item.start));
 const ShowList = ({ shows }) => {
   const [widescreenMode, setWidescreenMode] = useState(false);
   const [filtered, setFiltered] = useState(true);
-
-  /* temporarily removed blocking fullsize showlist on mobile for Syssyradio. Uncomment for wappu.
 
   const [screenWidth, setScreenWidth] = useState(window.innerWidth);
 
@@ -26,8 +25,7 @@ const ShowList = ({ shows }) => {
     }
   });
 
-  const widescreen = screenWidth >= 1200 && widescreenMode;
-  */
+  const widescreen = screenWidth >= 1100;
 
   const groupedShows = byDate(shows);
 
@@ -42,14 +40,19 @@ const ShowList = ({ shows }) => {
             {filtered ? 'Näytä menneet' : 'Piilota menneet'}
           </button>
         )}
-        {/* <button
-          className="Button ShowList-button"
-          onClick={() => setWidescreenMode(!widescreenMode)}>
-          {widescreenMode ? 'Ohjelmalista' : 'Ohjelmakartta'}
-        </button> */}
+        {widescreen && (
+          <>
+            <SelectButton selected={!widescreenMode} onClick={() => setWidescreenMode(false)}>
+              Ohjelmalista
+            </SelectButton>
+            <SelectButton selected={widescreenMode} onClick={() => setWidescreenMode(true)}>
+              Ohjelmakartta
+            </SelectButton>
+          </>
+        )}
       </div>
       {
-        widescreenMode
+        widescreen && widescreenMode
           ? <WidescreenShowList showData={shows} groupedShows={groupedShows} />
           : <ResponsiveShowList showData={shows} groupedShows={groupedShows} filtered={filtered} />
       }

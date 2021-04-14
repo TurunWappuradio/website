@@ -4,6 +4,7 @@ import fi from 'date-fns/locale/fi';
 
 import ShowCard from '../ShowCard/ShowCard';
 import Dropdown from '../common/Dropdown';
+import SelectButton from '../common/SelectButton';
 
 const getDateKeyFormat = dateTime => format(dateTime, 'dd.M');
 
@@ -23,7 +24,6 @@ export default ({ showData, groupedShows, filtered }) => {
 
   const dateKeys = Object.keys(groupedShows);
 
-  const [selected, setSelected] = useState();
   const [openDate, setOpenDate] = useState(initialDate(dateKeys));
 
   const selectedTimes = openDate && groupedShows[openDate];
@@ -34,36 +34,33 @@ export default ({ showData, groupedShows, filtered }) => {
     : selectedTimes;
 
   return (
-    <div className="ShowList-responsive">
+    <div className="ShowListContainer">
       <div className="ShowList-selector">
         {dateKeys.map(date => (
-          <button
-            className= {`ShowList-dayButton ${openDate === date ? 'ShowList-dayButton-open-day' : ''}`}
-            key={date}
-            onClick={() => setOpenDate(date)}>
-            {format(groupedShows[date][0].start, 'EE d.M.', {
+          <SelectButton key={date} selected={openDate === date} onClick={() => setOpenDate(date)}>
+            {format(groupedShows[date][0].start, 'EEEE d.M.', {
               locale: fi
             })}
-          </button>
+          </SelectButton>
         ))}
       </div>
-      <Dropdown
-        className="ShowList-selector--mobile"
-        options={mobileSelectorOptions(groupedShows, dateKeys)}
-        onChange={opt => setOpenDate(opt.value)}
-        value={openDate}
-        placeholder="Valitse päivä"
-      />
-      {timesWithAppliedFilter &&
-        timesWithAppliedFilter.map((item, idx) => (
-          <ShowCard
-            index={idx}
-            key={idx}
-            show={item}
-            open={item.id === selected}
-            selectFn={() => setSelected(selected === item.id ? '' : item.id)}
-          />
-        ))}
+      <div className="ShowList-responsive">
+        <Dropdown
+          className="ShowList-selector--mobile"
+          options={mobileSelectorOptions(groupedShows, dateKeys)}
+          onChange={opt => setOpenDate(opt.value)}
+          value={openDate}
+          placeholder="Valitse päivä"
+        />
+        {timesWithAppliedFilter &&
+          timesWithAppliedFilter.map((item, idx) => (
+            <ShowCard
+              index={idx}
+              key={idx}
+              show={item}
+            />
+          ))}
+      </div>
     </div>
   );
 };

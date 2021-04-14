@@ -7,11 +7,11 @@
 .Dropdown-control {
     position: relative;
     overflow: hidden;
-    background-color: white;
-    border: 1px solid #ccc;
+    background-color: $colorDarkestBlue;
+    border: 1px solid $colorDarkestBlue;
     border-radius: 2px;
     box-sizing: border-box;
-    color: #333;
+    color: white;
     cursor: default;
     outline: none;
     padding: 8px 52px 8px 10px;
@@ -23,7 +23,7 @@
 }
 
 .Dropdown-arrow {
-    border-color: #999 transparent transparent;
+    border-color: $colorWhite transparent transparent;
     border-style: solid;
     border-width: 5px 5px 0;
     content: ' ';
@@ -37,13 +37,13 @@
 }
 
 .is-open .Dropdown-arrow {
-    border-color: transparent transparent #999;
+    border-color: transparent transparent $colorWhite;
     border-width: 0 5px 5px;
 }
 
 .Dropdown-menu {
-    background-color: white;
-    border: 1px solid #ccc;
+    background-color: $colorDarkerBlue;
+    border: 1px solid $colorDarkestBlue;
     box-shadow: 0 1px 0 rgba(0, 0, 0, 0.06);
     box-sizing: border-box;
     margin-top: -1px;
@@ -57,14 +57,14 @@
 
 .Dropdown-menu .Dropdown-group>.Dropdown-title {
     padding: 8px 10px;
-    color: rgba(51, 51, 51, 1);
+    color: $colorWhite;
     font-weight: bold;
     text-transform: capitalize;
 }
 
 .Dropdown-option {
     box-sizing: border-box;
-    color: rgba(51, 51, 51, 0.8);
+    color: $colorWhite;
     cursor: pointer;
     display: block;
     padding: 8px 10px;
@@ -76,12 +76,12 @@
 }
 
 .Dropdown-option:hover {
-    background-color: #f2f9fc;
-    color: #333;
+    background-color: #000;
+    color: $colorOrange;
 }
 
 .Dropdown-option.is-selected {
-    background-color: #f2f9fc;
+    background-color: $colorBlue;
     color: #333;
 }
 

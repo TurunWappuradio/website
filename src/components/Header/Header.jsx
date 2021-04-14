@@ -1,25 +1,48 @@
 import React from 'react';
-import fetchEntries from '../../utils/dataEntries';
-import { NAVIGATION } from '../../constants/contentTypes';
 import { Link } from 'react-router-dom';
+import { useQuery, gql } from '@apollo/client';
+
 import './Header.scss';
 
+const query = gql`
+  query getNavigation {
+    navigation: navigationCollection(limit: 1) {
+      items {
+        links: pagesCollection(limit: 20) {
+          items {
+            name,
+            slug
+          }
+        }
+      }
+    }
+  }
+`;
 
-export default () => {
-  const nav = fetchEntries({
-    content_type: NAVIGATION,
-  }).data;
+// FIXME: Nav position is off. Causes horizontal scroll.
+const Header = () => {
+  const { loading, error, data } = useQuery(query);
+
+  if (loading || error) {
+    return (
+      <header className="Header"></header>
+    );
+  }
+
+  const { links } = data.navigation.items[0];
 
   return (
     <div className="Header">
       <ul>
         <li>
-          <Link to="/">Radio</Link>
+          <Link to="/">
+            Radio
+          </Link>
         </li>
-        {nav && nav.items && nav.items[0].fields.pages.map((item, idx) => (
-          <li key={idx}>
-            <Link to={`/${item.fields.slug.toLowerCase()}`}>
-              {item.fields.name}
+        {links.items.map(link => (
+          <li>
+            <Link to={link.slug}>
+              {link.name}
             </Link>
           </li>
         ))}
@@ -27,3 +50,5 @@ export default () => {
     </div>
   );
 }
+
+export default Header;

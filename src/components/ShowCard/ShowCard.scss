@@ -178,11 +178,11 @@
     box-shadow: 3px 4px 3px 0px rgba(0,0,0,0.21);
     flex-direction: row;
     height: auto;
-    max-height: 382px;
+    max-height: 409px;
 
     > .ShowCard-heroContainer {
       flex: 2;
-      max-height: 382px;
+      max-height: 409px;
       
       > .ShowCard-hero {
         background: #fff;
@@ -229,10 +229,10 @@
     }
   
     @media (max-width: 1100px), (max-device-width: 1100px) {
-      max-height: 382px;
+      max-height: 409px;
 
       > .ShowCard-heroContainer {
-        max-height: 382px;
+        max-height: 409px;
       }
     }
 
@@ -279,6 +279,4 @@
       }
     }
   }
-
-
 }

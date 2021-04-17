@@ -80,7 +80,7 @@ export default () => {
       <div className="RadioPlayer-inPage">
         <img
           className={
-            'RadioPlayer-Brand ' + (playing ? 'pulse' : '')
+            'RadioPlayer-Brand ' + (playing ? 'running' : '')
           }
           src="leima.svg"
           alt="Turun Wappuradio"

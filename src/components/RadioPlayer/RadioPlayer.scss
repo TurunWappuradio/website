@@ -1,9 +1,10 @@
 @import '../../styles/common.scss';
 
 .RadioPlayer {
+  flex: 1;
   display: flex;
   flex-direction: column;
-  color: $colorStraw;
+  color: $colorWhite;
   align-items: center;
   margin-bottom: 42px;
 }
@@ -11,7 +12,7 @@
 .RadioPlayer-inPage {
   display: flex;
   flex-direction: row;
-  max-width: 900px;
+  max-width: 1200px;
   width: 100%;
   align-items: center;
   justify-content: center;
@@ -31,6 +32,9 @@
   @media (max-width: 600px), (max-device-width: 600px) {
     width: 300px;
   }
+
+  animation: rotation 2.5s infinite linear;
+  animation-play-state: paused;
 }
 
 .RadioPlayer-contact {
@@ -38,7 +42,7 @@
     padding: 0.25rem 0rem;
     font-size: 0.9rem;
     > b {
-      color: $colorLightOrange;
+      color: $colorOrange;
       font-weight: 600;
     }
   }
@@ -46,7 +50,7 @@
 
 .RadioPlayer-streamLink {
   margin-top: 1rem;
-  color: $colorStraw;
+  color: $colorWhite;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -60,7 +64,7 @@
 
 .RadioPlayer-controlWrapper {
   flex: 2;
-  background-color: $colorLightPurple;
+  //background-color: $colorLightPurple;
   padding: 2rem;
   border-radius: 5px;
   margin-left: 2rem;
@@ -78,7 +82,7 @@
   font-size: 1.2rem;
   margin-left: 1rem;
   font-weight: 600;
-  color: $colorStraw;
+  color: $colorWhite;
   text-align: left;
 
   @media (max-width: 600px), (max-device-width: 600px) {
@@ -89,18 +93,18 @@
   > span {
     display: block;
     padding: 0.25rem;
-    color: $colorStraw;
+    color: $colorWhite;
   }
 
   > span:nth-child(2) {
     font-size: 1.1rem;
     font-weight: 600;
-    color: $colorLightOrange;
+    color: $colorOrange;
   }
   > span:last-child {
     font-size: 0.9rem;
     font-weight: 600;
-    color: $colorLightOrange;
+    color: $colorWhite;
     opacity: 0.6;
     padding-top: 0;
   }
@@ -124,8 +128,8 @@
   height: 42px;
 
   svg {
-    fill: $colorStraw;
-    color: $colorStraw;
+    fill: $colorWhite;
+    color: $colorWhite;
   }
 
   :hover {
@@ -134,13 +138,22 @@
 }
 
 .pulse {
-  fill: $colorStraw;
+  fill: $colorWhite;
   fill-opacity: 0;
   transform-origin: 50% 50%;
   animation-duration: 2s;
   animation-name: pulse;
   animation-iteration-count: infinite;
   transition: all 0.3s ease;
+}
+
+.rotate {
+  animation: rotation 2s infinite linear;
+  animation-play-state: paused;
+}
+
+.running {
+  animation-play-state: running;
 }
 
 @keyframes pulse {
@@ -157,5 +170,14 @@
   to {
     -webkit-transform: scale3d(1, 1, 1);
     transform: scale3d(1, 1, 1);
+  }
+}
+
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
   }
 }

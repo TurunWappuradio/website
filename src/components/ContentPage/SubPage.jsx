@@ -38,7 +38,10 @@ export default () => {
         <title>{name} | Turun Wappuradio</title>
         <meta name="description" content={description}></meta>
       </Helmet>
-      <Hero text={name} />
+      <Hero>
+        <img src="leima.svg" alt="Turun Wappuradio" />
+        <h1>{name}</h1>
+      </Hero>
       <ContentPage content={content} customComponent={customComponent} />
     </>
   );

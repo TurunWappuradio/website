@@ -21,6 +21,8 @@ import { pageview } from './utils/analytics';
 import useLiveShowListId from './utils/liveShows';
 import useShowList from './utils/shows';
 
+const isLive = process.env.REACT_APP_BROADCAST_MODE === 'live';
+
 export default () => {
   pageview();
 
@@ -39,10 +41,17 @@ export default () => {
               <title>Turun Wappuradio</title>
               <meta name="description" content="Wappuradio 21.-30.4."></meta>
             </Helmet>
-            <Hero text="Lähetys 21.-30.4." />
-            {/* <IndexPage /> */}
-            {process.env.REACT_APP_BROADCAST_MODE === 'live' && <RadioPlayer />}
-            {process.env.REACT_APP_BROADCAST_MODE === 'live' && <VideoChatHider />}
+            <Hero>
+              {!isLive && (
+                <>
+                  <img src="leima.svg" alt="Turun Wappuradio" />
+                  <h1>Lähetys 21.-30.4.</h1>
+                </>
+              )}
+              {isLive && <RadioPlayer />}
+              {/* {isLive && <VideoChatHider />} */}
+            </Hero>
+            {/* <IndexPage />*/}
             <ShowList shows={showList} />
           </Route>
         </Switch>

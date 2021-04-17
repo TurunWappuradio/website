@@ -45,7 +45,10 @@ export default () => {
               {!isLive && (
                 <>
                   <img src="leima.svg" alt="Turun Wappuradio" />
-                  <h1>Lähetys 21.-30.4.</h1>
+                  <div>
+                    <h1>Lähetys 21.-30.4.</h1>
+                    <h2>Kuuntele myös taajuudella 93,8Mhz.</h2>
+                  </div>
                 </>
               )}
               {isLive && <RadioPlayer />}

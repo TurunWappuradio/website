@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
 
 import PlayControl from './controls/PlayControl';
+import ExternalLinkControl from './controls/ExternalLinkControl';
 import RadioControlPanel from './RadioControlPanel';
-import { FiMaximize2 } from 'react-icons/fi';
+import { FiMaximize2, FiPhone, FiMail, FiInstagram, FiFacebook } from 'react-icons/fi';
 import { FaTelegramPlane } from 'react-icons/fa';
-import resolveAssetUrl from '../../utils/assetUrlResolver';
 import './RadioPlayer.scss';
 
 const AUDIO_STREAM_URL = 'https://player.turunwappuradio.com/wappuradio.mp3';
@@ -60,10 +60,6 @@ export default () => {
     }
   }
 
-  const onOpenExternal = () => {
-    window.open(AUDIO_STREAM_URL, '_blank');
-  }
-
   return (
     <div className="RadioPlayer">
       {playClicked && (
@@ -93,6 +89,8 @@ export default () => {
               playing={playing}
               onClick={() => onPlayStop()}
             />
+            <ExternalLinkControl />
+          </div>
             {Date.now() >= 1556010000000 && (
               <div className="RadioPlayer-nowPlaying">
                 <span>Nyt soi</span>
@@ -100,29 +98,39 @@ export default () => {
                 <span>{song ? song.artist : ''}</span>
               </div>
             )}
-          </div>
-          <div className="RadioPlayer-contact">
-            <h2>
-              Studio <b>023 619 0420</b>
-            </h2>
-            <h2>
-              <b>toimitus[at]turunwappuradio.com</b>
-            </h2>
-          </div>
-          <a
-            className="RadioPlayer-streamLink"
-            href="https://player.turunwappuradio.com/wappuradio.mp3"
-            target="_blank">
-            <FiMaximize2 />
-              Avaa lähetys uuteen ikkunaan
-            </a>
+        </div>
+        <div className="RadioPlayer-contact">
+          <h1>
+            Ota yhteyttä
+          </h1>
+          <p className="RadioPlayer-streamLink">
+            <FiPhone />Studio{' '} <b>023 619 0420</b>
+          </p>
+          <p className="RadioPlayer-streamLink">
+            <FiMail /><b>toimitus[at]turunwappuradio.com</b>
+          </p>
+
+          <h1>
+            Seuraa meitä myös
+          </h1>
           <a
             className="RadioPlayer-streamLink"
             href="https://t.me/turunwappuradio"
             target="_blank">
-            <FaTelegramPlane />
-              Keskustele telegrammissa
-            </a>
+            <FaTelegramPlane /> t.me/turunwappuradio
+          </a>
+          <a
+            className="RadioPlayer-streamLink"
+            href="https://t.me/turunwappuradio"
+            target="_blank">
+            <FiInstagram /> @turunwappuradio
+          </a>
+          <a
+            className="RadioPlayer-streamLink"
+            href="https://t.me/turunwappuradio"
+            target="_blank">
+            <FiFacebook /> @turunwappuradio
+          </a>
         </div>
       </div>
       <audio ref={audio}>

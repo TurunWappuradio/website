@@ -41,6 +41,12 @@
       height: 80px;
       font-size: 40px;
       border-width: 3px;
+
+      @media (min-width: 600px), (min-device-width: 600px) {
+        width: 120px;
+        height: 120px;
+        font-size: 60px;
+      }
     }
   }
 

@@ -1,18 +1,15 @@
 import React from 'react';
 
-import OpenInBrowserIcon from '../../../assets/icons/baseline-open_in_browser.svg';
+import { FiExternalLink } from 'react-icons/fi';
 
-const ICON_SIZE = '34px';
-
-export default ({ onClick }) => (
-  <button
+const ExternalLinkControl = () => (
+  <a
     className="RadioPlayerControl"
     title="Kuuntele omassa soittimessa"
-    onClick={onClick}>
-    <OpenInBrowserIcon
-      width={ICON_SIZE}
-      height={ICON_SIZE}
-      viewBox={[0, 0, 24, 24]}
-    />
-  </button>
+    href="https://player.turunwappuradio.com/wappuradio.mp3"
+    target="_blank">
+    <FiExternalLink size="1.5em" />
+  </a>
 );
+
+export default ExternalLinkControl;

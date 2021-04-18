@@ -38,13 +38,27 @@
 }
 
 .RadioPlayer-contact {
-  > * {
-    padding: 0.25rem 0rem;
-    font-size: 0.9rem;
+  padding: 2rem;
+  margin: 2rem;
+
+  > p, h1 {
+    font-size: 1rem;
+    width: fit-content;
+    color: $colorWhite;
     > b {
       color: $colorOrange;
       font-weight: 600;
     }
+
+    > svg {
+      margin-right: 0.5rem;
+    }
+  }
+
+  h1 {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-top: 1em;
   }
 }
 
@@ -55,7 +69,8 @@
   flex-direction: row;
   align-items: center;
   width: fit-content;
-  font-size: 0.9rem;
+  font-size: 1rem;
+  text-decoration: none;
 
   > svg {
     margin-right: 0.5rem;
@@ -63,10 +78,9 @@
 }
 
 .RadioPlayer-controlWrapper {
-  flex: 2;
+  flex: 1;
   //background-color: $colorLightPurple;
   padding: 2rem;
-  border-radius: 5px;
   margin-left: 2rem;
   display: flex;
   flex-direction: column;
@@ -74,6 +88,15 @@
 
   @media (max-width: 600px), (max-device-width: 600px) {
     margin-left: 0;
+  }
+
+  .Button {
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: fit-content;
+    font-size: 0.9rem;
   }
 }
 
@@ -128,7 +151,7 @@
   height: 42px;
 
   svg {
-    fill: $colorWhite;
+    margin-left: 2rem;
     color: $colorWhite;
   }
 
@@ -179,5 +202,15 @@
   }
   to {
     transform: rotate(359deg);
+  }
+}
+
+@media (min-width: 600px), (min-screen-width: 600px) {
+  .RadioPlayer-controlWrapper {
+    border-left: 1px solid $colorWhite;
+  }
+
+  .RadioPlayer-contact {
+    border-left: 1px solid $colorWhite;
   }
 }

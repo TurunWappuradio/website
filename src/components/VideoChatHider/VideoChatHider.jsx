@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import VideoPlayer from '../VideoPlayer/VideoPlayer';
 import ShoutBox from '../ShoutBox/ShoutBox';
 import './VideoChatHider.scss'
-import { FaChevronDown } from 'react-icons/fa';
+import { FiChevronDown, FiChevronUp } from 'react-icons/fi';
 
 import Button from '../common/Button';
 
@@ -26,13 +26,13 @@ const VideoChatHider = () => {
       <div className="VCButtons">
         {WEBCAM_MODE === 'live' && (
           <div className="VCSingleButton">
-            <Button onClick={toggleVideo}>
+            <Button onClick={toggleVideo} selected={openVideo}>
               {!openVideo ? 'Katso lähetystä' : 'Piilota video'}
             </Button>
           </div>
         )}
         <div className="VCSingleButton">
-          <Button onClick={toggleShoutBox}>
+          <Button onClick={toggleShoutBox} selected={openShout}>
             {!openShout ? 'Avaa chat' : 'Piilota chat'}
           </Button>
         </div>

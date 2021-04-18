@@ -2,7 +2,8 @@
 
 .Button {
     cursor: pointer;
-    display: inline-block;
+    display: flex;
+    align-items: center;
     font-weight: 400;
     color: $colorWhite;
     text-align: center;
@@ -24,6 +25,15 @@
     &:hover {
         background: $colorBlue;
         border-color: $colorBlue;
+    }
+
+    &-selected {
+        background: $colorBlue;
+        border-color: $colorBlue;
+    }
+
+    svg {
+        margin-right: 0.5rem;
     }
 }
 

@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 import PlayControl from './controls/PlayControl';
 import ExternalLinkControl from './controls/ExternalLinkControl';
 import RadioControlPanel from './RadioControlPanel';
-import { FiMaximize2, FiPhone, FiMail, FiInstagram, FiFacebook } from 'react-icons/fi';
+import { FiPhone, FiMail, FiInstagram, FiFacebook } from 'react-icons/fi';
 import { FaTelegramPlane } from 'react-icons/fa';
 import './RadioPlayer.scss';
 
@@ -110,23 +110,23 @@ export default () => {
             <FiMail /><b>toimitus[at]turunwappuradio.com</b>
           </p>
 
-          <h1>
+          <h1 className="desktop-only">
             Seuraa meitä myös
           </h1>
           <a
-            className="RadioPlayer-streamLink"
+            className="RadioPlayer-streamLink desktop-only"
             href="https://t.me/turunwappuradio"
             target="_blank">
             <FaTelegramPlane /> t.me/turunwappuradio
           </a>
           <a
-            className="RadioPlayer-streamLink"
+            className="RadioPlayer-streamLink desktop-only"
             href="https://t.me/turunwappuradio"
             target="_blank">
             <FiInstagram /> @turunwappuradio
           </a>
           <a
-            className="RadioPlayer-streamLink"
+            className="RadioPlayer-streamLink desktop-only"
             href="https://t.me/turunwappuradio"
             target="_blank">
             <FiFacebook /> @turunwappuradio

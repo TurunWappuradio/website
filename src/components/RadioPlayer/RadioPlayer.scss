@@ -6,7 +6,6 @@
   flex-direction: column;
   color: $colorWhite;
   align-items: center;
-  margin-bottom: 42px;
 }
 
 .RadioPlayer-inPage {
@@ -60,12 +59,19 @@
     font-weight: 700;
     margin-top: 1em;
   }
+
+  > .desktop-only {
+    display: none;
+
+    @media(min-width: 600px), (min-screen-width: 600px) {
+      display: flex;
+    }
+  }
 }
 
 .RadioPlayer-streamLink {
   margin-top: 1rem;
   color: $colorWhite;
-  display: flex;
   flex-direction: row;
   align-items: center;
   width: fit-content;
@@ -106,7 +112,7 @@
   margin-left: 1rem;
   font-weight: 600;
   color: $colorWhite;
-  text-align: left;
+  text-align: center;
 
   @media (max-width: 600px), (max-device-width: 600px) {
     max-width: calc(0.8 * 100vw - 80px);
@@ -127,7 +133,7 @@
   > span:last-child {
     font-size: 0.9rem;
     font-weight: 600;
-    color: $colorWhite;
+    color: $colorOrange;
     opacity: 0.6;
     padding-top: 0;
   }

@@ -3,6 +3,7 @@
 .VideoChatHider {
   width: 100%;
   text-align: center;
+  margin-top: 20px;
 }
 
 .VCButtons {
@@ -13,6 +14,7 @@
 }
 
 .VCElements {
+  background-color: rgba(0,0,0,0.3);
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -37,7 +39,11 @@
 }
 
 .VCSingleButton {
-  margin: 0.3rem 1.5rem;
+  margin: .3rem 0;
+  > .SelectButton {
+    padding: .7rem;
+    margin: .2rem;
+  }
 }
 
 @media (min-width: 640px) {

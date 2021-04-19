@@ -8,6 +8,29 @@
   align-items: center;
 }
 
+.RadioWrapper {
+  display: flex;
+  flex-direction: column;
+  background-color: $colorDarkestBlue;
+  border-radius: 8px;
+  padding: 1rem;
+}
+
+.GradientBorder {
+  border-radius: 12px;
+  padding: 4px;
+  background: linear-gradient(180deg, $colorOrange 0%, $colorBlue 25%, $colorTeal 40%, $colorOrange 100%);
+  background-size: 400% 400%;
+  animation: gradient 4s infinite;
+  animation-play-state: paused;
+}
+
+@keyframes gradient {
+  0%{background-position:50% 0%}
+  50%{background-position:50% 100%}
+  100%{background-position:50% 0%}
+}
+
 .RadioPlayer-inPage {
   display: flex;
   flex-direction: row;
@@ -16,6 +39,7 @@
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
+  padding: 1.3rem;
 
   @media (max-width: 600px), (max-device-width: 600px) {
     flex-direction: column;
@@ -28,6 +52,7 @@
   flex: 1;
   margin-bottom: 30px;
   object-fit: contain;
+
   @media (max-width: 600px), (max-device-width: 600px) {
     width: 300px;
   }
@@ -37,7 +62,7 @@
 }
 
 .RadioPlayer-contact {
-  padding: 2rem;
+  padding: .5rem;
 
   > p, h1 {
     font-size: 1rem;
@@ -68,28 +93,37 @@
   }
 }
 
+.RadioPlayer-contactInfo {
+  margin-top: 1rem;
+}
+
 .RadioPlayer-streamLink {
   margin-top: 1rem;
-  color: $colorWhite;
+  color: $colorTeal;
   flex-direction: row;
   align-items: center;
   width: fit-content;
   font-size: 1rem;
-  font-weight: 400;
+  font-weight: 600;
   text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
 
   > svg {
     margin-right: 0.5rem;
   }
+
 }
 
 .RadioPlayer-controlWrapper {
   flex: 1;
-  padding: 2rem;
+  padding-left: 2rem;
   margin-left: 2rem;
   display: flex;
-  flex-direction: column;
-  max-width: 100%;
+  flex-direction: row;
+  align-items: center;
 
   @media (max-width: 600px), (max-device-width: 600px) {
     margin-left: 0;
@@ -111,7 +145,7 @@
   margin-left: 1rem;
   font-weight: 600;
   color: $colorWhite;
-  text-align: center;
+  text-align: left;
 
   @media (max-width: 600px), (max-device-width: 600px) {
     max-width: calc(0.8 * 100vw - 80px);
@@ -124,13 +158,17 @@
     color: $colorWhite;
   }
 
+  > span:nth-child(1) {
+    font-size: 0.9rem;
+  }
+
   > span:nth-child(2) {
-    font-size: 1.1rem;
+    font-size: 1.3rem;
     font-weight: 600;
     color: $colorOrange;
   }
   > span:last-child {
-    font-size: 0.9rem;
+    font-size: 1.1rem;
     font-weight: 600;
     color: $colorOrange;
     opacity: 0.6;
@@ -139,7 +177,6 @@
 }
 
 .RadioPlayer-controls {
-  width: 100%;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -148,6 +185,7 @@
 }
 
 .RadioPlayerControl {
+  display: none;
   background: transparent;
   border: none;
   cursor: pointer;
@@ -156,12 +194,15 @@
   height: 42px;
 
   svg {
-    margin-left: 2rem;
     color: $colorWhite;
   }
 
   :hover {
     outline: none;
+  }
+
+  @media (min-width: 600px), (min-device-width: 600px) {
+    display: block;
   }
 }
 
@@ -211,11 +252,16 @@
 }
 
 @media (min-width: 600px), (min-screen-width: 600px) {
-  .RadioPlayer-controlWrapper {
-    border-left: 1px solid $colorWhite;
+  .RadioWrapper {
+    flex-direction: row;
+    flex-wrap: wrap;
   }
 
   .RadioPlayer-contact {
-    border-left: 1px solid $colorWhite;
+    padding: 2rem;
+  }
+
+  .RadioPlayer-controlWrapper {
+    width: 450px;
   }
 }

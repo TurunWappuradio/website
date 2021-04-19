@@ -5,7 +5,7 @@ import ShoutBox from '../ShoutBox/ShoutBox';
 import './VideoChatHider.scss'
 import { FiChevronDown, FiChevronUp } from 'react-icons/fi';
 
-import Button from '../common/Button';
+import SelectButton from '../common/SelectButton';
 
 const WEBCAM_MODE = process.env.REACT_APP_WEBCAM_MODE;
 
@@ -26,15 +26,15 @@ const VideoChatHider = () => {
       <div className="VCButtons">
         {WEBCAM_MODE === 'live' && (
           <div className="VCSingleButton">
-            <Button onClick={toggleVideo} selected={openVideo}>
+            <SelectButton onClick={toggleVideo} selected={openVideo}>
               {!openVideo ? 'Katso lähetystä' : 'Piilota video'}
-            </Button>
+            </SelectButton>
           </div>
         )}
         <div className="VCSingleButton">
-          <Button onClick={toggleShoutBox} selected={openShout}>
+          <SelectButton onClick={toggleShoutBox} selected={openShout}>
             {!openShout ? 'Avaa chat' : 'Piilota chat'}
-          </Button>
+          </SelectButton>
         </div>
       </div>
       <div className="VCElements">

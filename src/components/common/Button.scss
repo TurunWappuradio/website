@@ -13,23 +13,23 @@
     -ms-user-select: none;
     user-select: none;
     text-decoration: none;
-    background-color: $colorOrange;
+    background-color: $colorDarkestBlue;
     padding: .375rem .75rem;
     font-size: 1rem;
     line-height: 1.5;
-    border-radius: .25rem;
+    border-radius: 4px;
     transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
-    border: 3px solid $colorOrange;
+    border: 3px solid $colorDarkestBlue;
     font-weight: 600;
 
     &:hover {
-        background: $colorBlue;
-        border-color: $colorBlue;
+        background: $colorOrange;
+        border-color: $colorOrange;
     }
 
     &-selected {
-        background: $colorBlue;
-        border-color: $colorBlue;
+        background: $colorOrange;
+        border-color: $colorOrange;
     }
 
     svg {

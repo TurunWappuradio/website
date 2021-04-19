@@ -21,7 +21,7 @@
   padding: 4px;
   background: linear-gradient(180deg, $colorOrange 0%, $colorBlue 25%, $colorTeal 40%, $colorOrange 100%);
   background-size: 400% 400%;
-  animation: gradient 4s infinite;
+  animation: gradient 6s infinite;
   animation-play-state: paused;
 }
 
@@ -57,15 +57,20 @@
     width: 300px;
   }
 
-  animation: rotation 2.5s infinite linear;
+  animation: rotation 3s infinite linear;
   animation-play-state: paused;
 }
 
 .RadioPlayer-contact {
   padding: .5rem;
 
+  > h1 {
+    font-size: 1.2rem !important;
+  }
+
   > p, h1 {
-    font-size: 1rem !important;
+    font-size: 1rem;
+    margin-left: 0 !important;
     width: fit-content;
     color: $colorWhite;
     > b {
@@ -214,11 +219,6 @@
   animation-name: pulse;
   animation-iteration-count: infinite;
   transition: all 0.3s ease;
-}
-
-.rotate {
-  animation: rotation 2s infinite linear;
-  animation-play-state: paused;
 }
 
 .running {

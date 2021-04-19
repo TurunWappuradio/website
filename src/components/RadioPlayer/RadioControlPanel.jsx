@@ -31,7 +31,7 @@ export default function RadioControlPanel(props) {
               <span>Taajuudella</span> <b>93,8 MHz</b>
             </div>
             <div>
-              <span> Studio</span> <b>023 619 0420</b>
+              <span>Studio</span> <b>023 619 1666</b>
             </div>
           </div>
         </div>

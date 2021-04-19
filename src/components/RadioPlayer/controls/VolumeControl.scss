@@ -8,7 +8,7 @@
 .VolumeSliderArea {
   width: 42px; // Icon size
   height: 180px;
-  background-color: $colorLightPurple;
+  background-color: $colorDarkerBlue;
   position: absolute;
   bottom: 50px;
   border-radius: 50px;
@@ -16,7 +16,7 @@
 }
 
 .VolumeSliderMute {
-  background-color: $colorLightOrange;
+  background-color: $colorOrange;
   border-radius: 50%;
   margin: 7px auto;
   border: none;
@@ -48,15 +48,15 @@
   line-height: 0;
   font-size: 15px;
   border: 2px solid;
-  border-color: $colorStraw;
-  color: $colorStraw;
+  border-color: $colorOrange;
+  color: $colorOrange;
   border-radius: 50%;
   background: transparent;
 
   @extend .RoundButtonOutline;
 
   &--Active {
-    border-color: $colorLightOrange;
-    color: $colorLightOrange;
+    border-color: $colorBlue;
+    color: $colorBlue;
   }
 }

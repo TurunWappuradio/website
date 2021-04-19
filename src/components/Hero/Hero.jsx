@@ -2,7 +2,7 @@ import React from 'react';
 import { Header } from '..';
 import './Hero.scss';
 
-const Hero = ({ children }) => (
+const Hero = ({ children, controls }) => (
   <div id="logoContainer" className="Hero" style={{
     backgroundImage: 'url("herokuva.jpeg")'
   }}>
@@ -11,6 +11,7 @@ const Hero = ({ children }) => (
       <div className="Hero-wrapper">
         {children}
       </div>
+      {controls}
     </div>
   </div>
 );

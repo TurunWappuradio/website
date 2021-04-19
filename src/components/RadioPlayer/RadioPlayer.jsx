@@ -46,7 +46,7 @@ const RadioPlayer = (props) => {
             <FiRadio />Taajuudella <b>93,8MHz</b>
           </p>
           <p className="RadioPlayer-streamLink">
-            <FiPhone />Studio{' '} <b>023 619 0420</b>
+            <FiPhone />Studio <b>023 619 0420</b>
           </p>
 
           <h1 className="desktop-only">

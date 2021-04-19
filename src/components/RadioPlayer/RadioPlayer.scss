@@ -65,7 +65,7 @@
   padding: .5rem;
 
   > p, h1 {
-    font-size: 1rem;
+    font-size: 1rem !important;
     width: fit-content;
     color: $colorWhite;
     > b {

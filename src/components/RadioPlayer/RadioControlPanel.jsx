@@ -20,9 +20,13 @@ export default function RadioControlPanel(props) {
           </span>
         </div>
         <div className="RadioControlPanel-metaContainer">
-          <span>Nyt soi</span>
-          <span>{props.song && props.song.song}</span>
-          <span>{props.song && props.song.artist}</span>
+          {Date.now() >= 1618995600000 && (
+            <>
+              <span>Nyt soi</span>
+              <span>{props.song && props.song.song}</span>
+              <span>{props.song && props.song.artist}</span>
+            </>
+          )}
         </div>
         <div className="RadioControlPanel-infoContainer RadioControlPanel-infoContainer--Details">
           <div className="RadioControlPanel-contactWrapper">

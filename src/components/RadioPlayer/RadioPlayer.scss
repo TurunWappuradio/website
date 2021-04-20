@@ -1,21 +1,45 @@
 @import '../../styles/common.scss';
 
 .RadioPlayer {
+  flex: 1;
   display: flex;
   flex-direction: column;
-  color: $colorStraw;
+  color: $colorWhite;
   align-items: center;
-  margin-bottom: 42px;
+}
+
+.RadioWrapper {
+  display: flex;
+  flex-direction: column;
+  background-color: $colorDarkestBlue;
+  border-radius: 8px;
+  padding: 1rem;
+}
+
+.GradientBorder {
+  border-radius: 12px;
+  padding: 4px;
+  background: linear-gradient(180deg, $colorOrange 0%, $colorBlue 25%, $colorTeal 40%, $colorOrange 100%);
+  background-size: 400% 400%;
+  animation: gradient 8s infinite;
+  animation-play-state: paused;
+}
+
+@keyframes gradient {
+  0%{background-position:50% 0%}
+  50%{background-position:50% 100%}
+  100%{background-position:50% 0%}
 }
 
 .RadioPlayer-inPage {
   display: flex;
   flex-direction: row;
-  max-width: 900px;
+  max-width: 1200px;
   width: 100%;
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
+  padding: 1.3rem;
 
   @media (max-width: 600px), (max-device-width: 600px) {
     flex-direction: column;
@@ -26,50 +50,96 @@
   max-width: 300px;
   min-width: 150px;
   flex: 1;
-  margin-bottom: 30px;
   object-fit: contain;
+
   @media (max-width: 600px), (max-device-width: 600px) {
     width: 300px;
   }
+
+  animation: rotation 4s infinite linear;
+  animation-play-state: paused;
 }
 
 .RadioPlayer-contact {
-  > * {
-    padding: 0.25rem 0rem;
-    font-size: 0.9rem;
+  padding: .5rem;
+
+  > h1 {
+    font-size: 1.2rem !important;
+  }
+
+  > p, h1 {
+    font-size: 1rem;
+    margin-left: 0 !important;
+    width: fit-content;
+    color: $colorWhite;
     > b {
-      color: $colorLightOrange;
+      color: $colorOrange;
       font-weight: 600;
+    }
+
+    > svg {
+      margin-right: 0.5rem;
+    }
+  }
+
+  h1 {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-top: 1em;
+  }
+
+  > .desktop-only {
+    display: none;
+
+    @media(min-width: 600px), (min-screen-width: 600px) {
+      display: flex;
     }
   }
 }
 
+.RadioPlayer-contactInfo {
+  margin-top: 1rem;
+}
+
 .RadioPlayer-streamLink {
   margin-top: 1rem;
-  color: $colorStraw;
-  display: flex;
+  color: $colorTeal;
   flex-direction: row;
   align-items: center;
   width: fit-content;
-  font-size: 0.9rem;
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
 
   > svg {
     margin-right: 0.5rem;
   }
+
 }
 
 .RadioPlayer-controlWrapper {
-  flex: 2;
-  background-color: $colorLightPurple;
-  padding: 2rem;
-  border-radius: 5px;
+  flex: 1;
+  padding-left: 1rem;
   margin-left: 2rem;
   display: flex;
-  flex-direction: column;
-  max-width: 100%;
+  flex-direction: row;
+  align-items: center;
 
   @media (max-width: 600px), (max-device-width: 600px) {
     margin-left: 0;
+  }
+
+  .Button {
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: fit-content;
+    font-size: 0.9rem;
   }
 }
 
@@ -78,7 +148,7 @@
   font-size: 1.2rem;
   margin-left: 1rem;
   font-weight: 600;
-  color: $colorStraw;
+  color: $colorWhite;
   text-align: left;
 
   @media (max-width: 600px), (max-device-width: 600px) {
@@ -89,25 +159,28 @@
   > span {
     display: block;
     padding: 0.25rem;
-    color: $colorStraw;
+    color: $colorWhite;
+  }
+
+  > span:nth-child(1) {
+    font-size: 0.9rem;
   }
 
   > span:nth-child(2) {
-    font-size: 1.1rem;
+    font-size: 1.3rem;
     font-weight: 600;
-    color: $colorLightOrange;
+    color: $colorOrange;
   }
   > span:last-child {
-    font-size: 0.9rem;
+    font-size: 1.1rem;
     font-weight: 600;
-    color: $colorLightOrange;
+    color: $colorOrange;
     opacity: 0.6;
     padding-top: 0;
   }
 }
 
 .RadioPlayer-controls {
-  width: 100%;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -116,6 +189,7 @@
 }
 
 .RadioPlayerControl {
+  display: none;
   background: transparent;
   border: none;
   cursor: pointer;
@@ -124,23 +198,30 @@
   height: 42px;
 
   svg {
-    fill: $colorStraw;
-    color: $colorStraw;
+    color: $colorWhite;
   }
 
   :hover {
     outline: none;
   }
+
+  @media (min-width: 600px), (min-device-width: 600px) {
+    display: block;
+  }
 }
 
 .pulse {
-  fill: $colorStraw;
+  fill: $colorWhite;
   fill-opacity: 0;
   transform-origin: 50% 50%;
   animation-duration: 2s;
   animation-name: pulse;
   animation-iteration-count: infinite;
   transition: all 0.3s ease;
+}
+
+.running {
+  animation-play-state: running;
 }
 
 @keyframes pulse {
@@ -157,5 +238,34 @@
   to {
     -webkit-transform: scale3d(1, 1, 1);
     transform: scale3d(1, 1, 1);
+  }
+}
+
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
+  }
+}
+
+@media (min-width: 600px), (min-screen-width: 600px) {
+  .RadioWrapper {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .RadioPlayer-contact {
+    padding: 2rem;
+  }
+
+  .RadioPlayer-controlWrapper {
+    width: 450px;
+    padding-left: 2rem;
+  }
+
+  .RadioPlayer-inPage {
+    padding: 2rem 1.3rem;
   }
 }

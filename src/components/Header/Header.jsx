@@ -40,7 +40,7 @@ const Header = () => {
           </Link>
         </li>
         {links.items.map(link => (
-          <li>
+          <li key={link.name}>
             <Link to={link.slug}>
               {link.name}
             </Link>

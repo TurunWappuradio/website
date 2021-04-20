@@ -14,6 +14,7 @@ import IndexPage from './ContentPage/IndexPage';
 import ArchivedShowList from './ArchivedShowList/ArchivedShowList';
 import ArchiveLinks from './ArchiveLinks/ArchiveLinks';
 import Hero from './Hero/Hero';
+import RadioControlPanel from './RadioPlayer/RadioControlPanel';
 
 export {
   RadioPlayer,
@@ -31,5 +32,6 @@ export {
   IndexPage,
   ArchivedShowList,
   ArchiveLinks,
-  Hero
+  Hero,
+  RadioControlPanel
 };

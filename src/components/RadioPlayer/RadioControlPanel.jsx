@@ -27,11 +27,11 @@ export default function RadioControlPanel(props) {
         <div className="RadioControlPanel-infoContainer RadioControlPanel-infoContainer--Details">
           <div className="RadioControlPanel-contactWrapper">
             <h2>Turun Wappuradio</h2>
-            {/* <div>
-              <span>Taajuudella</span> <b>93,8 MHz</b>
-            </div> */}
             <div>
-              <span> Studio</span> <b>023 619 0420</b>
+              <span>Taajuudella</span> <b>93,8 MHz</b>
+            </div>
+            <div>
+              <span>Studio</span> <b>023 619 1666</b>
             </div>
           </div>
         </div>

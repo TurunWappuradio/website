@@ -1,8 +1,9 @@
 @import '../../styles/common.scss';
 
 .VideoChatHider {
-  margin-bottom: 30px;
+  width: 100%;
   text-align: center;
+  margin-top: 20px;
 }
 
 .VCButtons {
@@ -13,6 +14,7 @@
 }
 
 .VCElements {
+  background-color: rgba(0,0,0,0.3);
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -21,13 +23,14 @@
 }
 
 .VideoContainer {
-  margin-top: 20px;
+  flex: 1;
+  margin: 10px;
 }
 
 .ShoutBoxContainer {
-  width: 100%;
+  flex: 1;
   max-width: 900px;
-  margin-top: 20px;
+  margin: 10px;
 }
 
 .VideoContainer > iframe {
@@ -36,30 +39,28 @@
 }
 
 .VCSingleButton {
-  margin: 2rem 1rem;
-  > .Button {
-    color: $colorStraw;
-    border-color: $colorStraw;
-    &:hover {
-      background-color: $colorStraw;
-      color: $colorPink;
-    }
+  margin: .3rem 0;
+  > .SelectButton {
+    padding: .7rem;
+    margin: .2rem;
   }
 }
 
 @media (min-width: 640px) {
   .VideoContainer > iframe {
-    width: 640px;
+    min-width: 640px;
+    width: 100%;
+    max-width: 848px;
     height: 360px;
   }
   .ShoutBoxContainer {
     height: 360px;
+    min-width: 400px;
   }
 }
 
 @media (min-width: 960px) {
   .VideoContainer > iframe {
-    width: 848px;
     height: 480px;
   }
   .ShoutBoxContainer {

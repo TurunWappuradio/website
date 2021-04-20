@@ -2,7 +2,8 @@
 
 .Button {
     cursor: pointer;
-    display: inline-block;
+    display: flex;
+    align-items: center;
     font-weight: 400;
     color: $colorWhite;
     text-align: center;
@@ -11,18 +12,28 @@
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
-    background-color: $colorBlue;
+    text-decoration: none;
+    background-color: $colorDarkestBlue;
     padding: .375rem .75rem;
     font-size: 1rem;
     line-height: 1.5;
-    border-radius: .25rem;
+    border-radius: 4px;
     transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
-    border: 3px solid $colorBlue;
+    border: 3px solid $colorDarkestBlue;
     font-weight: 600;
 
     &:hover {
-        color: initial;
-        background: $colorMainTextColor;
+        background: $colorOrange;
+        border-color: $colorOrange;
+    }
+
+    &-selected {
+        background: $colorOrange;
+        border-color: $colorOrange;
+    }
+
+    svg {
+        margin-right: 0.5rem;
     }
 }
 

@@ -21,7 +21,7 @@
   padding: 4px;
   background: linear-gradient(180deg, $colorOrange 0%, $colorBlue 25%, $colorTeal 40%, $colorOrange 100%);
   background-size: 400% 400%;
-  animation: gradient 6s infinite;
+  animation: gradient 8s infinite;
   animation-play-state: paused;
 }
 
@@ -50,14 +50,13 @@
   max-width: 300px;
   min-width: 150px;
   flex: 1;
-  margin-bottom: 30px;
   object-fit: contain;
 
   @media (max-width: 600px), (max-device-width: 600px) {
     width: 300px;
   }
 
-  animation: rotation 3s infinite linear;
+  animation: rotation 4s infinite linear;
   animation-play-state: paused;
 }
 
@@ -124,7 +123,7 @@
 
 .RadioPlayer-controlWrapper {
   flex: 1;
-  padding-left: 2rem;
+  padding-left: 1rem;
   margin-left: 2rem;
   display: flex;
   flex-direction: row;
@@ -263,5 +262,10 @@
 
   .RadioPlayer-controlWrapper {
     width: 450px;
+    padding-left: 2rem;
+  }
+
+  .RadioPlayer-inPage {
+    padding: 2rem 1.3rem;
   }
 }

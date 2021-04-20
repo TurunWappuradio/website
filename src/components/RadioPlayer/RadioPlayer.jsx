@@ -2,7 +2,7 @@ import React from 'react';
 
 import PlayControl from './controls/PlayControl';
 import ExternalLinkControl from './controls/ExternalLinkControl';
-import { FiRadio, FiPhone, FiMail, FiInstagram, FiFacebook } from 'react-icons/fi';
+import { FiCalendar, FiRadio, FiPhone, FiInstagram, FiFacebook } from 'react-icons/fi';
 import { FaTelegramPlane } from 'react-icons/fa';
 import './RadioPlayer.scss';
 
@@ -31,7 +31,7 @@ const RadioPlayer = (props) => {
                   onClick={onPlayPause}
                 />
               </div>
-                {Date.now() >= 1556010000000 && (
+                {Date.now() >= 1618995600000 && (
                   <div className="RadioPlayer-nowPlaying">
                     <span>NYT SOI:</span>
                     <span>{song ? song.song : '-'}</span>
@@ -47,7 +47,10 @@ const RadioPlayer = (props) => {
             Turun Wappuradio
           </h1>
           <p className="RadioPlayer-contactInfo">
-            <FiRadio />Taajuudella <b>93,8MHz</b>
+            <FiCalendar />Lähetys <b>21.–30.4.</b>
+          </p>
+          <p className="RadioPlayer-contactInfo">
+            <FiRadio />Taajuudella <b>93,8 MHz</b>
           </p>
           <p className="RadioPlayer-contactInfo">
             <FiPhone />Studio <b>023 619 1666</b>

@@ -43,10 +43,6 @@ export default () => {
     setTimeout(() => {
       fetch('https://json.turunwappuradio.com/metadata.json', {
         method: 'GET', // *GET, POST, PUT, DELETE, etc.
-        headers: {
-          'pragma': 'no-cache',
-          'cache-control': 'no-cache', 
-        },
         mode: 'cors' // no-cors, *cors, same-origin
       })
         .then(res => res.json())

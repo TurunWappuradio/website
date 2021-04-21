@@ -54,7 +54,15 @@ class MetadataForm extends Component {
         'Content-Type': 'text/plain'
       },
       body
-    }).catch(err => console.error(err));
+    })
+      .then(() => alert('Metadatan lisääminen onnistu. Hyvä sää!'))
+      .then(() => this.setState(prev => ({
+        ...prev,
+        artist: '',
+        track: '',
+        error: null
+      })))
+      .catch(err => console.error(err));
   }
 
   render() {

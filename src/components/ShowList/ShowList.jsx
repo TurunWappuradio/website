@@ -34,11 +34,9 @@ const ShowList = ({ shows }) => {
       <div className="ShowList-header">
         <h1 className="ShowList-title">Ohjelmistossa</h1>
         {Object.keys(groupedShows).includes(getDateKeyFormat(new Date())) && (
-          <button
-            className="Button ShowList-button"
-            onClick={() => setFiltered(!filtered)}>
+          <SelectButton selected={!filtered} onClick={() => setFiltered(!filtered)}>
             {filtered ? 'Näytä menneet' : 'Piilota menneet'}
-          </button>
+          </SelectButton>
         )}
         {widescreen && (
           <>

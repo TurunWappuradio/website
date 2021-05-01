@@ -93,7 +93,7 @@ export default () => {
               <title>Turun Wappuradio</title>
               <meta name="description" content="Wappuradio 21.-30.4."></meta>
             </Helmet>
-            <Hero controls={<VideoChatHider/>}>
+            <Hero controls={isLive ? <VideoChatHider/> : null}>
               {!isLive && (
                 <>
                   <img src="leima.svg" alt="Turun Wappuradio" />

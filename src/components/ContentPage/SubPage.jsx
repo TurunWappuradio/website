@@ -40,7 +40,10 @@ export default () => {
       </Helmet>
       <Hero>
         <img src="leima.svg" alt="Turun Wappuradio" />
-        <h1>{name}</h1>
+        <div>
+          <h1>{name}</h1>
+          <h2>{description}</h2>
+        </div>
       </Hero>
       <ContentPage content={content} customComponent={customComponent} />
     </>

@@ -28,6 +28,8 @@ const isLive = process.env.REACT_APP_BROADCAST_MODE === 'live';
 
 export default () => {
 
+  /* Comment out radioplayer stuff for off-season.
+
   // TODO: this should probably be a provider.
   const [playing, setPlaying] = useState(false);
   const [muted, setMuted] = useState(false);
@@ -78,6 +80,8 @@ export default () => {
       setVolumeLevel(valueArray[0]);
     }
   }
+
+  */
   
   pageview();
 
@@ -91,29 +95,25 @@ export default () => {
           <Route path="/">
             <Helmet>
               <title>Turun Wappuradio</title>
-              <meta name="description" content="Wappuradio 21.-30.4."></meta>
+              <meta name="description" content="Wappuradioo tält puolt jokkee"></meta>
             </Helmet>
             <Hero controls={isLive ? <VideoChatHider/> : null}>
-              {!isLive && (
-                <>
-                  <img src="leima.svg" alt="Turun Wappuradio" />
-                  <div>
-                    <h1>Lähetys 21.-30.4.</h1>
-                    <h2>Kuuntele myös taajuudella 93,8Mhz.</h2>
-                  </div>
-                </>
-              )}
-              {isLive && <RadioPlayer playing={playing} onPlayPause={onPlayPause} song={song} />}
+              <img src="leima.svg" alt="Turun Wappuradio" />
+              <div>
+                <h1>Turun Wappuradio</h1>
+                <h2>Wappuradioo tält puolt jokkee</h2>
+              </div>
+              {/* {isLive && <RadioPlayer playing={playing} onPlayPause={onPlayPause} song={song} />} */}
               {/* {isLive && <VideoChatHider />} */}
             </Hero>
-            {/* <IndexPage />*/}
-            <ShowList shows={showList} />
+            <IndexPage />
+            {/* <ShowList shows={showList} /> */}
           </Route>
         </Switch>
       </Router>
       <Sponsors />
       <Footer />
-      <audio ref={audio}>
+      {/* <audio ref={audio}>
         <source src={AUDIO_STREAM_URL} />
       </audio>
       {playClicked && (
@@ -126,7 +126,7 @@ export default () => {
           volumeLevel={volumeLevel}
           changeVolume={changeVolume}
         />
-      )}
+      )} */}
     </div>
   );
 }

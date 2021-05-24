@@ -6,12 +6,19 @@ import { MusicLibrary, MetadataForm, CalendarEvents, ShoutBox, Dashboard, Archiv
 import './ContentPage.scss';
 
 export default ({ content, customComponent }) => (
-  <div className="Container">
-    <div className="ContentPage">
-      {documentToReactComponents(content, options)}
+  <>
+    <div className="Container">
+      <div className="ContentPage">
+        {documentToReactComponents(content, options)}
+      </div>
     </div>
-    {getCustomComponent(customComponent)}
-  </div>
+    <div className={`
+      ComponentContainer
+      ${customComponent && customComponent.startsWith('Ohjelmakartta-') ? 'ComponentContainer-showlist' : ''}
+    `}>
+      {getCustomComponent(customComponent)}
+    </div>
+  </>
 );
 
 let options = {
@@ -62,5 +69,7 @@ const getCustomComponent = (componentName) => {
       return <ArchivedShowList showListKey="wappuradio2020" />;
     case "Ohjelmakartta-syssy2020":
       return <ArchivedShowList showListKey="syssyradio2020" />;
+    case "Ohjelmakartta-wappu2021":
+      return <ArchivedShowList showListKey="wappuradio2021" />;
   }
 }

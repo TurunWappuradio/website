@@ -21,7 +21,7 @@ const timeStamps = ['00', '01', '02', '03', '04', '05', '06', '07', '08', '09', 
                     '12', '13', '14', '15', '16', '17', '18', '19', '20', '21', '22', '23'];
 
 export default ({ showData, groupedShows }) => {
-  const showsGroupedByWeek = groupByWeek(Object.values(groupedShows))
+  const showsGroupedByWeek = groupByWeek(Object.values(groupedShows));
 
   const [openWeek, setWeek] = useState(getInitialWeek(Object.keys(showsGroupedByWeek)));
   const [selected, setSelected] = useState(null);
@@ -29,16 +29,18 @@ export default ({ showData, groupedShows }) => {
 
   return (
     <div className="ShowList-widescreenContainer">
-      <div className="ShowList-weekselector">
-        {Object.keys(showsGroupedByWeek).map(week => (
-          <SelectButton
-            selected={openWeek === week}
-            key={week}
-            onClick={() => setWeek(week)}>
-            Viikko {week}
-          </SelectButton>
-        ))}
-      </div>
+      {Object.keys(showsGroupedByWeek).length > 1 && (
+        <div className="ShowList-weekselector">
+          {Object.keys(showsGroupedByWeek).map(week => (
+            <SelectButton
+              selected={openWeek === week}
+              key={week}
+              onClick={() => setWeek(week)}>
+              Viikko {week}
+            </SelectButton>
+          ))}
+        </div>
+      )}
       {selected !== null && (
         <ShowCard
           show={showData[selectedIdx]}

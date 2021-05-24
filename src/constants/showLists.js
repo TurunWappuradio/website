@@ -1,4 +1,10 @@
 export const SHOWLISTS = {
+  wappuradio2021: {
+    title: 'Wappuradio 2021',
+    url: '/wappuradio2021',
+    contentfulId: '2OY4IE0Ph4BKgFXCWawHSR',
+    buttonImage: '/wappuradio2021/startti2021.jpeg'
+  },
   syssyradio2020: {
     title: 'Syssyradio 2020',
     url: '/syssyradio2020',

@@ -36,7 +36,7 @@ const Header = () => {
       <ul>
         <li>
           <Link to="/">
-            Radio
+            Etusivu
           </Link>
         </li>
         {links.items.map(link => (

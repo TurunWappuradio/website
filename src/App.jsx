@@ -111,7 +111,7 @@ export default () => {
           </Route>
         </Switch>
       </Router>
-      <Sponsors />
+      //<Sponsors />
       <Footer />
       {/* <audio ref={audio}>
         <source src={AUDIO_STREAM_URL} />

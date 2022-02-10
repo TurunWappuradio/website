@@ -11,7 +11,7 @@
     "contentful": "^8.2.1",
     "date-fns": "^2.16.0",
     "graphql": "^15.5.0",
-    "node-sass": "^4.14.1",
+    "node-sass": "^7.0.0",
     "ramda": "^0.27.1",
     "react": "^16.13.1",
     "react-compound-slider": "^2.5.0",
